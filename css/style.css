@@ -1,0 +1,139 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+#tabsContainer {
+padding: 50px;
+
+}
+
+#javaScript {
+  margin: auto;
+  width: 50%;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 40px;
+ }
+
+#javaScript:hover {
+  background-image: url("interactive.jpg");
+  background-position: -100px -50px;
+  background-size: 600px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.5s;
+  background-color: none;
+  color: #fff;
+  font-size: 40px;
+}
+
+#webDesign {
+  margin: auto;
+  width: 50%;
+  border: 1px solid #000;
+  padding: 40px;
+ }
+
+#webDesign:hover {
+  background-image: url("florence.jpg");
+  background-position: 0px -160px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.5s;
+  color: #fff;
+  font-size: 40px;
+ }
+
+#python {
+  margin: auto;
+  width: 50%;
+  border: 1px solid #000;
+  padding: 40px;
+ }
+
+#python:hover {
+  background-image: url("mrpython.png");
+  background-position: 0px -160px;
+  size: 400px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.5s;
+  color: #fff;
+  font-size: 40px;
+}
+
+#projects {
+  margin: auto;
+  background-position: -10px -50px;
+  width: 50%;
+  border: 1px solid #000;
+  padding: 40px;
+ }
+
+#projects:hover {
+  background-image: url("japan.jpg");
+  background-position: 0px 0px;
+  background-size: 500px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.5s;
+  color: #fff;
+  font-size: 40px;
+ }
+
+.tab {
+  width: 50%;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+  margin: none;
+  float: none;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
