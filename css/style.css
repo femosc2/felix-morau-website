@@ -62,12 +62,14 @@ body {
   height: 600px;
   width: 400px;
   right: 0px;
+  display: none;
 }
 
 #twitterIndex {
   float: left;
   position: relative;
   left: 0px;
+  display: none;
 }
 
 #instagramIndex {
