@@ -77,7 +77,7 @@ body {
   position: relative;
 }
 .brand-logo a {
-  margin.auto;
+  margin: auto;
   width: 50%;
 }
 
@@ -114,7 +114,6 @@ display: none;
   transition-timing-function: ease-in-out;
   background-repeat: no-repeat;
   transition: all 0.5s;
-  background-color: none;
   color: #fff;
   font-size: 40px;
 }
@@ -148,7 +147,6 @@ display: none;
 #python:hover {
   background-image: url("mrpython.png");
   background-position: 0px -160px;
-  size: 400px;
   transition-timing-function: ease-in-out;
   background-repeat: no-repeat;
   transition: all 0.5s;
@@ -183,7 +181,7 @@ display: none;
 nav ul a,
 nav .brand-logo {
   color: #444;
-  margin: none;
+  margin: 0px;
   float: none;
   background-color: #b2b2b2;
 }
