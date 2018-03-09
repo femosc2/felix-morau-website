@@ -1,0 +1,4 @@
+# Colours
+
+Light Grey: #b2b2b2
+Dark Grey: #4c4d4f
