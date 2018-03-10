@@ -127,7 +127,18 @@ body {
   border: 0.5px solid #b2b2b2;
   background-color:rgba(255, 255, 255, 0.3);
   padding: 40px;
+  color: #070707;
  }
+
+ #javaScript a, #python a, #webDesign a, #projects a {
+   color: #070707;
+ }
+#javaScript a:hover, #python a:hover, #webDesign a:hover, #projects a:hover {
+  color: #fff;
+ -webkit-text-stroke: 0.5px #070707;
+  text-stroke: 0.5px #070707;
+}
+
 
 #javaScript:hover {
   background-image: url("interactive.jpg");
