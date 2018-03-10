@@ -15,6 +15,24 @@ body {
   background-image: url("background.png");
 }
 
+
+.tabs.tabs-transparent .tab a:hover,
+.tabs.tabs-transparent .tab a.active {
+  color: #070707;
+}
+
+
+.completed {
+  color: #12d604 !important;
+}
+
+.inProgress {
+  color: #d60404 !important;
+}
+.tabs.tabs-transparent .indicator {
+  background-color: #070707;
+}
+
 #mobile-demo {
   background-color: rgba(255, 255, 255, 0.8);
 }
