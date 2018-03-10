@@ -45,14 +45,10 @@ body {
 #intro {
   width: 30%;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
   box-sizing: border-box;
-  border-radius: 10px;
   text-align: center;
   margin-left: 33%;
   float: right;
-  position: absolute;
-  top: 18%;
 }
 
 
@@ -89,14 +85,12 @@ body {
 
 
 #tabsContainer {
-padding: 50px;
-
+  padding: 10px;
 }
 
 #inProgressTabsContainer {
-padding: 50px;
-display: none;
-
+  display: none;
+  padding: 10px;
 }
 
 #javaScript {
@@ -193,8 +187,6 @@ nav {
 
 .page-footer{
   background-color: #b2b2b2;
-  bottom: 0;
-  position: absolute;
   width: 100%;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
@@ -231,12 +223,71 @@ p {
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 500px) {
   #index-banner .section {
     top: 0;
   }
+
+
+#TODOTheme {
+  display: none;
 }
 
+#footerBio {
+  display: none;
+}
+
+#intro {
+  width: 100%;
+  float: none;
+  margin-left: 0%;
+  top: 18%;
+  padding: 0px;
+}
+
+#about {
+  width: 100%;
+  float: none;
+  margin-left: 0%;
+  top: 18%;
+}
+#javaScript {
+  margin: auto;
+  width: 50%;
+ }
+
+#javaScript:hover {
+  font-size: 15px;
+}
+
+#webDesign {
+  width: 50%;
+ }
+
+#webDesign:hover {
+  font-size: 15px;
+ }
+
+#python {
+  margin: auto;
+  width: 50%;
+ }
+
+#python:hover {
+  font-size: 15px;
+}
+
+#projects {
+  width: 50%;
+ }
+
+#projects:hover {
+  font-size: 15px;
+ }
+
+nav {
+  width: 100%;
+}
 .icon-block {
   padding: 0 15px;
 }
@@ -246,4 +297,11 @@ p {
 
 footer.page-footer {
   margin: 0;
+  position: absolute;
+}
+
+#indexFooter {
+  position: fixed;
+  bottom: 0;
+}
 }
