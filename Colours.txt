@@ -1,4 +1,9 @@
 # Colours
 
-Light Grey: #b2b2b2
-Dark Grey: #4c4d4f
+Light Grey: #b2b2b2;
+Dark Grey: #4c4d4f;
+Black: #070707;
+In Progress Red: #d60404;
+Completed Green: #12d604;
+Header and Footer Transparent: rgba(255, 255, 255, 0.8);
+Project tabs Transparent: rgba(255, 255, 255, 0.3);
