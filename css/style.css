@@ -7,7 +7,17 @@
  */
 
 
+ .container {
+   background-color: #f2f2f2;
+ }
 
+
+ .copyrightcontainer {
+   margin: 0 auto;
+   max-width: 1280px;
+   width: 90%;
+   background-color: #e3e3e3;
+ }
 
 a {
   color: #fff;
@@ -22,8 +32,8 @@ a {
 }
 
 body {
-  background-image: url("background.png");
-  background-color: rgba(255, 255, 255, 0.8);
+  background-image: url("helsingborg.jpg");
+  background-color: #f2f2f2;
 }
 
 
@@ -48,17 +58,6 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-#about {
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: auto;
-  top: 18%;
-  color: #070707;
-}
-
 .blue-grey.darken-1 {
   background-color: rgba(255, 255, 255, 0.8) !important;
   width: 35%;
@@ -68,12 +67,16 @@ body {
   color: #4c4d4f !important;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+  color: #2456c1;
+}
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    color: #4c4d4f;
-    margin-right: 24px;
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
-    text-transform: uppercase;
+  color: #4c4d4f;
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase;
 }
 
 #intro {
@@ -89,39 +92,22 @@ body {
   padding: 10px;
 }
 
-
-
-#github-card {
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: auto;
-  top: 18%;
-  color: #070707;
-}
-
-#twitterIndex {
-  float: left;
-  position: relative;
-  left: 0px;
-  display: none;
-}
-
-#instagramIndex {
-  float: right;
-  position: relative;
-}
 .brand-logo a {
   margin: auto;
   width: 50%;
 }
 
 .linkContainer {
-  display:block;
+  display: block;
   width: 100%;
   height: 100%;
+  color: #070707;
+}
+
+.linkContainer:hover {
+  -webkit-text-stroke: 0.5px #070707;
+   text-stroke: 0.5px #070707;
+  color: #070707;
 }
 
 
@@ -144,7 +130,6 @@ body {
   border: 0.5px solid #b2b2b2;
   background-color:rgba(255, 255, 255, 0.3);
   padding: 40px;
-  color: #070707;
   display: block;
  }
 
@@ -171,6 +156,7 @@ body {
   transition: all 0.5s;
   color: #fff;
   font-size: 40px;
+  display: block;
 }
 
 #webDesign {
@@ -179,6 +165,7 @@ body {
   border: 0.5px solid #b2b2b2;
   background-color:rgba(255, 255, 255, 0.3);
   padding: 40px;
+  display: block;
  }
 
 #webDesign:hover {
@@ -189,6 +176,7 @@ body {
   transition: all 0.5s;
   color: #fff;
   font-size: 40px;
+  display: block;
  }
 
 #python {
@@ -197,6 +185,7 @@ body {
   border: 0.5px solid #b2b2b2;
   background-color:rgba(255, 255, 255, 0.3);
   padding: 40px;
+  display: block;
  }
 
 #python:hover {
@@ -207,6 +196,7 @@ body {
   transition: all 0.5s;
   color: #fff;
   font-size: 40px;
+  display: block;
 }
 
 #projects {
@@ -216,6 +206,7 @@ body {
   border: 0.5px solid #b2b2b2;
   background-color:rgba(255, 255, 255, 0.3);
   padding: 40px;
+  display: block;
  }
 
 #projects:hover {
@@ -227,6 +218,7 @@ body {
   transition: all 0.5s;
   color: #fff;
   font-size: 40px;
+  display: block;
  }
 
 .tab {
@@ -242,7 +234,7 @@ nav .brand-logo {
 }
 
 nav {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #f2f2f2;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -251,7 +243,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f2f2f2;
     color: #070707;
     text-align: center;
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);

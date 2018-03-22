@@ -7,15 +7,35 @@
  */
 
 
+.teal-text.text-lighten-2{
+  color: #fff !important;
+}
 
+.parallax {
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+}
 
 a {
-  color: #fff;
+  color: #f2f2f2;
 
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #f2f2f2;
+}
+
+.footercontainer {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  background-color: #f2f2f2;
+}
+
+.copyrightcontainer {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  background-color: #e3e3e3;
 }
 
 #divider {
@@ -26,7 +46,7 @@ a {
 }
 
 body {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #f2f2f2;
 }
 
 
@@ -51,186 +71,10 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-#about {
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: auto;
-  top: 18%;
-  color: #070707;
-}
-
-.blue-grey.darken-1 {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  width: 35%;
-}
-
-.card-content.white-text {
-  color: #4c4d4f !important;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    color: #4c4d4f;
-    margin-right: 24px;
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
-    text-transform: uppercase;
-}
-
-#intro {
-  width: 30%;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #070707;
-  box-sizing: border-box;
-  text-align: center;
-  margin-left: 33%;
-  position: absolute;
-  border-radius: 10px;
-  float: right;
-  padding: 10px;
-}
-
-
-
-#github-card {
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: auto;
-  top: 18%;
-  color: #070707;
-}
-
-#twitterIndex {
-  float: left;
-  position: relative;
-  left: 0px;
-  display: none;
-}
-
-#instagramIndex {
-  float: right;
-  position: relative;
-}
 .brand-logo a {
   margin: auto;
   width: 50%;
 }
-
-.linkContainer {
-  display:block;
-  width: 100%;
-  height: 100%;
-}
-
-
-#tabsContainer {
-  padding: 10px;
-  display: block;
-  position: relative;
-  overflow: hidden;
-  height: 20%;
-}
-
-#inProgressTabsContainer {
-  display: none;
-  padding: 10px;
-}
-
-#javaScript {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
-  color: #070707;
-  display: block;
- }
-
- #javaScript a, #python a, #webDesign a, #projects a {
-   color: #070707;
-   display:block;
-   width: 100%;
- }
-#javaScript a:hover, #python a:hover, #webDesign a:hover, #projects a:hover {
-  color: #fff;
- -webkit-text-stroke: 0.5px #070707;
-  text-stroke: 0.5px #070707;
-  display: block;
-  width: 100%;
-}
-
-
-#javaScript:hover {
-  background-image: url("interactive.jpg");
-  background-position: -100px -50px;
-  background-size: 600px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-}
-
-#webDesign {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
- }
-
-#webDesign:hover {
-  background-image: url("florence.jpg");
-  background-position: -80px -160px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
- }
-
-#python {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
- }
-
-#python:hover {
-  background-image: url("mrpython.png");
-  background-position: 0px -160px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-}
-
-#projects {
-  margin: auto;
-  background-position: -10px -50px;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
- }
-
-#projects:hover {
-  background-image: url("japan.jpg");
-  background-position: 0px 0px;
-  background-size: 500px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
- }
 
 .tab {
   width: 50%;
@@ -245,19 +89,21 @@ nav .brand-logo {
 }
 
 nav {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #f2f2f2;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
 
 .page-footer{
 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f2f2f2;
     color: #070707;
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .footer-copyright {
   color: #fff;
+  background-color: #4c4d4f;
 }
 
 .white-text {
@@ -443,7 +289,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f2f2f2;F
     color: #070707;
     text-align: center;
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
