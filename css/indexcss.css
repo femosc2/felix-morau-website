@@ -11,6 +11,12 @@
   color: #fff !important;
 }
 
+.teal-text.text-lighten-3 a{
+  color: #fff !important;
+  -webkit-text-stroke: 1px #070707;
+  text-stroke: 1px #070707;
+}
+
 .parallax {
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
