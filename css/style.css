@@ -79,19 +79,6 @@ body {
   text-transform: uppercase;
 }
 
-#intro {
-  width: 30%;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #070707;
-  box-sizing: border-box;
-  text-align: center;
-  margin-left: 33%;
-  position: absolute;
-  border-radius: 10px;
-  float: right;
-  padding: 10px;
-}
-
 .brand-logo a {
   margin: auto;
   width: 50%;
@@ -106,7 +93,7 @@ body {
 
 .linkContainer:hover {
   -webkit-text-stroke: 0.5px #070707;
-   text-stroke: 0.5px #070707;
+  text-stroke: 0.5px #070707;
   color: #070707;
 }
 
@@ -247,6 +234,9 @@ nav {
     color: #070707;
     text-align: center;
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+    clear: both;
+    float: none;
+
 }
 
 .footer-copyright {
@@ -436,11 +426,13 @@ nav {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f2f2f2;
     color: #070707;
     text-align: center;
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
     height: 100%;
+    margin-top: 200px;
+    clear: both;
 }
 
 .card-content.white-text {
@@ -448,6 +440,14 @@ nav {
 }
 #normalContainer {
   position: relative;
+}
+
+.card .card-title {
+  font-size: 14px;
+}
+
+.card .card-action {
+  font-size: 12px;
 }
 }
 

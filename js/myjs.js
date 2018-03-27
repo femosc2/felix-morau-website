@@ -13,9 +13,3 @@ document.querySelector(".completed").addEventListener("click", function() {
   document.getElementById("tabsContainer").style.display = "block";
   document.getElementById("inProgressTabsContainer").style.display = "none";
 });
-
-GitHubActivity.feed({
-	username: "femosc2",
-	selector: "#feed",
-	limit: 20 // optional
-});
