@@ -1,14 +1,15 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
+
+#wrapper {
+  animation: fadein 1s;
+}
 
  .container {
    background-color: #f2f2f2;
+   display: flex;
+   justify-content: center;
  }
 
 
@@ -33,7 +34,8 @@ a {
 
 body {
   background-image: url("helsingborg.jpg");
-  background-color: #f2f2f2;
+  background-color: #070707;
+  animation: fadein 0s;
 }
 
 
@@ -56,27 +58,6 @@ body {
 
 #mobile-demo {
   background-color: rgba(255, 255, 255, 0.8);
-}
-
-.blue-grey.darken-1 {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  width: 35%;
-}
-
-.card-content.white-text {
-  color: #4c4d4f !important;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-  color: #2456c1;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #4c4d4f;
-  margin-right: 24px;
-  -webkit-transition: color .3s ease;
-  transition: color .3s ease;
-  text-transform: uppercase;
 }
 
 .brand-logo a {
@@ -104,21 +85,14 @@ body {
   position: relative;
   overflow: hidden;
   height: 20%;
+  animation: fadein 1s;
 }
 
 #inProgressTabsContainer {
   display: none;
   padding: 10px;
+  animation: fadein 1s;
 }
-
-#javaScript {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
-  display: block;
- }
 
  #javaScript a, #python a, #webDesign a, #projects a {
    color: #070707;
@@ -133,83 +107,110 @@ body {
   width: 100%;
 }
 
+#javaScript:hover, #webDesign:hover, #python:hover, #projects:hover {
+  transition-timing-function: ease-out;
+  background-repeat: no-repeat;
+  transition-duration: 0.4s;
+  color: #fff;
+  font-size: 40px;
+  display: block;
+  animation: fadein 0.5s;
+}
+
+#javaScript:active, #webDesign:active, #python:active, #projects:active {
+  animation: clickFlash 1s cubic-bezier(.76,-0.02,.19,1.95);
+}
+
+#javaScript, #webDesign, #python, #projects {
+  margin: auto;
+  width: 20%;
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  background-color:rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  display: block;
+  animation: fadeout 0.5s;
+}
+
 
 #javaScript:hover {
   background-image: url("interactive.jpg");
   background-position: -100px -50px;
   background-size: 600px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-  display: block;
 }
 
-#webDesign {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
-  display: block;
- }
+@keyframes fadein {
+  from { opacity: 0;}
+  to { opacity: 1; }
+}
+
+@keyframes flashing {
+  0% {
+    color: #2bffd1;
+  }
+  25% {
+    color: #ff51c5;
+  }
+  50% {
+    color: #05fff2;
+  }
+  75% {color: #844c71;
+  }
+  100% {color: #2bffd1;
+  }
+}
+
+@keyframes jiggle {
+  48%, 62% {
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    transform: scale(1.1, 0.9)
+  }
+  56% {
+    transform: scale(0.9, 1.1) translate(0, -5px)
+  }
+  59% {
+    transform: scale(1.0, 1.0) translate(0, -3px)
+  }
+}
+
+@keyframes clickFlash {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
 
 #webDesign:hover {
   background-image: url("florence.jpg");
   background-position: -80px -160px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-  display: block;
- }
-
-#python {
-  margin: auto;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
-  display: block;
  }
 
 #python:hover {
   background-image: url("mrpython.png");
   background-position: 0px -160px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-  display: block;
 }
 
-#projects {
-  margin: auto;
-  background-position: -10px -50px;
-  width: 20%;
-  border: 0.5px solid #b2b2b2;
-  background-color:rgba(255, 255, 255, 0.3);
-  padding: 40px;
-  display: block;
- }
 
 #projects:hover {
   background-image: url("japan.jpg");
-  background-position: 0px 0px;
   background-size: 500px;
-  transition-timing-function: ease-in-out;
-  background-repeat: no-repeat;
-  transition: all 0.5s;
-  color: #fff;
-  font-size: 40px;
-  display: block;
  }
 
 .tab {
   width: 50%;
+}
+
+.cardlink {
+  bottom: 50px;
 }
 
 nav ul a,
@@ -218,6 +219,11 @@ nav .brand-logo {
   margin: 0px;
   float: none;
   background-color: rgba(255, 255, 255, 0.0);
+}
+
+nav .brand-logo:hover {
+  animation: jiggle 1s ease-in;
+  animation-iteration-count: infinite;
 }
 
 nav {
@@ -264,9 +270,85 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
+.parallax-container .section {
     width: 100%;
-  }
+}
+
+
+div.item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+div.item * {
+    box-sizing: border-box;
+}
+
+div.item img {
+    max-width: 100%;
+    vertical-align: top;
+    height: 210px;
+}
+
+div.item i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    font-size: 34px;
+    color: #000000;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background: #ffffff;
+}
+
+div.item a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    font-size: 35px;
+    -webkit-text-stroke: 0.5px #070707;
+    text-stroke: 0.5px #070707;
+}
+
+  div.item a:hover {
+  transform: translateY(20px;)
+}
+
+div.item.blue {
+    background-color: #34495e;
+}
+div.item.blue i {
+    color: #34495e;
+}
+
+div.item:hover img {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+div.item * {
+    -webkit-transition: all 400ms cubic-bezier(.76,-0.02,.19,1.95);
+    transition:         all 400ms cubic-bezier(.76,-0.02,.19,1.95);
+}
+
+div.item i {
+  transform: translate(-50%, -50%) scale(0);
+}
+div.item:hover i {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
