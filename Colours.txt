@@ -7,6 +7,7 @@ Footer Grey: #f2f2f2;
 Black: #070707;
 In Progress Red: #d60404;
 Completed Green: #17682a;
+Indicator Gold: #ffdd00;
 Header and Footer Transparent: rgba(255, 255, 255, 0.8);
 Project tabs Transparent: rgba(255, 255, 255, 0.3);
 Project cards link Blue: #2456c1;

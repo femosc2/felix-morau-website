@@ -4214,10 +4214,6 @@ nav {
   line-height: 56px;
 }
 
-nav.nav-extended {
-  height: auto;
-}
-
 nav.nav-extended .nav-wrapper {
   min-height: 56px;
   height: auto;
