@@ -10,4 +10,16 @@ Completed Green: #17682a;
 Indicator Gold: #ffdd00;
 Header and Footer Transparent: rgba(255, 255, 255, 0.8);
 Project tabs Transparent: rgba(255, 255, 255, 0.3);
-Project cards link Blue: #2456c1;
+___________________________________________________________
+Flashing animation colours and box shadows:
+background-color: #070707;
+box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5),
+background-color: rgba(255, 25, 212, 1);
+box-shadow: 0 0 3px 1px rgba(255, 25, 212, 0.5),
+background-color: rgba(150, 39, 129, 1);
+box-shadow: 0 0 3px 1px rgba(150, 39, 129, 0.5);
+background-color: rgba(0, 255, 203, 1);
+box-shadow: 0 0 3px 1px rgba(0, 255, 203, 0.5);
+background-color: rgba(42, 145, 124, 1);
+box-shadow: 0 0 3px 1px rgba(42, 145, 124, 0.5);
+___________________________________________________________
