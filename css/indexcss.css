@@ -214,7 +214,7 @@ p {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 
 @media only screen and (max-width : 992px) {
@@ -307,10 +307,6 @@ nav {
 #footerBio {
   display: none;
 }
-#about {
-  width: 100%;
-  float: none;
-}
 #javaScript {
   margin: auto;
   width: 50%;
@@ -385,9 +381,6 @@ nav {
         80% {opacity:1;}
         100% {opacity:1;width:250px;}
 }
-#animated {
-  font-size: 10px;
-}
 }
 
 @media only screen and (max-width : 360px) {
@@ -404,7 +397,7 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:200px;}
+        100% {opacity:1;width:70%;}
 }
 }
 
@@ -422,21 +415,75 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:500px;}
-}
-#animated {
-  font-size: 10px;
+        100% {opacity:1;width:70%;}
 }
 }
 
-@media only screen and (max-width : 1000px) {
+@media only screen and (max-width : 1024px) {
   #animated {
     font-size: 10px;
+}
+@keyframes slidein {
+        0% { margin-left:200px; }
+        20% { margin-left:200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+        0% {opacity:0;width:0px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:70%;}
 }
 }
 
-@media only screen and (max-width : 900px) {
+@media only screen and (max-width : 414px) {
   #animated {
     font-size: 10px;
+}
+@keyframes slidein {
+        0% { margin-left:200px; }
+        20% { margin-left:200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+}
+@keyframes reveal {
+        0% {opacity:0;width:0px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:70%;}
+}
+}
+
+@media only screen and (max-width : 320px) {
+  #animated {
+    font-size: 10px;
+}
+@keyframes slidein {
+        0% { margin-left:200px; }
+        20% { margin-left:200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+}
+@keyframes reveal {
+        0% {opacity:0;width:0px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:70%;}
+}
+}
+
+@media only screen and (max-width : 400px) {
+  #animated {
+    font-size: 9px;
+}
+@keyframes slidein {
+        0% { margin-left:200px; }
+        20% { margin-left:200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+}
+@keyframes reveal {
+        0% {opacity:0;width:0px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:70%;}
 }
 }

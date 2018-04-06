@@ -87,6 +87,8 @@ body {
   overflow: hidden;
   height: 20%;
   animation: fadein 1s;
+  clear: both;
+  margin-bottom: 100px;
 }
 
 #inProgressTabsContainer {
@@ -258,6 +260,7 @@ nav {
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
     clear: both;
     float: none;
+    margin-top: 100px;
 }
 
 .footer-copyright {
@@ -409,12 +412,12 @@ div.item:hover i {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 
 
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 996px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -422,7 +425,103 @@ div.item:hover i {
   #index-banner .section {
     top: 10%;
   }
+  .page-footer{
+      position: static;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      color: #070707;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      margin-top: 200px;
+      clear: both;
+      margin-top: 100px;
+  }
 }
+
+@media only screen and (max-width : 1180px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  .page-footer{
+      position: static;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      color: #070707;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      margin-top: 200px;
+      clear: both;
+      margin-top: 100px;
+  }
+  #animated {
+      font-size: 25px;
+  }
+}
+
+@media only screen and (max-width : 1280px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  .page-footer{
+      position: static;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      color: #070707;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      margin-top: 200px;
+      clear: both;
+      margin-top: 100px;
+  }
+  #animated {
+      font-size: 25px;
+  }
+}
+
+@media only screen and (max-width : 1600px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  .page-footer{
+      position: static;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      color: #070707;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      margin-top: 200px;
+      clear: both;
+      margin-top: 100px;
+  }
+  #animated {
+      font-size: 25px;
+  }
+}
+
 
 
 @media only screen and (max-width : 900px) {
@@ -433,6 +532,21 @@ div.item:hover i {
 
 #TODOTheme {
   display: none;
+}
+
+.page-footer{
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #070707;
+    text-align: center;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    margin-top: 200px;
+    clear: both;
+    margin-top: 800px;
 }
 
 #footerBio {
@@ -565,6 +679,7 @@ nav {
     height: 100%;
     margin-top: 200px;
     clear: both;
+    margin-top: 800px;
 }
 
 .card-content.white-text {
@@ -612,7 +727,7 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 }
 
@@ -630,7 +745,7 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 }
 
@@ -648,7 +763,7 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 }
 
@@ -665,7 +780,7 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
 }
 }
 
@@ -682,6 +797,23 @@ nav {
 @keyframes reveal {
         0% {opacity:0;width:0px;}
         80% {opacity:1;}
-        100% {opacity:1;width:37.5%;}
+        100% {opacity:1;width:70%;}
+}
+}
+
+@media only screen and (max-width : 400px) {
+  #animated {
+    font-size: 9px;
+}
+@keyframes slidein {
+        0% { margin-left:200px; }
+        20% { margin-left:200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+}
+@keyframes reveal {
+        0% {opacity:0;width:0px;}
+        80% {opacity:1;}
+        100% {opacity:1;width:70%;}
 }
 }
