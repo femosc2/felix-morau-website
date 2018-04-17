@@ -13,12 +13,71 @@
    overflow: visible;
  }
 
+ @keyframes slideInLeft {
+   0% {
+     opacity: 0;
+     transform: translateX(-100%);
+   }
+   100% {
+     opacity: 1;
+     transform: translateX(0%);
+   }
+ }
+
+ @keyframes slideInRight {
+   0% {
+     opacity: 0;
+     transform: translateX(100%);
+   }
+   100% {
+     opacity: 1;
+     transform: translateX(0%);
+   }
+ }
+
+ @keyframes slideInTop {
+   0% {
+     opacity: 0;
+     transform: translateY(-100%);
+   }
+   100% {
+     opacity: 1;
+     transform: translateY(0%);
+   }
+ }
+
+ @keyframes slideInBottom {
+   0% {
+     opacity: 0;
+     transform: translateY(100%);
+   }
+   100% {
+     opacity: 1;
+     transform: translateY(0%);
+   }
+ }
+
+ @keyframes slideInLeftInProgress {
+   0% {
+     opacity: 0;
+     transform: translateX(-200%);
+   }
+   100% {
+     opacity: 1;
+     transform: translateX(0%);
+   }
+ }
+
+ nav {
+   animation: slideInTop 1s 1;
+   animation-fill-mode: forwards;
+ }
 
 .blue {
   background-color: #f2f2f2 !important;
 }
 
- .copyrightcontainer {
+.copyrightcontainer {
    margin: 0 auto;
    max-width: 1280px;
    width: 90%;
@@ -33,7 +92,8 @@ a {
 body {
   background-image: url("helsingborg.jpg");
   background-color: #070707;
-  animation: fadein 0s;
+  animation: fadein 0s 1;
+  overflow: hidden;
 }
 
 
@@ -81,20 +141,40 @@ body {
 
 
 #tabsContainer {
+  opacity: 0;
   padding: 10px;
   display: block;
   position: relative;
   overflow: hidden;
   height: 20%;
-  animation: fadein 1s;
+  animation: slideInRight 1s 1;
+  animation-timing-function: cubic-bezier(.49,.3,0,1.3);
+  animation-fill-mode: forwards;
+  clear: both;
+  margin-bottom: 100px;
+}
+
+#projectsContainer {
+  opacity: 0;
+  padding: 10px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 20%;
+  animation: fadein 1s 1;
+  animation-fill-mode: forwards;
   clear: both;
   margin-bottom: 100px;
 }
 
 #inProgressTabsContainer {
+  opacity: 0;
   display: none;
   padding: 10px;
   animation: fadein 1s;
+  animation: slideInLeftInProgress 0.5s 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.49,.3,0,1.2);
 }
 
  #javaScript a, #python a, #webDesign a, #projects a {
@@ -118,6 +198,7 @@ body {
   font-size: 40px;
   display: block;
   animation: fadein 0.5s;
+  animation-fill-mode: forwards;
 }
 
 #javaScript:active, #webDesign:active, #python:active, #projects:active {
@@ -132,6 +213,18 @@ body {
   padding: 40px;
   display: block;
   animation: fadeout 0.5s;
+}
+
+#webDesign, #python {
+  opacity: 0;
+  animation: slideInRight 1s 1;
+  animation-fill-mode: forwards;
+}
+
+#javaScript, #projects {
+  opacity: 0;
+  animation: slideInLeft 1s 1;
+  animation-fill-mode: forwards;
 }
 
 
@@ -261,6 +354,8 @@ nav {
     clear: both;
     float: none;
     margin-top: 100px;
+    animation: slideInBottom 1s 1;
+    animation-fill-mode: forwards;
 }
 
 .footer-copyright {
