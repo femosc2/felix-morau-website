@@ -8,7 +8,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen"/>
-  <link href="css/indexcss.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
 
 
   <!-- JavaScript -->
@@ -19,24 +19,25 @@
 <body>
   <div id=wrapper>
     <nav class="nav-extended">
+      <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img></a>
       <div class="nav-wrapper">
-        <a href="index.html">
-        <div id=animated>Felix Morau | </div>
-          <div id=animated>
-            <span>Index</span>
-          </div>
-        </a>
+        <a href="index.html" id="headerLink">| Index</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="myStuff.html">My Projects</a></li>
           <li><a href="https://github.com/femosc2/">GitHub</a></li>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="myStuff.html">My Projects</a></li>
-          <li><a href="https://github.com/femosc2/">GitHub</a></li>
-        </ul>
       </div>
     </nav>
+
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="webDesign.html">Web Design</a></li>
+      <li><a href="javaScript.html">JavaScript</a></li>
+      <li><a href="python.html">Python</a></li>
+      <li><a href="projects.html">University</a></li>
+      <br>
+      <li><a href="https://github.com/femosc2/">GitHub</a></li>
+    </ul>
 
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
@@ -50,7 +51,7 @@
           <br><br>
 
       </div>
-      <div class="parallax"><img src="css/helsingborg.jpg" alt="Norra hamnen, Helsingborg"></div>
+      <div class="parallax"><img src="css/florenceHeader.png" alt="Norra hamnen, Helsingborg"></div>
     </div>
 
     <div class="container">
@@ -74,10 +75,10 @@
     <div class="parallax-container valign-wrapper" id="secondBanner">
       <div class="section no-pad-bot">
           <div class="row center">
-            <h1 class="header center teal-text text-lighten-3" ><a href=myStuff.html>Projects</a></h1>
+            <h1 class="header center teal-text text-lighten-3 cyanH5" ><a href=myStuff.html>Projects</a></h1>
           </div>
       </div>
-      <div class="parallax"><img src="css/femoart.png" alt="projects"></div>
+      <div class="parallax"><img src="css/section2.jpg" alt="projects"></div>
     </div>
 
     <div class="container">
@@ -101,10 +102,10 @@
             <h1 class="header center teal-text text-lighten-3" ><a href=https://github.com/femosc2>GitHub</a></h1>
           </div>
       </div>
-      <div class="parallax"><img src="css/malmo.jpg" alt="Malmö Universitet"></div>
+      <div class="parallax"><img src="css/section3.png" alt="Malmö Universitet"></div>
     </div>
 
-    <footer class="page-footer">
+    <footer class="page-footer" id="indexFooter">
       <div class="footercontainer">
         <div class="row">
           <div id="footerBio" class="col l6 s12">

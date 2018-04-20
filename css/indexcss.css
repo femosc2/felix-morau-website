@@ -7,37 +7,6 @@
    to { opacity: 1; }
  }
 
- @keyframes flashing {
-   0% {
-     background-color: #070707;
-     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
-   }
-   15% {
-     background-color: rgba(255, 25, 212, 1);
-     box-shadow: 0 0 3px 1px rgba(255, 25, 212, 0.5);
-   }
-   30% {
-     background-color: rgba(150, 39, 129, 1);
-     box-shadow: 0 0 3px 1px rgba(150, 39, 129, 0.5);
-   }
-   50% {
-     background-color: #070707;
-     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
-   }
-   65% {
-     background-color: rgba(0, 255, 203, 1);
-     box-shadow: 0 0 3px 1px rgba(0, 255, 203, 0.5);
-   }
-   80% {
-     background-color: rgba(42, 145, 124, 1);
-     box-shadow: 0 0 3px 1px rgba(42, 145, 124, 0.5);
-   }
-   100% {
-     background-color: #070707;
-     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
-   }
- }
-
  #index-banner {
    animation: slideInLeft 1s 1;
    /* animation-timing-function: cubic-bezier(.49,.3,0,1.3); */

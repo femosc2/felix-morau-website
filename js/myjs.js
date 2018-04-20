@@ -13,3 +13,5 @@ document.querySelector(".completed").addEventListener("click", function() {
   document.getElementById("tabsContainer").style.display = "block";
   document.getElementById("inProgressTabsContainer").style.display = "none";
 });
+
+var instance = M.Modal.getInstance(elem);

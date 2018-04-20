@@ -10,27 +10,28 @@
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   </head>
-  <body>
-    <div id=wrapper>
+  <body id="nonIndexBody">
+    <div id=wrapper class="nonIndex">
       <nav class="nav-extended">
+        <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img></a>
         <div class="nav-wrapper">
-          <a href="index.html">
-          <div id=animated>Felix Morau | </div>
-            <div id=animated>
-              <span>My Projects</span>
-            </div>
-          </a>
+          <a href="index.html" id="headerLink">| My Projects</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="myStuff.html">My Projects</a></li>
             <li><a href="https://github.com/femosc2/">GitHub</a></li>
           </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="myStuff.html">My Projects</a></li>
-            <li><a href="https://github.com/femosc2/">GitHub</a></li>
-          </ul>
         </div>
       </nav>
+
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="webDesign.html">Web Design</a></li>
+        <li><a href="javaScript.html">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="projects.html">University</a></li>
+        <br>
+        <li><a href="https://github.com/femosc2/">GitHub</a></li>
+      </ul>
 
 
       <div id="normalContainer">
@@ -38,7 +39,7 @@
           <a href="webDesign.html" id="webDesign" class="linkContainer">Web Design</a>
           <a href="javaScript.html" id="javaScript" class="linkContainer">JavaScript</a>
           <a href="python.html" id="python"  class="linkContainer">Python</a>
-          <a href="projects.html" id="projects" class="linkContainer">Projects</a>
+          <a href="projects.html" id="projects" class="linkContainer">University</a>
         </div>
       </div>
 

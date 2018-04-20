@@ -10,36 +10,40 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
 </head>
-<body>
-  <div id=wrapper>
+<body id="nonIndexBody">
+  <div id=wrapper class="nonIndex">
     <nav class="nav-extended">
+      <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img></a>
       <div class="nav-wrapper">
-        <a href="index.html">
-        <div id=animated>Felix Morau | </div>
-          <div id=animated>
-            <span>Web Design</span>
-          </div>
-        </a>
+        <a href="index.html" id="headerLink">| Web Design</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="myStuff.html">My Projects</a></li>
           <li><a href="https://github.com/femosc2/">GitHub</a></li>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="myStuff.html">My Projects</a></li>
-          <li><a href="https://github.com/femosc2/">GitHub</a></li>
-        </ul>
-      </div>
+
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
           <li class="tab" class="active"><a href="#test1" class="completed">Completed</a></li>
           <li class="tab"><a href="#test2" class="inProgress">In progress</a></li>
         </ul>
       </div>
+      </div>
     </nav>
+
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="webDesign.html">Web Design</a></li>
+      <li><a href="javaScript.html">JavaScript</a></li>
+      <li><a href="python.html">Python</a></li>
+      <li><a href="projects.html">University</a></li>
+      <br>
+      <li><a href="https://github.com/femosc2/">GitHub</a></li>
+    </ul>
+
+
     <div id=container>
       <div id="tabsContainer">
-        <div class="item blue">
+        <div class="item blue placeholder">
           <img src="css/helsingborg.png">
           <a class=cardLink href="#">Placeholder</a>
           <a href="#">
@@ -53,6 +57,20 @@
           <img src="css/helsingborg.jpg">
           <a class=cardLink href="http://github.com/femosc2/felix-morau-website">Felixmorau.se</a>
           <a href="http://github.com/femosc2/felix-morau-website">
+            <i class="fa fa-github-square"></i>
+          </a>
+        </div>
+        <div class="item blue">
+          <img src="css/florenceHeader.png">
+          <a class=cardLink href="https://github.com/femosc2/felix-inspo">felix-inspo</a>
+          <a href="https://github.com/femosc2/felix-inspo">
+            <i class="fa fa-github-square"></i>
+          </a>
+        </div>
+        <div class="item blue">
+          <img src="css/westworld.jpeg">
+          <a class=cardLink href="http://github.com/femosc2/welcome-to-westworld">welcome-to-westworld</a>
+          <a href="https://github.com/femosc2/welcome-to-westworld">
             <i class="fa fa-github-square"></i>
           </a>
         </div>
