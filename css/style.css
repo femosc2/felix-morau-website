@@ -85,6 +85,8 @@ h1 a {
 
  h5 {
    color: #e786e5 !important;
+   -webkit-text-stroke: 0.5px #070707;
+   text-stroke: 0.2px #070707;
  }
 
  .cyanH5 a {
@@ -273,6 +275,7 @@ body {
    display:block;
    width: 100%;
    text-align: center;
+   margin: 0 auto;
  }
 #javaScript a:hover, #python a:hover, #webDesign a:hover, #projects a:hover {
   color: #fff;
@@ -324,7 +327,6 @@ body {
   animation: slideInLeft 1s 1;
   animation-fill-mode: forwards;
 }
-
 
 #javaScript:hover {
   background-image: url("interactive.jpg");
@@ -463,7 +465,12 @@ nav a {
 
 #indexFooter {
   position: static;
-  margin: 0;
+}
+
+.footercontainer {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .footer-copyright {
@@ -513,9 +520,9 @@ div.item {
     min-width: 220px;
     max-width: 310px;
     width: 100%;
-    background: #000000;
+    background-color: #e786e5;
+    box-shadow: 0 0 6px 2px rgba(0, 255, 209, 0.3);
     text-align: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
 div.item * {
@@ -550,6 +557,7 @@ div.item a {
     font-size: 35px;
     -webkit-text-stroke: 0.5px #070707;
     text-stroke: 0.5px #070707;
+    color: #c7fff5;
 }
 
   div.item a:hover {
@@ -557,10 +565,13 @@ div.item a {
 }
 
 div.item.blue {
-    background-color: #b2b2b2;
+    background-color: #000 !important;
+    box-shadow: 0 0 6px 2px rgba(0, 255, 209, 0.3);
+
 }
 div.item.blue i {
-    color: #b2b2b2;
+  background-color: #e786e5 !important;
+  box-shadow: 0 0 6px 2px rgba(0, 255, 209, 0.3);
 }
 
 div.item:hover img {
@@ -681,6 +692,7 @@ div.item:hover i {
   overflow: scroll;
   width: 100%;
   height: 50%;
+  text-align: center;
 }
 
 #javaScript {
@@ -728,6 +740,13 @@ nav {
 }
 }
 
+
+@media only screen and (max-width : 600px) {
+  .page-footer {
+    margin-top: 200px;
+    position: static;
+  }
+}
 
 
 @media only screen and (max-width : 500px) {
@@ -803,6 +822,8 @@ nav {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  width: 50px;
+  height: 50px;
 }
 
 
