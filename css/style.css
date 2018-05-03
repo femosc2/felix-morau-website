@@ -270,14 +270,14 @@ body {
   overflow: hidden;
 }
 
- #javaScript a, #python a, #webDesign a, #projects a {
+ #javaScript a, #python a, #webDesign a, #projects a, #photoshop a {
    color: #070707;
    display:block;
    width: 100%;
    text-align: center;
    margin: 0 auto;
  }
-#javaScript a:hover, #python a:hover, #webDesign a:hover, #projects a:hover {
+#javaScript a:hover, #python a:hover, #webDesign a:hover, #projects a:hover, #photoshop a:hover {
   color: #fff;
  -webkit-text-stroke: 0.5px #070707;
   text-stroke: 0.5px #070707;
@@ -289,7 +289,7 @@ body {
   opacity: 0;
 }
 
-#javaScript:hover, #webDesign:hover, #python:hover, #projects:hover {
+#javaScript:hover, #webDesign:hover, #python:hover, #projects:hover, #photoshop:hover {
   transition-timing-function: ease-out;
   background-repeat: no-repeat;
   transition-duration: 0.4s;
@@ -304,7 +304,7 @@ body {
   animation: clickFlash 1s cubic-bezier(.76,-0.02,.19,1.95);
 }
 
-#javaScript, #webDesign, #python, #projects {
+#javaScript, #webDesign, #python, #projects, #photoshop {
   margin: auto;
   width: 20%;
   border: 0.5px solid rgba(0, 0, 0, 0.4);
@@ -316,7 +316,7 @@ body {
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
 }
 
-#webDesign, #python {
+#webDesign, #python, #photoshop {
   opacity: 0;
   animation: slideInRight 1s 1;
   animation-fill-mode: forwards;
@@ -412,6 +412,11 @@ body {
 #python:hover {
   background-image: url("mrpython.png");
   background-position: 0px -160px;
+}
+
+#photoshop:hover {
+  background-image: url("sisterfriede.png");
+  background-position: -1000px -200px;
 }
 
 
