@@ -1,107 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FeMo - Photoshop</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
-  </head>
-  <body id="nonIndexBody">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+
+<body id="nonIndexBody">
     <div id=wrapper class="nonIndex">
-      <nav class="nav-extended">
-        <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img></a>
-        <div class="nav-wrapper">
-          <a href="index.html" id="headerLink">| My Projects</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="myStuff.html">My Projects</a></li>
+        <nav class="nav-extended">
+            <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img>
+            </a>
+            <div class="nav-wrapper">
+                <a href="index.html" id="headerLink">| My Projects</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="myStuff.html">My Projects</a></li>
+                    <li><a href="https://github.com/femosc2/">GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="webDesign.html">Web Design</a></li>
+            <li><a href="javaScript.html">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="photoshop.html">Photoshop</a></li>
+            <li><a href="projects.html">University</a></li>
+            <br>
             <li><a href="https://github.com/femosc2/">GitHub</a></li>
-          </ul>
-        </div>
-      </nav>
+        </ul>
 
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="webDesign.html">Web Design</a></li>
-        <li><a href="javaScript.html">JavaScript</a></li>
-        <li><a href="python.html">Python</a></li>
-        <li><a href="photoshop.html">Photoshop</a></li>
-        <li><a href="projects.html">University</a></li>
-        <br>
-        <li><a href="https://github.com/femosc2/">GitHub</a></li>
-      </ul>
+        <iframe id=photoshopIframe src="femo-photoshop/myPhotoshops.html">
+        </iframe>
 
-
-      <div id="tabsContainer">
-        <div class="item blue">
-          <img src="css/twitterart.jpg">
-          <a class=cardLink href="https://github.com/femosc2/femo-photoshops/blob/master/postera2300.pdf">Politweet Poster</a>
-          <a href="https://github.com/femosc2/femo-photoshops/blob/master/postera2300.pdf">
-            <i class="fa fa-github-square"></i>
-          </a>
-        </div>
-        <div class="item blue">
-          <img src="css/miami background.png">
-          <a class=cardLink href="https://github.com/femosc2/femo-photoshops/blob/master/miami%20background.png">Miami Background</a>
-          <a href="https://github.com/femosc2/femo-photoshops/blob/master/miami%20background.png">
-            <i class="fa fa-github-square"></i>
-          </a>
-        </div>
-        <div class="item blue">
-          <img src="css/sisterfriede.png">
-          <a class=cardLink href="https://github.com/femosc2/femo-photoshops/blob/master/sisterfriede.png">Sister Friede</a>
-          <a href="https://github.com/femosc2/femo-photoshops/blob/master/sisterfriede.png">
-            <i class="fa fa-github-square"></i>
-          </a>
-        </div>
-      </div>
-
-      <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div id="footerBio" class="col l6 s12">
-              <h5 class="white-text">Bio</h5>
-              <p class="grey-text text-lighten-4">My name is Felix Morau and I'm an Information Architecture student at Malmö University. The purpose of this website is for you to be able to follow my journey through both university projects and personal projects alike. Do not hesitate to contact me on social media or through email!</p>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div id="footerBio" class="col l6 s12">
+                        <h5 class="white-text">Bio</h5>
+                        <p class="grey-text text-lighten-4">My name is Felix Morau and I'm an Information Architecture student at Malmö University. The purpose of this website is for you to be able to follow my journey through both university projects and personal projects alike. Do not
+                            hesitate to contact me on social media or through email!</p>
 
 
+                    </div>
+                    <div id="TODOTheme" class="col l3 s12">
+                        <h5 class="white-text">My Stuff</h5>
+                        <ul>
+                            <li><a class="white-text" href="webDesign.html">Web Design</a></li>
+                            <li><a class="white-text" href="javaScript.html">JavaScript</a></li>
+                            <li><a class="white-text" href="python.html">Python</a></li>
+                            <li><a class="white-text" href="photoshop.html">Photoshop</a></li>
+                            <li><a class="white-text" href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div id="contactBio" class="col l3 s12">
+                        <h5 class="white-text">Contact</h5>
+                        <ul>
+                            <li><a class="white-text" href="http://www.twitter.com/femosc2">Twitter</a></li>
+                            <li><a class="white-text" href="http://www.instagram.com/moraufelix">Instagram</a></li>
+                            <li><a class="white-text" href="http://www.github.com/femosc2">GitHub</a></li>
+                            <li><a class="white-text" href="#!">felixmorau@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="TODOTheme" class="col l3 s12">
-              <h5 class="white-text">My Stuff</h5>
-              <ul>
-                <li><a class="white-text" href="webDesign.html">Web Design</a></li>
-                <li><a class="white-text" href="javaScript.html">JavaScript</a></li>
-                <li><a class="white-text" href="python.html">Python</a></li>
-                <li><a class="white-text" href="photoshop.html">Photoshop</a></li>
-                <li><a class="white-text" href="projects.html">Projects</a></li>
-              </ul>
+            <div class="footer-copyright">
+                <div class="copyrightcontainer">
+                    Made by Felix Morau powered by <a href="http://materializecss.com">Materialize</a>
+                </div>
             </div>
-            <div id="contactBio" class="col l3 s12">
-              <h5 class="white-text">Contact</h5>
-              <ul>
-                <li><a class="white-text" href="http://www.twitter.com/femosc2">Twitter</a></li>
-                <li><a class="white-text" href="http://www.instagram.com/moraufelix">Instagram</a></li>
-                <li><a class="white-text" href="http://www.github.com/femosc2">GitHub</a></li>
-                <li><a class="white-text" href="#!">felixmorau@gmail.com</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="copyrightcontainer">
-          Made by Felix Morau powered by <a href="http://materializecss.com">Materialize</a>
-          </div>
-        </div>
-      </footer>
+        </footer>
 
 
-      <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="js/materialize.js"></script>
-      <script src="js/init.js"></script>
-      <script src="js/myjs.js"></script>
+        <!--  Scripts-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/myjs.js"></script>
     </div>
-  </body>
+</body>
+
 </html>
