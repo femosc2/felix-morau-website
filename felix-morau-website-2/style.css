@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    font-family: 'Lato', sans-serif;
+    animation: fadeIn 0.5s 1;
+}
+
 .app {
     display: flex;
 }
 
 .stickyMenu {
+    position: fixed;
     display: flex;
+    top: 0;
     width: 100%;
-    display: sticky;
-    background-color: rgba(255,255,255, 0.4);
+    background-color: rgba(0,0,0, 0.4);
+    z-index: 500;
 }
 
 .navItem {
-    display: flex;
+    display: inline-flex;
     width: 33%;
     margin: 0 auto;
     align-items: center;
@@ -23,6 +32,11 @@
     -ms-filter: blur(2px);
     filter: blur(2px); */
     height: 50px;
+}
+
+.projectLink {
+    display: block;
+    width: 100%;
 }
 
 .active {
@@ -40,7 +54,8 @@ body {
     background-color: rgba(255,255,255, 0.4);
     width: 66%;
     margin: 0 auto;
-    margin-top: 10%;
+    min-height: 800px;
+    margin-top: 5%;
 
 }
 
@@ -64,6 +79,8 @@ body {
     min-height: 150px;
     text-align: center;
     border-radius: 35px;
+    background-position: center;
+    transition: 0.2s;
 }
 
 .projectLiDiv h3,h4 {
@@ -74,6 +91,51 @@ body {
     color: white;
 }
 
+.projectLiDiv:not(:hover) {
+    transition: 0.2s;
+    filter: grayscale(100%);
+}
+
 i {
     color: #fff;
 }
+
+a {
+    display: block;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .blur {
+      filter: blur(5px);
+  }
+
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes enlarge {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.3);
+    }
+}
+

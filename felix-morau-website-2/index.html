@@ -10,30 +10,80 @@
     <body>
         <div id="app" class="fadeIn">
             <nav class="stickyMenu">
-                <a class="navItem about active" @click="about">About</a>
-                <a class="navItem myProjects" @click="myProjects">My Projects</a>
+                <a class="navItem about" @click="about">About</a>
+                <a class="navItem myProjects active" @click="myProjects">My Projects</a>
                 <a class="navItem contact" @click="contact">Contact</a>
             </nav>
+            
             <div class="main">
                 <h1 class="mainH1"> {{ currentH1 }} </h1>
                 <hr>
                 <h3 class="mainH3"> {{ currentH3 }} </h3>
-                <content class="mainContent" v-if="currentActive === 'about'">
+                <transition name="fade">
+                <section class="mainContent" v-if="currentActive === 'about'">
                     {{ mainContent }}
-                </content>
-                <content class="mainContent" v-if="currentActive === 'myProjects'">
-                    <ul v-for="project in projects">
-                        <li class="projectLi">
-                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }" >
+                </section>
+                </transition>
+                <transition name="fade">
+                <section class="mainContent" v-if="currentActive === 'myProjects'">
+                    <h3>JavaScript</h3>
+                    <ul v-for="project in javaScriptProjects">
+                        <li>
+                            <a v-bind:href="project.github">
+                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
                                 <h3>{{ project.name }}</h3>
                                 <h4>{{ project.language }}</h4>
-                                <p> <a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
+                                <p><a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
                                 <p>{{ project.description }}</p>
                             </div>
+                            </a>
                         </li>
                         <hr>
                     </ul>
-                </content>
+                    <h3>Web Design</h3>
+                    <ul v-for="project in webProjects">
+                            <li>
+                                <a v-bind:href="project.github">
+                                <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                    <h3>{{ project.name }}</h3>
+                                    <h4>{{ project.language }}</h4>
+                                    <p><a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
+                                    <p>{{ project.description }}</p>
+                                </div>
+                                </a>
+                            </li>
+                            <hr>
+                    </ul>
+                    <h3>Python</h3>
+                    <ul v-for="project in pythonProjects">
+                            <li>
+                                <a v-bind:href="project.github">
+                                <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                    <h3>{{ project.name }}</h3>
+                                    <h4>{{ project.language }}</h4>
+                                    <p><a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
+                                    <p>{{ project.description }}</p>
+                                </div>
+                                </a>
+                            </li>
+                            <hr>
+                    </ul>
+                    <h3>University</h3>
+                    <ul v-for="project in universityProjects">
+                            <li>
+                                <a v-bind:href="project.github">
+                                <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                    <h3>{{ project.name }}</h3>
+                                    <h4>{{ project.language }}</h4>
+                                    <p><a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
+                                    <p>{{ project.description }}</p>
+                                </div>
+                                </a>
+                            </li>
+                            <hr>
+                    </ul>
+                </section>
+                </transition>
 
             </div>
         </div>
