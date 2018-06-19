@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Felix Morau</title>
+        <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app" class="fadeIn">
+            <nav class="stickyMenu">
+                <a class="navItem about active" @click="about">About</a>
+                <a class="navItem myProjects" @click="myProjects">My Projects</a>
+                <a class="navItem contact" @click="contact">Contact</a>
+            </nav>
+            <div class="main">
+                <h1 class="mainH1"> {{ currentH1 }} </h1>
+                <hr>
+                <h3 class="mainH3"> {{ currentH3 }} </h3>
+                <content class="mainContent" v-if="currentActive === 'about'">
+                    {{ mainContent }}
+                </content>
+                <content class="mainContent" v-if="currentActive === 'myProjects'">
+                    <ul v-for="project in projects">
+                        <li class="projectLi">
+                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }" >
+                                <h3>{{ project.name }}</h3>
+                                <h4>{{ project.language }}</h4>
+                                <p> <a v-bind:href="project.github"> <i class="fa fa-github-square" style="font-size: 60px;"></i></a></p>
+                                <p>{{ project.description }}</p>
+                            </div>
+                        </li>
+                        <hr>
+                    </ul>
+                </content>
+
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
