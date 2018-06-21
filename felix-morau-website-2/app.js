@@ -28,7 +28,7 @@ new Vue({
             github: "https://github.com/femosc2/politweet", 
             description: "Project for the course System Development and Project, created with React", 
             image: "images/politweet.png", 
-            language: "React, CSS"}
+            language: "React.js, CSS"}
         ],
         webProjects: [
             {name: "Personal Website", 
@@ -67,7 +67,7 @@ new Vue({
             github: "https://github.com/femosc2/politweet", 
             description: "Project for the course System Development and Project, created with React", 
             image: "images/politweet.png", 
-            language: "React, CSS"}
+            language: "React.js, CSS"}
         ]
     },
 
@@ -78,6 +78,7 @@ new Vue({
             document.querySelector(".myProjects").classList.remove("active");
             document.querySelector(".contact").classList.remove("active");
             this.currentActive = "about";
+            this.mainContent = "Hello!";
             this.scrollToTop();
             
         },
@@ -87,6 +88,7 @@ new Vue({
             document.querySelector(".about").classList.remove("active");
             document.querySelector(".contact").classList.remove("active");
             this.currentActive = "myProjects";
+            this.mainContent = "This are the projects I've either completed or currently working on!!";
             this.scrollToTop();
         },
         contact() {
@@ -95,6 +97,7 @@ new Vue({
             document.querySelector(".myProjects").classList.remove("active");
             document.querySelector(".about").classList.remove("active");
             this.currentActive = "contact";
+            this.mainContent = "Do not hesitate to contact me!";
             this.scrollToTop();
         },
         scrollToTop() {

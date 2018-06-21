@@ -14,8 +14,12 @@
     display: flex;
     top: 0;
     width: 100%;
-    background-color: rgba(0,0,0, 0.4);
+    background-color: rgba(0,0,0, 0.6);
     z-index: 500;
+}
+
+h3 {
+    text-align: center;
 }
 
 .navItem {
@@ -24,8 +28,8 @@
     margin: 0 auto;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    color: #fff;
     /*-webkit-filter: blur(2px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
@@ -41,22 +45,33 @@
 
 .active {
     background-color: rgba(255,255,255, 0.7);
+    transition: 0.5s;
 }
 
 body {
+    background-color: #000f;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url("images/background.jpg");
+    animation: fadeIn 1s 1;
+    animation-fill-mode: forwards;
 }
 
 .main {
     display: block;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255,255,255, 0.4);
+    background-color: rgba(0,0,0, 0.6);
     width: 66%;
     margin: 0 auto;
     min-height: 800px;
     margin-top: 5%;
-
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .mainH1 {
@@ -81,10 +96,22 @@ body {
     border-radius: 35px;
     background-position: center;
     transition: 0.2s;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
 }
 
 .projectLiDiv h3,h4 {
     color: white;
+    text-align: center;
 }
 
 .projectLiDiv p {
@@ -92,8 +119,14 @@ body {
 }
 
 .projectLiDiv:not(:hover) {
-    transition: 0.2s;
+    transition: 1s;
     filter: grayscale(100%);
+}
+
+.projectLiDiv:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    animation-fill-mode: forwards;
 }
 
 i {
@@ -102,6 +135,15 @@ i {
 
 a {
     display: block;
+}
+
+.divider {
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    height: 2px;
+    width: 100%;
 }
 
 
@@ -117,10 +159,6 @@ a {
       filter: blur(5px);
   }
 
-
-
-
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -129,13 +167,3 @@ a {
         opacity: 1;
     }
 }
-
-@keyframes enlarge {
-    0% {
-        transform: scale(1.0);
-    }
-    100% {
-        transform: scale(1.3);
-    }
-}
-
