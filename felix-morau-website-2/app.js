@@ -88,7 +88,7 @@ new Vue({
             document.querySelector(".about").classList.remove("active");
             document.querySelector(".contact").classList.remove("active");
             this.currentActive = "myProjects";
-            this.mainContent = "This are the projects I've either completed or currently working on!!";
+            this.mainContent = "These are the projects I've either completed or currently working on!!";
             this.scrollToTop();
         },
         contact() {
@@ -101,9 +101,29 @@ new Vue({
             this.scrollToTop();
         },
         scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+            window.scroll({
+                top: 0,
+                behavior: "smooth"
+            });
+        },
+        scrollToWeb() {
+            window.scroll({
+                top: 1000,
+                behavior: "smooth"
+            });
+        },
+        scrollToPython() {
+            window.scroll({
+                top: 1500,
+                behavior: "smooth"
+            });
+        },
+        scrollToUniversity() {
+            window.scroll({
+                top: 2000,
+                behavior: "smooth"
+            });
+        },
 }
 
 });

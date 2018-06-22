@@ -22,10 +22,18 @@
     right: 0;
     width: 100%;
     background-color: rgba(0,0,0, 0.6);
-    z-index: 500;
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    z-index: 10;
+}
+
+#wrapper {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/background.jpg");
 }
 
 h3 {
@@ -54,11 +62,42 @@ p {
     filter: blur(2px); */
     height: 50px;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 .projectLink {
     display: block;
     width: 100%;
+    position: fixed;
+}
+
+#sideBar {
+    display: block;
+    width: 50px;
+    height: 30%;
+    position: fixed;
+    margin-top: 15%;
+    left: 6px;
+    -webkit-backdrop-filter: blur(15px) brightness(35%);
+    backdrop-filter: blur(15px) brightness(35%);
+    animation: slideInLeft 0.5s 1;
+    animation-fill-mode: forwards;
+}
+
+#sideBar i {
+    color: rgba(255, 0, 203,0.75);
+    text-align: center;
+}
+
+#sideBar i:hover {
+    transition: 0.5s;
+    color: rgba(0, 255, 237, 1);
+    text-align: center;
+}
+
+.sidebarIcon:hover {
+    color: rgba(0, 255, 237, 1);
+    animation: spin 1s 1;
 }
 
 .active {
@@ -68,28 +107,36 @@ p {
 
 body {
     background-color: #000f;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("images/background.jpg");
     animation: fadeIn 1s 1;
     animation-fill-mode: forwards;
 }
 
-.main {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0,0,0, 0.6);
+.mainBackdrop {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/background.jpg");
+    top: -50%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.mainBackground {
+    border: 1px solid rgba(0, 0, 0, 0.8);
     width: 66%;
     margin: 0 auto;
+    padding: 0px;
+}
+
+.main {
+    display: block;
+    margin: 0 auto;
+    padding: 0px;
     min-height: 800px;
     margin-top: 5%;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(15px) brightness(35%);
+    backdrop-filter: blur(15px) brightness(35%);
 }
 
 .mainH1 {
@@ -123,6 +170,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 5%;
 }
 
 ul {
@@ -187,11 +235,37 @@ a {
     margin: 0 auto;
 }
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
