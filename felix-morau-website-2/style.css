@@ -1,25 +1,40 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url('https://fonts.googleapis.com/css?family=Mr+Dafoe');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     animation: fadeIn 0.5s 1;
+    font-weight: 1px;
 }
 
 .app {
     display: flex;
+    width: 100%;
 }
 
 .stickyMenu {
     position: fixed;
     display: flex;
+    padding: 0;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background-color: rgba(0,0,0, 0.6);
     z-index: 500;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
 }
 
 h3 {
     text-align: center;
+    color: #fff;
+}
+
+p {
+    color: #fff;
 }
 
 .navItem {
@@ -27,15 +42,18 @@ h3 {
     width: 33%;
     margin: 0 auto;
     align-items: center;
+    font-family: "Mr Dafoe", cursive;
+    font-size: 30px;
+    color: #ff00cb;
     justify-content: center;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    color: #fff;
     /*-webkit-filter: blur(2px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
     filter: blur(2px); */
     height: 50px;
+    backdrop-filter: blur(15px);
 }
 
 .projectLink {
@@ -44,7 +62,7 @@ h3 {
 }
 
 .active {
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(0, 255, 237, 0.6);
     transition: 0.5s;
 }
 
@@ -76,10 +94,12 @@ body {
 
 .mainH1 {
     text-align: center;
+    color: white;
 }
 
 .mainH3 {
     text-align: center;
+    
 }
 
 .projectLi {
@@ -96,9 +116,9 @@ body {
     border-radius: 35px;
     background-position: center;
     transition: 0.2s;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
@@ -146,18 +166,26 @@ a {
     width: 100%;
 }
 
+#footer {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.25s ease-out;
-  }
-  
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
-  .blur {
-      filter: blur(5px);
-  }
+#footerText {
+    color: rgba(255, 0, 203,0.75);
+    position: relative;
+    font-family: "Mr Dafoe", cursive;
+    margin: 0 auto;
+}
 
 @keyframes fadeIn {
     0% {
