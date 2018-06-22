@@ -1,168 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FeMo - Start</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
-
-
-  <!-- JavaScript -->
-  <link rel="stylesheet" href="http://github-profile.com/dist/gh-profile-card.min.css" />
-  <script type="text/javascript" src="http://github-profile.com/dist/gh-profile-card.min.js"></script>
-
+    <title>Felix Morau</title>
+    <meta charset="utf-8">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-  <div id=wrapper>
-    <nav class="nav-extended">
-      <a href="index.html"><img id="femoLogo" src="css/Logo.png"></img></a>
-      <div class="nav-wrapper">
-        <a href="index.html" id="headerLink">| Index</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="myStuff.html">My Projects</a></li>
-          <li><a href="https://github.com/femosc2/">GitHub</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <ul class="side-nav" id="mobile-demo">
-      <li><a href="webDesign.html">Web Design</a></li>
-      <li><a href="javaScript.html">JavaScript</a></li>
-      <li><a href="python.html">Python</a></li>
-      <li><a href="projects.html">University</a></li>
-      <li><a href="photoshop.html">Photoshop</a></li>
-      <br>
-      <li><a href="https://github.com/femosc2/">GitHub</a></li>
-    </ul>
-
-    <div id="index-banner" class="parallax-container">
-      <div class="section no-pad-bot">
-          <br><br>
-          <h1 class="header center teal-text text-lighten-2">Felix Morau</h1>
-          <div class="row center">
-            <h5 class="header col s12 light">An information architecture students personal website!</h5>
-          </div>
-          <div class="row center">
-          </div>
-          <br><br>
-
-      </div>
-      <div class="parallax"><img src="css/florenceHeader.png" alt="Norra hamnen, Helsingborg"></div>
-    </div>
-
-    <div class="container">
-      <div class="section" id="firstSection">
-
-        <div class="row">
-          <div class="col s12 center">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
-            <p class="left-align light">
-            <p> I'm a 22 year old student who studies Information Architecture at Malmö University.</p>
-            <p>I grew up in Helsingborg, Sweden where I attended Husensjö Skolan (Years 1-5), Kunskapsskolan (Years 6-9) and attended the business program at Nicolaiskolan (Years 9-12). Afterwards I started studying Marketing at Linnaeus University but found out that I did not enjoy economics or business management. Instead I took a year off where I took some courses in various subjects. I enrolled in Malmö University September 2017. </p>
-            <p>I've been enjoying both web design and programming since taking the courses and made this website as a form to track all my projects, social media and GitHub while also practicing my web design skills. </p>
-            <p> Make sure to follow my social media and do not hesitate to contact me if you have any questions about my projects, information architecture or Malmö University. </p>
-          </div>
+    <div id="wrapper">
+        <div id="app" class="fadeIn">
+            <nav class="stickyMenu">
+                <a class="navItem about" @click="about">About</a>
+                <a class="navItem myProjects active" @click="myProjects">My Projects</a>
+                <a class="navItem contact" @click="contact">Contact</a>
+            </nav>
+            <div id="sideBar" v-if="currentActive === 'myProjects'">
+                <p><i class="fab fa-js sidebarIcon" @click="scrollToTop" style="font-size: 40px;"></i></p>
+                <p><i class="fab fa-css3-alt sidebarIcon" @click="scrollToWeb" style="font-size: 40px;"></i></p>
+                <p><i class="fab fa-python sidebarIcon" @click="scrollToPython" style="font-size: 40px;"></i></p>
+                <p><i class="fas fa-graduation-cap sidebarIcon" @click="scrollToUniversity" style="font-size: 30px;"></i></p>
+            </div>
+            <div class="mainBackdrop">
+                <div class="mainBackground">
+                    <div class="main">
+                        <h1 class="mainH1"> {{ currentH1 }} </h1>
+                        <div class="divider"></div>
+                        <h3 class="mainH3"> {{ currentH3 }} </h3>
+                        <transition name="fade">
+                            <section class="mainContent" v-if="currentActive === 'about'">
+                                <p>My name is Felix Morau and I'm an information architecture student at Malmö University.</p>
+                                <p>I made this website as a way to track my programming journey through university and beyond! Make sure to check out my "My Projects" to see what I've done and what I'm currently working on! </p>
+                            </section>
+                        </transition>
+                        <transition name="fade">
+                            <section class="mainContent" v-if="currentActive === 'myProjects'">
+                                <p>{{ mainContent }}</p>
+                                <h3>JavaScript</h3>
+                                <ul v-for="project in javaScriptProjects">
+                                    <li>
+                                        <a v-bind:href="project.github">
+                                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                                <h3>{{ project.name }}</h3>
+                                                <h4>{{ project.language }}</h4>
+                                                <p>
+                                                    <a v-bind:href="project.github">
+                                                        <i class="fab fa-github" style="font-size: 60px;"></i>
+                                                    </a>
+                                                </p>
+                                                <p>{{ project.description }}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h3>Web Design</h3>
+                                <ul v-for="project in webProjects">
+                                    <li>
+                                        <a v-bind:href="project.github">
+                                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                                <h3>{{ project.name }}</h3>
+                                                <h4>{{ project.language }}</h4>
+                                                <p>
+                                                    <a v-bind:href="project.github">
+                                                        <i class="fab fa-github" style="font-size: 60px;"></i>
+                                                    </a>
+                                                </p>
+                                                <p>{{ project.description }}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h3>Python</h3>
+                                <ul v-for="project in pythonProjects">
+                                    <li>
+                                        <a v-bind:href="project.github">
+                                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                                <h3>{{ project.name }}</h3>
+                                                <h4>{{ project.language }}</h4>
+                                                <p>
+                                                    <a v-bind:href="project.github">
+                                                        <i class="fab fa-github" style="font-size: 60px;"></i>
+                                                    </a>
+                                                </p>
+                                                <p>{{ project.description }}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h3>University</h3>
+                                <ul v-for="project in universityProjects">
+                                    <li>
+                                        <a v-bind:href="project.github">
+                                            <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                                <h3>{{ project.name }}</h3>
+                                                <h4>{{ project.language }}</h4>
+                                                <p>
+                                                    <a v-bind:href="project.github">
+                                                        <i class="fab fa-github" style="font-size: 60px;"></i>
+                                                    </a>
+                                                </p>
+                                                <p>{{ project.description }}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </transition>
+                        <transition name="fade">
+                            <section class="mainContent" v-if="currentActive === 'contact'">
+                                    <a href="http://www.twitter.com/femosc2"><p><i class="fab fa-twitter sidebarIcon" style="font-size: 60px;"></i> @FeMoSC2</p></a>
+                                    <a href="http://www.github.com/femosc2"><p><i class="fab fa-github sidebarIcon" style="font-size: 60px;"></i>FeMoSC2</p></a>
+                                    <a href="http://www.instagram.com/moraufelix"><p><i class="fab fa-instagram sidebarIcon" style="font-size: 60px;"></i>moraufelix</p></a>
+                                    <a><p><i class="far fa-envelope sidebarIcon" style="font-size: 60px;"></i>felixmorau@gmail.com</p></a>
+                            </section>
+                        </transition>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div>
+        <footer id="footer">
+            <section>
+                <p id="footerText">Made By Felix Morau</p>
+            </section>
+        </footer>
     </div>
+    <script src="app.js"></script>
+</body>
 
-
-    <div class="parallax-container valign-wrapper" id="secondBanner">
-      <div class="section no-pad-bot">
-          <div class="row center">
-            <h1 class="header center teal-text text-lighten-3 cyanH5" ><a href=myStuff.html>Projects</a></h1>
-          </div>
-      </div>
-      <div class="parallax"><img src="css/section2.jpg" alt="projects"></div>
-    </div>
-
-    <div class="container">
-      <div class="section" id="secondSection">
-
-        <div class="row">
-          <div class="col s12 center">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
-            <p class="left-align light">
-            <p>All my in progress and completed projects can be found under the My Projects tab, I'm currently mostly focusing on learning JavaScript and Web Design but Python is currently my language of choice when it comes to do school assignments.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="parallax-container valign-wrapper" id="thirdBanner">
-      <div class="section no-pad-bot">
-          <div class="row center">
-            <h1 class="header center teal-text text-lighten-3" ><a href=https://github.com/femosc2>GitHub</a></h1>
-          </div>
-      </div>
-      <div class="parallax"><img src="css/section3.png" alt="Malmö Universitet"></div>
-    </div>
-
-    <div class="container">
-      <div class="section" id="secondSection">
-
-        <div class="row">
-          <div class="col s12 center">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
-            <p class="left-align light">
-            <p> All code I write can be found on my GitHub, my goal is to commit all the code I write as a way to see my progress as a developer.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <footer class="page-footer" id="indexFooter">
-      <div class="footercontainer">
-        <div class="row">
-          <div id="footerBio" class="col l6 s12">
-            <h5 class="white-text">Bio</h5>
-            <p class="grey-text text-lighten-4">My name is Felix Morau and I'm an Information Architecture student at Malmö University. The purpose of this website is for you to be able to follow my journey through both university projects and personal projects alike. Do not hesitate to contact me on social media or through email!</p>
-
-
-          </div>
-          <div id="TODOTheme" class="col l3 s12">
-            <h5 class="white-text">My Stuff</h5>
-            <ul>
-              <li><a class="white-text" href="webDesign.html">Web Design</a></li>
-              <li><a class="white-text" href="javaScript.html">JavaScript</a></li>
-              <li><a class="white-text" href="python.html">Python</a></li>
-              <li><a class="white-text" href="photoshop.html">Photoshop</a></li>
-              <li><a class="white-text" href="projects.html">Projects</a></li>
-            </ul>
-          </div>
-          <div id="contactBio" class="col l3 s12">
-            <h5 class="white-text">Contact</h5>
-            <ul>
-              <li><a class="white-text" href="http://www.twitter.com/femosc2">Twitter</a></li>
-              <li><a class="white-text" href="http://www.instagram.com/moraufelix">Instagram</a></li>
-              <li><a class="white-text" href="http://www.github.com/femosc2">GitHub</a></li>
-              <li><a class="white-text" href="#!">felixmorau@gmail.com</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="copyrightcontainer">
-        Made by Felix Morau powered by <a href="http://materializecss.com">Materialize</a>
-        </div>
-      </div>
-    </footer>
-
-
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/myjs.js"></script>
-  </div>
-  </body>
 </html>
