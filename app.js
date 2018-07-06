@@ -20,9 +20,9 @@ new Vue({
 
             {name: "Felix Inspo", 
             github: "https://github.com/femosc2/felix-inspo", 
-            description: "An inspo site made with React", 
+            description: "An inspo site made with Vue", 
             image: "images/florence.png", 
-            language: "React.js, CSS"},
+            language: "Vue.js, CSS"},
 
             {name: "Politweet", 
             github: "https://github.com/femosc2/politweet", 
@@ -39,9 +39,9 @@ new Vue({
 
             {name: "Felix Inspo", 
             github: "https://github.com/femosc2/felix-inspo", 
-            description: "An inspo site made with React", 
+            description: "An inspo site made with Vue", 
             image: "images/florence.png", 
-            language: "React.js, CSS"}
+            language: "Vue.js, CSS"}
         ],
         pythonProjects: [
             {name: "Bus Database",
