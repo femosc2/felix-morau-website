@@ -28,7 +28,13 @@ new Vue({
             github: "https://github.com/femosc2/politweet", 
             description: "Project for the course System Development and Project, created with React", 
             image: "images/politweet.png", 
-            language: "React.js, CSS"}
+            language: "React.js, CSS"},
+
+            {name: "Jonas Sjöstedt Bird", 
+            github: "https://github.com/femosc2/svpol-bird", 
+            description: "Help Jonas Sjöstedt avoid the Nazis.", 
+            image: "images/communism.png", 
+            language: "JavaScript"}
         ],
         webProjects: [
             {name: "Personal Website", 
@@ -111,7 +117,7 @@ new Vue({
         },
         scrollToWeb() {
             window.scroll({
-                top: 1000,
+                top: 1250,
                 behavior: "smooth"
             });
         },
