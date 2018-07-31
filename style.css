@@ -80,6 +80,7 @@ p {
     position: fixed;
     margin-top: 15%;
     left: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(15px) brightness(35%);
     backdrop-filter: blur(15px) brightness(35%);
     animation: slideInLeft 0.5s 1;
