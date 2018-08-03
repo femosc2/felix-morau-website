@@ -8,9 +8,9 @@
     font-weight: 1px;
 }
 
-.app {
-    display: flex;
+#app {
     width: 100%;
+    height: 100%;
 }
 
 .stickyMenu {
@@ -85,6 +85,7 @@ p {
     backdrop-filter: blur(15px) brightness(35%);
     animation: slideInLeft 0.5s 1;
     animation-fill-mode: forwards;
+    left: 0;
 }
 
 #sideBar i {
@@ -110,9 +111,8 @@ p {
 }
 
 body {
-    background-color: #000f;
-    animation: fadeIn 1s 1;
-    animation-fill-mode: forwards;
+    margin: 0;
+    background-color: #000;
 }
 
 .mainBackdrop {
@@ -123,6 +123,7 @@ body {
     background-image: url("images/background.jpg");
     margin: 0 auto;
     padding: 0px;
+    width: 100%;
 }
 
 .mainContent {
