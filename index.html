@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <div id="wrapper">
         <div id="app" class="fadeIn">
             <nav class="stickyMenu">
                 <a class="navItem about" @click="about">About</a>
@@ -25,9 +24,7 @@
                 <p><i class="fab fa-python sidebarIcon" @click="scrollToPython" style="font-size: 40px;"></i></p>
                 <p><i class="fas fa-graduation-cap sidebarIcon" @click="scrollToUniversity" style="font-size: 30px;"></i></p>
             </div>
-            <div class="mainBackdrop">
-                <div class="mainBackground">
-                    <div class="main">
+                <div class="main">
                         <h1 class="mainH1"> {{ currentH1 }} </h1>
                         <div class="divider"></div>
                         <h3 class="mainH3"> {{ currentH3 }} </h3>
@@ -120,14 +117,11 @@
                         </transition>
                     </div>
                 </div>
-            </div>
-        </div>
         <footer id="footer">
             <section>
                 <p id="footerText">alpha</p>
             </section>
         </footer>
-    </div>
     <script src="app.js"></script>
 </body>
 
