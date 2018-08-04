@@ -148,7 +148,7 @@ body {
 	z-index: -100;
 	position: fixed;
     margin-top: -3%;
-    animation: fadeOut 3s 1;
+    animation: blurFadeOut 3s 1;
     animation-fill-mode: forwards;
 }
 
@@ -156,15 +156,30 @@ body {
     animation: slideInLeftAndSlideOutRight 3s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
+    color: #fff;
     z-index: 10;
+    text-align: center;
+    font-family: "Mr Dafoe", cursive;
+    font-size: 60px;
 }
 
 .felix {
     animation: slideInRightAndSlideOutLeft 3s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
-    margin-top: 10%;
+    color: #fff;
+    text-align: center;
+    margin-top: 15%;
     z-index: 10;
+    font-family: "Mr Dafoe", cursive;
+    font-size: 60px;
+}
+
+#logo {
+    height: 200px;
+    width: 200px;
+    animation: logoFadeOut 3s 1;
+    animation-fill-mode: forwards;
 }
 
 .main {
@@ -331,7 +346,40 @@ a:hover {
         opacity: 1;
     }
 
-    80% {
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes logoFadeOut {
+    0% {
+        opacity: 1;
+        filter: grayscale(100%)
+    }
+    60% {
+        filter: grayscale(100%)
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        filter: grayscale(0%)
+    }
+}
+
+@keyframes blurFadeOut {
+    0% {
+        opacity: 1;
+        filter: grayscale(100%)
+    }
+    40% {
+        filter: grayscale(0%)
+    }
+    90% {
         opacity: 1;
     }
     100% {
@@ -377,44 +425,50 @@ a:hover {
 
 @keyframes slideInLeftAndSlideOutRight {
 	0% {
-		opacity: 0;
+        opacity: 0;
 		transform: translateX(100%);
 	}
 	20% {
-		opacity: 1;
+        opacity: 1;
 	}
 	80% {
-		opacity: 1;
-		transform: translateX(0%);
+        opacity: 1;
+        transform: translateX(-10%);
+        color: #ff00cb;
 	}
 	90% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 0;
-		transform: translateX(-100%);
+        transform: translateX(-100%);
+        color: #ff00cb;
 	}
 }
 
 @keyframes slideInRightAndSlideOutLeft {
 	0% {
-		opacity: 0;
+        opacity: 0;
+        color: #fff;
 		transform: translateX(-100%);
 	}
 	20% {
-		opacity: 1;
+        opacity: 1;
 	}
 	80% {
-		opacity: 1;
-		transform: translateX(20%);
+        opacity: 1;
+        transform: translateX(20%);
+        color: #ff00cb;
 	}
 	90% {
-		opacity: 1;
+		opacity: 0;
 	}
 	100% {
-		opacity: 1;
-		transform: translateX(100%);
-	}
+		opacity: 0;
+        transform: translateX(100%);
+        color: #ff00cb;
+    }
+}
 
 @media only screen and (max-width: 908px) {
     .mainBackground {
