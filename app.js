@@ -1,3 +1,16 @@
+var site;
+
+function siteLoader() {
+    site = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+
+
+
 new Vue({
     el: "#app",
     data: {
@@ -74,7 +87,7 @@ new Vue({
             description: "Project for the course System Development and Project, created with React", 
             image: "images/politweet.png", 
             language: "React.js, CSS"}
-        ]
+        ],
     },
 
     methods: {
@@ -117,22 +130,22 @@ new Vue({
         },
         scrollToWeb() {
             window.scroll({
-                top: 1250,
+                top: 500,
                 behavior: "smooth"
             });
         },
         scrollToPython() {
             window.scroll({
-                top: 1500,
+                top: 850,
                 behavior: "smooth"
             });
         },
         scrollToUniversity() {
             window.scroll({
-                top: 2000,
+                top: 1250,
                 behavior: "smooth"
             });
         },
-}
+    },
 
 });
