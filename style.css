@@ -14,6 +14,23 @@
     margin: 0;
 }
 
+.introduction {
+    width: 35%;
+    float: left;
+    margin-left: 5%;
+}
+
+.mySkills {
+    width: 35%;
+    float: right;
+    text-align: right;
+    margin-right: 5%;
+}
+
+.skills {
+    text-align: center;
+}
+
 .stickyMenu {
     position: fixed;
     display: flex;
@@ -22,7 +39,11 @@
     left: 0;
     right: 0;
     width: 100%;
-    background-color: rgba(0,0,0, 0.8);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/backgroundBlur.jpg");
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
@@ -55,14 +76,8 @@ p {
     color: #ff00cb;
     justify-content: center;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    /*-webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px); */
     height: 50px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    
 }
 
 .projectLink {
@@ -76,13 +91,21 @@ p {
     width: 50px;
     height: 225px;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(15px) brightness(35%);
-    backdrop-filter: blur(15px) brightness(35%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/backgroundBlur.jpg");
+    background-blend-mode: ligthen;
     animation: slideInLeft 0.5s 1;
     animation-fill-mode: forwards;
     left: 0;
     margin-top: 10%;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    border: 1px solid #000;
+    filter: brightness(2.0);
 }
 
 .desktopHide {
@@ -90,7 +113,7 @@ p {
 }
 
 #sideBar i {
-    color: rgba(255, 0, 203,0.75);
+    color: rgba(255, 0, 203,0.5);
     text-align: center;
 }
 
@@ -139,21 +162,17 @@ body {
     height: 1400px;
 	width: 100%;
     overflow: hidden;
-    background-image: url("images/backgroundBlur.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+    background-color: #000;
 	top: 0;
 	z-index: -100;
 	position: fixed;
     margin-top: -3%;
-    animation: blurFadeOut 3s 1;
+    animation: blurFadeOut 2s 1;
     animation-fill-mode: forwards;
 }
 
 .morau {
-    animation: slideInLeftAndSlideOutRight 3s 1;
+    animation: slideInLeftAndSlideOutRight 2s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
     color: #fff;
@@ -164,7 +183,7 @@ body {
 }
 
 .felix {
-    animation: slideInRightAndSlideOutLeft 3s 1;
+    animation: slideInRightAndSlideOutLeft 2s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
     color: #fff;
@@ -178,7 +197,7 @@ body {
 #logo {
     height: 200px;
     width: 200px;
-    animation: logoFadeOut 3s 1;
+    animation: logoFadeOut 2s 1;
     animation-fill-mode: forwards;
 }
 
@@ -186,22 +205,30 @@ body {
     display: block;
     margin: 0 auto;
     padding: 0px;
-    min-height: 800px;
-    margin-top: 7%;
     /* -webkit-backdrop-filter: blur(15px) brightness(35%);
     backdrop-filter: blur(15px) brightness(35%); */
-    background-color: rgba(0,0,0, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 66%;
+    /*background-color: rgba(0,0,0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/backgroundBlur.jpg");
+    width: 100%;
     margin: 0 auto;
     padding: 0px;
-    margin-top: 7%;
-    margin-bottom: 7%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    min-height: 400px;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
 }
 
 .mainH1 {
+    width: 105%;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
 .mainH3 {
@@ -233,10 +260,8 @@ body {
 
 .projectCards {
     display: inline-flex;
-    width: 50%;
     text-align: center;
     font-size: 20px;
-    margin-right: 50%;
 }
 
 a:visited {
@@ -245,7 +270,7 @@ a:visited {
 }
 
 .projectH3 {
-    text-align: center;
+    width: 105%;
 }
 
 ul {
@@ -303,7 +328,11 @@ a:hover {
 
 #footer {
     border: 1px solid rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-image: url("images/backgroundBlur.jpg");
     display: flex;
     position: fixed;
     bottom: 0%;
@@ -325,11 +354,12 @@ a:hover {
 }
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.25s ease-out;
+    transition: 0.5s ease-out;
 }
 
 .fade-enter, .fade-leave-to {
     opacity: 0;
+    transition: 0.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -374,12 +404,10 @@ a:hover {
 @keyframes blurFadeOut {
     0% {
         opacity: 1;
-        filter: grayscale(100%)
+        filter: grayscale(100%);
     }
     40% {
-        filter: grayscale(0%)
-    }
-    90% {
+        filter: grayscale(0%);
         opacity: 1;
     }
     100% {
@@ -499,11 +527,6 @@ a:hover {
         display: block;
     }
 
-    i {
-        text-align: center;
-        font-size: 200px !important;
-    }
-    
     .stickyMenu {
         display: flex;
     }
@@ -520,8 +543,8 @@ a:hover {
     }
     .main {
         width: 100%;
-        margin-top: -4%;
         margin-bottom: 0%;
+        height: 1000px;
     }
     .mainContent {
         margin: 0 auto;

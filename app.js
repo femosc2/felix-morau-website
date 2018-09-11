@@ -1,7 +1,7 @@
 var site;
 
 function siteLoader() {
-    site = setTimeout(showPage, 3000);
+    site = setTimeout(showPage, 2000);
 }
 
 function showPage() {

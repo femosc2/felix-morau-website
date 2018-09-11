@@ -41,14 +41,22 @@
         </div>
         <div class="main">
             <h1 class="mainH1"> {{ currentH1 }} </h1>
-            <div class="divider"></div>
             <h3 class="mainH3"> {{ currentH3 }} </h3>
             <transition name="fade">
-                <section class="mainContent" v-if="currentActive === 'about'">
-                    <p>My name is Felix Morau and I'm an information architecture student at Malmö University.</p>
-                    <p>I made this website as a way to track my programming journey through university and beyond! Make sure
-                        to check out my "My Projects" to see what I've done and what I'm currently working on! </p>
-                </section>
+                <div v-if="currentActive === 'about'">
+                    <section class="introduction">
+                        <p>My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.</p>
+                        <p>I made this website as a way to track my programming journey through university and beyond! Make sure
+                            to check out my "My Projects" to see what I've done and what I'm currently working on! </p>
+                    </section>
+                    <section class="mySkills">
+                        <p>I'm proficient in Python, JavaScript, Photoshop and CSS! </p>
+                        <i class="fab fa-python skills" style="font-size: 60px;"></i>
+                        <i class="fab fa-js skills" style="font-size: 60px;"></i>
+                        <i class="fas fa-file-powerpoint skills" style="font-size: 60px;"></i>
+                        <i class="fab fa-css3 skills" style="font-size: 60px;"></i>
+                    </section>
+                </div>
             </transition>
             <transition name="fade">
                 <section class="mainContent" v-if="currentActive === 'myProjects'">
