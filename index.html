@@ -44,8 +44,10 @@
             <transition name="fade">
                 <div v-if="currentActive === 'about'">
                     <section class="introduction">
-                        <p>My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.</p>
-                        <p>I made this website as a way to track my programming journey through university and beyond! Make sure
+                        <p>My name is Felix Morau and I'm an 22 year old information architecture student at Malmö
+                            University.</p>
+                        <p>I made this website as a way to track my programming journey through university and beyond!
+                            Make sure
                             to check out my "My Projects" to see what I've done and what I'm currently working on! </p>
                     </section>
                     <section class="mySkills">
@@ -68,17 +70,17 @@
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
                                         <p>
+                                            <h3>
+                                                <a v-bind:href="project.github"> {{ project.name }} </a>
+                                            </h3>
+                                            <h4>{{ project.language }}</h4>
+                                            <p>{{ project.description }}</p>
                                             <a v-bind:href="project.github">
                                                 <i class="fab fa-github" style="font-size: 50px;"></i>
                                             </a>
                                         </p>
                                     </div>
                                 </a>
-                                <h3>
-                                    <a v-bind:href="project.github"> {{ project.name }} </a>
-                                </h3>
-                                <h4>{{ project.language }}</h4>
-                                <p class="desktopHide">{{ project.description }}</p>
                             </li>
                         </ul>
                     </div>
@@ -89,17 +91,17 @@
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
                                         <p>
+                                            <h3>
+                                                <a v-bind:href="project.github"> {{ project.name }} </a>
+                                            </h3>
+                                            <h4>{{ project.language }}</h4>
+                                            <p>{{ project.description }}</p>
                                             <a v-bind:href="project.github">
                                                 <i class="fab fa-github" style="font-size: 50px;"></i>
                                             </a>
                                         </p>
                                     </div>
                                 </a>
-                                <h3>
-                                    <a v-bind:href="project.github"> {{ project.name }} </a>
-                                </h3>
-                                <h4>{{ project.language }}</h4>
-                                <p class="desktopHide">{{ project.description }}</p>
                             </li>
                         </ul>
                     </div>
@@ -110,17 +112,17 @@
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
                                         <p>
+                                            <h3>
+                                                <a v-bind:href="project.github"> {{ project.name }} </a>
+                                            </h3>
+                                            <h4>{{ project.language }}</h4>
+                                            <p> {{ project.description }}</p>
                                             <a v-bind:href="project.github">
                                                 <i class="fab fa-github" style="font-size: 50px;"></i>
                                             </a>
                                         </p>
                                     </div>
                                 </a>
-                                <h3>
-                                    <a v-bind:href="project.github"> {{ project.name }} </a>
-                                </h3>
-                                <h4>{{ project.language }}</h4>
-                                <p class="desktopHide"> {{ project.description }}</p>
                             </li>
                         </ul>
                     </div>
@@ -131,17 +133,17 @@
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
                                         <p>
+                                            <h3>
+                                                <a v-bind:href="project.github"> {{ project.name }} </a>
+                                            </h3>
+                                            <h4>{{ project.language }}</h4>
+                                            <p>{{ project.description }}</p>
                                             <a v-bind:href="project.github">
                                                 <i class="fab fa-github" style="font-size: 50px;"></i>
                                             </a>
                                         </p>
                                     </div>
                                 </a>
-                                <h3>
-                                    <a v-bind:href="project.github"> {{ project.name }} </a>
-                                </h3>
-                                <h4>{{ project.language }}</h4>
-                                <p class="desktopHide">{{ project.description }}</p>
                             </li>
                         </ul>
                     </div>
@@ -151,28 +153,28 @@
                 <section class="mainContent" v-if="currentActive === 'contact'">
                     <a href="http://www.twitter.com/moraufelix">
                         <p>
-                            <i class="fab fa-twitter sidebarIcon" style="font-size: 60px;"></i> @moraufelix</p>
+                            <i class="fab fa-twitter contactIcon" style="font-size: 60px;"></i> @moraufelix</p>
                     </a>
                     <a href="http://www.github.com/femosc2">
                         <p>
-                            <i class="fab fa-github sidebarIcon" style="font-size: 60px;"></i>FeMoSC2</p>
+                            <i class="fab fa-github contactIcon" style="font-size: 60px;"></i>FeMoSC2</p>
                     </a>
                     <a href="http://www.instagram.com/moraufelix">
                         <p>
-                            <i class="fab fa-instagram sidebarIcon" style="font-size: 60px;"></i>moraufelix</p>
+                            <i class="fab fa-instagram contactIcon" style="font-size: 60px;"></i>moraufelix</p>
                     </a>
                     <a>
                         <p>
-                            <i class="far fa-envelope sidebarIcon" style="font-size: 50px;"></i>felixmorau@gmail.com</p>
+                            <i class="far fa-envelope contactIcon" style="font-size: 50px;"></i>felixmorau@gmail.com</p>
                     </a>
                 </section>
             </transition>
         </div>
         <footer id="footer">
-                <section>
-                    <p id="footerText">alpha</p>
-                </section>
-            </footer>
+            <section>
+                <p id="footerText">alpha</p>
+            </section>
+        </footer>
     </div>
     <script src="app.js"></script>
 </body>

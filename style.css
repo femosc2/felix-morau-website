@@ -14,14 +14,18 @@
     margin: 0;
 }
 
+ul {
+    padding: 0px;
+}
+
 .introduction {
-    width: 35%;
+    width: 45%;
     float: left;
     margin-left: 5%;
 }
 
 .mySkills {
-    width: 35%;
+    width: 45%;
     float: right;
     text-align: right;
     margin-right: 5%;
@@ -119,12 +123,18 @@ p {
 
 #sideBar i:hover {
     transition: 0.5s;
-    color: rgba(0, 255, 237, 1);
+    color: rgba(0, 255, 237, 0.5);
     text-align: center;
     cursor: pointer;
 }
 
 .sidebarIcon:hover {
+    color: rgba(0, 255, 237, 0.5);
+    animation: spin 1s 1;
+}
+
+
+.contactIcon:hover {
     color: rgba(0, 255, 237, 1);
     animation: spin 1s 1;
 }
@@ -223,6 +233,7 @@ body {
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    overflow: hidden;
 }
 
 .mainH1 {
@@ -243,8 +254,7 @@ body {
 }
 
 .projectLiDiv {
-    width: 50px;
-    border-radius: 50%;
+    width: 50%;
     background-position: center;
     transition: 0.2s;
     -webkit-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
@@ -259,7 +269,7 @@ body {
 }
 
 .projectCards {
-    display: inline-flex;
+    display: block;
     text-align: center;
     font-size: 20px;
 }
@@ -287,13 +297,13 @@ ul {
 }
 
 .projectLiDiv:not(:hover) {
-    transition: 1s;
+    transition: 0.5s;
     filter: grayscale(100%);
 }
 
 .projectLiDiv:hover {
-    transition: 1s;
-    transform: scale(1.4);
+    transition: 0.5s;
+    transform: scale(1.2);
     animation-fill-mode: forwards;
 }
 
@@ -505,9 +515,9 @@ a:hover {
     .projectLiDiv {
         display: block;
         min-height: 200px;
-        width: 200px;
-        margin-left: -4%;
+        width: 100%;
         margin: 0 auto;
+        margin-left: 0%;
     }
     #footer {
         display: none;
@@ -545,6 +555,7 @@ a:hover {
         width: 100%;
         margin-bottom: 0%;
         height: 1000px;
+        overflow: visible;
     }
     .mainContent {
         margin: 0 auto;
