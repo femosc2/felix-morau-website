@@ -47,6 +47,12 @@ new Vue({
             github: "https://github.com/femosc2/svpol-bird", 
             description: "Help Jonas Sjöstedt avoid the Nazis.", 
             image: "images/communism.png", 
+            language: "JavaScript"},
+
+            {name: "Electron-todo", 
+            github: "https://github.com/femosc2/electron-todo", 
+            description: "Todo app made with Electron", 
+            image: "images/electron.jpg", 
             language: "JavaScript"}
         ],
         webProjects: [
