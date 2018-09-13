@@ -136,19 +136,19 @@ new Vue({
         },
         scrollToWeb() {
             window.scroll({
-                top: 500,
+                top: 1750,
                 behavior: "smooth"
             });
         },
         scrollToPython() {
             window.scroll({
-                top: 850,
+                top: 2250,
                 behavior: "smooth"
             });
         },
         scrollToUniversity() {
             window.scroll({
-                top: 1250,
+                top: 2750,
                 behavior: "smooth"
             });
         },
