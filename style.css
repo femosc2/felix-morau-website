@@ -526,9 +526,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 908px) {
-    .mainBackground {
-        width: 100%;
-    }
     .projectLiDiv {
         display: block;
         min-height: 200px;
@@ -536,6 +533,11 @@ a:hover {
         margin: 0 auto;
         margin-left: 0%;
     }
+    
+    body {
+        background-image: url("images/backgroundBlur.jpg");
+    }
+
     #footer {
         display: none;
     }
@@ -561,9 +563,12 @@ a:hover {
         font-size: 25px;
     }
     #sideBar {
+        position: fixed;
+        display: inline-flex;
+        bottom: 25px;
+        width: 100%;
+        height: 25px;
         display: none;
-        width: 25px;
-        height: 117px;
     }
     i {
         font-size: 20px;
