@@ -134,23 +134,25 @@ new Vue({
                 behavior: "smooth"
             });
         },
+        scrollToJavaScript() {
+        document.querySelector('.projectH3JavaScript').scrollIntoView({ 
+            behavior: 'smooth' 
+          });
+        },
         scrollToWeb() {
-            window.scroll({
-                top: 1750,
-                behavior: "smooth"
-            });
+            document.querySelector('.projectH3Web').scrollIntoView({ 
+                behavior: 'smooth' 
+              });
         },
         scrollToPython() {
-            window.scroll({
-                top: 2250,
-                behavior: "smooth"
-            });
+            document.querySelector('.projectH3Python').scrollIntoView({ 
+                behavior: 'smooth' 
+              });
         },
         scrollToUniversity() {
-            window.scroll({
-                top: 2750,
-                behavior: "smooth"
-            });
+            document.querySelector('.projectH3Uni').scrollIntoView({ 
+                behavior: 'smooth' 
+              });
         },
     },
 

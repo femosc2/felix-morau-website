@@ -292,7 +292,7 @@ a {
     text-decoration: none;
 }
 
-.projectH3 {
+.projectH3JavaScript, .projectH3Web, .projectH3Python, .projectH3Uni  {
     width: 100%;
 }
 
@@ -366,13 +366,20 @@ a:hover {
     text-align: center;
     animation: slideInBottom 1s 1;
     animation-fill-mode: forwards;
+    justify-content: center;
 }
 
 #footerText {
     color: rgba(255, 0, 203,0.75);
     position: relative;
-    font-family: "Mr Dafoe", cursive;
+    font-family: "Montserrat", sans-serif;
     margin: 0 auto;
+    width: 100%;
+    margin-top: 2%;
+}
+
+#footerText a {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .fade-enter-active,
@@ -533,6 +540,10 @@ a:hover {
         margin: 0 auto;
         margin-left: 0%;
     }
+
+    .navItem {
+        height: 50px;
+    }
     
     body {
         background-image: url("images/backgroundBlur.jpg");
@@ -558,26 +569,55 @@ a:hover {
 
     .stickyMenu {
         display: flex;
+        z-index: 999;
     }
     .navItem {
         font-size: 25px;
     }
     #sideBar {
-        position: fixed;
         display: inline-flex;
-        bottom: 25px;
+        position: fixed;
+        top: 0%;
         width: 100%;
-        height: 25px;
-        display: none;
+        height: 60px;
+        border: none;
+        margin-top: 50px;
+        filter: none;
+        text-align: center;
+        -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+        -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+        box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+        animation: slideInTop 0.5s 1;
+        animation-fill-mode: forwards;
+        z-index: 500;
+        justify-content: center;
     }
-    i {
-        font-size: 20px;
+    #sideBar i {
+        font-size: 25px;
+        display: inline-flex;
+        top: 0%;
+        color: rgba(255, 0, 203, 1);
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #sideBar p {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .sidebarIcon:hover {
+        color: rgba(0, 255, 237, 1);
+        animation: spin 1s 1;
     }
     .main {
         width: 100%;
         margin-bottom: 0%;
         height: 1000px;
         overflow: visible;
+        margin-top: 120px;
+        box-shadow: none;
     }
     .mainContent {
         margin: 0 auto;
