@@ -624,6 +624,7 @@ a:hover {
         overflow: visible;
         margin-top: 120px;
         box-shadow: none;
+        background-image: none;
     }
     .mainContent {
         margin: 0 auto;
