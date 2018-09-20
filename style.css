@@ -541,6 +541,12 @@ a:hover {
         margin-left: 0%;
     }
 
+    .projectLiDiv:hover {
+        transition: 0.5s;
+        transform: scale(1.0);
+        animation-fill-mode: forwards;
+    }
+
     .navItem {
         height: 50px;
     }
