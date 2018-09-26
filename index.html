@@ -65,22 +65,22 @@
                     <div class="projectCards">
                         <br>
                         <ul v-for="project in javaScriptProjects">
-                                <li>
-                                    <a v-bind:href="project.github">
-                                        <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
-                                            <p>
-                                                <h3>
-                                                    <a v-bind:href="project.github"> {{ project.name }} </a>
-                                                </h3>
-                                                <h4>{{ project.language }}</h4>
-                                                <p>{{ project.description }}</p>
-                                                <a v-bind:href="project.github">
-                                                    <i class="fab fa-github" style="font-size: 50px;"></i>
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
+                            <li>
+                                <a v-bind:href="project.github">
+                                    <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
+                                        <p>
+                                            <h3>
+                                                <a v-bind:href="project.github"> {{ project.name }} </a>
+                                            </h3>
+                                            <h4>{{ project.language }}</h4>
+                                            <p>{{ project.description }}</p>
+                                            <a v-bind:href="project.github">
+                                                <i class="fab fa-github" style="font-size: 50px;"></i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <h3 class="projectH3Web">Web Design</h3>

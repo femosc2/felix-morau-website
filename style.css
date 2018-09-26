@@ -611,7 +611,7 @@ a:hover {
         padding-right: 25px;
     }
 
-    .sidebarIcon:hover {
+    .sidebarIcon:hover, .sidebarIcon:active {
         color: rgba(0, 255, 237, 1);
         animation: spin 1s 1;
     }
