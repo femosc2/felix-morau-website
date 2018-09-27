@@ -150,26 +150,12 @@
             </transition>
             <transition name="fade">
                 <section class="mainContent" v-if="currentActive === 'contact'">
-                    <a href="http://www.twitter.com/moraufelix">
-                        <p>
-                            <i class="fab fa-twitter contactIcon" style="font-size: 60px;"></i> @moraufelix</p>
-                    </a>
-                    <a href="http://www.github.com/femosc2">
-                        <p>
-                            <i class="fab fa-github contactIcon" style="font-size: 60px;"></i>FeMoSC2</p>
-                    </a>
-                    <a href="http://www.instagram.com/moraufelix">
-                        <p>
-                            <i class="fab fa-instagram contactIcon" style="font-size: 60px;"></i>moraufelix</p>
-                    </a>
-                    <a>
-                        <p>
-                            <i class="far fa-envelope contactIcon" style="font-size: 50px;"></i>felixmorau@gmail.com</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/felix-morau-0193a2163/">
-                        <p>
-                            <i class="fab fa-linkedin-in contactIcon" style="font-size: 50px;"></i>Felix Morau</p>
-                    </a>
+                    <ul v-for="contact in contactLinks">
+                        <a v-bind:href="contact.link">
+                            <p>
+                                <i :class="contact.fa" style="font-size: 60px;"></i>{{ contact.name }}</p>
+                        </a>
+                    </ul>
                 </section>
             </transition>
         </div>

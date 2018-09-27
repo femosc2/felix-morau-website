@@ -94,6 +94,33 @@ new Vue({
             image: "images/politweet.png", 
             language: "React.js, CSS"}
         ],
+        contactLinks: [
+            {
+                name: "moraufelix",
+                fa: "fab fa-twitter",
+                link: "http://www.twitter.com/moraufelix"
+            },
+            {
+                name: "FeMoSC2",
+                fa: "fab fa-github",
+                link: "http://www.github.com/femosc2"
+            },
+            {
+                name: "moraufelix",
+                fa: "fab fa-instagram",
+                link: "http://www.instagram.com/moraufelix"
+            },
+            {
+                name: "Felixmorau@gmail.com",
+                fa: "far fa-envelope",
+                link: "http://www.instagram.com/moraufelix"
+            },
+            {
+                name: "Felix Morau",
+                fa: "fab fa-linkedin-in",
+                link: "https://www.linkedin.com/in/felix-morau-0193a2163/"
+            }
+        ]
     },
 
     methods: {
