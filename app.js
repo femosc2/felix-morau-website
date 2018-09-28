@@ -120,15 +120,34 @@ new Vue({
                 fa: "fab fa-linkedin-in",
                 link: "https://www.linkedin.com/in/felix-morau-0193a2163/"
             }
+        ],
+        sideBarIcons: [
+            {
+                fa: "fab fa-js sidebarIcon",
+                fontsize: 40,
+                method: "JavaScript"
+            },
+            {
+                fa: "fab fa-css3-alt sidebarIcon",
+                fontsize: 40,
+                method: "Web"
+            },
+            {
+                fa: "fab fa-python sidebarIcon",
+                fontsize: 40,
+                method: "Python"
+            },
+            {
+                fa: "fas fa-graduation-cap sidebarIcon",
+                fontsize: 30,
+                method: "Uni"
+            }
         ]
     },
 
     methods: {
         about() {
             this.currentH1 = "Felix Morau";
-            document.querySelector(".about").classList.add("active");
-            document.querySelector(".myProjects").classList.remove("active");
-            document.querySelector(".contact").classList.remove("active");
             this.currentActive = "about";
             this.mainContent = "Hello!";
             this.scrollToTop();
@@ -137,9 +156,6 @@ new Vue({
         },
         myProjects() {
             this.currentH1 = "My Projects";
-            document.querySelector(".myProjects").classList.add("active");
-            document.querySelector(".about").classList.remove("active");
-            document.querySelector(".contact").classList.remove("active");
             this.currentActive = "myProjects";
             this.mainContent = null;
             this.scrollToTop();
@@ -147,9 +163,6 @@ new Vue({
         },
         contact() {
             this.currentH1 = "Contact";
-            document.querySelector(".contact").classList.add("active");
-            document.querySelector(".myProjects").classList.remove("active");
-            document.querySelector(".about").classList.remove("active");
             this.currentActive = "contact";
             this.mainContent = "Do not hesitate to contact me!";
             this.scrollToTop();
@@ -166,8 +179,8 @@ new Vue({
             behavior: 'smooth' 
           });
         },
-        scrollToWeb() {
-            document.querySelector('.projectH3Web').scrollIntoView({ 
+        scrollToWeb(element) {
+            document.querySelector(element).scrollIntoView({ 
                 behavior: 'smooth' 
               });
         },

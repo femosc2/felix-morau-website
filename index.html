@@ -21,26 +21,19 @@
     </div>
     <div id="app" class="fadeIn">
         <nav class="stickyMenu">
-            <a class="navItem about" @click="about">About</a>
-            <a class="navItem myProjects active" @click="myProjects">My Projects</a>
-            <a class="navItem contact" @click="contact">Contact</a>
+            <a class="navItem about" @click="about" v-bind:class= "{ active: currentActive === 'about' }">About</a>
+            <a class="navItem myProjects" @click="myProjects" v-bind:class= "{ active: currentActive === 'myProjects' }">My Projects</a>
+            <a class="navItem contact" @click="contact" v-bind:class= "{ active: currentActive === 'contact' }">Contact</a>
         </nav>
         <div id="sideBar" v-if="currentActive === 'myProjects'">
-            <p>
-                <i class="fab fa-js sidebarIcon" @click="scrollToTop" style="font-size: 40px;"></i>
-            </p>
-            <p>
-                <i class="fab fa-css3-alt sidebarIcon" @click="scrollToWeb" style="font-size: 40px;"></i>
-            </p>
-            <p>
-                <i class="fab fa-python sidebarIcon" @click="scrollToPython" style="font-size: 40px;"></i>
-            </p>
-            <p>
-                <i class="fas fa-graduation-cap sidebarIcon" @click="scrollToUniversity" style="font-size: 30px;"></i>
-            </p>
+            <ul v-for="icon in sideBarIcons">
+                <li>
+                    <i :class="icon.fa" v-on:click="scrollToWeb('.projectH3' + icon.method)" :style="{ 'font-size': icon.fontsize + 'px' }"></i>
+                </li>
+            </ul>
         </div>
         <div class="main">
-            <h1 class="mainH1"> {{ currentH1 }} </h1>>
+            <h1 class="mainH1"> {{ currentH1 }} </h1>
             <transition name="fade">
                 <div v-if="currentActive === 'about'">
                     <section class="introduction">
