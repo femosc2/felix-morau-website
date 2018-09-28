@@ -142,31 +142,34 @@ new Vue({
                 fontsize: 30,
                 method: "Uni"
             }
+        ],
+        navItems: [
+            {
+                name: "About",
+                cssName: "navItem about",
+                codeName: "about"
+            },
+            {
+                name: "My Projects",
+                cssName: "navItem myProjects",
+                codeName: "myProjects"
+            },
+            {
+                name: "Contact",
+                cssName: "navItem contact",
+                codeName: "contact"
+            }
         ]
     },
 
     methods: {
-        about() {
-            this.currentH1 = "Felix Morau";
-            this.currentActive = "about";
+        menuSelect(menuOption, active) {
+            this.currentH1 = menuOption;
+            this.currentActive = active;
             this.mainContent = "Hello!";
             this.scrollToTop();
-            this.currentH3 = "About";
+            this.currentH3 = menuOption;
             
-        },
-        myProjects() {
-            this.currentH1 = "My Projects";
-            this.currentActive = "myProjects";
-            this.mainContent = null;
-            this.scrollToTop();
-            this.currentH3 = null;
-        },
-        contact() {
-            this.currentH1 = "Contact";
-            this.currentActive = "contact";
-            this.mainContent = "Do not hesitate to contact me!";
-            this.scrollToTop();
-            this.currentH3 = "Contact";
         },
         scrollToTop() {
             window.scroll({
@@ -174,23 +177,8 @@ new Vue({
                 behavior: "smooth"
             });
         },
-        scrollToJavaScript() {
-        document.querySelector('.projectH3JavaScript').scrollIntoView({ 
-            behavior: 'smooth' 
-          });
-        },
-        scrollToWeb(element) {
+        scrollTo(element) {
             document.querySelector(element).scrollIntoView({ 
-                behavior: 'smooth' 
-              });
-        },
-        scrollToPython() {
-            document.querySelector('.projectH3Python').scrollIntoView({ 
-                behavior: 'smooth' 
-              });
-        },
-        scrollToUniversity() {
-            document.querySelector('.projectH3Uni').scrollIntoView({ 
                 behavior: 'smooth' 
               });
         },

@@ -21,14 +21,12 @@
     </div>
     <div id="app" class="fadeIn">
         <nav class="stickyMenu">
-            <a class="navItem about" @click="about" v-bind:class= "{ active: currentActive === 'about' }">About</a>
-            <a class="navItem myProjects" @click="myProjects" v-bind:class= "{ active: currentActive === 'myProjects' }">My Projects</a>
-            <a class="navItem contact" @click="contact" v-bind:class= "{ active: currentActive === 'contact' }">Contact</a>
+            <a v-for="navItem in navItems" class="navItem" v-on:click="menuSelect(navItem.name, navItem.codeName)" v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
         </nav>
         <div id="sideBar" v-if="currentActive === 'myProjects'">
             <ul v-for="icon in sideBarIcons">
                 <li>
-                    <i :class="icon.fa" v-on:click="scrollToWeb('.projectH3' + icon.method)" :style="{ 'font-size': icon.fontsize + 'px' }"></i>
+                    <i :class="icon.fa" v-on:click="scrollTo('.projectH3' + icon.method)" :style="{ 'font-size': icon.fontsize + 'px' }"></i>
                 </li>
             </ul>
         </div>
