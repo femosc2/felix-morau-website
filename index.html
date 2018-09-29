@@ -7,7 +7,8 @@
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -21,7 +22,8 @@
     </div>
     <div id="app" class="fadeIn">
         <nav class="stickyMenu">
-            <a v-for="navItem in navItems" class="navItem" v-on:click="menuSelect(navItem.name, navItem.codeName)" v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
+            <a v-for="navItem in navItems" class="navItem"
+            v-on:click="menuSelect(navItem.name, navItem.codeName)" v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
         </nav>
         <div id="sideBar" v-if="currentActive === 'myProjects'">
             <ul v-for="icon in sideBarIcons">

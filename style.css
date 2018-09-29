@@ -156,6 +156,7 @@ body {
     background-position: top;
     background-size: cover;
     background-image: url("images/background.jpg");
+    overflow-y: scroll;
 }
 
 .mainContent {
@@ -365,6 +366,9 @@ a:hover {
     animation: slideInBottom 1s 1;
     animation-fill-mode: forwards;
     justify-content: center;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
 }
 
 #footerText {
