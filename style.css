@@ -610,7 +610,7 @@ a:hover {
         justify-content: center;
     }
 
-    #sideBar p {
+    #sideBar li {
         padding-left: 25px;
         padding-right: 25px;
     }
