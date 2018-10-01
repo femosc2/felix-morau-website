@@ -15,7 +15,8 @@ new Vue({
     data: {
         firstName: "Felix",
         lastName: "Morau",
-}});
+    }
+});
 
 
 new Vue({
@@ -124,7 +125,7 @@ new Vue({
             {
                 name: "Felixmorau@gmail.com",
                 fa: "far fa-envelope",
-                link: "http://www.instagram.com/moraufelix"
+                link: null,
             },
             {
                 name: "Felix Morau",
