@@ -23,7 +23,8 @@
     <div id="app" class="fadeIn">
         <nav class="stickyMenu">
             <a v-for="navItem in navItems" class="navItem"
-            v-on:click="menuSelect(navItem.name, navItem.codeName)" v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
+            v-on:click="menuSelect(navItem.name, navItem.codeName)"
+             v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
         </nav>
         <div id="sideBar" v-if="currentActive === 'myProjects'">
             <ul v-for="icon in sideBarIcons">
@@ -37,14 +38,11 @@
             <transition name="fade">
                 <div v-if="currentActive === 'about'">
                     <section class="introduction">
-                        <p>My name is Felix Morau and I'm an 22 year old information architecture student at Malmö
-                            University.</p>
-                        <p>I made this website as a way to track my programming journey through university and beyond!
-                            Make sure
-                            to check out my "My Projects" to see what I've done and what I'm currently working on! </p>
+                        <p>{{ introduction1 }}</p>
+                        <p> {{ introduction2 }}</p>
                     </section>
                     <section class="mySkills">
-                        <p>I'm proficient in Python, JavaScript, Photoshop and CSS! </p>
+                        <p>{{ skillText }}</p>
                         <ul id="skillsList" v-for="skill in mySkills">
                             <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }" ></i>
                         </ul>

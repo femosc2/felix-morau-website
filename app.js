@@ -28,6 +28,9 @@ new Vue({
         mainContent: null,
         firstName: "Felix",
         lastName: "Morau",
+        introduction1: "My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.",
+        introduction2: "I made this website as a way to track my programming journey through university and beyond! Make sure to check out my 'My Projects' to see what I've done and what I'm currently working on!",
+        skillText: "I'm proficient in Python, JavaScript, Photoshop and CSS!",
         footerText: "Made by Felix Morau 2018",
         footerLink: "https://www.github.com/femosc2",
         javaScriptProjects: [
