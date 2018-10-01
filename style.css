@@ -186,7 +186,7 @@ body {
     animation-fill-mode: forwards;
 }
 
-.morau {
+.lastName {
     animation: slideInLeftAndSlideOutRight 2s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
@@ -197,7 +197,7 @@ body {
     font-size: 60px;
 }
 
-.felix {
+.firstName {
     animation: slideInRightAndSlideOutLeft 2s 1;
     animation-timing-function: cubic-bezier(.1, 1.01, 1, .56);
     animation-fill-mode: forwards;
@@ -241,6 +241,11 @@ body {
     animation: mainEnter 1s 1;
     animation-fill-mode: forwards;
     overflow: hidden;
+}
+
+#skillsList {
+    display: inline-flex;
+    letter-spacing: 20px;
 }
 
 .mainH1 {

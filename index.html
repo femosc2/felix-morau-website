@@ -15,9 +15,9 @@
 
 <body onload="siteLoader()">
     <div id="loader">
-        <h1 class="felix">Felix</h1>
+        <h1 class="firstName">{{ firstName }}</h1>
         <img id="logo" src="images/logo.png">
-        <h1 class="morau">Morau</h1>
+        <h1 class="lastName">{{ lastName }}</h1>
         <div id="splashBlur"></div>
     </div>
     <div id="app" class="fadeIn">
@@ -45,10 +45,9 @@
                     </section>
                     <section class="mySkills">
                         <p>I'm proficient in Python, JavaScript, Photoshop and CSS! </p>
-                        <i class="fab fa-python skills" style="font-size: 60px;"></i>
-                        <i class="fab fa-js skills" style="font-size: 60px;"></i>
-                        <i class="fas fa-file-powerpoint skills" style="font-size: 60px;"></i>
-                        <i class="fab fa-css3 skills" style="font-size: 60px;"></i>
+                        <ul id="skillsList" v-for="skill in mySkills">
+                            <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }" ></i>
+                        </ul>
                     </section>
                 </div>
             </transition>
@@ -154,7 +153,7 @@
         </div>
         <footer id="footer">
             <section>
-                <p id="footerText"><a href="https://www.github.com/femosc2"> Made by Felix Morau 2018 </a></p>
+                <p id="footerText"><a v-bind:href="footerLink"> {{ footerText }} </a></p>
             </section>
         </footer>
     </div>

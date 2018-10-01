@@ -10,6 +10,13 @@ function showPage() {
 }
 
 
+new Vue({
+    el: "#loader",
+    data: {
+        firstName: "Felix",
+        lastName: "Morau",
+}});
+
 
 new Vue({
     el: "#app",
@@ -18,6 +25,10 @@ new Vue({
         currentH3: null,
         currentActive: "myProjects",
         mainContent: null,
+        firstName: "Felix",
+        lastName: "Morau",
+        footerText: "Made by Felix Morau 2018",
+        footerLink: "https://www.github.com/femosc2",
         javaScriptProjects: [
             {name: "Personal Website", 
             github: "https://github.com/femosc2/felix-morau-website", 
@@ -158,6 +169,24 @@ new Vue({
                 name: "Contact",
                 cssName: "navItem contact",
                 codeName: "contact"
+            }
+        ],
+        mySkills: [
+            {
+                fa: "fab fa-python skills",
+                fontsize: 60,
+            },
+            {
+                fa: "fab fa-js skills",
+                fontsize: 60,
+            },
+            {
+                fa: "fas fa-file-powerpoint skills",
+                fontsize: 60,
+            },
+            {
+                fa: "fab fa-css3 skills",
+                fontsize: 60,
             }
         ]
     },
