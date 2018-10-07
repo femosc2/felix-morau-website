@@ -68,7 +68,13 @@ new Vue({
             github: "https://github.com/femosc2/electron-todo", 
             description: "Todo app made with Electron", 
             image: "images/electron.jpg", 
-            language: "JavaScript"}
+            language: "JavaScript"},
+
+            {name: "easy-electron-boilerplate", 
+            github: "https://github.com/femosc2/easy-electron-boilerplate", 
+            description: "Easy to edit electron boilerplate.", 
+            image: "images/electron.jpg", 
+            language: "JavaScript"},
         ],
         webProjects: [
             {name: "Personal Website", 
