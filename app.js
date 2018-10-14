@@ -100,7 +100,13 @@ new Vue({
             github: "https://github.com/femosc2/ia-discord-bot", 
             description: "A discord bot for the IA discord channel made with Python.", 
             image: "images/florence5.png", 
-            language: "Python"}
+            language: "Python"},
+
+            {name: "FeMoShop", 
+            github: "https://github.com/femosc2/femoshop", 
+            description: "A easy to use photo editor with a TkInter GUI", 
+            image: "images/logo.png", 
+            language: "Python"},
         ],
         universityProjects: [
             {name: "Bus Database",
