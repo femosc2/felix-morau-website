@@ -41,10 +41,6 @@ ul {
     left: 0;
     right: 0;
     width: 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     background-image: url("images/backgroundBlur.jpg");
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
@@ -99,10 +95,6 @@ p {
     width: 50px;
     height: 225px;
     position: fixed;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     background-image: url("images/backgroundBlur.jpg");
     background-blend-mode: ligthen;
     animation: slideInLeft 0.5s 1;
@@ -123,10 +115,11 @@ p {
 #sideBar i {
     color: rgba(255, 0, 203,0.5);
     text-align: center;
+    transition: 1s;
 }
 
 #sideBar i:hover {
-    transition: 0.5s;
+    transition: 1s;
     color: rgba(0, 255, 237, 0.5);
     text-align: center;
     cursor: pointer;
@@ -134,7 +127,7 @@ p {
 
 .sidebarIcon:hover {
     color: rgba(0, 255, 237, 0.5);
-    animation: spin 1s 1;
+    transform: rotate(360deg)
 }
 
 
@@ -220,14 +213,6 @@ body {
     display: block;
     margin: 0 auto;
     padding: 0px;
-    /* -webkit-backdrop-filter: blur(15px) brightness(35%);
-    backdrop-filter: blur(15px) brightness(35%); */
-    /*background-color: rgba(0,0,0, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);*/
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     background-image: url("images/backgroundBlur.jpg");
     width: 100%;
     margin: 0 auto;
@@ -272,10 +257,6 @@ body {
     -webkit-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
     box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
     margin: 0 auto;
     margin-bottom: 5%;
 }
@@ -355,10 +336,6 @@ a:hover {
 
 #footer {
     border: 1px solid rgba(0, 0, 0, 0.8);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     background-image: url("images/backgroundBlur.jpg");
     display: flex;
     position: fixed;
@@ -374,6 +351,13 @@ a:hover {
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+}
+
+.projectLiDiv, #footer, .main, #sidebar, #stickyMenu {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
 #footerText {
