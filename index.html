@@ -7,8 +7,7 @@
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -22,9 +21,8 @@
     </div>
     <div id="app" class="fadeIn">
         <nav class="stickyMenu">
-            <a v-for="navItem in navItems" class="navItem"
-            v-on:click="menuSelect(navItem.name, navItem.codeName)"
-             v-bind:class= "{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
+            <a v-for="navItem in navItems" class="navItem" v-on:click="menuSelect(navItem.name, navItem.codeName)"
+                v-bind:class="{ active: currentActive === navItem.codeName }">{{ navItem.name }}</a>
         </nav>
         <div id="sideBar" v-if="currentActive === 'myProjects'">
             <ul v-for="icon in sideBarIcons">
@@ -40,11 +38,12 @@
                     <section class="introduction">
                         <p>{{ introduction1 }}</p>
                         <p> {{ introduction2 }}</p>
+                        <p> {{ currentCourses }}</p>
                     </section>
                     <section class="mySkills">
                         <p>{{ skillText }}</p>
                         <ul id="skillsList" v-for="skill in mySkills">
-                            <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }" ></i>
+                            <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }"></i>
                         </ul>
                     </section>
                 </div>
@@ -54,7 +53,7 @@
                     <h3 class="projectH3JavaScript">JavaScript</h3>
                     <div class="projectCards">
                         <br>
-                        <ul v-for="project in javaScriptProjects">
+                        <ul class="projectList" v-for="project in javaScriptProjects">
                             <li>
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
@@ -75,7 +74,7 @@
                     </div>
                     <h3 class="projectH3Web">Web Design</h3>
                     <div class="projectCards">
-                        <ul v-for="project in webProjects">
+                        <ul class="projectList" v-for="project in webProjects">
                             <li>
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
@@ -96,7 +95,7 @@
                     </div>
                     <h3 class="projectH3Python">Python</h3>
                     <div class="projectCards">
-                        <ul v-for="project in pythonProjects">
+                        <ul class="projectList" v-for="project in pythonProjects">
                             <li>
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
@@ -117,7 +116,7 @@
                     </div>
                     <h3 class="projectH3Uni">University</h3>
                     <div class="projectCards">
-                        <ul v-for="project in universityProjects">
+                        <ul class="projectList" v-for="project in universityProjects">
                             <li>
                                 <a v-bind:href="project.github">
                                     <div class="projectLiDiv" v-bind:style="{ 'background-image': 'url(' + project.image + ')' }">
@@ -140,10 +139,10 @@
             </transition>
             <transition name="fade">
                 <section class="mainContent" v-if="currentActive === 'contact'">
-                    <ul v-for="contact in contactLinks">
-                        <a v-bind:href="contact.link">
-                            <p>
-                                <i :class="contact.fa" style="font-size: 60px;"></i>{{ contact.name }}</p>
+                    <ul class="contactList" v-for="contact in contactLinks">
+                        <a class="contactLink" v-bind:href="contact.link">
+                            <p><i class="contactIcon" :class="contact.fa" style="font-size: 60px;"></i></p>
+                            <p class="contactText">{{ contact.name }}</p>
                         </a>
                     </ul>
                 </section>

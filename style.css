@@ -42,9 +42,9 @@ ul {
     right: 0;
     width: 100%;
     background-image: url("images/backgroundBlur.jpg");
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
     z-index: 10;
     animation: slideInTop 1s 1;
     animation-fill-mode: forwards;
@@ -81,7 +81,7 @@ p {
     background-color: #ff00cb;
     color: rgba(0, 255, 237, 1);
     cursor: pointer;
-    
+
 }
 
 .projectLink {
@@ -101,9 +101,9 @@ p {
     animation-fill-mode: forwards;
     left: 0;
     margin-top: 10%;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
     border: 1px solid #000;
     filter: brightness(2.0);
 }
@@ -113,9 +113,10 @@ p {
 }
 
 #sideBar i {
-    color: rgba(255, 0, 203,0.5);
+    color: rgba(255, 0, 203, 0.5);
     text-align: center;
     transition: 1s;
+    padding-left: 10%;
 }
 
 #sideBar i:hover {
@@ -131,9 +132,63 @@ p {
 }
 
 
+.contactIcon {
+    margin-right: 25px;
+    transition: 1s;
+}
+
 .contactIcon:hover {
     color: rgba(0, 255, 237, 1);
-    animation: spin 1s 1;
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.contactLink {
+    display: inline-flex;
+    align-content: center;
+    padding: 0px;
+    float: none;
+    margin-right: 75px;
+    position: relative;
+    text-decoration: none;
+}
+
+.contactText:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 0, 203, 1);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.contactText:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.contactText:hover {
+    transition: 1s;
+    color: rgba(0, 255, 237, 1);
+}
+
+.contactText {
+    padding-top: 20px;
+    margin-left: 75px;
+    position: absolute;
+    transition: 1s;
+}
+
+.contactList {
+    margin: 0;
+    padding: 0;
 }
 
 .active {
@@ -168,12 +223,12 @@ body {
 
 #splashBlur {
     height: 1400px;
-	width: 100%;
+    width: 100%;
     overflow: hidden;
     background-color: #000;
-	top: 0;
-	z-index: -100;
-	position: fixed;
+    top: 0;
+    z-index: -100;
+    position: fixed;
     margin-top: -3%;
     animation: blurFadeOut 2s 1;
     animation-fill-mode: forwards;
@@ -220,9 +275,9 @@ body {
     margin-top: 10%;
     min-height: 400px;
     margin-bottom: 15%;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
     animation: mainEnter 1s 1;
     animation-fill-mode: forwards;
     overflow: hidden;
@@ -241,7 +296,7 @@ body {
 
 .mainH3 {
     text-align: center;
-    
+
 }
 
 .projectLi {
@@ -251,14 +306,19 @@ body {
 }
 
 .projectLiDiv {
-    width: 65%;
+    width: 75%;
     background-position: center;
     transition: 0.2s;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(93, 0, 160,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(93, 0, 160, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(93, 0, 160, 0.75);
     margin: 0 auto;
     margin-bottom: 5%;
+}
+
+.projectList {
+    /*margin: 0;
+    padding: 0; */
 }
 
 .projectCards {
@@ -277,15 +337,22 @@ a {
     text-decoration: none;
 }
 
-.projectH3JavaScript, .projectH3Web, .projectH3Python, .projectH3Uni  {
+.projectH3JavaScript,
+.projectH3Web,
+.projectH3Python,
+.projectH3Uni {
     width: 100%;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
 }
 
 ul {
     list-style: none;
 }
 
-.projectLiDiv h3,h4 {
+.projectLiDiv h3,
+h4 {
     color: #fff;
     text-align: center;
 }
@@ -327,9 +394,9 @@ a:hover {
 
 .divider {
     background-color: rgba(0, 0, 0, 0.8);
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
     height: 2px;
     width: 100%;
 }
@@ -348,12 +415,17 @@ a:hover {
     animation: slideInBottom 1s 1;
     animation-fill-mode: forwards;
     justify-content: center;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
 }
 
-.projectLiDiv, #footer, .main, #sidebar, #stickyMenu {
+.projectLiDiv,
+#footer,
+.main,
+#sidebar,
+#stickyMenu,
+.projectLiDivInfo {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top;
@@ -361,7 +433,7 @@ a:hover {
 }
 
 #footerText {
-    color: rgba(255, 0, 203,0.75);
+    color: rgba(255, 0, 203, 0.75);
     position: relative;
     font-family: "Pavanam", sans-serif;
     margin: 0 auto;
@@ -375,22 +447,22 @@ a:hover {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 1s, height 1s, opacity 0.5s;
-  overflow: hidden;
-  max-height: 1000px;
+    transition: all 1s, height 1s, opacity 0.5s;
+    overflow: hidden;
+    max-height: 1000px;
 }
 
 .fade-enter,
-.fade-leave-to
-{
-  opacity: 0;
-  max-height: 0px;
+.fade-leave-to {
+    opacity: 0;
+    max-height: 0px;
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -404,6 +476,7 @@ a:hover {
     90% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -414,12 +487,15 @@ a:hover {
         opacity: 1;
         filter: grayscale(100%)
     }
+
     60% {
         filter: grayscale(100%)
     }
+
     90% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         filter: grayscale(0%)
@@ -431,10 +507,12 @@ a:hover {
         opacity: 1;
         filter: grayscale(100%);
     }
+
     40% {
         filter: grayscale(0%);
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -444,6 +522,7 @@ a:hover {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -453,6 +532,7 @@ a:hover {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(0%);
     }
@@ -462,6 +542,7 @@ a:hover {
     0% {
         transform: translateY(-100%);
     }
+
     100% {
         transform: translateY(0%);
     }
@@ -471,53 +552,62 @@ a:hover {
     0% {
         transform: translateY(100%);
     }
+
     100% {
         transform: translateY(0);
     }
 }
 
 @keyframes slideInLeftAndSlideOutRight {
-	0% {
+    0% {
         opacity: 0;
-		transform: translateX(100%);
-	}
-	20% {
+        transform: translateX(100%);
+    }
+
+    20% {
         opacity: 1;
-	}
-	80% {
+    }
+
+    80% {
         opacity: 1;
         transform: translateX(-10%);
         color: #ff00cb;
-	}
-	90% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
         transform: translateX(-100%);
         color: #ff00cb;
-	}
+    }
 }
 
 @keyframes slideInRightAndSlideOutLeft {
-	0% {
+    0% {
         opacity: 0;
         color: #fff;
-		transform: translateX(-100%);
-	}
-	20% {
+        transform: translateX(-100%);
+    }
+
+    20% {
         opacity: 1;
-	}
-	80% {
+    }
+
+    80% {
         opacity: 1;
         transform: translateX(20%);
         color: #ff00cb;
-	}
-	90% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
         transform: translateX(100%);
         color: #ff00cb;
     }
@@ -541,7 +631,7 @@ a:hover {
     .navItem {
         height: 50px;
     }
-    
+
     body {
         background-image: url("images/backgroundBlur.jpg");
     }
@@ -549,6 +639,7 @@ a:hover {
     #footer {
         display: none;
     }
+
     #sideBar {
         z-index: 100;
     }
@@ -568,9 +659,11 @@ a:hover {
         display: flex;
         z-index: 999;
     }
+
     .navItem {
         font-size: 25px;
     }
+
     #sideBar {
         display: inline-flex;
         position: fixed;
@@ -581,14 +674,15 @@ a:hover {
         margin-top: 50px;
         filter: none;
         text-align: center;
-        -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-        -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
-        box-shadow: 0px 0px 20px -1px rgba(0, 0, 0,0.75);
+        -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.75);
         animation: slideInTop 0.5s 1;
         animation-fill-mode: forwards;
         z-index: 500;
         justify-content: center;
     }
+
     #sideBar i {
         font-size: 25px;
         display: inline-flex;
@@ -597,6 +691,7 @@ a:hover {
         margin: 0 auto;
         text-align: center;
         justify-content: center;
+        align-content: center;
     }
 
     #sideBar li {
@@ -604,10 +699,12 @@ a:hover {
         padding-right: 25px;
     }
 
-    .sidebarIcon:hover, .sidebarIcon:active {
+    .sidebarIcon:hover,
+    .sidebarIcon:active {
         color: rgba(0, 255, 237, 1);
         animation: spin 1s 1;
     }
+
     .main {
         width: 100%;
         margin-bottom: 0%;
@@ -617,16 +714,20 @@ a:hover {
         box-shadow: none;
         background-image: none;
     }
+
     .mainContent {
         margin: 0 auto;
     }
+
     .mainBackground {
         width: 100%;
         height: 100%;
     }
+
     .mainH1 {
         margin-top: 14%;
     }
+
     body {
         width: 100%;
         height: 1000px;
