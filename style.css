@@ -468,20 +468,6 @@ a:hover {
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 @keyframes logoFadeOut {
     0% {
         opacity: 1;
@@ -515,16 +501,6 @@ a:hover {
 
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
     }
 }
 
