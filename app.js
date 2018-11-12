@@ -259,7 +259,7 @@ let main = new Vue({
 
 
             if (today.getTime() > secondPeriod.getTime() && today.getFullYear() == 2018) {
-                this.currentCourses = "I'm currently taking the Web Services (7.5hp) and Information Design (7.5hp) courses!";
+                this.currentCourses = "I'm currently taking the Web Services (7.5hp) and Information Design (7.5hp) courses! I'm also taking a distance course in JavaScript (7.5hp)!";
             } else if (today.getTime() > thirdPeriod.getTime() && today.getFullYear() == 2019 && today.getMonth() >= 1) {
                 this.currentCourses = "I'm currently taking the Research Methods (15hp) and Multiplatform Web Applications (7.5hp) courses!";
             } else if (today.getTime() > fourthPeriod.getTime() && today.getFullYear() == 2019 && today.getMonth() >= 3) {
