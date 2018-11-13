@@ -31,7 +31,7 @@ let main = new Vue({
         introduction1: "My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.",
         introduction2: "I made this website as a way to track my programming journey through university and beyond! Make sure to check out my 'My Projects' to see what I've done and what I'm currently working on!",
         skillText: "I'm proficient in Python, JavaScript, Photoshop and CSS!",
-        currentCourses: "LOOOL",
+        currentCourses: "This text should be updated to show what courses i'm taking dynamiclly, please contact me if you can read this",
         footerText: "Made by Felix Morau 2018",
         footerLink: "https://www.github.com/femosc2",
         currentHour: "",
@@ -252,20 +252,20 @@ let main = new Vue({
         },
         showCurrentCourses() {
             let today = new Date();
-            const secondPeriod = new Date(2018, 11, 12);
-            const thirdPeriod = new Date(2019, 1, 15);
-            const fourthPeriod = new Date(2019, 3, 4);
-            const summer = new Date(2019,6,1);
+            const secondPeriod = new Date(2018, 10, 12);
+            const thirdPeriod = new Date(2019, 0, 14);
+            const fourthPeriod = new Date(2019, 3, 2);
+            const summer = new Date(2019,5,0);
 
 
-            if (today.getTime() > secondPeriod.getTime() && today.getFullYear() == 2018) {
+            if ((today.getTime() > secondPeriod.getTime()) && (today.getTime() < thirdPeriod.getTime())) {
                 this.currentCourses = "I'm currently taking the Web Services (7.5hp) and Information Design (7.5hp) courses! I'm also taking a distance course in JavaScript (7.5hp)!";
-            } else if (today.getTime() > thirdPeriod.getTime() && today.getFullYear() == 2019 && today.getMonth() >= 1) {
+            } else if ((today.getTime() > thirdPeriod.getTime()) && (today.getTime() < fourthPeriod.getTime())) {
                 this.currentCourses = "I'm currently taking the Research Methods (15hp) and Multiplatform Web Applications (7.5hp) courses!";
-            } else if (today.getTime() > fourthPeriod.getTime() && today.getFullYear() == 2019 && today.getMonth() >= 3) {
+            } else if ((today.getTime() > fourthPeriod.getTime()) && (today.getTime() < summer.getTime())) {
                 this.currentCourses = "I'm currently taking the Research Methods (15hp) and Information Security (7.5hp) courses!";
-            } else if (today.getTime() > summer.getTime() && today.getFullYear() == 2019 && today.getMonth() >= 6) {
-                this.currnetCourses= "The semester is over and I'm not taking any courses at the moment";
+            } else if (today.getTime() > summer.getTime()) {
+                this.currentCourses = null;
             } else {
                 this.currentCourses = "I'm currently taking the Object Oriented Programming (7.5hp) and Information Architecture 2 (7.5hp) courses!";
             }
