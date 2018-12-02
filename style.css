@@ -12,6 +12,15 @@
     margin: 0;
 }
 
+
+body{margin:0;height:100%;}
+canvas{
+    position:fixed;
+    z-index: 2000;
+    pointer-events: none;
+    top: 0;
+}
+
 ul {
     padding: 0px;
 }
