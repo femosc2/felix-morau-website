@@ -4,6 +4,11 @@ function siteLoader() {
     site = setTimeout(showPage, 2000);
 }
 
+const currentlyListening = () => {
+    currentSong = require("https://api.spotify.com/v1/3OHYFlFMX0kx8NrPbfk04p");
+    retu
+}
+
 function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("app").style.display = "block";
@@ -26,6 +31,7 @@ let main = new Vue({
         currentH3: null,
         currentActive: "myProjects",
         mainContent: null,
+        currentSong: null,
         firstName: "Felix",
         lastName: "Morau",
         introduction1: "My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.",
@@ -270,9 +276,9 @@ let main = new Vue({
                 this.currentCourses = "I'm currently taking the Object Oriented Programming (7.5hp) and Information Architecture 2 (7.5hp) courses!";
             }
         },
+        }
 
     },
-
-});
+);
 
 main.showCurrentCourses();
