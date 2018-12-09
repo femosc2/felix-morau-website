@@ -152,6 +152,10 @@ p {
     transition: 1s;
 }
 
+.contactIcon:active {
+    color: rgba(255, 0, 203, 1);
+}
+
 .contactLink {
     display: inline-flex;
     align-content: center;
@@ -186,6 +190,10 @@ p {
 .contactText:hover {
     transition: 1s;
     color: rgba(0, 255, 237, 1);
+}
+
+.contactText:active {
+    color: rgba(255, 0, 203, 1);
 }
 
 .contactText {

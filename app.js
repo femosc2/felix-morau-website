@@ -4,11 +4,6 @@ function siteLoader() {
     site = setTimeout(showPage, 2000);
 }
 
-const currentlyListening = () => {
-    currentSong = require("https://api.spotify.com/v1/3OHYFlFMX0kx8NrPbfk04p");
-    retu
-}
-
 function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("app").style.display = "block";
@@ -97,6 +92,13 @@ let main = new Vue({
                 image: "images/javascript.jpg",
                 language: "JavaScript"
             },
+            {
+                name: "Vuenicorns",
+                github: "https://github.com/femosc2/vuenicorns",
+                description: "Workshop assignment for the Webservices Course",
+                image: "images/javascript.jpg",
+                language: "Vue.js"
+            },
         ],
         webProjects: [{
                 name: "Personal Website",
@@ -152,7 +154,14 @@ let main = new Vue({
                 description: "Project for the course System Development and Project, created with React",
                 image: "images/university.jpg",
                 language: "React.js, CSS"
-            }
+            },
+            {
+                name: "Vuenicorns",
+                github: "https://github.com/femosc2/vuenicorns",
+                description: "Workshop assignment for the Webservices Course",
+                image: "images/university.jpg",
+                language: "Vue.js"
+            },
         ],
         contactLinks: [{
                 name: "moraufelix",
@@ -257,7 +266,7 @@ let main = new Vue({
             });
         },
         showCurrentCourses() {
-            let today = new Date();
+            const today = new Date();
             const secondPeriod = new Date(2018, 10, 12);
             const thirdPeriod = new Date(2019, 0, 14);
             const fourthPeriod = new Date(2019, 3, 2);
@@ -267,9 +276,9 @@ let main = new Vue({
             if ((today.getTime() > secondPeriod.getTime()) && (today.getTime() < thirdPeriod.getTime())) {
                 this.currentCourses = "I'm currently taking the Web Services (7.5hp) and Information Design (7.5hp) courses! I'm also taking a distance course in JavaScript (7.5hp)!";
             } else if ((today.getTime() > thirdPeriod.getTime()) && (today.getTime() < fourthPeriod.getTime())) {
-                this.currentCourses = "I'm currently taking the Research Methods (15hp) and Multiplatform Web Applications (7.5hp) courses!";
+                this.currentCourses = "I'm currently taking the Research Methods (15hp) and Information Security  (7.5hp) courses!";
             } else if ((today.getTime() > fourthPeriod.getTime()) && (today.getTime() < summer.getTime())) {
-                this.currentCourses = "I'm currently taking the Research Methods (15hp) and Information Security (7.5hp) courses!";
+                this.currentCourses = "I'm currently taking the Research Methods (15hp) and Multiplatform Web Applications (7.5hp) courses!";
             } else if (today.getTime() > summer.getTime()) {
                 this.currentCourses = null;
             } else {
