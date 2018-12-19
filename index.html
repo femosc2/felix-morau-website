@@ -39,9 +39,17 @@
                 <div v-if="currentActive === 'about'">
                     <section class="introduction">
                         <p>{{ introduction1 }}</p>
-                        <p>{{ currentSong }}</p>
                         <p> {{ introduction2 }}</p>
                         <p> {{ currentCourses }}</p>
+                        <p> Currently Playing </p>
+                        <div id="currentSong">
+                            <img id="songImage" v-bind:src="currentSongImage">
+                            <ul id="songInfo">
+                                <li> {{ currentSongArtist }} </li>
+                                <li> {{ currentSongName }} </li>
+                                <li> {{ currentSongAlbum }} </li>
+                            </ul>
+                        </div>
                     </section>
                     <section class="mySkills">
                         <p>{{ skillText }}</p>

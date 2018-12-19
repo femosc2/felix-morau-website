@@ -26,7 +26,10 @@ let main = new Vue({
         currentH3: null,
         currentActive: "myProjects",
         mainContent: null,
-        currentSong: null,
+        currentSongArtist: null,
+        currentSongName: null,
+        currentSongImage: null,
+        currentSongAlbum: null,
         firstName: "Felix",
         lastName: "Morau",
         introduction1: "My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.",
@@ -99,6 +102,13 @@ let main = new Vue({
                 image: "images/javascript.jpg",
                 language: "Vue.js"
             },
+            {
+                name: "geniusify",
+                github: "https://github.com/femosc2/geniusify-quiz",
+                description: "Project for the Web Services course, frontend built with Vue and backend build with Java",
+                image: "images/javascript.jpg",
+                language: "Vue, CSS, Java"
+            },
         ],
         webProjects: [{
                 name: "Personal Website",
@@ -161,6 +171,13 @@ let main = new Vue({
                 description: "Workshop assignment for the Webservices Course",
                 image: "images/university.jpg",
                 language: "Vue.js"
+            },
+            {
+                name: "geniusify",
+                github: "https://github.com/femosc2/geniusify-quiz",
+                description: "Project for the Web Services course, frontend built with Vue and backend build with Java",
+                image: "images/university.jpg",
+                language: "Vue, CSS, Java"
             },
         ],
         contactLinks: [{
@@ -291,6 +308,21 @@ let main = new Vue({
                 this.currentCourses = "I'm currently taking the Object Oriented Programming (7.5hp) and Information Architecture 2 (7.5hp) courses!";
             }
         },
+        getLastPlayedSong() {
+            this.$http.get("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ozonesc&api_key=569cc53306c0449d57809a3aca1aeb09&format=json&limit=1")
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    this.currentSongArtist = data.recenttracks.track[0].artist["#text"];
+                    this.currentSongName = data.recenttracks.track[0].name;
+                    this.currentSongImage = data.recenttracks.track[0].image[1]["#text"];
+                    this.currentSongAlbum = data.recenttracks.track[0].album["#text"]
+                })
+        }
+        },
+        created() {
+            this.getLastPlayedSong();
         }
 
     },
