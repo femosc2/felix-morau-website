@@ -33,6 +33,7 @@ let main = new Vue({
         currentSongImage: null,
         currentSongAlbum: null,
         firstName: "Felix",
+        latestTweet: null,
         lastName: "Morau",
         introduction1: "My name is Felix Morau and I'm an 22 year old information architecture student at Malmö University.",
         introduction2: "I made this website as a way to track my programming journey through university and beyond! Make sure to check out my 'My Projects' to see what I've done and what I'm currently working on!",
@@ -321,13 +322,12 @@ let main = new Vue({
                     this.currentSongImage = data.recenttracks.track[0].image[1]["#text"];
                     this.currentSongAlbum = data.recenttracks.track[0].album["#text"]
                 })
-        }
         },
+    },
         created() {
             this.getLastPlayedSong();
+            this.showCurrentCourses();
         }
 
     },
 );
-
-main.showCurrentCourses();
