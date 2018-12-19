@@ -14,12 +14,12 @@
 </head>
 
 <body onload="siteLoader()">
-    <div id="loader">
+    <!-- <div id="loader">
         <h1 class="firstName">{{ firstName }}</h1>
         <img id="logo" src="images/logo.png" alt="Logo">
         <h1 class="lastName">{{ lastName }}</h1>
         <div id="splashBlur"></div>
-    </div>
+    </div> -->
     <div id="app" class="fadeIn">
         <canvas id="canvas"></canvas>
         <nav class="stickyMenu">
@@ -41,7 +41,7 @@
                         <p>{{ introduction1 }}</p>
                         <p> {{ introduction2 }}</p>
                         <p> {{ currentCourses }}</p>
-                        <p> Currently Playing </p>
+                        <p id="songHeader"> Currently Playing </p>
                         <div id="currentSong">
                             <img id="songImage" v-bind:src="currentSongImage">
                             <ul id="songInfo">

@@ -741,5 +741,9 @@ a:hover {
         height: 1000px;
     }
 
+    #currentSong, #songHeader {
+        display: none;
+    }
+
     
 }

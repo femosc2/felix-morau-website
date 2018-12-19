@@ -1,22 +1,24 @@
-var site;
+// var site;
 
 function siteLoader() {
-    site = setTimeout(showPage, 2000);
-}
-
-function showPage() {
-    document.getElementById("loader").style.display = "none";
+//     site = setTimeout(showPage, 2000);
+    console.log("lol")
     document.getElementById("app").style.display = "block";
 }
 
+// function showPage() {
+//     document.getElementById("loader").style.display = "none";
+//     document.getElementById("app").style.display = "block";
+// }
 
-let loader = new Vue({
-    el: "#loader",
-    data: {
-        firstName: "Felix",
-        lastName: "Morau",
-    }
-});
+
+// let loader = new Vue({
+//     el: "#loader",
+//     data: {
+//         firstName: "Felix",
+//         lastName: "Morau",
+//     }
+// });
 
 
 let main = new Vue({
