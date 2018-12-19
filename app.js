@@ -221,10 +221,16 @@ let main = new Vue({
                 codeName: "myProjects"
             },
             {
+                name: "Skills",
+                cssName: "navItem skills",
+                codeName: "skills"
+            },
+            {
                 name: "Contact",
                 cssName: "navItem contact",
                 codeName: "contact"
             }
+            
         ],
         mySkills: [{
                 fa: "fab fa-python skills",

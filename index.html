@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -52,7 +53,7 @@
             </transition>
             <transition name="fade">
                 <section class="mainContent" v-if="currentActive === 'myProjects'">
-                    <h3 class="projectH3JavaScript">JavaScript</h3>
+                    <h3 class="projectH3JavaScript"></h3>
                     <div class="projectCards">
                         <br>
                         <ul class="projectList" v-for="project in javaScriptProjects">
@@ -74,7 +75,7 @@
                             </li>
                         </ul>
                     </div>
-                    <h3 class="projectH3Web">Web Design</h3>
+                    <h3 class="projectH3Web"></h3>
                     <div class="projectCards">
                         <ul class="projectList" v-for="project in webProjects">
                             <li>
@@ -95,7 +96,7 @@
                             </li>
                         </ul>
                     </div>
-                    <h3 class="projectH3Python">Python</h3>
+                    <h3 class="projectH3Python"></h3>
                     <div class="projectCards">
                         <ul class="projectList" v-for="project in pythonProjects">
                             <li>
@@ -116,7 +117,7 @@
                             </li>
                         </ul>
                     </div>
-                    <h3 class="projectH3Uni">University</h3>
+                    <h3 class="projectH3Uni"></h3>
                     <div class="projectCards">
                         <ul class="projectList" v-for="project in universityProjects">
                             <li>
@@ -137,6 +138,11 @@
                             </li>
                         </ul>
                     </div>
+                </section>
+            </transition>
+            <transition name="fade">
+                <section class="mainContent" v-if="currentActive === 'skills'">
+                    <p>Hej</p>
                 </section>
             </transition>
             <transition name="fade">
