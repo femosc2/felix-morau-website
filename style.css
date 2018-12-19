@@ -26,16 +26,15 @@ ul {
 }
 
 .introduction {
-    width: 45%;
-    float: left;
-    margin-left: 5%;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .mySkills {
-    width: 45%;
-    float: right;
-    text-align: right;
-    margin-right: 5%;
+    width: 100%;
+    text-align: center;
 }
 
 .skills {
@@ -79,10 +78,11 @@ p {
 #currentSong {
     display: flex;
     background-color: rgba(255, 255, 255, 0.5);
-    width: 35%;
+    width: 25%;
     justify-content: center;
     padding: 15px;
-    margin-bottom: 15px;
+    align-content: center;
+    margin: 0 auto;
 }
 
 #songImage {
@@ -325,6 +325,7 @@ body {
     width: 100%;
     text-align: center;
     color: #fff;
+    margin: 0 auto;
 }
 
 .mainH3 {

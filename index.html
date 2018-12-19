@@ -51,12 +51,6 @@
                             </ul>
                         </div>
                     </section>
-                    <section class="mySkills">
-                        <p>{{ skillText }}</p>
-                        <ul id="skillsList" v-for="skill in mySkills">
-                            <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }"></i>
-                        </ul>
-                    </section>
                 </div>
             </transition>
             <transition name="fade">
@@ -150,7 +144,12 @@
             </transition>
             <transition name="fade">
                 <section class="mainContent" v-if="currentActive === 'skills'">
-                    <p>Hej</p>
+                    <section class="mySkills">
+                        <p>{{ skillText }}</p>
+                        <ul id="skillsList" v-for="skill in mySkills">
+                            <i :class="skill.fa" :style="{ 'font-size': skill.fontsize + 'px' }"></i>
+                        </ul>
+                    </section>
                 </section>
             </transition>
             <transition name="fade">
@@ -172,7 +171,7 @@
     </div>
     <script src="app.js"></script>
     <script src="snow.js"></script>
-    
+
 </body>
 
 </html>
