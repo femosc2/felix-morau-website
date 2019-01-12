@@ -4,6 +4,7 @@
     <nav-bar />
     <about-section />
     <skills />
+    <projects />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import NavBar from './components/Nav/Nav.vue'
 import AboutSection from './components/About/AboutSection.vue'
 import BigHeader from "./components/Header/Header.vue"
 import Skills from "./components/Skills/Skills.vue"
+import Projects from "./components/Projects/Projects.vue"
 
 export default {
   name: 'app',
@@ -19,7 +21,8 @@ export default {
     NavBar,
     AboutSection,
     BigHeader,
-    Skills
+    Skills,
+    Projects
   }
 }
 </script>

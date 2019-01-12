@@ -16,11 +16,11 @@ export default {
           active: true
         },
         {
-          menuName: "Projects",
+          menuName: "Skills",
           active: false
         },
         {
-          menuName: "Skills",
+          menuName: "Projects",
           active: false
         },
         {

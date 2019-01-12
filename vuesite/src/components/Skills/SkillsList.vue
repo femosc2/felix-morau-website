@@ -5,27 +5,27 @@
             <div class="innerDiv">
             <h3>Programming</h3>
             <div class="skillDiv" v-for="(skill, index) in programmingSkills" :key=index>
-            <p> {{ skill.skillName }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
             <div class="skillBar">
                 <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
             </div>
-            <p> {{ skill.description }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
         </div>
         <h3>Programs</h3>
         <div class="skillDiv" v-for="(skill, index) in applicationSkills" :key=index>
-            <p> {{ skill.skillName }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
             <div class="skillBar">
                 <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
             </div>
-            <p> {{ skill.description }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
         </div>
         <h3>Concepts</h3>
         <div class="skillDiv" v-for="(skill, index) in conceptSkills" :key=index>
-            <p> {{ skill.skillName }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
             <div class="skillBar">
                 <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
             </div>
-            <p> {{ skill.description }}</p>
+            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
         </div>
         </div>
         </section>
@@ -37,7 +37,7 @@ export default {
   data: function() {
     return {};
   },
-  props: ["programmingSkills", "applicationSkills", "conceptSkills"]
+  props: ["programmingSkills", "applicationSkills", "conceptSkills"],
 };
 </script>
 
@@ -48,12 +48,17 @@ export default {
   max-width: 50%;
   margin: 0 auto;
   border-radius: 35px;
+  transition: 1s;
 }
 .skillBar > .skill {
   z-index: 1000;
   background-color: white;
   height: 10px;
   border-radius: 35px;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+transition: 1s;
 }
 section {
   -webkit-clip-path: polygon(100% 12%, 0 0, 0 75%, 100% 100%);
@@ -83,8 +88,8 @@ section {
   -webkit-clip-path: polygon(100% 0, 0 12%, 0 100%, 100% 75%);
   clip-path: polygon(100% 0, 0 12%, 0 100%, 100% 75%);
   min-height: 200px;
-  padding-top: 300px;
-  padding-bottom: 50px;
+  padding-top: 200px;
+  padding-bottom: 600px;
   height: 1600px;
   width: 100%;
 }

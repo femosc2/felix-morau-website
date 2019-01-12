@@ -42,8 +42,6 @@ p {
     margin: 0 auto;
     margin-top: 2%;
     font-size: 30px;
-  padding-top: 150px;
-  padding-bottom: 150px;
   color: white;
   text-align: center;
 }
@@ -55,6 +53,8 @@ clip-path: polygon(100% 0, 0 25%, 0 100%, 100% 75%);
 min-height: 200px;
 height: 600px;
 width: 100%;
+padding-top: 150px;
+
 }
 h2 {
     margin: 0;
