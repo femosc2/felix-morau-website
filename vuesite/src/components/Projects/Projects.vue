@@ -1,12 +1,11 @@
 <template>
-<div class="projects">
+<div>
     <projects-list :projects="projects" />
 </div>
 </template>
 
 <script>
 const axios = require("axios")
-const _ = require("lodash")
 
 import ProjectsList from "./ProjectsList.vue"
 

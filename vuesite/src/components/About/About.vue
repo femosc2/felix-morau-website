@@ -1,5 +1,6 @@
 <template>
-<div class="about">
+<div>
+    <a class="about"></a>
     <about-section />
 </div>
 </template>

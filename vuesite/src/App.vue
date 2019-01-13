@@ -5,6 +5,7 @@
     <about />
     <skills />
     <projects />
+    <contact />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import About from './components/About/About.vue'
 import BigHeader from "./components/Header/Header.vue"
 import Skills from "./components/Skills/Skills.vue"
 import Projects from "./components/Projects/Projects.vue"
+import Contact from "./components/Contact/Contact.vue"
 
 export default {
   name: 'app',
@@ -22,7 +24,8 @@ export default {
     About,
     BigHeader,
     Skills,
-    Projects
+    Projects,
+    Contact
   },
   methods: {
     scrollTo(element) {
@@ -43,5 +46,15 @@ export default {
   color: #2c3e50;
   padding: 0;
   margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .projectCard {
+    width: 100%;
+    height: 20%;
+  }
+  h2 {
+  font-size: 75px !important;
+}
 }
 </style>

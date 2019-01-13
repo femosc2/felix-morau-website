@@ -4,6 +4,7 @@
         <section>
             <div class="innerDiv">
             <h3>Programming</h3>
+            <a class="skills"></a>
             <div class="skillDiv" v-for="(skill, index) in programmingSkills" :key=index>
             <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
             <div class="skillBar">
@@ -62,8 +63,8 @@ transition: 1s;
 }
 section {
   /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
-  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
-  background-image: url("https://images.alphacoders.com/964/thumb-1920-964422.jpg");
+  /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
+  background-image: url("https://i.imgur.com/klUhiki.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -71,8 +72,13 @@ section {
 }
 .outerDiv {
   background: #009fff;
-  background: -webkit-linear-gradient(to bottom, #009fff, #6dff77);
-  background: linear-gradient(to bottom, #009fff, #6dff77);
+  background: -webkit-linear-gradient(to bottom, #009fff, #ec2F4B);
+  background: linear-gradient(to bottom, #009fff, #ec2F4B);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 .innerDiv {
   background: -webkit-linear-gradient(
@@ -85,16 +91,18 @@ section {
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.6)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
-  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
+  /* -webkit-clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
+  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
   min-height: 200px;
-  padding-top: 200px;
-  padding-bottom: 600px;
-  height: 1600px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  height: auto;
   width: 100%;
+  
 }
 h2 {
     margin: 0;
+    font-size: 100px;
 }
 </style>
 

@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
-    "vue": "^2.5.21"
+    "vue": "^2.5.21",
+    "vue-masonry": "^0.11.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

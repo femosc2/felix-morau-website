@@ -1,22 +1,20 @@
 <template>
   <div class="woo">
     <ul :class="[{navTop: scrolledPastHeader === true},
-        {red: currentScroll < 1800},
-        {blue: currentScroll > 1801},
-        {green: currentScroll > 4000},
+        {red: currentScroll < 1200},
+        {blue: currentScroll > 1201},
+        {green: currentScroll > 3000},
+        {yellow: currentScroll > 6000}
         ]">
         <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
         { active: activeSection === section.menuName },
-        {red: currentScroll < 1800},
-        {blue: currentScroll > 1801},
-        {green: currentScroll > 4000}
         ]"> <p> {{ section.menuName }} </p> </li>
         <div class="indicator" :class="[
-        {indicatorAbout: currentScroll < 1800},
-        {indicatorSkills: currentScroll > 1801},
-        {indicatorProjects: currentScroll > 4000},
+        {indicatorAbout: currentScroll < 1200},
+        {indicatorSkills: currentScroll > 1201},
+        {indicatorProjects: currentScroll > 3000},
         {indicatorContact: currentScroll > 6000},
-        ]" :style="{ 'left': currentScroll/100 + '%' }">
+        ]">
         </div>
     </ul>
   </div>
@@ -58,16 +56,16 @@ export default {
     handleScroll() {
       this.currentScroll = window.scrollY
       console.log(this.currentScroll)
-      if (this.currentScroll > 1000 && this.currentScroll < 1801) {
+      if (this.currentScroll > 500 && this.currentScroll < 1200) {
         this.scrolledPastHeader = true;
         this.activeSection = "about"
       } else if (this.currentScroll < 1000) {
         this.scrolledPastHeader = false;
-      } else if (this.currentScroll > 1801 && this.currentScroll < 3800) {
+      } else if (this.currentScroll > 1200 && this.currentScroll < 3500) {
         this.activeSection = "skills"
-      } else if (this.currentScroll > 4000 && this.currentScroll < 6000) {
+      } else if (this.currentScroll > 3500 && this.currentScroll < 6000) {
         this.activeSection = "projects"
-      } else if (this.currentScroll > 7000 && this.currentScroll < 8000) {
+      } else if (this.currentScroll > 6000 && this.currentScroll < 8000) {
         this.activeSection = "contact"
       }
     }
@@ -94,9 +92,6 @@ ul {
   margin: 0;
   transition: 1s;
   margin: 0 auto;
-  background: #ec2f4b;
-  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 li {
   align-items: center;
@@ -106,8 +101,6 @@ li {
   width: 25%;
   height: 50px;
   font-size: 20px;
-  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   display: inline-block;
   transition: 1s;
   }
@@ -120,10 +113,12 @@ li > p {
 .active {
   text-decoration-line:underline;
   transition: 1s;
+  background-color: rgba(255,255,255, 0.0);
+  opacity: 1;
 }
 
 li:not(.active) {
-  opacity: 0.5;
+  background-color: rgba(255,255,255, 0.0);
 }
 
 .navTop {
@@ -141,37 +136,48 @@ li:not(.active) {
 }
 
 .green {
-  background-color: #6dff77;
+  background-color: #0A949F;
+}
+
+.yellow {
+  background-color: #FDC01A;
 }
 
 .indicator  {
   background-color: black;
   height: 10px;
   top: 80%;
-  width: 10%;
+  width: 25%;
   position: absolute;
   border-radius: 20px;
+  float: left;
+  left: 0;
 }
 
-/* .indicatorAbout {
+.indicatorAbout {
   transform: translateX(0%);
   transition: 1s;
 }
-
 .indicatorSkills {
   transform: translateX(100%);
   transition: 1s;
 }
-
 .indicatorProjects {
   transform: translateX(200%);
   transition: 1s;
 }
-
 .indicatorContact {
-
   transform: translateX(300%);
   transition: 1s;
-} */
+}
+
+@media only screen and (max-width: 1000px) {
+  .indicator {
+    display: none;
+  }
+  .active {
+    background-color: rgba(255,255,255, 1);
+  }
+}
 
 </style>

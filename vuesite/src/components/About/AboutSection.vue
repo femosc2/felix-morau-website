@@ -21,8 +21,8 @@ export default {};
 <style scoped>
 div {
     background: #009FFF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to bottom, #ec2F4B, #009fff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ec2F4B, #009fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 p {
     width: 50%;
@@ -51,9 +51,9 @@ box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
 transition: 1s;
 }
 section {
-  -webkit-clip-path: polygon(100% 10%, 0 0, 0 90%, 100% 100%);
-  clip-path: polygon(0 10%, 100% 0%, 100% 75%, 0 100%);
-  background-image: url("https://images.alphacoders.com/964/thumb-1920-964422.jpg");
+  /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
+  /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
+  background-image: url("https://i.imgur.com/5He4smd.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,12 +61,12 @@ section {
 }
 .outerDiv {
   background: #009fff;
-  background: -webkit-linear-gradient(to bottom, #009fff, #6dff77);
-  background: linear-gradient(to bottom, #009fff, #6dff77);
+  background: -webkit-linear-gradient(to bottom, #009fff, #009fff);
+  background: linear-gradient(to bottom, #009fff, #009fff);
 }
 .innerDiv {
   background: -webkit-linear-gradient(
-    to bottom,
+    to top,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.6)
   ); /* Chrome 10-25, Safari 5.1-6 */
@@ -75,16 +75,18 @@ section {
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.6)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-clip-path: polygon(100% 0, 0 8%, 0 100%, 100% 75%);
-  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 85%);
+  /* -webkit-clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
+  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
   min-height: 200px;
-  padding-top: 200px;
-  padding-bottom: 50px;
-  height: 600px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  height: auto;
   width: 100%;
+  
 }
 h2 {
     margin: 0;
+    font-size: 100px;
 }
 
 </style>

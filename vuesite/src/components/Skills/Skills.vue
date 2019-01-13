@@ -1,5 +1,5 @@
 <template>
-    <div class="skills">
+    <div>
         <skills-list :programmingSkills="programmingSkills" :conceptSkills="conceptSkills" :applicationSkills="applicationSkills" />
     </div>
 </template>
