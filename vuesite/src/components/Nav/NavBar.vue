@@ -1,7 +1,13 @@
 <template>
-  <div>
-    <ul :class="{navTop: scrolledPastHeader === true}">
-        <li v-for="(section, index) in sections" :key=index @click="goToSection(index)" :class="{ active: activeSection === section.menuName }"> <p> {{ section.menuName }}</p> </li>
+  <div class="woo">
+    <ul :class="[{navTop: scrolledPastHeader === true},
+        {red: currentScroll < 1999},
+        {blue: currentScroll > 2000},
+        {green: currentScroll > 4000},
+        ]">
+        <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
+        { active: activeSection === section.menuName },
+        ]"> <p> {{ section.menuName }}</p> </li>
     </ul>
   </div>
 </template>
@@ -12,40 +18,41 @@ export default {
     return {
       sections: [
         {
-          menuName: "About",
+          menuName: "about",
           active: true
         },
         {
-          menuName: "Skills",
+          menuName: "skills",
           active: false
         },
         {
-          menuName: "Projects",
+          menuName: "projects",
           active: false
         },
         {
-          menuName: "Contact",
+          menuName: "contact",
           active: false
         }
       ],
-      activeSection: "About",
-      scrolledPastHeader: false
+      activeSection: "about",
+      scrolledPastHeader: false,
+      currentScroll: 0
     }
   },
   methods: {
-    goToSection(index) {
+    goToSection(index, element) {
       this.sections[index].active = true;
       this.activeSection = this.sections[index].menuName
-      this.$emit("currentSection", this.sections[index].menuName);
+      this.$emit("navClickDetected", element)
     },
-    handleScroll () {
-      // this.currentScroll = window.scrollY > 10;
-      // if (this.currentScroll < 1) {
-      //   this.scrolledPastHeader = true;
-      //   console.log(this.scrolledPastHeader);
-      // } else if (this.currentScroll === 0) {
-      //   this.scrolledPastHeader = false;
-      // }
+    handleScroll() {
+      this.currentScroll = window.scrollY
+      if (this.currentScroll > 1000) {
+        this.scrolledPastHeader = true;
+        console.log(this.scrolledPastHeader);
+      } else if (this.currentScroll < 1000) {
+        this.scrolledPastHeader = false;
+      }
     }
   },
   created() {
@@ -54,12 +61,13 @@ export default {
   destroyed() {
       window.removeEventListener('scroll', this.handleScroll);
   }
-};
+}
 </script>
 
 <style scoped>
 ul {
   display: flex;
+  top: 0;
   list-style-type: none;
   text-align: center;
   justify-content: center;
@@ -69,7 +77,9 @@ ul {
   margin: 0;
   transition: 1s;
   margin: 0 auto;
-  background: #ec2F4B
+  background: #ec2f4b;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 li {
   align-items: center;
@@ -86,19 +96,31 @@ li {
   background: grey;
 }
 li > p {
-    margin: 0;
-    margin-top: 0.6rem;
+  margin: 0;
+  margin-top: 0.6rem;
 }
 
 .active {
-    background-color: #ec2F4B;
-    color: white;
+  background-color: #ec2f4b;
+  color: white;
 }
 
 .navTop {
   position: fixed;
   top: 0;
   width: 100%;
-
+  z-index: 5000;
 }
+.red {
+  background-color: #ec2f4b;
+}
+
+.blue {
+  background-color: #009fff;
+}
+
+.green {
+  background-color: #6dff77;
+}
+
 </style>

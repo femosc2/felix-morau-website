@@ -1,7 +1,7 @@
 <template>
-    <div id="about">
+    <div>
+        <h2> ABOUT </h2>
         <section>
-            <h2>About</h2>
             <div class="innerDiv">
                 <p>
                     Hello!
@@ -19,19 +19,6 @@ export default {};
 </script>
 
 <style scoped>
-section {
-  /*background: #009FFF;
-        background: -webkit-linear-gradient(to bottom, #ec2F4B, #009FFF);
-        background: linear-gradient(to right, #ec2F4B, #009FFF);*/
-        width: 100%;
-  -webkit-clip-path: polygon(100% 25%, 0 0, 0 75%, 100% 100%);
-  clip-path: polygon(100% 25%, 0 0, 0 75%, 100% 100%);
-  background-image: url("https://images.alphacoders.com/964/thumb-1920-964422.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 div {
     background: #009FFF;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
@@ -45,16 +32,56 @@ p {
   color: white;
   text-align: center;
 }
+.skillBar {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 35px;
+  transition: 1s;
+}
+.skillBar > .skill {
+  z-index: 1000;
+  background-color: white;
+  height: 10px;
+  border-radius: 35px;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+transition: 1s;
+}
+section {
+  -webkit-clip-path: polygon(100% 10%, 0 0, 0 90%, 100% 100%);
+  clip-path: polygon(0 10%, 100% 0%, 100% 75%, 0 100%);
+  background-image: url("https://images.alphacoders.com/964/thumb-1920-964422.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.outerDiv {
+  background: #009fff;
+  background: -webkit-linear-gradient(to bottom, #009fff, #6dff77);
+  background: linear-gradient(to bottom, #009fff, #6dff77);
+}
 .innerDiv {
-    background: -webkit-linear-gradient(to bottom, rgba(0,0,0, 1), rgba(0,0,0, 0.6));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0, 1), rgba(0,0,0, 0.6)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
--webkit-clip-path: polygon(100% 0, 0 25%, 0 100%, 100% 75%);
-clip-path: polygon(100% 0, 0 25%, 0 100%, 100% 75%);
-min-height: 200px;
-height: 600px;
-width: 100%;
-padding-top: 150px;
-
+  background: -webkit-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-clip-path: polygon(100% 0, 0 8%, 0 100%, 100% 75%);
+  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 85%);
+  min-height: 200px;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  height: 600px;
+  width: 100%;
 }
 h2 {
     margin: 0;

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <big-header />
-    <nav-bar />
-    <about-section />
+    <nav-bar @navClickDetected="scrollTo" />
+    <about />
     <skills />
     <projects />
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import NavBar from './components/Nav/Nav.vue'
-import AboutSection from './components/About/AboutSection.vue'
+import About from './components/About/About.vue'
 import BigHeader from "./components/Header/Header.vue"
 import Skills from "./components/Skills/Skills.vue"
 import Projects from "./components/Projects/Projects.vue"
@@ -19,10 +19,17 @@ export default {
   name: 'app',
   components: {
     NavBar,
-    AboutSection,
+    About,
     BigHeader,
     Skills,
     Projects
+  },
+  methods: {
+    scrollTo(element) {
+      document.querySelector(element).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
   }
 }
 </script>

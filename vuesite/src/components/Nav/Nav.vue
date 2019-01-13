@@ -1,5 +1,7 @@
 <template>
-    <nav-bar />
+<div>
+    <nav-bar class="nav" @navClickDetected="navClickDetected" />
+</div>
 </template>
 
 <script>
@@ -8,6 +10,12 @@ export default {
     data: function() {
         return {
 
+        }
+    },
+    methods: {
+        navClickDetected(element) {
+            console.log(element)
+            this.$emit("navClickDetected", element)
         }
     },
     components: {

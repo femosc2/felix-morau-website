@@ -1,13 +1,15 @@
 <template>
-<div>
-    <ul>
-        <li v-for="(project, index) in projects" :key=index>{{ project.projectName }}</li>
-    </ul>
+<div class="projects">
+    <projects-list :projects="projects" />
 </div>
 </template>
 
 <script>
 const axios = require("axios")
+const _ = require("lodash")
+
+import ProjectsList from "./ProjectsList.vue"
+
 export default {
     data: function() {
         return {
@@ -37,7 +39,10 @@ export default {
     },
     created() {
         this.getProjects()
-    }
+    },
+components: {
+    ProjectsList
+}
 }
 </script>
 
