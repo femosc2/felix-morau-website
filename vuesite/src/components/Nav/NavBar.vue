@@ -63,15 +63,19 @@ export default {
         this.scrolledPastHeader = false;
       } else if (this.currentScroll > 1200 && this.currentScroll < 3500) {
         this.activeSection = "skills"
+        this.scrolledPastHeader = true;
       } else if (this.currentScroll > 3500 && this.currentScroll < 6000) {
         this.activeSection = "projects"
+        this.scrolledPastHeader = true;
       } else if (this.currentScroll > 6000 && this.currentScroll < 8000) {
         this.activeSection = "contact"
+        this.scrolledPastHeader = true;
       }
     }
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll()
   },
   destroyed() {
       window.removeEventListener('scroll', this.handleScroll);
@@ -103,6 +107,7 @@ li {
   font-size: 20px;
   display: inline-block;
   transition: 1s;
+  cursor: pointer;
   }
 li > p {
   margin: 0;

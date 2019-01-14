@@ -127,14 +127,19 @@ p {
 .projectCard:hover .overlay {
   opacity: 1;
   transition: 1s;
-  transform: translateY(-100%);
+  transform: translateY(-80%);
   margin: 0 auto;
 }
 
 .projectCard:hover .projectGithub, .projectCard:hover .projectLanguage, .projectCard:hover .projectName  {
   opacity: 0;
   transition: 1s;
-  transform: translateY(-100%);
+  transform: translateY(-80%);
+}
+
+.projectCard:hover {
+  background: black !important;
+  transition: 1s;
 }
 
 
