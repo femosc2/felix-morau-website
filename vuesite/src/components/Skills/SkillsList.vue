@@ -3,25 +3,8 @@
         <h2>Skills</h2>
         <section>
             <div class="innerDiv">
-            <h3>Programming</h3>
             <a class="skills"></a>
-            <div class="skillDiv" v-for="(skill, index) in programmingSkills" :key=index>
-            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
-            <div class="skillBar">
-                <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
-            </div>
-            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
-        </div>
-        <h3>Programs</h3>
-        <div class="skillDiv" v-for="(skill, index) in applicationSkills" :key=index>
-            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
-            <div class="skillBar">
-                <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
-            </div>
-            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
-        </div>
-        <h3>Concepts</h3>
-        <div class="skillDiv" v-for="(skill, index) in conceptSkills" :key=index>
+            <div class="skillDiv" v-for="(skill, index) in concatSkills" :key=index>
             <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
             <div class="skillBar">
                 <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
@@ -36,9 +19,17 @@
 <script>
 export default {
   data: function() {
-    return {};
+    return {
+      combinedSkills: []
+    };
   },
   props: ["programmingSkills", "applicationSkills", "conceptSkills"],
+  computed: {
+    concatSkills: function() {
+      this.combinedSkills = this.programmingSkills.concat(this.applicationSkills, this.conceptSkills)
+      return this.combinedSkills;
+    }
+  }
 };
 </script>
 
@@ -103,6 +94,10 @@ section {
 h2 {
     margin: 0;
     font-size: 7vw;
+}
+
+p {
+  font-size: 20px;
 }
 </style>
 

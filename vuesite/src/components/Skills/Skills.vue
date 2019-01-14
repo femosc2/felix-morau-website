@@ -27,7 +27,7 @@ export default {
                     skillName: "Vue",
                     familiarity: 75,
                     description: "Favorite framework for JavaScript. Able to build pretty much anything the framework allows.",
-                    color: "#2c3e50"
+                    color: "#4e8e7f"
                 },
                 {
                     skillName: "React",

@@ -7,6 +7,7 @@
                 <div v-masonry transition-duration="1s" item-selector=".projectCard">
                   <div v-masonry-tile class="item" v-for="(project, index) in orderedProjects" :key=index fit-width="true">
                     <div class="projectCard" :style="{ 'background-image': 'url(' + project.projectImage + ')' }" @click="goToPage(project.projectGithub)">
+                    <div class="innerDiv">
                     <img src=project.projectImage alt="">
                     <h3 class="projectName">{{ project.projectName }}</h3>
                         <p class="projectLanguage"> {{ project.projectLanguage }}</p>
@@ -14,6 +15,7 @@
                         <div class="overlay">
                           <div class="projectDescription">{{ project.projectDescription }}</div>
                         </div>
+                    </div>
                     </div>
                   </div>
                 </div> 
@@ -84,17 +86,18 @@ section {
 .innerDiv {
   background: -webkit-linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1)
   );
   min-height: 300px;
-  height: auto;
+  height: 100%;
   width: 100%;
+  overflow: hidden;
   /* padding-top: 150px;
   padding-bottom: 150px; */
 }
