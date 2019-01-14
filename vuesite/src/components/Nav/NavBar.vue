@@ -107,7 +107,7 @@ li {
   background-color: red;
   width: 25%;
   height: 50px;
-  font-size: 20px;
+  font-size: 25px;
   display: inline-block;
   transition: 1s;
   cursor: pointer;
@@ -115,7 +115,7 @@ li {
 li > p {
   margin: 0;
   margin-top: 0.6rem;
-  color: #000;
+  color: #2c3e50;
 }
 
 .active {
@@ -149,16 +149,15 @@ li:not(.active) {
 
 .yellow {
   background: #FDC01A !important;
-  color: black;
 }
 
 .indicator  {
-  background-color: black;
-  height: 10px;
-  top: 81%;
+  background-color: #2c3e50;
+  height: 5px;
+  top: 90%;
   width: 25%;
   position: absolute;
-  border-radius: 20px;
+  border-radius: 10px;
   float: left;
   left: 0;
 }
@@ -193,6 +192,9 @@ li:not(.active) {
   }
   .active {
     background-color: rgba(255,255,255, 1);
+  }
+  li {
+    font-size: 20px;
   }
 
 }

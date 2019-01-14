@@ -140,16 +140,12 @@ p {
 .projectCard:hover {
   color: #fff;
   transition: 1s;
-  -webkit-text-stroke-width: 0.35px;
-   -webkit-text-stroke-color: black;
 }
 
 .projectCard:not(:hover) {
     transition: 1s;
     filter: grayscale(100%);
     color: #fff;
-    -webkit-text-stroke-width: 0.35px;
-   -webkit-text-stroke-color: black;
 }
 
 
