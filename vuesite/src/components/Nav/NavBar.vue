@@ -1,19 +1,19 @@
 <template>
   <div class="woo">
     <ul :class="[{navTop: scrolledPastHeader === true},
-        {red: currentScroll < 1200},
-        {blue: currentScroll > 1201},
+        {red: currentScroll <= 1200 && currentScroll > 500},
+        {blue: currentScroll > 1200},
         {green: currentScroll > 3000},
-        {yellow: currentScroll > 6000}
+        {yellow: currentScroll > 4200}
         ]">
         <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
         { active: activeSection === section.menuName },
         ]"> <p> {{ section.menuName }} </p> </li>
         <div class="indicator" :class="[
-        {indicatorAbout: currentScroll < 1200},
-        {indicatorSkills: currentScroll > 1201},
+        {indicatorAbout: currentScroll <= 1200},
+        {indicatorSkills: currentScroll > 1200},
         {indicatorProjects: currentScroll > 3000},
-        {indicatorContact: currentScroll > 6000},
+        {indicatorContact: currentScroll > 4200},
         ]">
         </div>
     </ul>
@@ -26,19 +26,19 @@ export default {
     return {
       sections: [
         {
-          menuName: "about",
+          menuName: "About",
           active: true
         },
         {
-          menuName: "skills",
+          menuName: "Skills",
           active: false
         },
         {
-          menuName: "projects",
+          menuName: "Projects",
           active: false
         },
         {
-          menuName: "contact",
+          menuName: "Contact",
           active: false
         }
       ],
@@ -50,24 +50,26 @@ export default {
   methods: {
     goToSection(index, element) {
       this.sections[index].active = true;
+      let lowercaseElement = element.toLowerCase()
       this.activeSection = this.sections[index].menuName
-      this.$emit("navClickDetected", element)
+      this.$emit("navClickDetected", lowercaseElement)
     },
     handleScroll() {
       this.currentScroll = window.scrollY
       console.log(this.currentScroll)
-      if (this.currentScroll > 500 && this.currentScroll < 1200) {
+      if (this.currentScroll > 400 && this.currentScroll < 1100) {
         this.scrolledPastHeader = true;
         this.activeSection = "about"
-      } else if (this.currentScroll < 1000) {
+      } else if (this.currentScroll < 1100) {
         this.scrolledPastHeader = false;
-      } else if (this.currentScroll > 1200 && this.currentScroll < 3500) {
+        this.activeSection = "about"
+      } else if (this.currentScroll > 1101 && this.currentScroll < 3500) {
         this.activeSection = "skills"
         this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 3500 && this.currentScroll < 6000) {
+      } else if (this.currentScroll > 3500 && this.currentScroll < 4200) {
         this.activeSection = "projects"
         this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 6000 && this.currentScroll < 8000) {
+      } else if (this.currentScroll > 4290 && this.currentScroll < 8000) {
         this.activeSection = "contact"
         this.scrolledPastHeader = true;
       }
@@ -92,10 +94,11 @@ ul {
   justify-content: center;
   padding: 0;
   width: 100%;
-  background-color: blue;
+  background: #ec2F4B;
   margin: 0;
   transition: 1s;
   margin: 0 auto;
+  color: white;
 }
 li {
   align-items: center;
@@ -112,7 +115,7 @@ li {
 li > p {
   margin: 0;
   margin-top: 0.6rem;
-  color: black;
+  color: #000;
 }
 
 .active {
@@ -133,25 +136,26 @@ li:not(.active) {
   z-index: 5000;
 }
 .red {
-  background-color: #ec2f4b;
+  background: #F56B5E !important;
 }
 
 .blue {
-  background-color: #009fff;
+  background: #009fff !important;
 }
 
 .green {
-  background-color: #0A949F;
+  background: #ED5181 !important;
 }
 
 .yellow {
-  background-color: #FDC01A;
+  background: #FDC01A !important;
+  color: black;
 }
 
 .indicator  {
   background-color: black;
   height: 10px;
-  top: 80%;
+  top: 81%;
   width: 25%;
   position: absolute;
   border-radius: 20px;
@@ -163,17 +167,24 @@ li:not(.active) {
   transform: translateX(0%);
   transition: 1s;
 }
+
 .indicatorSkills {
   transform: translateX(100%);
   transition: 1s;
 }
+
 .indicatorProjects {
   transform: translateX(200%);
   transition: 1s;
 }
+
 .indicatorContact {
   transform: translateX(300%);
   transition: 1s;
+}
+
+::selection {
+  background-color: rgba(255,255,255, 0.0)
 }
 
 @media only screen and (max-width: 1000px) {
@@ -183,6 +194,7 @@ li:not(.active) {
   .active {
     background-color: rgba(255,255,255, 1);
   }
+
 }
 
 </style>

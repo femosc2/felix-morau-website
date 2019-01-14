@@ -17,7 +17,6 @@
                     </div>
                   </div>
                 </div> 
-
         </div>
         </section>
     </div>
@@ -62,12 +61,12 @@ export default {
   background-size: cover;
   color: #0A949F;
   transition: 1s;
-  font-size: 25px;
+  font-size: 1.5vw;
 }
 section {
   /* -webkit-clip-path: polygon(100% 5%, 0 0, 0 95%, 100% 100%); */
   /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
-  background-image: url("https://i.imgur.com/f5KfkLe.jpg");
+  background-image: url("https://i.imgur.com/5ypPRGu.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,8 +74,8 @@ section {
 }
 .outerDiv {
   background: #0A949F;
-  background: -webkit-linear-gradient(to bottom, #0A949F, #009fff);
-  background: linear-gradient(to bottom, #0A949F,#009fff);
+  background: -webkit-linear-gradient(to bottom, #ED5181, #009fff);
+  background: linear-gradient(to bottom, #ED5181,#009fff);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -92,18 +91,16 @@ section {
     to top,
     rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0.6)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* -webkit-clip-path: polygon(100% 0, 0 8%, 0 100%, 100% 85%);
-  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
+  );
   min-height: 300px;
-  padding-top: 150px;
-  padding-bottom: 150px;
   height: auto;
   width: 100%;
+  /* padding-top: 150px;
+  padding-bottom: 150px; */
 }
 h2 {
   margin: 0;
-  font-size: 100px;
+  font-size: 7vw;
 }
 
 h3 {
@@ -138,8 +135,18 @@ p {
 }
 
 .projectCard:hover {
-  background: black !important;
+  color: #fff;
   transition: 1s;
+  -webkit-text-stroke-width: 0.35px;
+   -webkit-text-stroke-color: black;
+}
+
+.projectCard:not(:hover) {
+    transition: 1s;
+    filter: grayscale(100%);
+    color: #fff;
+    -webkit-text-stroke-width: 0.35px;
+   -webkit-text-stroke-color: black;
 }
 
 
@@ -147,6 +154,7 @@ p {
 @media only screen and (max-width: 1000px) {
   .projectCard {
     width: 50%;
+    font-size: 5vw;
   }
   .innerDiv {
     padding-top: 0;

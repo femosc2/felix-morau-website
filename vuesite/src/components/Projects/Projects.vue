@@ -24,7 +24,6 @@ export default {
                     resultArray.push(response[key]);
                 }
                 this.projects = resultArray[0]
-                console.log(resultArray[0])
             })
         },
         newProject() {

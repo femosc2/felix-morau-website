@@ -72,8 +72,8 @@ section {
 }
 .outerDiv {
   background: #009fff;
-  background: -webkit-linear-gradient(to bottom, #009fff, #ec2F4B);
-  background: linear-gradient(to bottom, #009fff, #ec2F4B);
+  background: -webkit-linear-gradient(to bottom, #009fff, #F56B5E);
+  background: linear-gradient(to bottom, #009fff, #F56B5E);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -102,7 +102,7 @@ section {
 }
 h2 {
     margin: 0;
-    font-size: 100px;
+    font-size: 7vw;
 }
 </style>
 

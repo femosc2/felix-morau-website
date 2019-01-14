@@ -6,7 +6,7 @@
               <a class="contact"></a>
                 <ul class="contactList" v-for="(contact, index) in contacts" :key=index>
                         <a class="contactLink" v-bind:href="contact.link">
-                            <p><i class="contactIcon" :class="contact.fa" style="font-size: 100px;"></i></p>
+                            <p><i class="contactIcon" :class="contact.fa"></i></p>
                             <p class="contactText">{{ contact.name }}</p>
                         </a>
                     </ul>
@@ -16,14 +16,12 @@
 </template>
 
 <script>
-
 export default {
   data: function() {
-    return {
-    };
+    return {};
   },
   methods: {},
-  props: ["contacts"],
+  props: ["contacts"]
 };
 </script>
 
@@ -38,9 +36,9 @@ section {
   background-size: cover;
 }
 .outerDiv {
-  background: #FDC01A;
-  background: -webkit-linear-gradient(to bottom, #FDC01A, #0A949F);
-  background: linear-gradient(to bottom, #FDC01A, #0A949F);
+  background: #fdc01a;
+  background: -webkit-linear-gradient(to bottom, #fdc01a, #ED5181);
+  background: linear-gradient(to bottom, #fdc01a, #ED5181);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,50 +58,54 @@ section {
   /* -webkit-clip-path: polygon(100% 0, 0 8%, 0 100%, 100% 85%);
   clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
   min-height: 300px;
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 150px;
   height: auto;
   width: 100%;
 }
 h2 {
   margin: 0;
-  font-size: 100px;
+  font-size: 7vw;
 }
 
 .contactIcon {
-    color: #FDC01A;
-    transition: 1s;
+  color: #fdc01a;
+  transition: 1s;
+  font-size: 7vw;
 }
 
-.contactLink:visited, .contactLink {
-    color: #FDC01A;
-    width: 20%;
-    transition: 1s;
-    filter: hue-rotate(180deg);
+.contactLink:visited,
+.contactLink {
+  color: #fdc01a;
+  width: 20%;
+  transition: 1s;
+  filter: hue-rotate(180deg);
 }
 
 .contactIcon:hover {
-    transform: rotate(360deg);
-    filter: hue-rotate(180deg);
-    transition: 1s;
+  transform: rotate(360deg);
+  filter: hue-rotate(180deg);
+  transition: 1s;
 }
 
 .contactLink:hover {
-    filter: hue-rotate(180deg);
-    transition: 1s;
+  filter: hue-rotate(180deg);
+  transition: 1s;
 }
 ul {
-    padding: 15px;
-    display: inline-block;
+  padding: 15px;
 }
 p {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 1000px) {
-    ul {
-        display: block;
-        padding: 0;
-    }
+  ul {
+    display: block;
+    padding: 0;
+  }
+  .contactIcon {
+      font-size: 15vw;
+  }
 }
 </style>

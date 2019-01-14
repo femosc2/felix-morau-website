@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2> ABOUT </h2>
+        <h2> About </h2>
         <section>
             <div class="innerDiv">
                 <p>
@@ -21,8 +21,8 @@ export default {};
 <style scoped>
 div {
     background: #009FFF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #ec2F4B, #009fff);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #ec2F4B, #009fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to top, #F56B5E, #ec2F4B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #F56B5E, #ec2F4B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 p {
     width: 50%;
@@ -53,7 +53,7 @@ transition: 1s;
 section {
   /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
   /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
-  background-image: url("https://i.imgur.com/5He4smd.jpg");
+  background-image: url("https://i.imgur.com/ZlJAr2k.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,7 +86,14 @@ section {
 }
 h2 {
     margin: 0;
-    font-size: 100px;
+    font-size: 7vw;
+}
+
+@media only screen and (max-width: 1000px) {
+    p {
+        width: 100%;
+    }
+
 }
 
 
