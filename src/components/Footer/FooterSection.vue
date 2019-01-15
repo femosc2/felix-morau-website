@@ -24,6 +24,7 @@ export default {
     background-color: #FDC01A;
     bottom: 0;
     margin: 0;
+    
 }
 p {
     margin: 0;

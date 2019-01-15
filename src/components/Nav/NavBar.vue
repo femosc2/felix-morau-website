@@ -93,11 +93,15 @@ ul {
   justify-content: center;
   padding: 0;
   width: 100%;
-  background: #ec2F4B;
+  background: #F56B5E;
   margin: 0;
   transition: 1s;
   margin: 0;
   color: white;
+  webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
+box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
+  
 }
 li {
   align-items: center;

@@ -55,7 +55,7 @@ transition: 1s;
 section {
   /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
   /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
-  background-image: url("https://i.imgur.com/klUhiki.jpg");
+  background-image: url("https://i.imgur.com/FmICIUg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

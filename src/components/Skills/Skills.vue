@@ -85,13 +85,13 @@ export default {
                     skillName: "Information Architecture",
                     familiarity: 60,
                     description: "Completed 30HP of Information Architecture at Malmö University.",
-                    color: "#7e0699",
+                    color: "#d20aff",
                 },
                 {
                     skillName: "UX-design",
                     familiarity: 50,
                     description: "Decent knowledge of proper UX-Design",
-                    color: "#03440c",
+                    color: "#0ad626",
                 },
                 {
                     skillName: "Interaction Design",
