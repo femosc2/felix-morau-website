@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     goToPage(link) {
-      window.location.href = link 
+      window.open(link, '_blank'); 
     }
   },
   props: ["projects"],
