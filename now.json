@@ -9,6 +9,6 @@
       {"src": "/dist/^/js/(.*)", "dest": "/js/$1"},
       {"src": "/dist/^/css/(.*)", "dest": "/css/$1"},
       {"src": "/dist/^/img/(.*)", "dest": "/img/$1"},
-      {"src": "/dist/.*", "dest": "/index.html"}
+      {"src": ".*", "dest": "/index.html"}
     ]
 }

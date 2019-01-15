@@ -100,6 +100,7 @@ section {
   overflow: hidden;
   /* padding-top: 150px;
   padding-bottom: 150px; */
+  
 }
 h2 {
   margin: 0;
@@ -134,7 +135,7 @@ p {
 .projectCard:hover .projectGithub, .projectCard:hover .projectLanguage, .projectCard:hover .projectName  {
   opacity: 0;
   transition: 1s;
-  transform: translateY(-80%);
+  transform: translateY(-80%) !important;
 }
 
 .projectCard:hover {
@@ -146,6 +147,7 @@ p {
     transition: 1s;
     filter: grayscale(100%);
     color: #fff;
+    opacity: 1;
 }
 
 
