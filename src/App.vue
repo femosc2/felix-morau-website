@@ -6,6 +6,7 @@
     <skills />
     <projects />
     <contact />
+    <small-footer />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import BigHeader from "./components/Header/Header.vue";
 import Skills from "./components/Skills/Skills.vue";
 import Projects from "./components/Projects/Projects.vue";
 import Contact from "./components/Contact/Contact.vue";
+import SmallFooter from "./components/Footer/Footer.vue"
 
 const axios = require("axios");
 
@@ -30,7 +32,8 @@ export default {
     BigHeader,
     Skills,
     Projects,
-    Contact
+    Contact,
+    SmallFooter
   },
   methods: {
     scrollTo(element) {
@@ -38,33 +41,33 @@ export default {
         behavior: "smooth"
       });
     },
-    logIP() {
-      let today = new Date();
-      axios.get("https://api.ipify.org").then(response => {
-        const resultArray = [];
-        for (let key in response) {
-          resultArray.push(response[key]);
-        }
-        let ip = resultArray[0];
-        let stringIp = ip.split(".")
-        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
-        console.log(firebaseIp)
-        let firebaseInt = parseInt(firebaseIp, 10)
-        let loggedIp = {
-        "ip": ip,
-        "time": today
-      }
-        setTimeout(() => {
-        axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
-        const postArray = [];
-        for (let key in response) {
-          resultArray.push(response[key]);
-        }
-        console.log(postArray)
-      })
-      }, 5*1000)
-      });
-  },
+  //   logIP() {
+  //     let today = new Date();
+  //     axios.get("https://api.ipify.org").then(response => {
+  //       const resultArray = [];
+  //       for (let key in response) {
+  //         resultArray.push(response[key]);
+  //       }
+  //       let ip = resultArray[0];
+  //       let stringIp = ip.split(".")
+  //       let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
+  //       console.log(firebaseIp)
+  //       let firebaseInt = parseInt(firebaseIp, 10)
+  //       let loggedIp = {
+  //       "ip": ip,
+  //       "time": today
+  //     }
+  //       setTimeout(() => {
+  //       axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
+  //       const postArray = [];
+  //       for (let key in response) {
+  //         resultArray.push(response[key]);
+  //       }
+  //       console.log(postArray)
+  //     })
+  //     }, 5*1000)
+  //     });
+  // },
 },
 created() {
     this.logIP();
@@ -81,6 +84,16 @@ created() {
   color: #2c3e50;
   padding: 0;
   margin: 0 !important;
+  animation: blurIn 1.5s 1;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(15px);
+  }
+  100% {
+    filter: blur(0px);
+  }
 }
 
 @media only screen and (max-width: 1000px) {

@@ -99,5 +99,11 @@ h2 {
 p {
   font-size: 20px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .skillBar {
+    max-width: 100%;
+  }
+}
 </style>
 

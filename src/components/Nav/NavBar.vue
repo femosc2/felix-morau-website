@@ -56,7 +56,6 @@ export default {
     },
     handleScroll() {
       this.currentScroll = window.scrollY
-      console.log(this.currentScroll)
       if (this.currentScroll > 400 && this.currentScroll < 1100) {
         this.scrolledPastHeader = true;
         this.activeSection = "about"

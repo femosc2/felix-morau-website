@@ -153,11 +153,14 @@ p {
 @media only screen and (max-width: 1000px) {
   .projectCard {
     width: 50%;
-    font-size: 5vw;
+    font-size: 15px;
   }
   .innerDiv {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .projectName {
+    font-size: 20px;
   }
 }
 </style>
