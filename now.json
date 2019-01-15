@@ -1,14 +1,14 @@
 {
     "version": 2,
-    "alias": "felixmorau.se",
+    "alias": "www.felixmorau.se",
     "name": "vue",
     "builds": [
         { "src": "package.json", "use": "@now/static-build" }
     ],
     "routes": [
-      {"src": "^/js/(.*)", "dest": "/js/$1"},
-      {"src": "^/css/(.*)", "dest": "/css/$1"},
-      {"src": "^/img/(.*)", "dest": "/img/$1"},
-      {"src": ".*", "dest": "/index.html"}
+      {"src": "/dist/^/js/(.*)", "dest": "/js/$1"},
+      {"src": "/dist/^/css/(.*)", "dest": "/css/$1"},
+      {"src": "/dist/^/img/(.*)", "dest": "/img/$1"},
+      {"src": "/dist/.*", "dest": "/index.html"}
     ]
 }
