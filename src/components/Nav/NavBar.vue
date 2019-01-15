@@ -75,7 +75,7 @@ export default {
     }
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll); // Listens to the users mousescroll
     this.handleScroll()
   },
   destroyed() {
