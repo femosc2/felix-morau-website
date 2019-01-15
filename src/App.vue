@@ -41,33 +41,33 @@ export default {
         behavior: "smooth"
       });
     },
-  //   logIP() {
-  //     let today = new Date();
-  //     axios.get("https://api.ipify.org").then(response => {
-  //       const resultArray = [];
-  //       for (let key in response) {
-  //         resultArray.push(response[key]);
-  //       }
-  //       let ip = resultArray[0];
-  //       let stringIp = ip.split(".")
-  //       let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
-  //       console.log(firebaseIp)
-  //       let firebaseInt = parseInt(firebaseIp, 10)
-  //       let loggedIp = {
-  //       "ip": ip,
-  //       "time": today
-  //     }
-  //       setTimeout(() => {
-  //       axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
-  //       const postArray = [];
-  //       for (let key in response) {
-  //         resultArray.push(response[key]);
-  //       }
-  //       console.log(postArray)
-  //     })
-  //     }, 5*1000)
-  //     });
-  // },
+    logIP() {
+      let today = new Date();
+      axios.get("https://api.ipify.org").then(response => {
+        const resultArray = [];
+        for (let key in response) {
+          resultArray.push(response[key]);
+        }
+        let ip = resultArray[0];
+        let stringIp = ip.split(".")
+        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
+        console.log(firebaseIp)
+        let firebaseInt = parseInt(firebaseIp, 10)
+        let loggedIp = {
+        "ip": ip,
+        "time": today
+      }
+        setTimeout(() => {
+        axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
+        const postArray = [];
+        for (let key in response) {
+          resultArray.push(response[key]);
+        }
+        console.log(postArray)
+      })
+      }, 5*1000)
+      });
+  },
 },
 created() {
     this.logIP();
