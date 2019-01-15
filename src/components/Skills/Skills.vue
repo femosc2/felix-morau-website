@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SkillsList from "./SkillsList.vue"
+import SkillsList from "./SkillsList.vue" // imports the skill
 
 export default {
     data: function() {
