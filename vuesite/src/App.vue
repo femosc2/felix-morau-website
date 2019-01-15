@@ -80,7 +80,7 @@ created() {
   text-align: center;
   color: #2c3e50;
   padding: 0;
-  margin: 0;
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 1000px) {

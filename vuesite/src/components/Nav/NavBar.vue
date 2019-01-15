@@ -97,7 +97,7 @@ ul {
   background: #ec2F4B;
   margin: 0;
   transition: 1s;
-  margin: 0 auto;
+  margin: 0;
   color: white;
 }
 li {
