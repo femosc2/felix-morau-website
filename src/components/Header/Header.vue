@@ -6,7 +6,7 @@
 
 <script>
 import HeaderSection from "./HeaderSection.vue";
-import Config from "../../../config.js"
+import Config from "../../config.js"
 
 const axios = require("axios")
 
