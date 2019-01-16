@@ -3,7 +3,7 @@
     <ul :class="[{navTop: scrolledPastHeader === true},
         {red: currentScroll <= 1200 && currentScroll > 500},
         {blue: currentScroll > 1200},
-        {green: currentScroll > 3000},
+        {green: currentScroll > 3500},
         {yellow: currentScroll > 4200}
         ]">
         <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
@@ -12,7 +12,7 @@
         <div class="indicator" :class="[
         {indicatorAbout: currentScroll <= 1200},
         {indicatorSkills: currentScroll > 1200},
-        {indicatorProjects: currentScroll > 3000},
+        {indicatorProjects: currentScroll > 3500},
         {indicatorContact: currentScroll > 4200},
         ]">
         </div>
@@ -56,13 +56,13 @@ export default {
     },
     handleScroll() {
       this.currentScroll = window.scrollY
-      if (this.currentScroll > 400 && this.currentScroll < 1100) {
+      if (this.currentScroll > 600 && this.currentScroll < 1200) {
         this.scrolledPastHeader = true;
         this.activeSection = "about"
-      } else if (this.currentScroll < 1100) {
+      } else if (this.currentScroll <= 1200) {
         this.scrolledPastHeader = false;
         this.activeSection = "about"
-      } else if (this.currentScroll > 1101 && this.currentScroll < 3500) {
+      } else if (this.currentScroll > 1200 && this.currentScroll < 3500) {
         this.activeSection = "skills"
         this.scrolledPastHeader = true;
       } else if (this.currentScroll > 3500 && this.currentScroll < 4200) {

@@ -90,20 +90,26 @@ export default {
                 {
                     skillName: "UX-design",
                     familiarity: 50,
-                    description: "Decent knowledge of proper UX-Design",
+                    description: "Decent familiarity of proper UX-Design",
                     color: "#0ad626",
                 },
                 {
                     skillName: "Interaction Design",
                     familiarity: 25,
-                    description: "Some knowledge of Interaction Design, completed a 7.5hp course at Malmö University",
+                    description: "Some familiarity with Interaction Design, completed a 7.5hp course at Malmö University",
                     color: "#ffadda",
                 },
                 {
                     skillName: "UML",
                     familiarity: 75,
-                    description: "Good familiartiy of UML, passed with distiction on the exam.",
+                    description: "Good familiarity with UML, passed with distiction on the exam.",
                     color: "#ed0219",
+                },
+                {
+                    skillName: "Information Design",
+                    familiarity: 35,
+                    description: "Some familiarity with Information Design, completed a 7.5hp course at Malmö University",
+                    color: "#ffff00",
                 },
             ]
         }

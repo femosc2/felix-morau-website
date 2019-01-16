@@ -1,10 +1,14 @@
 <template>
 <div class="outerDiv">
-<div class="innerDiv">
-        <h1>Felix Morau</h1>
-        <h2>{{ currentTime }}</h2>
-        <h3>{{ currentDay }}</h3>
-        <h3> {{ currentDate }} {{ currentMonth }} {{ currentYear }}</h3>
+    <div class="innerDiv">
+        <div class="textBackground">
+            <h1>Felix Morau</h1>
+            <h2>{{ currentTime }}</h2>
+            <h3>{{ currentDay }}</h3>
+            <h3> {{ currentDate }} {{ currentMonth }} {{ currentYear }}</h3>
+            <h4> {{ userCity }} {{ userCountry }}</h4>
+            <h4>{{ userWeather }} {{ userTemp }}&#8451;</h4>
+        </div>
     </div>
 </div>
 </template>
@@ -43,31 +47,57 @@ export default {
                 i = "0" + i
             };  // add zero in front of numbers < 10
             return i;
-        }
+        },
     },
     created() {
         this.clock()
-    }
+    },
+    props: ["userCity", "userWeather", "userTemp", "userCountry"]
 }
 </script>
 <style scoped>
 
-.innerDiv {
+.outerDiv {
   background: #F56B5E;
-  background-image: url("https://i.imgur.com/DVJ1VGU.png");
+  background-image: url("https://i.redd.it/mxld4d2grs421.png");
+   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 600px;
   /* -webkit-clip-path: polygon(100% 5%, 0 0, 0 95%, 100% 100%);
   clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0 100%); */
 }
+
+.textBackground {
+    /* background-image: url("https://i.imgur.com/WUSb5Cm.png");
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  position: absolute;
+  height: 35%;
+  width: 100%;
+  top: 15%;
+  padding-top: 3rem;
+  /* -webkit-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.5); */
+color: #2c3e50;
+}
 h1 {
   margin: 0;
-  padding-top: 15vh;
   font-size: 50px;
 }
 
 h2 {
     font-size: 35px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 25px;
+    margin: 0;
 }
 
 @media only screen and (max-width: 1000px) {

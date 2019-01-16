@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <big-header />
+    <big-header :ip="ip" />
     <nav-bar @navClickDetected="scrollTo" />
     <about />
     <skills />
@@ -24,7 +24,9 @@ const axios = require("axios");
 export default {
   name: "app",
   data: function() {
-    return {};
+    return {
+      ip: ""
+    };
   },
   components: {
     NavBar,
@@ -44,26 +46,25 @@ export default {
     logIP() {
       let today = new Date();
       axios.get("https://api.ipify.org").then(response => {
-        const resultArray = [];
+        let resultArray = [];
         for (let key in response) {
           resultArray.push(response[key]);
         }
-        let ip = resultArray[0];
-        let stringIp = ip.split(".")
+        this.ip = resultArray[0];
+        let stringIp = this.ip.split(".")
         let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
         console.log(firebaseIp)
         let firebaseInt = parseInt(firebaseIp, 10)
         let loggedIp = {
-        "ip": ip,
+        "ip": this.ip,
         "time": today
       }
         setTimeout(() => {
         axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
-        const postArray = [];
+        let postArray = [];
         for (let key in response) {
           resultArray.push(response[key]);
         }
-        console.log(postArray)
       })
       }, 5*1000)
       });

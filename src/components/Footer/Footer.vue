@@ -7,7 +7,7 @@ import FooterSection from "./FooterSection";
 
 export default {
     data: function() {
-
+        
     },
     methods: {},
     components: {

@@ -32,24 +32,6 @@ p {
   color: white;
   text-align: center;
 }
-.skillBar {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 10px;
-  max-width: 50%;
-  margin: 0 auto;
-  border-radius: 35px;
-  transition: 1s;
-}
-.skillBar > .skill {
-  z-index: 1000;
-  background-color: white;
-  height: 10px;
-  border-radius: 35px;
-  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
-transition: 1s;
-}
 section {
   /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
   /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
