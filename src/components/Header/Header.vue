@@ -6,6 +6,7 @@
 
 <script>
 import HeaderSection from "./HeaderSection.vue";
+import Config from "../../../config.js"
 
 const axios = require("axios")
 
@@ -16,13 +17,15 @@ export default {
         userWeather: "",
         userTemp: "",
         userCountry: "",
+        userCoords: "",
 
     };
   },
   methods: {
       getWeather() {
           setTimeout(() => {
-              axios.get("http://ip-api.com/json/" + this.ip).then(response => {
+              axios.get("https://ipinfo.io/" + this.ip + "?token=83fb0c9bd7376e ").then(response => {
+                  //83fb0c9bd7376e
                   let resultArray = []
                   for (let key in response) {
                       resultArray.push(response[key]);
@@ -30,19 +33,21 @@ export default {
                   console.log(resultArray)
                   this.userCity = resultArray[0].city
                   this.userCountry = resultArray[0].country
+                  this.userCoords = resultArray[0].loc
                   if (this.userCity === "Malmo") {
                       this.userCity = "Malmö"
                   }
                   console.log(this.userCity)
-                  axios.get("http://api.openweathermap.org/data/2.5/weather?q=" + this.userCity + "&APPID=65815e60870528d779d7eb889d42fa03").then(response => {
+                  axios.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + Config.forecastAPIKey() + "/" + this.userCoords).then(response => {
                   let weatherArray = []
                   for (let key in response) {
                       weatherArray.push(response[key]);
                   }
-                  this.userWeather = weatherArray[0].weather[0].main + " & " + weatherArray[0].weather[1].main
-                  let temp = weatherArray[0].main.temp - 273.15
+                  console.log(weatherArray)
+                  this.userWeather = weatherArray[0].currently.summary
+                  let temp = (weatherArray[0].currently.temperature - 32) * 5/9
                   this.userTemp = Math.round(temp * 10) / 10
-                  console.log(this.userCity, this.userWeather, this.userTemp)
+                  console.log(this.userCity, this.userCountry, this.userWeather, this.userTemp)
               })
               })
           },2)
