@@ -62,13 +62,13 @@ export default {
       } else if (this.currentScroll <= 1200) {
         this.scrolledPastHeader = false;
         this.activeSection = "about"
-      } else if (this.currentScroll > 1200 && this.currentScroll < 3500) {
+      } else if (this.currentScroll > 1200 && this.currentScroll <= 3500) {
         this.activeSection = "skills"
         this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 3500 && this.currentScroll < 4200) {
+      } else if (this.currentScroll > 3500 && this.currentScroll <= 4200) {
         this.activeSection = "projects"
         this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 4290 && this.currentScroll < 8000) {
+      } else if (this.currentScroll > 4200 && this.currentScroll <= 8000) {
         this.activeSection = "contact"
         this.scrolledPastHeader = true;
       }

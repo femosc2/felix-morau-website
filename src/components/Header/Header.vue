@@ -24,8 +24,7 @@ export default {
   methods: {
       getWeather() {
           setTimeout(() => {
-              axios.get("https://ipinfo.io/" + this.ip + "?token=83fb0c9bd7376e ").then(response => {
-                  //83fb0c9bd7376e
+              axios.get("https://ipinfo.io/" + this.ip + "?token=" + Config.ipAPIKey()).then(response => {
                   let resultArray = []
                   for (let key in response) {
                       resultArray.push(response[key]);
