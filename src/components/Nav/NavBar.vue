@@ -1,20 +1,10 @@
 <template>
   <div class="woo">
-    <ul :class="[{navTop: scrolledPastHeader === true},
-        {red: currentScroll <= 1200 && currentScroll > 500},
-        {blue: currentScroll > 1200},
-        {green: currentScroll > 3500},
-        {yellow: currentScroll > 4200}
-        ]">
+    <ul id="navBar" :class="{navTop: scrolledPastHeader === true}">
         <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
         { active: activeSection === section.menuName },
         ]"> <p> {{ section.menuName }} </p> </li>
-        <div class="indicator" :class="[
-        {indicatorAbout: currentScroll <= 1200},
-        {indicatorSkills: currentScroll > 1200},
-        {indicatorProjects: currentScroll > 3500},
-        {indicatorContact: currentScroll > 4200},
-        ]">
+        <div id="indicator">
         </div>
     </ul>
   </div>
@@ -45,43 +35,98 @@ export default {
       activeSection: "about",
       scrolledPastHeader: false,
       currentScroll: 0
-    }
+    };
   },
   methods: {
     goToSection(index, element) {
       this.sections[index].active = true;
-      let lowercaseElement = element.toLowerCase()
-      this.activeSection = this.sections[index].menuName
-      this.$emit("navClickDetected", lowercaseElement)
+      let lowercaseElement = element.toLowerCase();
+      this.activeSection = this.sections[index].menuName;
+      this.$emit("navClickDetected", lowercaseElement);
     },
     handleScroll() {
-      this.currentScroll = window.scrollY
-      if (this.currentScroll > 600 && this.currentScroll < 1200) {
-        this.scrolledPastHeader = true;
-        this.activeSection = "about"
-      } else if (this.currentScroll <= 1200) {
-        this.scrolledPastHeader = false;
-        this.activeSection = "about"
-      } else if (this.currentScroll > 1200 && this.currentScroll <= 3500) {
-        this.activeSection = "skills"
-        this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 3500 && this.currentScroll <= 4200) {
-        this.activeSection = "projects"
-        this.scrolledPastHeader = true;
-      } else if (this.currentScroll > 4200 && this.currentScroll <= 8000) {
-        this.activeSection = "contact"
-        this.scrolledPastHeader = true;
+      // Method for changing the color of the navbar as the user scrolls.
+      // The if and else checks what platform the user is on.
+      // This is needed because of how much longer the webpage becomes on mobile due to the width of the projectcards found in Projects/ProjectList.vue
+
+      this.currentScroll = window.scrollY; // Checks what the current scroll is.
+
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        // Checks if the user is on a mobile device such as a smartphone or a surface.
+        if (this.currentScroll > 625 && this.currentScroll < 1200) { // Navbar positioning, if you scroll past 600px (header), the navbar should follow the user
+          this.scrolledPastHeader = true; // Else the navbar should be below the header.
+          document.getElementById("navBar").style.background = "#f56b5e";
+          this.activeSection = "about";
+          document.getElementById("indicator").style.transform =
+            "translateX(0%)";
+        } else if (this.currentScroll <= 1200) {
+          this.scrolledPastHeader = false;
+          this.activeSection = "about";
+          document.getElementById("navBar").style.background = "#f56b5e";
+          document.getElementById("indicator").style.transform =
+            "translateX(0%)";
+        } else if (this.currentScroll > 1200 && this.currentScroll <= 4300) {
+          this.activeSection = "skills";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#009fff";
+          document.getElementById("indicator").style.transform =
+            "translateX(100%)";
+        } else if (this.currentScroll > 4300 && this.currentScroll <= 5950) {
+          this.activeSection = "projects";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#ed5181";
+          document.getElementById("indicator").style.transform =
+            "translateX(200%)";
+        } else if (this.currentScroll > 5950 && this.currentScroll <= 10000) {
+          this.activeSection = "contact";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#fdc01a";
+          document.getElementById("indicator").style.transform =
+            "translateX(300%)";
+        }
+      } else { // If the user is on a desktop or a laptop.
+        if (this.currentScroll >= 600 && this.currentScroll <= 1200) {
+          this.scrolledPastHeader = true;
+          this.activeSection = "about";
+          document.getElementById("navBar").style.background = "#f56b5e";
+          document.getElementById("indicator").style.transform =
+            "translateX(0%)";
+        } else if (this.currentScroll <= 1200) {
+          this.scrolledPastHeader = false;
+          this.activeSection = "about";
+          document.getElementById("navBar").style.background = "#f56b5e";
+          document.getElementById("indicator").style.transform =
+            "translateX(0%)";
+        } else if (this.currentScroll > 1200 && this.currentScroll <= 3400) {
+          this.activeSection = "skills";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#009fff";
+          document.getElementById("indicator").style.transform =
+            "translateX(100%)";
+        } else if (this.currentScroll > 3400 && this.currentScroll <= 4500) {
+          this.activeSection = "projects";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#ed5181";
+          document.getElementById("indicator").style.transform =
+            "translateX(200%)";
+        } else if (this.currentScroll > 4500 && this.currentScroll <= 8000) {
+          this.activeSection = "contact";
+          this.scrolledPastHeader = true;
+          document.getElementById("navBar").style.background = "#fdc01a";
+          document.getElementById("indicator").style.transform =
+            "translateX(300%)";
+        }
       }
     }
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll); // Listens to the users mousescroll
-    this.handleScroll()
+    window.addEventListener("scroll", this.handleScroll); // Listens to the users mousescroll
+    this.handleScroll();
   },
   destroyed() {
-      window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
-}
+};
 </script>
 
 <style scoped>
@@ -93,15 +138,14 @@ ul {
   justify-content: center;
   padding: 0;
   width: 100%;
-  background: #F56B5E;
+  background: #f56b5e;
   margin: 0;
   transition: 1s;
   margin: 0;
   color: white;
-  webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.55);
-  
+  -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
 }
 li {
   align-items: center;
@@ -114,7 +158,7 @@ li {
   display: inline-block;
   transition: 1s;
   cursor: pointer;
-  }
+}
 li > p {
   margin: 0;
   margin-top: 0.6rem;
@@ -122,14 +166,14 @@ li > p {
 }
 
 .active {
-  text-decoration-line:underline;
+  text-decoration-line: underline;
   transition: 1s;
-  background-color: rgba(255,255,255, 0.0);
+  background-color: rgba(255, 255, 255, 0);
   opacity: 1;
 }
 
 li:not(.active) {
-  background-color: rgba(255,255,255, 0.0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .navTop {
@@ -138,23 +182,8 @@ li:not(.active) {
   width: 100%;
   z-index: 5000;
 }
-.red {
-  background: #F56B5E !important;
-}
 
-.blue {
-  background: #009fff !important;
-}
-
-.green {
-  background: #ED5181 !important;
-}
-
-.yellow {
-  background: #FDC01A !important;
-}
-
-.indicator  {
+#indicator {
   background-color: #2c3e50;
   height: 5px;
   top: 90%;
@@ -163,43 +192,22 @@ li:not(.active) {
   border-radius: 10px;
   float: left;
   left: 0;
-}
-
-.indicatorAbout {
-  transform: translateX(0%);
-  transition: 1s;
-}
-
-.indicatorSkills {
-  transform: translateX(100%);
-  transition: 1s;
-}
-
-.indicatorProjects {
-  transform: translateX(200%);
-  transition: 1s;
-}
-
-.indicatorContact {
-  transform: translateX(300%);
   transition: 1s;
 }
 
 ::selection {
-  background-color: rgba(255,255,255, 0.0)
+  background-color: rgba(255, 255, 255, 0);
 }
 
 @media only screen and (max-width: 1000px) {
-  .indicator {
+  #indicator {
     display: none;
   }
   .active {
-    background-color: rgba(255,255,255, 1);
+    background: rgba(255, 255, 255, 1);
   }
   li {
     font-size: 20px;
   }
-
 }
-
 </style>

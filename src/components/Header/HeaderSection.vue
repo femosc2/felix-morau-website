@@ -100,6 +100,28 @@ h3 {
     margin: 0;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .outerDiv {
+        background-size: 2000px 800px;
+        background-attachment: inherit;
+    }
+}
+
+@media only screen and (min-width: 810px) {
+    .outerDiv {
+        background-attachment: inherit;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .innerDiv {
         height: 500px;
@@ -108,8 +130,14 @@ h3 {
         font-size: 35px;
     }
     h2 {
-        font-size: 20px;
+        font-size: 25px !important;
     }
-
+    h3 {
+        font-size: 20px !important;
+    }
+    .outerDiv {
+        background-attachment: top;
+        background-size: 1600px 800px;
+    }
 }
 </style>

@@ -85,7 +85,6 @@ created() {
   color: #2c3e50;
   padding: 0;
   margin: 0 !important;
-  animation: blurIn 1.5s 1;
 }
 
 @keyframes blurIn {

@@ -3,6 +3,10 @@
         <h2>Contact</h2>
         <section>
             <div class="innerDiv">
+              <p>
+                I'm always looking for work, projects, internships and jobs. Whether you want a small website for your band or a large webapplication for your company, I'm up for the task!
+                You can contact me through the links below!
+              </p>
               <a class="contact"></a>
                 <ul class="contactList" v-for="(contact, index) in contacts" :key=index>
                         <a class="contactLink" v-bind:href="contact.link">
@@ -97,6 +101,10 @@ ul {
 }
 p {
   font-size: 30px;
+  color: #fdc01a;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -106,6 +114,9 @@ p {
   }
   .contactIcon {
       font-size: 15vw;
+  }
+  p {
+    width: 100%;
   }
 }
 </style>

@@ -29,7 +29,7 @@ p {
     margin: 0 auto;
     margin-top: 2%;
     font-size: 30px;
-  color: white;
+  color: #F56B5E;
   text-align: center;
 }
 section {

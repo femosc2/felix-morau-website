@@ -3,7 +3,6 @@
         <h2>Projects</h2>
         <section>
             <div class="innerDiv">
-              <a class="projects"></a>
                 <div v-masonry transition-duration="1s" item-selector=".projectCard">
                   <div v-masonry-tile class="item" v-for="(project, index) in orderedProjects" :key=index fit-width="true">
                     <div class="projectCard" :style="{ 'background-image': 'url(' + project.projectImage + ')' }" @click="goToPage(project.projectGithub)">
@@ -17,6 +16,7 @@
                         </div>
                     </div>
                     </div>
+                    <a class="projects"></a>
                   </div>
                 </div> 
         </div>
@@ -86,13 +86,13 @@ section {
 .innerDiv {
   background: -webkit-linear-gradient(
     to top,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.1)
+    rgba(107, 38, 59, 1),
+    rgba(107, 38, 59, 0.8)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.1)
+    rgba(107, 38, 59, 1),
+    rgba(107, 38, 59, 0.8)
   );
   min-height: 300px;
   height: 100%;
@@ -145,9 +145,12 @@ p {
 
 .projectCard:not(:hover) {
     transition: 1s;
-    filter: grayscale(100%);
-    color: #fff;
     opacity: 1;
+    filter: grayscale(100%) brightness(1)
+}
+
+.projectLanguage:not(:hover), .projectGithub:not(:hover), .projectName:not(:hover) {
+  color: #fff;
 }
 
 

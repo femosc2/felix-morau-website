@@ -103,7 +103,7 @@ p {
 @media only screen and (max-width: 1000px) {
   .skillBar {
     max-width: 100%;
-    border-radius: 0px 35px 35px 0px;
+    border-radius: 0px;
   }
   .skillBar > .skill {
     max-width: 100%;
