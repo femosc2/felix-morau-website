@@ -22,7 +22,7 @@ export default {
             .then(response => {
                 const resultArray = [];
                 for (let key in response) {
-                    resultArray.push(response[key]);
+                    resultArray.push(response[key]); // Organizes the json response
                 }
                 this.projects = resultArray[0]
             })

@@ -69,18 +69,23 @@ export default {
         if (this.currentScroll >= 600 && this.currentScroll <= 1200) {
           this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
+          document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll <= 1200) {
           this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
+          document.getElementById("indicator").style.display = "none";
         } else if (this.currentScroll > 1200 && this.currentScroll <= 3400) {
           this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
+          document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll > 3400 && this.currentScroll <= 4500) {
           this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
+          document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll > 4500 && this.currentScroll <= 8000) {
           this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
           document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
+          document.getElementById("indicator").style.display = "block";
         }
       }
     },
@@ -165,6 +170,7 @@ li:not(.active) {
   float: left;
   left: 0;
   transition: 1s;
+  display: none;
 }
 
 ::selection {
