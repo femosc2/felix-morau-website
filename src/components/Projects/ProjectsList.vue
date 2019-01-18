@@ -40,7 +40,9 @@ export default {
   },
   props: ["projects"],
   computed: {
+    // Mutates the data
     orderedProjects: function() {
+      // Organize and joins the different skills.
       this.mutatedProjects = _.orderBy(this.projects, "index");
       for (let i = 0; i < this.mutatedProjects.length; i++) {
         this.mutatedProjects[i].projectLanguage = this.mutatedProjects[i].projectLanguage.join(" ");

@@ -29,27 +29,29 @@ export default {
             // Method for showing a clock
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            let today = new Date()
-            let hour = today.getHours()
-            let minute = today.getMinutes()
-            let second = today.getSeconds()
+            let today = new Date() // sets the current date
+            let hour = today.getHours() // sets the current hour
+            let minute = today.getMinutes() // sets the current minute
+            let second = today.getSeconds() // sets the current second
             minute = this.addZeroes(minute);
             second = this.addZeroes(second);
-            this.currentTime = hour + ":" + minute + ":" + second
-            this.currentDay = days[today.getDay()]
-            this.currentMonth = months[today.getMonth()]
-            this.currentDate = today.getDate()
-            this.currentYear = today.getFullYear()
+            this.currentTime = hour + ":" + minute + ":" + second // formats the time
+            this.currentDay = days[today.getDay()] // sets the current day
+            this.currentMonth = months[today.getMonth()] // sets the current momth
+            this.currentDate = today.getDate() // sets the current date
+            this.currentYear = today.getFullYear() // sets the current year
             let time = setTimeout(this.clock, 500);
         },
         addZeroes(i) {
+            // add zero in front of numbers < 10
             if (i < 10) {
                 i = "0" + i
-            }  // add zero in front of numbers < 10
+            }
             return i;
         },
     },
     created() {
+        // When this component is created run the methods.
         this.clock()
     },
     props: ["userCity", "userWeather", "userTemp", "userCountry"]

@@ -17,7 +17,7 @@ import BigHeader from "./components/Header/Header.vue";
 import Skills from "./components/Skills/Skills.vue";
 import Projects from "./components/Projects/Projects.vue";
 import Contact from "./components/Contact/Contact.vue";
-import SmallFooter from "./components/Footer/Footer.vue"
+import SmallFooter from "./components/Footer/Footer.vue";
 
 const axios = require("axios");
 
@@ -25,7 +25,8 @@ export default {
   name: "app",
   data: function() {
     return {
-      ip: ""
+      ip: "",
+      currentScroll: 0
     };
   },
   components: {
@@ -51,29 +52,38 @@ export default {
           resultArray.push(response[key]);
         }
         this.ip = resultArray[0];
-        let stringIp = this.ip.split(".")
-        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]
-        console.log(firebaseIp)
-        let firebaseInt = parseInt(firebaseIp, 10)
+        let stringIp = this.ip.split(".");
+        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3];
+        console.log(firebaseIp);
+        let firebaseInt = parseInt(firebaseIp, 10);
         let loggedIp = {
-        "ip": this.ip,
-        "time": today
-      }
+          ip: this.ip,
+          time: today
+        };
         setTimeout(() => {
-        axios.put("https://my-website-21d35.firebaseio.com/ipLog/" + firebaseInt + ".json", loggedIp).then(response => {
-        let postArray = [];
-        for (let key in response) {
-          resultArray.push(response[key]);
-        }
-      })
-      }, 5*1000)
+          axios
+            .put(
+              "https://my-website-21d35.firebaseio.com/ipLog/" +
+                firebaseInt +
+                ".json",
+              loggedIp
+            )
+            .then(response => {
+              let postArray = [];
+              for (let key in response) {
+                resultArray.push(response[key]);
+              }
+            });
+        }, 5 * 1000);
       });
+    }
   },
-},
-created() {
+  created() {
+    window.addEventListener("scroll", this.handleScroll); // Listens to the users mousescroll
+    this.handleScroll();
     this.logIP();
   }
-}
+};
 </script>
 
 <style>

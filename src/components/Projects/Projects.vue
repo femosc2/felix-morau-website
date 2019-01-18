@@ -17,6 +17,7 @@ export default {
     },
     methods: {
         getProjects() {
+            // Gets the projects from firebase
             axios.get("https://my-website-21d35.firebaseio.com/Projects.json")
             .then(response => {
                 const resultArray = [];

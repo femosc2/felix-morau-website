@@ -25,7 +25,7 @@ export default {
   },
   props: ["programmingSkills", "applicationSkills", "conceptSkills"],
   computed: {
-    concatSkills: function() {
+    concatSkills() {
       this.combinedSkills = this.programmingSkills.concat(this.applicationSkills, this.conceptSkills)
       return this.combinedSkills;
     }

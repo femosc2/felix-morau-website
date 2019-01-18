@@ -1,8 +1,8 @@
 <template>
   <div class="woo">
     <ul id="navBar" :class="{navTop: scrolledPastHeader === true}">
-        <li v-for="(section, index) in sections" :key=index @click="goToSection(index, '.' + section.menuName )" :class="[
-        { active: activeSection === section.menuName },
+        <li v-for="(section, index) in sections" :key=index @click="goToSection(index, section.menuName )" :class="[
+        { active: activeSection === '.' + section.menuName },
         ]"> <p> {{ section.menuName }} </p> </li>
         <div id="indicator">
         </div>
@@ -39,10 +39,11 @@ export default {
   },
   methods: {
     goToSection(index, element) {
-      this.sections[index].active = true;
-      let lowercaseElement = element.toLowerCase();
-      this.activeSection = this.sections[index].menuName;
-      this.$emit("navClickDetected", lowercaseElement);
+      // Method to scroll to the clicked section
+      this.sections[index].active = true; // Sets the active bool to true
+      let lowercaseElement = element.toLowerCase(); // transform the element so it can be used by App.vue 
+      this.activeSection = '.' + lowercaseElement; // Sets the current active section
+      this.$emit("navClickDetected", this.activeSection); // Emits the section to the parent (and in turn to app)
     },
     handleScroll() {
       // Method for changing the color of the navbar as the user scrolls.
@@ -53,70 +54,41 @@ export default {
 
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
         // Checks if the user is on a mobile device such as a smartphone or a surface.
-        if (this.currentScroll > 625 && this.currentScroll < 1200) { // Navbar positioning, if you scroll past 600px (header), the navbar should follow the user
-          this.scrolledPastHeader = true; // Else the navbar should be below the header.
-          document.getElementById("navBar").style.background = "#f56b5e";
-          this.activeSection = "about";
-          document.getElementById("indicator").style.transform =
-            "translateX(0%)";
+        if (this.currentScroll > 625 && this.currentScroll < 1200) { // Navbar positioning, if you scroll past 625px (header), the navbar should follow the user
+          this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
         } else if (this.currentScroll <= 1200) {
-          this.scrolledPastHeader = false;
-          this.activeSection = "about";
-          document.getElementById("navBar").style.background = "#f56b5e";
-          document.getElementById("indicator").style.transform =
-            "translateX(0%)";
+          this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
         } else if (this.currentScroll > 1200 && this.currentScroll <= 4300) {
-          this.activeSection = "skills";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#009fff";
-          document.getElementById("indicator").style.transform =
-            "translateX(100%)";
+          this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
         } else if (this.currentScroll > 4300 && this.currentScroll <= 5950) {
-          this.activeSection = "projects";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#ed5181";
-          document.getElementById("indicator").style.transform =
-            "translateX(200%)";
+          this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
         } else if (this.currentScroll > 5950 && this.currentScroll <= 10000) {
-          this.activeSection = "contact";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#fdc01a";
-          document.getElementById("indicator").style.transform =
-            "translateX(300%)";
+          this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
         }
       } else { // If the user is on a desktop or a laptop.
         if (this.currentScroll >= 600 && this.currentScroll <= 1200) {
-          this.scrolledPastHeader = true;
-          this.activeSection = "about";
-          document.getElementById("navBar").style.background = "#f56b5e";
-          document.getElementById("indicator").style.transform =
-            "translateX(0%)";
+          this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
+          document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
         } else if (this.currentScroll <= 1200) {
-          this.scrolledPastHeader = false;
-          this.activeSection = "about";
-          document.getElementById("navBar").style.background = "#f56b5e";
-          document.getElementById("indicator").style.transform =
-            "translateX(0%)";
+          this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
+          document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
         } else if (this.currentScroll > 1200 && this.currentScroll <= 3400) {
-          this.activeSection = "skills";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#009fff";
-          document.getElementById("indicator").style.transform =
-            "translateX(100%)";
+          this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
+          document.getElementById("indicator").style.borderRadius = "10px";
         } else if (this.currentScroll > 3400 && this.currentScroll <= 4500) {
-          this.activeSection = "projects";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#ed5181";
-          document.getElementById("indicator").style.transform =
-            "translateX(200%)";
+          this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
+          document.getElementById("indicator").style.borderRadius = "10px";
         } else if (this.currentScroll > 4500 && this.currentScroll <= 8000) {
-          this.activeSection = "contact";
-          this.scrolledPastHeader = true;
-          document.getElementById("navBar").style.background = "#fdc01a";
-          document.getElementById("indicator").style.transform =
-            "translateX(300%)";
+          this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
+          document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
         }
       }
+    },
+    changeNavBar(whatSection, color, transform, headerBool) {     // whatSection should be a string in lowercase.
+      this.activeSection = whatSection;                           // color should be a string with a hexcode.
+      this.scrolledPastHeader = headerBool;                       // transform should be css transfrom in %.
+      document.getElementById("navBar").style.background = color; //headerBool should be a bool which decides if the navbar is fixed or not.
+      document.getElementById("indicator").style.transform = transform;
     }
   },
   created() {
@@ -124,8 +96,8 @@ export default {
     this.handleScroll();
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
+    window.removeEventListener("scroll", this.handleScroll); // If the navbar is somehow destroyed, stop tracking the user mouse scroll
+  },
 };
 </script>
 
