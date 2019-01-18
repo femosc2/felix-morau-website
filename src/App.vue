@@ -54,7 +54,7 @@ export default {
         this.ip = resultArray[0];
         let stringIp = this.ip.split(".");
         let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3];
-        console.log(firebaseIp);
+        console.log("hej")
         let firebaseInt = parseInt(firebaseIp, 10);
         let loggedIp = {
           ip: this.ip,
@@ -71,16 +71,16 @@ export default {
             .then(response => {
               let postArray = [];
               for (let key in response) {
-                resultArray.push(response[key]);
+                postArray.push(response[key]);
               }
+              console.log(postArray)
+              console.log("hej")
             });
-        }, 5 * 1000);
+        }, 2 * 1000);
       });
     }
   },
   created() {
-    window.addEventListener("scroll", this.handleScroll); // Listens to the users mousescroll
-    this.handleScroll();
     this.logIP();
   }
 };
