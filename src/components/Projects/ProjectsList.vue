@@ -63,14 +63,15 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #0A949F;
+  color: #ED5181;
   transition: 1s;
   font-size: 1.5vw;
+  overflow: hidden;
 }
 section {
   /* -webkit-clip-path: polygon(100% 5%, 0 0, 0 95%, 100% 100%); */
   /* clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%); */
-  background-image: url("https://i.imgur.com/5ypPRGu.jpg");
+  background-image: url("https://i.imgur.com/bD4H0QB.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -88,13 +89,13 @@ section {
 .innerDiv {
   background: -webkit-linear-gradient(
     to top,
-    rgba(107, 38, 59, 1),
-    rgba(107, 38, 59, 0.8)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.8)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    rgba(107, 38, 59, 1),
-    rgba(107, 38, 59, 0.8)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6)
   );
   min-height: 300px;
   height: 100%;
@@ -141,7 +142,7 @@ p {
 }
 
 .projectCard:hover {
-  color: #fff;
+  color: #ED5181;
   transition: 1s;
 }
 
