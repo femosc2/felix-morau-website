@@ -35,7 +35,7 @@ export default {
     z-index: 90000000
 }
 
-.rightBox {
+.rightBox { 
     animation: slideOutRight 1s 1 forwards;
     animation-timing-function: cubic-bezier(1,.01,.86,.96)
 }

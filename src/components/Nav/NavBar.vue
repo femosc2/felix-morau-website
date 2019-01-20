@@ -58,11 +58,11 @@ export default {
           this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
         } else if (this.currentScroll <= 1200) {
           this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
-        } else if (this.currentScroll > 1200 && this.currentScroll <= 4300) {
+        } else if (this.currentScroll > 1200 && this.currentScroll <= 4600) {
           this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
-        } else if (this.currentScroll > 4300 && this.currentScroll <= 5950) {
+        } else if (this.currentScroll > 4600 && this.currentScroll <= 6200) {
           this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
-        } else if (this.currentScroll > 5950 && this.currentScroll <= 10000) {
+        } else if (this.currentScroll > 6200 && this.currentScroll <= 10000) {
           this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
         }
       } else { // If the user is on a desktop or a laptop.
@@ -74,15 +74,15 @@ export default {
           this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "none";
-        } else if (this.currentScroll > 1200 && this.currentScroll <= 3400) {
+        } else if (this.currentScroll > 1200 && this.currentScroll <= 3700) {
           this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
-        } else if (this.currentScroll > 3400 && this.currentScroll <= 4500) {
+        } else if (this.currentScroll > 3700 && this.currentScroll <= 4700) {
           this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
-        } else if (this.currentScroll > 4500 && this.currentScroll <= 8000) {
+        } else if (this.currentScroll > 4700 && this.currentScroll <= 8000) {
           this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
           document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
           document.getElementById("indicator").style.display = "block";
@@ -120,9 +120,6 @@ ul {
   transition: 1s;
   margin: 0;
   color: white;
-  -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
-  -moz-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
 }
 li {
   align-items: center;
@@ -158,6 +155,10 @@ li:not(.active) {
   top: 0;
   width: 100%;
   z-index: 5000;
+  transition: 1s;
+  -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.55);
 }
 
 #indicator {

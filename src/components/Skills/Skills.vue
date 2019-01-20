@@ -111,6 +111,12 @@ export default {
                     description: "Some familiarity with Information Design, completed a 7.5hp course at Malmö University",
                     color: "#ffff00",
                 },
+                {
+                    skillName: "Agile Development",
+                    familiarity: 70,
+                    description: "Have only worked with Agile Development including Kanban, Scrum and Scrumban.",
+                    color: "#42f4bc",
+                },
             ]
         }
     },
