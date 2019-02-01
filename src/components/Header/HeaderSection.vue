@@ -61,7 +61,7 @@ export default {
 
 .outerDiv {
   background: #F56B5E;
-  background-image: url("https://i.redd.it/mxld4d2grs421.png");
+  background-image: url("https://i.imgur.com/X2p0SfS.jpg");
    background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

@@ -54,6 +54,12 @@ export default {
                     color: "#1e3bfc"
                 },
                 {
+                    skillName: "Firebase",
+                    familiarity: 35,
+                    description: "I'm able to use the database and auth functionality to make stable and secure user management systems.",
+                    color: "#f4dc42"
+                },
+                {
                     skillName: "HTML",
                     familiarity: 85,
                     description: "First coding I ever did, never run into issues using HTML but I dont know everything.",
