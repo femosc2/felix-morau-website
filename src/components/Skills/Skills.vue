@@ -1,6 +1,6 @@
 <template>
     <div>
-        <skills-list :programmingSkills="programmingSkills" :conceptSkills="conceptSkills" :applicationSkills="applicationSkills" />
+        <skills-list :skills="skills" />
     </div>
 </template>
 
@@ -10,7 +10,7 @@ import SkillsList from "./SkillsList.vue" // imports the skill
 export default {
     data: function() {
         return {
-            programmingSkills: [
+            skills: [
                 {
                     skillName: "JavaScript",
                     familiarity: 60,
@@ -25,7 +25,7 @@ export default {
                 },
                 {
                     skillName: "Vue",
-                    familiarity: 75,
+                    familiarity: 76,
                     description: "Favorite framework for JavaScript. Able to build pretty much anything the framework allows.",
                     color: "#4e8e7f"
                 },
@@ -67,15 +67,13 @@ export default {
                 },
                 {
                     skillName: "CSS",
-                    familiarity: 85,
+                    familiarity: 90,
                     description: "Able to build decent Animations and transitions as an addition to everyday CSS.",
                     color: "#1472BA"
                 },
-            ],
-            applicationSkills: [
                 {
                     skillName: "Photoshop",
-                    familiarity: 30,
+                    familiarity: 31,
                     description: "Decent at Photoshop, made posters and logos for various school projects",
                     color: "#00C8FF"
                 },
@@ -85,8 +83,6 @@ export default {
                     description: "Used this program to build prototypes for Information Architecture assignments.",
                     color: "#FF21C0"
                 },
-            ],
-            conceptSkills: [
                 {
                     skillName: "Information Architecture",
                     familiarity: 60,

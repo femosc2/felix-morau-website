@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "color-sort": "0.0.1",
+    "hexsorter": "^1.3.1",
     "ip": "^1.1.5",
     "lodash": "^4.17.11",
     "npm": "^6.5.0",

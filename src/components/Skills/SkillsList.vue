@@ -3,32 +3,72 @@
         <h2>Skills</h2>
         <section>
             <div class="innerDiv">
+              <div class="buttonDiv">
+                <button class="sortButton" @click="sortBy('skillName')"><i class="fas fa-sort-alpha-up"></i></button>
+                <button class="sortButton" @click="sortByColor"><i class="fas fa-palette"></i></button>
+                <button class="sortButton" @click="sortBy('familiarity')"><i class="fas fa-sort-numeric-down"></i></button>
+              </div>
             <a class="skills"></a>
-            <div class="skillDiv" v-for="(skill, index) in concatSkills" :key=index>
-            <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
-            <div class="skillBar">
-                <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
+            <div class="skillDiv" v-for="(skill, index) in skills" :key=index>
+              <p :style="{ 'color': skill.color}"> {{ skill.skillName }}</p>
+              <div class="skillBar">
+                  <div class="skill" :style="[{ 'width': skill.familiarity + '%' }, { 'background-color': skill.color}]"></div>
+              </div>
+              <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
             </div>
-            <p :style="{ 'color': skill.color}"> {{ skill.description }}</p>
-        </div>
         </div>
         </section>
     </div>
 </template>
 
 <script>
+const _ = require("lodash");
+const colorSort = require("color-sort");
+
 export default {
   data: function() {
     return {
-      combinedSkills: []
+      combinedSkills: [],
+      hexCodeList: [],
+      colorSortedArray: [],
+      orderType: "byColor",
+      sortedSkills: []
     };
   },
-  props: ["programmingSkills", "applicationSkills", "conceptSkills"],
-  computed: {
-    concatSkills() {
-      this.combinedSkills = this.programmingSkills.concat(this.applicationSkills, this.conceptSkills)
-      return this.combinedSkills;
+  methods: {
+    getHexCodes() {
+      for (let i = 0; i < this.skills.length; i++) {
+        this.hexCodeList.push(this.skills[i].color);
+      }
+      colorSort(this.hexCodeList);
+    },
+    sortByColor() {
+      let x = 0;
+      this.colorSortedArray = this.skills;
+
+      while (x < this.colorSortedArray.length) {
+        for (let i = 0; i < this.colorSortedArray.length; i++) {
+          if (this.colorSortedArray[i].color === this.hexCodeList[x]) {
+            let splicedSkill = this.colorSortedArray.splice(i, 1);
+            this.colorSortedArray.unshift(splicedSkill[0]);
+            x = x + 1;
+          }
+        }
+      }
+      this.colorSortedArray = this.skills;
+    },
+    sortBy(property) {
+      let sortedBy = _.orderBy(this.skills, property);
+      if (property === "familiarity") {
+        sortedBy = sortedBy.reverse();
+      }
+      this.skills = sortedBy;
     }
+  },
+  props: ["skills"],
+  computed: {},
+  created() {
+    this.getHexCodes();
   }
 };
 </script>
@@ -47,10 +87,10 @@ export default {
   background-color: white;
   height: 10px;
   border-radius: 35px;
-  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
-transition: 1s;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+  transition: 1s;
 }
 section {
   /* -clip-path: polygon(0 15%, 100% 6%, 100% 85%, 0 15%); */
@@ -63,13 +103,12 @@ section {
 }
 .outerDiv {
   background: #009fff;
-  background: -webkit-linear-gradient(to bottom, #009fff, #F56B5E);
-  background: linear-gradient(to bottom, #009fff, #F56B5E);
+  background: -webkit-linear-gradient(to bottom, #009fff, #f56b5e);
+  background: linear-gradient(to bottom, #009fff, #f56b5e);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 .innerDiv {
   background: -webkit-linear-gradient(
@@ -85,19 +124,44 @@ section {
   /* -webkit-clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
   clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
   min-height: 200px;
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 150px;
   height: auto;
   width: 100%;
-  
 }
 h2 {
-    margin: 0;
-    font-size: 7vw;
+  margin: 0;
+  font-size: 7vw;
 }
 
 p {
   font-size: 20px;
+}
+
+.sortButton {
+  background-color: #009fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: 2s;
+}
+
+.sortButton:hover {
+  filter: hue-rotate(180deg);
+  transition: 2s;
+  transform: scale(1.2);
+}
+
+i {
+  font-size: 30px;
+}
+
+.buttonDiv {
+  padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 1000px) {
