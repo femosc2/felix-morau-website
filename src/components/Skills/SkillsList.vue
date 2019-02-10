@@ -6,7 +6,7 @@
               <div class="buttonDiv">
                 <button class="sortButton" @click="sortBy('skillName')"><i class="fas fa-sort-alpha-up"></i></button>
                 <button class="sortButton" @click="sortByColor"><i class="fas fa-palette"></i></button>
-                <button class="sortButton" @click="sortBy('familiarity')"><i class="fas fa-sort-numeric-down"></i></button>
+                <button class="sortButton" @click="sortBy('familiarity')"><i class="fas fa-star"></i></button>
               </div>
             <a class="skills"></a>
             <div class="skillDiv" v-for="(skill, index) in skills" :key=index>
@@ -154,6 +154,12 @@ p {
   filter: hue-rotate(180deg);
   transition: 2s;
   transform: scale(1.2);
+}
+
+.sortButton:focus {
+  filter: hue-rotate(180deg);
+  transform: scale(1.2);
+  outline: none;
 }
 
 i {
