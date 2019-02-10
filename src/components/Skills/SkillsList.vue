@@ -37,25 +37,27 @@ export default {
   },
   methods: {
     getHexCodes() {
+      // Method for getting all the hexcodes from the skill objects.
       for (let i = 0; i < this.skills.length; i++) {
-        this.hexCodeList.push(this.skills[i].color);
+        this.hexCodeList.push(this.skills[i].color); // Puts the hexcodes in a new seperate array
       }
-      colorSort(this.hexCodeList);
+      colorSort(this.hexCodeList); // Sorts the hexcodes by colour.
     },
     sortByColor() {
+      // Sorts the skills by colour.
       let x = 0;
       this.colorSortedArray = this.skills;
 
-      while (x < this.colorSortedArray.length) {
+      while (x < this.colorSortedArray.length) { // While the array is not sorted, keep sorting
         for (let i = 0; i < this.colorSortedArray.length; i++) {
-          if (this.colorSortedArray[i].color === this.hexCodeList[x]) {
-            let splicedSkill = this.colorSortedArray.splice(i, 1);
-            this.colorSortedArray.unshift(splicedSkill[0]);
-            x = x + 1;
-          }
+          if (this.colorSortedArray[i].color === this.hexCodeList[x]) { // if the current iterrated object has the same colour as the correct color
+            let splicedSkill = this.colorSortedArray.splice(i, 1);      // remove the color from the array
+            this.colorSortedArray.unshift(splicedSkill[0]);             // and add it to the front of the list
+            x = x + 1;                                                  // and let the iterator check the next color
+          } 
         }
       }
-      this.colorSortedArray = this.skills;
+      this.colorSortedArray = this.skills; // sets the skills to the array sorted by color
     },
     sortBy(property) {
       let sortedBy = _.orderBy(this.skills, property);
