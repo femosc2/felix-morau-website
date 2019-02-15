@@ -28,7 +28,6 @@ export default {
   data: function() {
     return {
       ip: "",
-      currentScroll: 0
     };
   },
   components: {
@@ -43,11 +42,13 @@ export default {
   },
   methods: {
     scrollTo(element) {
+      // Scrolls to an element on the page when the user clicks something on the navbar
       document.querySelector(element).scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth" // Gives the scrool a smooth look
       });
     },
     logIP() {
+      // Log visitors to the site.
       let today = new Date();
       axios.get("https://api.ipify.org").then(response => {
         let resultArray = [];
@@ -56,10 +57,9 @@ export default {
         }
         this.ip = resultArray[0];
         let stringIp = this.ip.split(".");
-        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3];
-        console.log("hej")
-        let firebaseInt = parseInt(firebaseIp, 10);
-        let loggedIp = {
+        let firebaseIp = stringIp[0] + stringIp[1] + stringIp[2] + stringIp[3]; //Creates a address for Firebase (firebase cant process .)
+        let firebaseInt = parseInt(firebaseIp, 10); // Convert the string to an Int as it wont work without it
+        let loggedIp = { //Object which gets passed to the database
           ip: this.ip,
           time: today
         };
@@ -76,8 +76,6 @@ export default {
               for (let key in response) {
                 postArray.push(response[key]);
               }
-              console.log(postArray)
-              console.log("hej")
             });
         }, 2 * 1000);
       });

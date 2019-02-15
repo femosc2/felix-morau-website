@@ -28,11 +28,8 @@ const colorSort = require("color-sort");
 export default {
   data: function() {
     return {
-      combinedSkills: [],
       hexCodeList: [],
       colorSortedArray: [],
-      orderType: "byColor",
-      sortedSkills: []
     };
   },
   methods: {
@@ -48,29 +45,28 @@ export default {
       let x = 0;
       this.colorSortedArray = this.skills;
 
-      while (x < this.colorSortedArray.length) { // While the array is not sorted, keep sorting
-        for (let i = 0; i < this.colorSortedArray.length; i++) {
+      while (x < this.colorSortedArray.length) {                        // While the array is not sorted, keep sorting
+        for (let i = 0; i < this.colorSortedArray.length; i++) {        // for every skill in the array
           if (this.colorSortedArray[i].color === this.hexCodeList[x]) { // if the current iterrated object has the same colour as the correct color
             let splicedSkill = this.colorSortedArray.splice(i, 1);      // remove the color from the array
-            this.colorSortedArray.unshift(splicedSkill[0]);             // and add it to the front of the list
+            this.colorSortedArray.unshift(splicedSkill[0]);             // and add it to the front of the array
             x = x + 1;                                                  // and let the iterator check the next color
           } 
         }
       }
-      this.colorSortedArray = this.skills; // sets the skills to the array sorted by color
+      this.skills = this.colorSortedArray; // sets the skills to the array sorted by color
     },
     sortBy(property) {
-      let sortedBy = _.orderBy(this.skills, property);
-      if (property === "familiarity") {
-        sortedBy = sortedBy.reverse();
+      let sortedBy = _.orderBy(this.skills, property); // Uses lodash to sort an object
+      if (property === "familiarity") { // Sorts the array in the right direction
+        sortedBy = sortedBy.reverse(); // Reverses the sort direction
       }
-      this.skills = sortedBy;
+      this.skills = sortedBy; // Sets the skills to the sorted skills
     }
   },
   props: ["skills"],
-  computed: {},
   created() {
-    this.getHexCodes();
+    this.getHexCodes(); // This has to be in created rather than in the sortByColor method for some reason.
   }
 };
 </script>
