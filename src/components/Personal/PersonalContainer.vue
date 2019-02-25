@@ -96,6 +96,16 @@ export default {
   color: #2c3e50;
   padding: 0;
   margin: 0 !important;
+  animation: fadeIn 1s 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes blurIn {
