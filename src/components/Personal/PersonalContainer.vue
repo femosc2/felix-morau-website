@@ -1,24 +1,25 @@
 <template>
   <div id="app">
-    <global-navigation @gNavClicked="setCurrentPage" />
-    <!-- <section v-if="currentPage === 'Professional'">
-      <professional-container />
-    </section>
-    <section v-if="currentPage === 'Personal'">
-       <personal-container :ip="ip" />
-    </section>
-   <section v-if="currentPage === 'CV'">
-      <c-v-container />
-   </section> -->
-   <router-view></router-view>
+    <revealer />
+    <big-header :ip="ip" />
+    <nav-bar @navClickDetected="scrollTo" />
+    <about />
+    <skills />
+    <projects />
+    <contact />
+    <small-footer />
   </div>
 </template>
 
 <script>
-import PersonalContainer from "./components/Personal/PersonalContainer";
-import CVContainer from "./components/CV/CVContainer";
-import ProfessionalContainer from "./components/Professional/ProfessionalContainer"
-import GlobalNavigation from "./components/GlobalNavigation/GlobalNavigation"
+import NavBar from "./components/Nav/Nav.vue";
+import About from "./components/About/About.vue";
+import BigHeader from "./components/Header/Header.vue";
+import Skills from "./components/Skills/Skills.vue";
+import Projects from "./components/Projects/Projects.vue";
+import Contact from "./components/Contact/Contact.vue";
+import SmallFooter from "./components/Footer/Footer.vue";
+import Revealer from "./components/Revealer/RevealerBoxes.vue";
 
 const axios = require("axios");
 
@@ -27,16 +28,25 @@ export default {
   data: function() {
     return {
       ip: "",
-      currentPage: "Personal"
     };
   },
   components: {
-    PersonalContainer,
-    CVContainer,
-    ProfessionalContainer,
-    GlobalNavigation
+    NavBar,
+    About,
+    BigHeader,
+    Skills,
+    Projects,
+    Contact,
+    SmallFooter,
+    Revealer
   },
   methods: {
+    scrollTo(element) {
+      // Scrolls to an element on the page when the user clicks something on the navbar
+      document.querySelector(element).scrollIntoView({
+        behavior: "smooth" // Gives the scrool a smooth look
+      });
+    },
     logIP() {
       // Log visitors to the site.
       let today = new Date();
@@ -69,10 +79,6 @@ export default {
             });
         }, 2 * 1000);
       });
-    },
-    setCurrentPage(page) {
-      this.currentPage = page
-      console.log(page)
     }
   },
   created() {
