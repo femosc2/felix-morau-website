@@ -1,12 +1,14 @@
 <template>
-    <div>
+    <div id="appPro">
         <nav-bar @navClickDetected="scrollTo" />
         <h1>Professional Shit</h1>
+        <about />
     </div>
 </template>
 
 <script>
 import NavBar from "./components/Nav/Nav"
+import About from "./components/About/About"
 export default {
     data() {
         return {
@@ -14,7 +16,8 @@ export default {
         }
     },
     components: {
-        NavBar
+        NavBar,
+        About
     },
     methods: {
         scrollTo(element) {
@@ -28,5 +31,8 @@ export default {
 </script>
 
 <style>
-
+#appPro {
+    background: white;
+    height: 2000px;
+}
 </style>

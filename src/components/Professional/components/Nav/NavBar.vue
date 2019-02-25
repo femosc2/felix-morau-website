@@ -1,7 +1,7 @@
 <template>
     <div>
-        <ul class="navBar">
-            <li v-for="(section,index) in sections" :key=index> {{ section.name }} </li>
+        <ul class="navBarPro">
+            <li class="navItemPro" v-for="(section,index) in sections" :key=index> <p class="liText">{{ section.name }}</p> </li>
         </ul>
     </div>
 </template>
@@ -30,15 +30,23 @@ export default {
 </script>
 
 <style scoped>
-.navBar {
+.navBarPro {
     display: block;
     position: fixed;
-    right: 0;
     list-style: none;
-    top: 50%;
-    padding: 10px;
+    top: 20%;
+    right: -12%;
 }
-li {
-    padding: 50px;
+.navItemPro {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 35px;
+}
+.liText {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 30%;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
 }
 </style>
