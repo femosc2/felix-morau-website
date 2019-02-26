@@ -26,20 +26,20 @@ export default {
 <style>
     .leftSide {
         height: 500px;
-        width: 10%;
+        width: 5%;
         position: fixed;
         left: 0;
-        background-color: white;
+        background-color: #070707;
         z-index: 500;
         position: fixed;
         margin-top: 0;
     }
     .rightSide {
         height: 500px;
-        width: 10%;
+        width: 5%;
         position: fixed;
         right: 0;
-        background-color: white;
+        background-color: #070707;
         z-index: 500;
         position: fixed;
         margin-top: 0;

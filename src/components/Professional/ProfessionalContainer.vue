@@ -32,7 +32,9 @@ export default {
 
 <style>
 #appPro {
-    background: white;
+    background: #070707;
+    color: #fff;
     height: 2000px;
+    text-align: left;
 }
 </style>

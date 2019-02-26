@@ -1,23 +1,33 @@
 <template>
     <div>
-        <h2> About </h2>
         <section>
-                    <section>
-                    <div class="black" style="top: 200px"></div>
-                    <p>
-                      Hello!
-                    My name is Felix Morau and I'm a second year Information Architecture student at Malmö University.  
-                    </p>
-                         
-                    </section>
+            <section>
+                <div class="black"></div>
+                <h3>Hello! My name is Felix Morau</h3>
+            </section>
+            <section>
+                <div class="black"></div>
+                <h2>"Developer, Designer, Degenerate"</h2>
+            </section>
+            <section>
+            <div class="black" style="top: 200px"></div>
+            <p>
+            I am an webdeveloper in development. I'm currently a second year student at the Information Architecture in programme who has a passion for webdevelopment.
+            I started coding in 2017 by learning HTML and CSS, by the end of 2017 I had good skills in HTML, CSS and Python. Through all of 2018 I taught myself JavaScript with a focus on Vue and React.
+            Now in 2019 my focus is on becoming a better full-stack programmer by building backends coupled with front-ends. My goal this year is to produce a full-fledged application released on the Web, Android and Iphone.
+            I'm currently interested in learning React Native, Go and Rust.
+
+            </p>
                     
-                    <br>
-                    <section>
-                    <div class="blackReverse" style="top: 300px"></div>
-                    <p>
-                      I built this website to function as a showcase of my projects, both school projects and individual projects can be found by clicking the Projects tab.  
-                    </p>
-                    </section>
+            </section>
+            
+            <br>
+            <section>
+            <div class="blackReverse" style="top: 295px"></div>
+            <p>
+                I enjoy being able to be 100% creative and realising an idea from conception until completion through programming and designing.
+            </p>
+            </section>
         </section>
     </div>
 </template>
@@ -34,12 +44,13 @@ p {
     font-size: 20px;
     text-align: center;
     animation: fadeIn 1.5s 1;
+    text-align: left;
 }
 
 .black {
-    height: 65px;
+    height: 70px;
     width: 200%;
-    background-color: black;
+    background-color: #fff;
     animation: blackSlide 2s 1;
     animation-fill-mode: forwards;
     /* animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); */
@@ -50,13 +61,32 @@ p {
 .blackReverse {
     height: 65px;
     width: 200%;
-    background-color: black;
+    background-color: #fff;
     animation: blackSlideReverse 2s 1;
     animation-fill-mode: forwards;
     /* animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); */
     animation-timing-function: linear;
     position: fixed;
 }
+
+h3 {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    color: #ed5181;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 30px;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+}
+
+
 
 @keyframes blackSlide {
     0% {
@@ -65,8 +95,11 @@ p {
     50% {
         transform: translateX(-100%);
     }
+    75% {
+        transform: translateX(0%);
+    }
     99% {
-        opacity: 1;
+        opacity: 1
     }
     100% {
         transform: translateX(100%);

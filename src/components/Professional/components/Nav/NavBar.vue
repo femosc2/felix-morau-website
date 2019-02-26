@@ -35,7 +35,8 @@ export default {
     position: fixed;
     list-style: none;
     top: 20%;
-    right: -12%;
+    z-index: 900;
+    right: -6%;
 }
 .navItemPro {
     font-size: 25px;
