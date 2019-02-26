@@ -1,8 +1,7 @@
 <template>
     <div>
         <section class="aboutContainer">
-            <section>
-                <div class="pink" style="top: 10vh;height: 40px;"></div>
+            <section class="revealerPink">
                 <h3>Hello! My name is <span style="color: #ed5181;">Felix Morau</span> and I am a
                     <div class="slidingVertical">
                         <span>{{ spanWords[0] }}</span>
@@ -13,12 +12,9 @@
                 </h3>
             </section>
             <section>
-                <div class="blackReverse" style="top: 15%; height: 65px;"></div>
-                <div class="black"></div>
-                <h2 class="quote">"Developer, Designer, Degenerate"</h2>
+                <h2 class="quote revealer">"Developer, Designer, Degenerate"</h2>
             </section>
-            <section>
-            <div class="black" style="top: 25%; height: 250px;"></div>
+            <section class="revealer">
             <p>
             I am a 23 year old student who is currently a second year student at the Information Architecture programme at <span style="font-weight: bold;">Malmö University</span> who has a passion for webdevelopment.
             I was born in <span style="font-weight: bold;">Helsingborg</span> and moved to Malmö in the fall of 2017 to pursue a bachelors degree in Computer Science.
@@ -29,9 +25,7 @@
             </p> 
             </section>
 
-            <section style="margin-top: 50px; margin-bottom: 50px; ">
-                <div class="blackReverse" style="background-color: #009fff; top: 45%; height: 65px;" >
-                </div>
+            <section class="revealerBlue" style="margin-top: 50px; margin-bottom: 50px;">
                 <h2 class="quote">Design + Code = <i class="far fa-grin-stars" style="color: #009fff;"></i> </h2>
             </section>
             
@@ -75,7 +69,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 p {
     width: 80%;
     margin: 0 auto;
@@ -84,39 +78,6 @@ p {
     text-align: center;
     animation: fadeIn 0.75s 1;
     text-align: left;
-}
-
-.black {
-    width: 200%;
-    background-color: #fff;
-    animation: blackSlide 1.5s 1;
-    animation-fill-mode: forwards;
-    /* animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); */
-    animation-timing-function: linear;
-    position: absolute;
-    z-index: 400;
-}
-
-.pink {
-    width: 200%;
-    background-color: #ed5181;
-    animation: blackSlide 1.5s 1;
-    animation-fill-mode: forwards;
-    /* animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); */
-    animation-timing-function: linear;
-    position: absolute;
-}
-
-.blackReverse {
-    height: 65px;
-    width: 200%;
-    background-color: #fff;
-    animation: blackSlideReverse 1.5s 1;
-    animation-fill-mode: forwards;
-    /* animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); */
-    animation-timing-function: linear;
-    position: absolute;
-    z-index: 400;
 }
 
 h3 {
@@ -131,14 +92,92 @@ h3 {
 .quote {
     text-align: center;
     margin: 0 auto;
-    width: 80%;
+    width: 40%;
     font-size: 30px;
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    animation: fadeIn 0.75s 1;
+}
+.revealer {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-100%);
+    animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
+    animation-fill-mode: both;
+  }
 }
 
-.aboutContainer {
+.revealerBlue {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #009fff;
+    transform: translateX(-100%);
+    animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
+    animation-fill-mode: both;
+  }
+}
+
+.revealerPink {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ed5181;
+    transform: translateX(-100%);
+    animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
+    animation-fill-mode: both;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes secondaryImageOverlayIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes secondaryImageOverlayOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .slidingVertical{
@@ -171,84 +210,27 @@ h3 {
 }
 
 /*topToBottom Animation*/
-@-moz-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -moz-transform: translateY(-50px); }
-	10% { opacity: 1; -moz-transform: translateY(0px); }
-	25% { opacity: 1; -moz-transform: translateY(0px); }
-	30% { opacity: 0; -moz-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-@-webkit-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -webkit-transform: translateY(-50px); }
-	10% { opacity: 1; -webkit-transform: translateY(0px); }
-	25% { opacity: 1; -webkit-transform: translateY(0px); }
-	30% { opacity: 0; -webkit-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-@-ms-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -ms-transform: translateY(-50px); }
-	10% { opacity: 1; -ms-transform: translateY(0px); }
-	25% { opacity: 1; -ms-transform: translateY(0px); }
-	30% { opacity: 0; -ms-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-
-
-@keyframes blackSlide {
-    0% {
-        transform: translateX(-100%)
-    }
-    /* 50% {
-        transform: translateX(-100%);
-    }
-    75% {
-        transform: translateX(0%);
-    } */
-    99% {
-        opacity: 1
-    }
-    100% {
-        transform: translateX(100%);
+@keyframes topToBottom{
+	0%{
+         opacity: 0;
+        }
+	5% {
+        opacity: 0; -moz-transform: translateY(-50px); 
+        }
+	10% {
+         opacity: 1; -moz-transform: translateY(0px);
+        }
+	25% { opacity: 1; -moz-transform: translateY(0px);
+        }
+	30% {
+        opacity: 0; -moz-transform: translateY(50px);
+        }
+	80% {
         opacity: 0;
-    }
-}
-
-.aboutContainer {
-    position: center;
-}
-
-@keyframes blackSlideReverse {
-    0% {
-        transform: translateX(100%)
-    }
-    /* 50% {
-        transform: translateX(100%);
-    } */
-    99% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-100%);
+        }
+	100% {
         opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    99% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+        }
 }
 
 @media only screen and (max-width: 1000px) {
