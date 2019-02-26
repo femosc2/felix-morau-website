@@ -28,7 +28,7 @@ export default {
         clock() {
             // Method for showing a clock
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let today = new Date() // sets the current date
             let hour = today.getHours() // sets the current hour
             let minute = today.getMinutes() // sets the current minute
@@ -53,6 +53,7 @@ export default {
     created() {
         // When this component is created run the methods.
         this.clock()
+        this.headerH1text()
     },
     props: ["userCity", "userWeather", "userTemp", "userCountry"]
 }

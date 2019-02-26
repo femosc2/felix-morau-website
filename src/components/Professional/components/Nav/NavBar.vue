@@ -35,7 +35,7 @@ export default {
     position: fixed;
     list-style: none;
     top: 20%;
-    z-index: 900;
+    z-index: 1000;
     right: -6%;
 }
 .navItemPro {

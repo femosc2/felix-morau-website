@@ -25,7 +25,7 @@ export default {
 
 <style>
     .leftSide {
-        height: 500px;
+        height: 2000px;
         width: 5%;
         position: fixed;
         left: 0;
@@ -33,9 +33,11 @@ export default {
         z-index: 500;
         position: fixed;
         margin-top: 0;
+        overflow: hidden;
+        top: 0;
     }
     .rightSide {
-        height: 500px;
+        height: 2000px;
         width: 5%;
         position: fixed;
         right: 0;
@@ -43,5 +45,7 @@ export default {
         z-index: 500;
         position: fixed;
         margin-top: 0;
+        overflow: hidden;
+        top: 0;
     }
 </style>
