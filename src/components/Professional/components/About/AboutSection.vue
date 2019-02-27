@@ -183,6 +183,13 @@ h3 {
 @media only screen and (max-width: 1000px) {
     p {
         width: 100%;
+        font-size: 15px;
+        text-align: center;
+    }
+    .quote {
+        font-size: 20px !important;
+        width: 100%;
+        margin: 0 auto;
     }
 
 }

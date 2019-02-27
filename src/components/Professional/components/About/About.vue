@@ -26,11 +26,11 @@ export default {
 <style>
     .leftSide {
         height: 2000px;
-        width: 5%;
+        width: 10%;
         position: fixed;
         left: 0;
         background-color: #070707;
-        z-index: 500;
+        z-index: 100;
         position: fixed;
         margin-top: 0;
         overflow: hidden;
@@ -38,14 +38,20 @@ export default {
     }
     .rightSide {
         height: 2000px;
-        width: 5%;
+        width: 10%;
         position: fixed;
         right: 0;
         background-color: #070707;
-        z-index: 500;
+        z-index: 100;
         position: fixed;
         margin-top: 0;
         overflow: hidden;
         top: 0;
     }
+    @media only screen and (max-width: 1000px) {
+    .rightSide, .leftSide {
+        display: none;
+    }
+
+}
 </style>

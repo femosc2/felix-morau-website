@@ -1,11 +1,13 @@
 <template>
     <div>
         <skills-terminals />
+        <skills-u-x />
     </div>    
 </template>
 
 <script>
 import SkillsTerminals from "./SkillsTerminals"
+import SkillsUX from "./SkillsUX"
 export default {
     data() {
         return {
@@ -13,11 +15,17 @@ export default {
         }
     },
     components: {
-        SkillsTerminals
+        SkillsTerminals,
+        SkillsUX
     }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+h3, h2 {
+    text-align: center;
+}
+
+
 
 </style>

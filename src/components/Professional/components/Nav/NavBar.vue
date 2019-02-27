@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="navBarPro">
-            <li class="navItemPro" v-for="(section,index) in sections" :key=index> <p class="liText">{{ section.name }}</p> </li>
+            <li class="navItemPro" v-for="(section,index) in sections" :key=index> <p class="liText" :style="{ 'color': section.color}">{{ section.name }}</p> </li>
         </ul>
     </div>
 </template>
@@ -13,16 +13,23 @@ export default {
             sections: [
                 {
                     name: "About",
+                    color: "#ed5181"
                 },
                 {
-                    name: "Skills",
+                    name: "Programming",
+                    color: "#00e00e"
                 },
                 {
-                    name: "Goals",
+                    name: "UX",
+                    color: "#F56B5E"
+                },
+                {
+                    name: "IA",
+                    color: "#fdc01a"
                 },
                 {
                     name: "Contact",
-                }
+                },
             ]
         }
     }
@@ -36,11 +43,10 @@ export default {
     list-style: none;
     z-index: 1000;
     right: 0%;
-    background-color: grey;
 }
 .navItemPro {
-    font-size: 25px;
-    margin-top: 35px;
+    font-size: 15px;
+    margin-top: 20px;
 }
 .liText {
     text-align: center;

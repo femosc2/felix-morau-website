@@ -1,8 +1,9 @@
 <template>
     <div id="appPro">
-        <nav-bar @navClickDetected="scrollTo" />
+        <!-- <nav-bar @navClickDetected="scrollTo" /> -->
         <about />
         <skills />
+        <vue-footer />
     </div>
 </template>
 
@@ -10,6 +11,8 @@
 import NavBar from "./components/Nav/Nav"
 import About from "./components/About/About"
 import Skills from "./components/Skills/Skills"
+import VueFooter from "./components/Footer/Footer"
+
 export default {
     data() {
         return {
@@ -19,7 +22,8 @@ export default {
     components: {
         NavBar,
         About,
-        Skills
+        Skills,
+        VueFooter
     },
     methods: {
         scrollTo(element) {
@@ -36,7 +40,6 @@ export default {
 #appPro {
     background: #070707;
     color: #fff;
-    height: 2000px;
     text-align: left;
 }
 </style>

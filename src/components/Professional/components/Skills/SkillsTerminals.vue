@@ -1,34 +1,37 @@
 <template>
     <div>
-        <section class="skillContainer">
-            <section class="codeWindow" v-for="(prompt, index) in prompts" :key=index in prompts>
-                <div class="greyBar">
-                    <div class="greyBarButtons">
-                        <div class="exitButton"></div>
-                        <div class="minimizeButton"></div>
-                        <div class="maximizeButton"></div>  
-                    </div>
-                    <span class="greyBarText"> {{index + 1}}. {{ prompt.language }}</span>
+        <h2 class="revealerWhite"><span class="headerSpan">Skills</span></h2>
+        <h3 class="revealerGreen"><span class="headerSpan">Programming</span></h3>
+      <div class="revealerGrey">
+        <section class="codeWindow" v-for="(prompt, index) in prompts" :key=index in prompts>
+            <div class="greyBar">
+                <div class="greyBarButtons">
+                    <div class="exitButton"></div>
+                    <div class="minimizeButton"></div>
+                    <div class="maximizeButton"></div>  
                 </div>
-                <div class="textWindow">
-                    <div class="sideBar"></div>
-                    <p class="standardConsoleText">
-                        Last Login: {{ currentDay }} {{ currentMonth}} {{ currentDate }} {{ currentTime }} on console
-                        <br>
-                        felixmorau.se:~ user$ {{ prompt.userInput }}
-                        <br>
-                        {{ prompt.terminalCommand }}
-                        <br>
-                        {{ prompt.promptStyle }} {{ prompt.print}}
-                        <br>
-                        {{ prompt.terminalOutput}}
-                        <br>
-                        <span v-for="(variable, index) in prompt.variables" :key=index > {{ prompt.promptStyle }} {{ variable}} <br> </span>
-                    </p>
-                </div>
-            </section>
+                <span class="greyBarText"> {{index + 1}}. {{ prompt.language }}</span>
+            </div>
+            <div class="textWindow">
+                <div class="sideBar"></div>
+                <p class="standardConsoleText">
+                    Last Login: {{ currentDay }} {{ currentMonth}} {{ currentDate }} {{ currentTime }} on console
+                    <br>
+                    felixmorau.se:~ user$ {{ prompt.userInput }}
+                    <br>
+                    {{ prompt.terminalCommand }}
+                    <br>
+                    {{ prompt.promptStyle }} {{ prompt.print}}
+                    <br>
+                    {{ prompt.terminalOutput}}
+                    <br>
+                    <span v-for="(variable, index) in prompt.variables" :key=index > {{ prompt.promptStyle }} {{ variable}} <br> </span>
+                </p>
+            </div>
         </section>
+    </div>  
     </div>
+    
 </template>
 
 <script>
@@ -48,13 +51,13 @@ export default {
                     print: "print('Hello World!')",
                     terminalOutput: "Hello World!",
                     promptStyle: ">>> ",
-                    variables: ["familiarity = 50"],
+                    variables: ["familiarity = 50", "bottle = True"],
                 },
                 {
                     language: "JavaScript",
                     userInput: "node",
                     terminalCommand: null,
-                    print: "console.log('Hello World')",
+                    print: "console.log('Hello World!')",
                     terminalOutput: "Hello World!",
                     variables: ["let familiarity = 60", "const Vue = true", "const React = true", "const Node = true"],
                     promptStyle: "> ",
@@ -95,6 +98,7 @@ export default {
 <style lang="scss" scoped>
 $space-grey: #303030;
 $border-grey: #444444;
+$maximize-green: #00e00e;
 
 .skillContainer {
     z-index: 1000;
@@ -115,12 +119,14 @@ p {
     text-align: left;
 }
 .codeWindow {
-    width: 70%;
+    width: 60%;
     background-color: #000;
     height: 300px;
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 15px;
+    animation: fadeIn 1s 1;
+    animation-fill-mode: forwards;
 }
 
 .greyBar {
@@ -162,7 +168,7 @@ p {
     background-color: #ffff23;
 }
 .maximizeButton {
-    background-color: #00e00e;
+    background-color: $maximize-green;
 }
 
 .textWindow {
@@ -188,6 +194,92 @@ p {
     padding: 0;
     font-family: monospace;
     font-size: 15px;
+}
+
+h3, h2 {
+    text-align: center;
+}
+
+h3 {
+    color: $maximize-green;
+}
+
+.revealerGrey, .revealerBlue, .revealerPink, .revealerWhite, .revealerGreen {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 5000px;
+    height: 100%;
+    background: $space-grey;
+    transform: translateX(-100%);
+    animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
+    animation-fill-mode: both;
+  }
+}
+
+.revealerWhite {
+    &::after {
+        background: #fff;
+    }
+}
+
+.revealerGreen {
+    &::after {
+        background: $maximize-green;
+    }
+}
+
+.headerSpan {
+    animation: fadeIn 1s 1;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  70% {
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes secondaryImageOverlayIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes secondaryImageOverlayOut {
+  0% {
+    transform: translateX(0);
+  }
+  99% {
+      opacity: 1
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+    .codeWindow {
+        width: 90%;
+        margin-top: 35px;
+        margin-bottom: 35px;
+
+    }
 }
 </style>
 

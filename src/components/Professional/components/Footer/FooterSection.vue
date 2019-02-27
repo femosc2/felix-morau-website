@@ -21,16 +21,21 @@ export default {
 <style scoped>
 .footer {
     width: 100%;
-    background-color: #FDC01A;
     bottom: 0;
     margin: 0;
+    color: #fff;
+    text-align: center;
+    /* background-color: #303030; */
+    z-index: 900;
+    padding: 0;
+    padding-top: 100px;
     
 }
 p {
     margin: 0;
 }
 a {
-    color: #2c3e50;
+    color: #fff;
     text-decoration-line: none;
     transition: 1s;
 }
