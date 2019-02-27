@@ -1,11 +1,11 @@
 <template>
     <div>
-        <skills-section />
+        <skills-terminals />
     </div>    
 </template>
 
 <script>
-import SkillsSection from "./SkillsSection"
+import SkillsTerminals from "./SkillsTerminals"
 export default {
     data() {
         return {
@@ -13,7 +13,7 @@ export default {
         }
     },
     components: {
-        SkillsSection
+        SkillsTerminals
     }
 }
 </script>
