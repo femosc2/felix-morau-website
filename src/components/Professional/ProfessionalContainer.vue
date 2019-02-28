@@ -4,6 +4,7 @@
         <about />
         <skills />
         <vue-footer />
+        <contact />
     </div>
 </template>
 
@@ -11,6 +12,7 @@
 import NavBar from "./components/Nav/Nav"
 import About from "./components/About/About"
 import Skills from "./components/Skills/Skills"
+import Contact from "./components/Contact/Contact"
 import VueFooter from "./components/Footer/Footer"
 
 export default {
@@ -23,7 +25,8 @@ export default {
         NavBar,
         About,
         Skills,
-        VueFooter
+        VueFooter,
+        Contact
     },
     methods: {
         scrollTo(element) {
