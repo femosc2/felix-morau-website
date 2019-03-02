@@ -6,9 +6,10 @@
 
 <script>
 import GlobalNavigationMenu from "./GlobalNavigationMenu"
+
 export default {
     components: {
-        GlobalNavigationMenu
+        GlobalNavigationMenu,
     },
     methods: {
         showPage(page) {

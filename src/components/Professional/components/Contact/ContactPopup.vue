@@ -1,12 +1,17 @@
 <template>
     <div>
-        <h2>Thank you for your message!</h2>
+        <h2>{{ popUpText }}</h2>
     </div>
 </template>
 
 <script>
 export default {
-    
+    data() {
+        return {
+            popUpText: ""
+        }
+    },
+    props: ["popUpText"]
 }
 </script>
 
@@ -34,6 +39,10 @@ p {
     white-space: nowrap;
     text-align: center;
 }
+
+h2 {
+    animation: fadeIn 3s 1;
+}
 @keyframes bloop {
     0% {
        width: 75px;
@@ -43,7 +52,7 @@ p {
        top: 0%;
         
     }
-    50% {
+    20% {
         top: 50%;
         width: 75px;
         height: 75px;
@@ -58,6 +67,17 @@ p {
         border-radius: 0px;
         left: 0%;
         opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 </style>

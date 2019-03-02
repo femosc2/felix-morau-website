@@ -1,22 +1,12 @@
 <template>
   <div id="app">
     <global-navigation @gNavClicked="setCurrentPage" />
-    <!-- <section v-if="currentPage === 'Professional'">
-      <professional-container />
-    </section>
-    <section v-if="currentPage === 'Personal'">
-       <personal-container :ip="ip" />
-    </section>
-   <section v-if="currentPage === 'CV'">
-      <c-v-container />
-   </section> -->
-   <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import PersonalContainer from "./components/Personal/PersonalContainer";
-import CVContainer from "./components/CV/CVContainer";
 import ProfessionalContainer from "./components/Professional/ProfessionalContainer"
 import GlobalNavigation from "./components/GlobalNavigation/GlobalNavigation"
 
@@ -32,7 +22,6 @@ export default {
   },
   components: {
     PersonalContainer,
-    CVContainer,
     ProfessionalContainer,
     GlobalNavigation
   },

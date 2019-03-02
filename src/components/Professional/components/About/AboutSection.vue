@@ -6,7 +6,7 @@
                 </h3>
             </section>
             <section class="revealerWhite">
-                <h2 class="quote">"Developer, Designer, Degenerate"</h2>
+                <h2 class="quote">"Developer and Designer"</h2>
             </section>
             <section class="revealerWhite">
             <p>
@@ -82,7 +82,7 @@ section {
 }
 
 h3 {
-    text-align: left;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     padding-bottom: 20px;

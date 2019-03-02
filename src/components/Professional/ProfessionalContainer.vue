@@ -3,8 +3,8 @@
         <!-- <nav-bar @navClickDetected="scrollTo" /> -->
         <about />
         <skills />
-        <vue-footer />
         <contact />
+        <vue-footer />
     </div>
 </template>
 
