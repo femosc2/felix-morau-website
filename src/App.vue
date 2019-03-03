@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-    <global-navigation @gNavClicked="setCurrentPage" />
-    <router-view></router-view>
+    <container />
   </div>
 </template>
 
 <script>
-import PersonalContainer from "./components/Personal/PersonalContainer";
-import ProfessionalContainer from "./components/Professional/ProfessionalContainer"
-import GlobalNavigation from "./components/GlobalNavigation/GlobalNavigation"
+import Container from "./components/Container/Container";
 
 const axios = require("axios");
 
@@ -21,9 +18,7 @@ export default {
     };
   },
   components: {
-    PersonalContainer,
-    ProfessionalContainer,
-    GlobalNavigation
+    Container
   },
   methods: {
     logIP() {
