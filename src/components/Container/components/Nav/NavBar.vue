@@ -3,7 +3,7 @@
     <ul id="navBar" :class="{navTop: scrolledPastHeader === true}">
         <li v-for="(section, index) in sections" :key=index @click="goToSection(index, section.menuName )" :class="[
         { active: activeSection === '.' + section.menuName },
-        ]"> <p> {{ section.menuName }} </p> </li>
+        ]" class="ripple"> <p> {{ section.menuName }} </p> </li>
         <div id="indicator">
         </div>
     </ul>
@@ -50,40 +50,46 @@ export default {
       // The if and else checks what platform the user is on.
       // This is needed because of how much longer the webpage becomes on mobile due to the width of the projectcards found in Projects/ProjectList.vue
 
+      let aboutSectionColour = "#f56b5e"
+      let skillsSectionColour = "#009fff"
+      let projectsSectionColour = "#ed5181"
+      let contactSectionColour = "#fdc01a"
+
+
       this.currentScroll = window.scrollY; // Checks what the current scroll is.
 
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
         // Checks if the user is on a mobile device such as a smartphone or a surface.
         if (this.currentScroll > 625 && this.currentScroll < 1200) { // Navbar positioning, if you scroll past 625px (header), the navbar should follow the user
-          this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
+          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", true )
         } else if (this.currentScroll <= 1200) {
-          this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
+          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", false )
         } else if (this.currentScroll > 1200 && this.currentScroll <= 4600) {
-          this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
+          this.changeNavBar("skills", skillsSectionColour, "translateX(100%)", true )
         } else if (this.currentScroll > 4600 && this.currentScroll <= 6200) {
-          this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
+          this.changeNavBar("projects", projectsSectionColour, "translateX(200%)", true )
         } else if (this.currentScroll > 6200 && this.currentScroll <= 10000) {
-          this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
+          this.changeNavBar("contact", contactSectionColour, "translateX(300%)", true )
         }
       } else { // If the user is on a desktop or a laptop.
         if (this.currentScroll >= 600 && this.currentScroll <= 1200) {
-          this.changeNavBar("about", "#f56b5e", "translateX(0%)", true )
+          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", true )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll <= 1200) {
-          this.changeNavBar("about", "#f56b5e", "translateX(0%)", false )
+          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", false )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "none";
         } else if (this.currentScroll > 1200 && this.currentScroll <= 3700) {
-          this.changeNavBar("skills", "#009fff", "translateX(100%)", true )
+          this.changeNavBar("skills", skillsSectionColour, "translateX(100%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll > 3700 && this.currentScroll <= 4700) {
-          this.changeNavBar("projects", "#ed5181", "translateX(200%)", true )
+          this.changeNavBar("projects", projectsSectionColour, "translateX(200%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
         } else if (this.currentScroll > 4700 && this.currentScroll <= 8000) {
-          this.changeNavBar("contact", "#fdc01a", "translateX(300%)", true )
+          this.changeNavBar("contact", contactSectionColour, "translateX(300%)", true )
           document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
           document.getElementById("indicator").style.display = "block";
         }
@@ -106,7 +112,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$aboutSectionColour: #f56b5e;
+$skillsSectionColour: #009fff;
+$projectsSectionColour: #ed5181;
+$contactSectionColour: #fdc01a;
+$indicatorColour: #2c3e50;
+
 ul {
   display: flex;
   top: 0;
@@ -115,7 +127,7 @@ ul {
   justify-content: center;
   padding: 0;
   width: 100%;
-  background: #f56b5e;
+  background: $aboutSectionColour;
   margin: 0;
   transition: 1s;
   margin: 0;
@@ -136,7 +148,15 @@ li {
 li > p {
   margin: 0;
   margin-top: 0.6rem;
-  color: #2c3e50;
+  color: $indicatorColour;
+  transition: 1s;
+}
+
+li:hover > p {
+  margin: 0;
+  margin-top: 0.6rem;
+  color: #fff;
+  transition: 1s;
 }
 
 .active {
@@ -162,7 +182,7 @@ li:not(.active) {
 }
 
 #indicator {
-  background-color: #2c3e50;
+  background-color: $indicatorColour;
   height: 5px;
   top: 90%;
   width: 25%;
@@ -176,6 +196,19 @@ li:not(.active) {
 
 ::selection {
   background-color: rgba(255, 255, 255, 0);
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: $indicatorColour radial-gradient(circle, transparent 1%, $indicatorColour 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #fff;
+  background-size: 100%;
+  transition: background 0s;
 }
 
 @media only screen and (max-width: 1000px) {

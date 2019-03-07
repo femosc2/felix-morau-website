@@ -31,7 +31,7 @@ export default {
                 },
                 {
                     skillName: "React",
-                    familiarity: 30,
+                    familiarity: 34,
                     description: "Used this framework from time to time, able to build simple things.",
                     color: "#80d8f7"
                 },
@@ -86,7 +86,7 @@ export default {
                 {
                     skillName: "Information Architecture",
                     familiarity: 60,
-                    description: "Completed 30HP of Information Architecture at Malmö University.",
+                    description: "Completed 15HP of Information Architecture courses at Malmö University.",
                     color: "#d20aff",
                 },
                 {
@@ -97,15 +97,15 @@ export default {
                 },
                 {
                     skillName: "Interaction Design",
-                    familiarity: 25,
-                    description: "Some familiarity with Interaction Design, completed a 7.5hp course at Malmö University",
+                    familiarity: 36,
+                    description: "Some familiarity with Interaction Design, completed a 7.5hp course at Malmö University, worked as a teaching assistant for the course aswell.",
                     color: "#ffadda",
                 },
                 {
                     skillName: "UML",
                     familiarity: 75,
                     description: "Good familiarity with UML, passed with distiction on the exam.",
-                    color: "#ed0219",
+                    color: "#ed0b00",
                 },
                 {
                     skillName: "Information Design",
@@ -118,6 +118,12 @@ export default {
                     familiarity: 70,
                     description: "Have only worked with Agile Development including Kanban, Scrum and Scrumban.",
                     color: "#42f4bc",
+                },
+                {
+                    skillName: "Information Security",
+                    familiarity: 35,
+                    description: "I took a 7.5hp course in Information Security at Malmö University, know basics of how to make privacy/password policies and know basics of Kali. ",
+                    color: "#b0e24a",
                 },
             ]
         }
