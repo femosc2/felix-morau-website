@@ -76,22 +76,27 @@ export default {
           this.changeNavBar("about", aboutSectionColour, "translateX(0%)", true )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "block";
+          document.getElementById("indicator").style.borderColor = aboutSectionColour
         } else if (this.currentScroll <= 1200) {
           this.changeNavBar("about", aboutSectionColour, "translateX(0%)", false )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "none";
+          document.getElementById("indicator").style.borderColor = aboutSectionColour
         } else if (this.currentScroll > 1200 && this.currentScroll <= 3700) {
           this.changeNavBar("skills", skillsSectionColour, "translateX(100%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
+          document.getElementById("indicator").style.borderColor = skillsSectionColour
         } else if (this.currentScroll > 3700 && this.currentScroll <= 4700) {
           this.changeNavBar("projects", projectsSectionColour, "translateX(200%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
+          document.getElementById("indicator").style.borderColor = projectsSectionColour
         } else if (this.currentScroll > 4700 && this.currentScroll <= 8000) {
           this.changeNavBar("contact", contactSectionColour, "translateX(300%)", true )
           document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
           document.getElementById("indicator").style.display = "block";
+          document.getElementById("indicator").style.borderColor = contactSectionColour
         }
       }
     },
@@ -192,6 +197,9 @@ li:not(.active) {
   left: 0;
   transition: 1s;
   display: none;
+  border-top: 1px solid;
+  border-color: white;
+
 }
 
 ::selection {
