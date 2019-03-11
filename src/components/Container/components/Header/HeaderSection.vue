@@ -53,7 +53,6 @@ export default {
     created() {
         // When this component is created run the methods.
         this.clock()
-        this.headerH1text()
     },
     props: ["userCity", "userWeather", "userTemp", "userCountry"]
 }

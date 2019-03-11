@@ -32,20 +32,17 @@ export default {
                   for (let key in response) {
                       resultArray.push(response[key]); // Organizes the JSON response
                   }
-                  console.log(resultArray)
                   this.userCity = resultArray[0].city // Sets the city to the response
                   this.userCountry = resultArray[0].country // Sets the country to the response
                   this.userCoords = resultArray[0].loc // Sets the coordinates to the response
                   if (this.userCity === "Malmo") { // The city Malmo points to a town in the US.
                       this.userCity = "Malmö"
                   }
-                  console.log(this.userCity)
                   axios.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + Config.forecastAPIKey() + "/" + this.userCoords).then(response => {
                   let weatherArray = []
                   for (let key in response) {
                       weatherArray.push(response[key]);
                   }
-                  console.log(weatherArray)
                   this.userWeather = weatherArray[0].currently.summary // sets the weather (ex rain)
                   let temp = (weatherArray[0].currently.temperature - 32) * 5/9 // Converts the temperature from Farenheit to Celcius.
                   this.userTemp = Math.round(temp * 10) / 10 // Show only one decimal 
