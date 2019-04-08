@@ -116,7 +116,7 @@ export default {
                 {
                     skillName: "Agile Development",
                     familiarity: 70,
-                    description: "Have only worked with Agile Development including Kanban, Scrum and Scrumban.",
+                    description: "Have worked extensively with Agile Development including Kanban, Scrum and Scrumban. Know when to apply what develop strategy.",
                     color: "#42f4bc",
                 },
                 {

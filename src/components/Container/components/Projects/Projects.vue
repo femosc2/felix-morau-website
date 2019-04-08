@@ -27,14 +27,6 @@ export default {
                 this.projects = resultArray[0]
             })
         },
-        newProject() {
-            let projectInfo = {
-                projectName: "lool",
-                projectLanguage: "lool.js",
-                projectDescription: "loool på lool",
-            }
-            axios.post("https://my-website-21d35.firebaseio.com/Projects.json", projectInfo)
-        }
     },
     created() {
         this.getProjects()
