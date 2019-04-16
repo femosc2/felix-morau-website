@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <p>Version 4.1 by <a href="http://www.github.com/femosc2"> Felix Morau</a></p>
+        <p>Version 4.2 by <a href="http://www.github.com/femosc2"> Felix Morau</a></p>
     </div>
 </template>
 
