@@ -2,6 +2,7 @@
     <div>
         <h2> About </h2>
         <section>
+            <about-picture />
             <div class="innerDiv">
                 <p>
                     Hello!
@@ -15,7 +16,19 @@
 </template>
 
 <script>
-export default {};
+import AboutPicture from "./AboutPicture"
+export default {
+    data: function() {
+        return {
+
+        }
+    },
+    components: {
+        AboutPicture
+    },
+    methods: {
+    }
+    }
 </script>
 
 <style scoped>
@@ -41,6 +54,10 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.imgSection {
+    background: white;
+}
 .outerDiv {
   background: #009fff;
   background: -webkit-linear-gradient(to bottom, #009fff, #009fff);
@@ -51,14 +68,12 @@ section {
     to top,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.6)
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.6)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* -webkit-clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%);
-  clip-path: polygon(100% 0, 0 10%, 0 100%, 100% 90%); */
+  );
   min-height: 200px;
   padding-top: 150px;
   padding-bottom: 150px;

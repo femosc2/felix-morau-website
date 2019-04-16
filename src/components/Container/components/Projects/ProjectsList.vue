@@ -2,6 +2,7 @@
 <div class="outerDiv">
         <h2>Projects</h2>
         <section>
+          <describer />
             <div class="innerDiv">
                 <div v-masonry transition-duration="1s" item-selector=".projectCard">
                   <div v-masonry-tile class="item" v-for="(project, index) in orderedProjects" :key=index fit-width="true">
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+import Describer from "../Describer/Describer"
 const _ = require("lodash");
 
 export default {
@@ -49,6 +51,9 @@ export default {
       }
       return this.mutatedProjects;
     }
+  },
+  components: {
+    Describer
   }
 };
 </script>
