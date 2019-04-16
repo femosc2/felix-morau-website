@@ -55,50 +55,39 @@ export default {
       let projectsSectionColour = "#ed5181"
       let contactSectionColour = "#fdc01a"
 
+      const h = document.documentElement, 
+          b = document.body,
+          st = 'scrollTop',
+          sh = 'scrollHeight';
 
-      this.currentScroll = window.scrollY; // Checks what the current scroll is.
-
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        // Checks if the user is on a mobile device such as a smartphone or a surface.
-        if (this.currentScroll > 625 && this.currentScroll < 1200) { // Navbar positioning, if you scroll past 625px (header), the navbar should follow the user
-          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", true )
-        } else if (this.currentScroll <= 1200) {
-          this.changeNavBar("about", aboutSectionColour, "translateX(0%)", false )
-        } else if (this.currentScroll > 1200 && this.currentScroll <= 4600) {
-          this.changeNavBar("skills", skillsSectionColour, "translateX(100%)", true )
-        } else if (this.currentScroll > 4600 && this.currentScroll <= 6200) {
-          this.changeNavBar("projects", projectsSectionColour, "translateX(200%)", true )
-        } else if (this.currentScroll > 6200 && this.currentScroll <= 10000) {
-          this.changeNavBar("contact", contactSectionColour, "translateX(300%)", true )
-        }
-      } else { // If the user is on a desktop or a laptop.
-        if (this.currentScroll >= 600 && this.currentScroll <= 1200) {
+      let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+      
+      if (percent >= 8.5 && percent <= 18) {
           this.changeNavBar("about", aboutSectionColour, "translateX(0%)", true )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "block";
           document.getElementById("indicator").style.borderColor = aboutSectionColour
-        } else if (this.currentScroll <= 1200) {
+        } else if (percent <= 18) {
           this.changeNavBar("about", aboutSectionColour, "translateX(0%)", false )
           document.getElementById("indicator").style.borderRadius = "0px 10px 10px 0px";
           document.getElementById("indicator").style.display = "none";
           document.getElementById("indicator").style.borderColor = aboutSectionColour
-        } else if (this.currentScroll > 1200 && this.currentScroll <= 3700) {
+        } else if (percent > 18 && percent <= 66) {
           this.changeNavBar("skills", skillsSectionColour, "translateX(100%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
           document.getElementById("indicator").style.borderColor = skillsSectionColour
-        } else if (this.currentScroll > 3700 && this.currentScroll <= 4700) {
+        } else if (percent > 66 && percent <= 87) {
           this.changeNavBar("projects", projectsSectionColour, "translateX(200%)", true )
           document.getElementById("indicator").style.borderRadius = "10px";
           document.getElementById("indicator").style.display = "block";
           document.getElementById("indicator").style.borderColor = projectsSectionColour
-        } else if (this.currentScroll > 4700 && this.currentScroll <= 8000) {
+        } else if (percent > 87 && percent <= 100) {
           this.changeNavBar("contact", contactSectionColour, "translateX(300%)", true )
           document.getElementById("indicator").style.borderRadius = "10px 0px 0px 10px";
           document.getElementById("indicator").style.display = "block";
           document.getElementById("indicator").style.borderColor = contactSectionColour
         }
-      }
     },
     changeNavBar(whatSection, color, transform, headerBool) {     // whatSection should be a string in lowercase.
       this.activeSection = whatSection;                           // color should be a string with a hexcode.
@@ -109,7 +98,6 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll); // Listens to the users mousescroll
-    this.handleScroll();
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll); // If the navbar is somehow destroyed, stop tracking the user mouse scroll

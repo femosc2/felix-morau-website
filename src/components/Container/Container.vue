@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <revealer />
+    <loading-page />
     <big-header :ip="ip" />
     <nav-bar @navClickDetected="scrollTo" />
     <about />
@@ -19,7 +19,7 @@ import Skills from "./components/Skills/Skills.vue";
 import Projects from "./components/Projects/Projects.vue";
 import Contact from "./components/Contact/Contact.vue";
 import SmallFooter from "./components/Footer/Footer.vue";
-import Revealer from "./components/Revealer/RevealerBoxes.vue";
+import LoadingPage from "./components/LoadingPage/LoadingPage.vue";
 
 const axios = require("axios");
 
@@ -38,7 +38,7 @@ export default {
     Projects,
     Contact,
     SmallFooter,
-    Revealer
+    LoadingPage
   },
   methods: {
     scrollTo(element) {
