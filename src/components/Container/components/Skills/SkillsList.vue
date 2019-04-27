@@ -130,6 +130,7 @@ section {
 h2 {
   margin: 0;
   font-size: 7vw;
+   z-index: 9000;
 }
 
 p {

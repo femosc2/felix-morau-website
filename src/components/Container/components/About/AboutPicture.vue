@@ -43,6 +43,13 @@ export default {
         margin-left: -75px;
         margin-top: 1%;
     }
+}
 
+@media only screen and (min-width: 1200px) {
+    .profilePicture {
+        height: 50%;
+        left: -10%;
+        margin-top: 1%;
+    }
 }
 </style>
