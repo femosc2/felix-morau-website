@@ -8,7 +8,7 @@ var ipAPIKey = (() => {
     return ipAPIKey
 })
 
-module.exports = {
+export default {
     forecastAPIKey,
     ipAPIKey
-}
+};

@@ -32,7 +32,6 @@ export default {
   },
   created() {
     this.counter();
-    this.destroyLoaders();
   }
 };
 </script>

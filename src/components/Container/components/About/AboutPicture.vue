@@ -1,7 +1,7 @@
 <template>
     <div>
         <section id="imgSection">
-            <img src="./femocutout.png" @click="togglePicture" class="profilePicture" alt=""> 
+            <img src="./femocutout.png" class="profilePicture" alt=""> 
         </section>
     </div>
     

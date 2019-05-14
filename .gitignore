@@ -21,3 +21,4 @@ yarn-error.log*
 *.sln
 *.sw*
 src/components/Personal/config.js
+src/components/Container/config.js
