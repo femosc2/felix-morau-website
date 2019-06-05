@@ -1,0 +1,142 @@
+<template>
+    <div>
+        <skills-list :skills="skills" />
+    </div>
+</template>
+
+<script>
+import SkillsList from "./SkillsList.vue" // imports the skill
+
+export default {
+    data: function() {
+        return {
+            skills: [
+                {
+                    skillName: "JavaScript",
+                    familiarity: 60,
+                    description: "Familiar with JavaScript, mainly with frameworks and libraries. Able to build servers, backends, apps, websites, APIs etc.",
+                    color: "#f1e05a"
+                },
+                {
+                    skillName: "Python",
+                    familiarity: 50,
+                    description: "Learned this language at University. Able to build simple webapps. Knowledge of both functional and object oriented Python.",
+                    color: "#3572A5"
+                },
+                {
+                    skillName: "Vue",
+                    familiarity: 76,
+                    description: "Favorite framework for JavaScript. Able to build pretty much anything the framework allows.",
+                    color: "#4e8e7f"
+                },
+                {
+                    skillName: "React",
+                    familiarity: 34,
+                    description: "Used this framework from time to time, able to build simple things.",
+                    color: "#80d8f7"
+                },
+                {
+                    skillName: "Node",
+                    familiarity: 60,
+                    description: "Able to build APIs, servers, backends and the likes.",
+                    color: "#77B362"
+                },
+                {
+                    skillName: "SQL",
+                    familiarity: 25,
+                    description: "Used POSTGRESQL and Python for a course at University, decent knowledge and experience in building and using Databases.",
+                    color: "#f4a142"
+                },
+                {
+                    skillName: "NO-SQL",
+                    familiarity: 40,
+                    description: "Preffered type of Database. Often using Firebase for projects (including this one).",
+                    color: "#1e3bfc"
+                },
+                {
+                    skillName: "Firebase",
+                    familiarity: 35,
+                    description: "I'm able to use the database and auth functionality to make stable and secure user management systems.",
+                    color: "#f4dc42"
+                },
+                {
+                    skillName: "HTML",
+                    familiarity: 85,
+                    description: "First coding I ever did, never run into issues using HTML but I dont know everything.",
+                    color: "#E54C21"
+                },
+                {
+                    skillName: "CSS",
+                    familiarity: 90,
+                    description: "Able to build decent Animations and transitions as an addition to everyday CSS.",
+                    color: "#1472BA"
+                },
+                {
+                    skillName: "Photoshop",
+                    familiarity: 31,
+                    description: "Decent at Photoshop, made posters and logos for various school projects",
+                    color: "#00C8FF"
+                },
+                {
+                    skillName: "Adobe XD",
+                    familiarity: 40,
+                    description: "Used this program to build prototypes for Information Architecture assignments.",
+                    color: "#FF21C0"
+                },
+                {
+                    skillName: "Information Architecture",
+                    familiarity: 60,
+                    description: "Completed 15HP of Information Architecture courses at Malmö University.",
+                    color: "#d20aff",
+                },
+                {
+                    skillName: "UX-design",
+                    familiarity: 50,
+                    description: "Decent familiarity of proper UX-Design",
+                    color: "#0ad626",
+                },
+                {
+                    skillName: "Interaction Design",
+                    familiarity: 36,
+                    description: "Some familiarity with Interaction Design, completed a 7.5hp course at Malmö University, worked as a teaching assistant for the course aswell.",
+                    color: "#ffadda",
+                },
+                {
+                    skillName: "UML",
+                    familiarity: 75,
+                    description: "Good familiarity with UML, passed with distiction on the exam.",
+                    color: "#ed0b00",
+                },
+                {
+                    skillName: "Information Design",
+                    familiarity: 35,
+                    description: "Some familiarity with Information Design, completed a 7.5hp course at Malmö University",
+                    color: "#ffff00",
+                },
+                {
+                    skillName: "Agile Development",
+                    familiarity: 70,
+                    description: "Have worked extensively with Agile Development including Kanban, Scrum and Scrumban. Know when to apply what develop strategy.",
+                    color: "#42f4bc",
+                },
+                {
+                    skillName: "Information Security",
+                    familiarity: 35,
+                    description: "I took a 7.5hp course in Information Security at Malmö University, know basics of how to make privacy/password policies and know basics of Kali. ",
+                    color: "#b0e24a",
+                },
+            ]
+        }
+    },
+    methods: {
+        
+    },
+    components: {
+        SkillsList
+    }
+}
+</script>
+
+<style>
+
+</style>

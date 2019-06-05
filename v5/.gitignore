@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 /dist
-src/config.js
 
 # local env files
 .env.local
@@ -19,7 +18,4 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
-src/components/Personal/config.js
-src/components/Container/config.js
-v5/src/components/HelloWorld.vue
+*.sw?
