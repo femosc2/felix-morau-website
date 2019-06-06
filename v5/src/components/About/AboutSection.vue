@@ -27,9 +27,10 @@ export default {
         handleScroll() {
             if (window.scrollY >= 0) {
                 this.scrollDown()
+                this.$emit("scrollDetected", "skills")
             } else {
-                console.log("asdasdasdasd")
                 window.scrollTo(0,0)
+                this.$emit("scrollDetected", "about")
             }
         }
     },

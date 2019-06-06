@@ -32,12 +32,11 @@ export default {
   },
   methods: {
     handleScroll() {
-      window.scrollTo(0,0)
+      if (window.scrollY >0) {
+        window.scrollTo(0,0)
+      this.$emit("scrollDetected", "about")
+      }
     },
-    scrollDown() {
-      console.log(window.scrollY);
-      window.scrollBy(0, window.innerHeight + window.scrollY);
-    }
   },
   created() {
     window.addEventListener("wheel", this.handleScroll);
@@ -45,7 +44,6 @@ export default {
     window.addEventListener("touchmove", this.handleScroll);
     window.addEventListener("touchend", this.handleScroll);
   },
-  props: ["skills"],
   components: {
     SkillsItem
   }

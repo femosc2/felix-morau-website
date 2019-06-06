@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <structure />
+    <sidebar :currentSection="currentSection" />
     <about :currentSection="currentSection" @scrollDetected="setSection" />
-    <skills :currentSection="currentSection" />
+    <skills :currentSection="currentSection" @scrollDetected="setSection" />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Skills from "./components/Skills/Skills.vue"
 import About from "./components/About/About.vue"
 import Contact from "./components/Contact/Contact.vue"
 import Structure from "./components/Structure/Structure.vue"
+import Sidebar from "./components/Sidebar/Sidebar.vue"
 
 export default {
   name: 'app',
@@ -25,12 +27,13 @@ export default {
     Skills,
     About,
     Contact,
-    Structure
+    Structure,
+    Sidebar
   },
   methods: {
     setSection(section) {
       this.currentSection = section
-      console.log(section)
+      console.log(this.currentSection)
     }
   }
 }
