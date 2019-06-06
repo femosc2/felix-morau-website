@@ -34,7 +34,7 @@ export default {
           this.changeBackground(softPink)
         } else if (percent > 10 && percent <= 25) {
             console.log("skills")
-            this.changeBackground(hardPurple)
+            this.changeBackground(hardPurpleDark)
         } else if (percent > 18 && percent <= 66) {
             console.log("Projects")
         } else if (percent > 66 && percent <= 87) {
@@ -56,7 +56,7 @@ export default {
 @import "../../sass/Variables.scss";
 .structure {
     background-color: $softPink;
-    height: 100vh;
+    min-height: 100%;
     width: 100%;
     z-index: -100;
     margin: 0;

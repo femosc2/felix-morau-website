@@ -79,7 +79,7 @@ span {
 .profilePicture {
     float: right;
     margin: 0;
-    max-width: 800px;
+    max-width: 80vw;
     height: auto;
     position: absolute;
     top: 0;
