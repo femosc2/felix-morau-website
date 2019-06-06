@@ -29,15 +29,11 @@ export default {
       let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
       
       if (percent <= 10) {
-          console.log("about")
           this.changeBackground(softPink)
         } else if (percent > 10 && percent <= 25) {
-            console.log("skills")
             this.changeBackground(hardPurpleDark)
         } else if (percent > 18 && percent <= 66) {
-            console.log("Projects")
         } else if (percent > 66 && percent <= 87) {
-            console.log("Contact")
         }
         },
         changeBackground(color) {

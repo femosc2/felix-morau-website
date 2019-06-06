@@ -22,7 +22,7 @@ export default {
     methods: {
         scrollDown() {
             console.log(window.scrollY)
-            window.scrollBy(0, window.innerHeight - window.scrollY);
+            window.scrollBy(0, window.innerHeight + window.scrollY);
         },
         handleScroll() {
             if (window.scrollY >= 0) {
@@ -36,7 +36,10 @@ export default {
     components: {
     },
     created() {
-        window.addEventListener('mousewheel', this.handleScroll);
+        window.addEventListener('wheel', this.handleScroll);
+        window.addEventListener("touchstart", this.handleScroll);
+        window.addEventListener("touchmove", this.handleScroll);
+        window.addEventListener("touchend", this.handleScroll);
     }
 }
 </script>
@@ -50,7 +53,7 @@ h2, h3 {
     padding-left: 1%;
 }
 h3 {
-    font-size: 3vh
+    font-size: 2em
 }
 section {
     padding: 0;
@@ -65,11 +68,11 @@ section {
 }
 
 .firstName {
-    font-size: 25vh;
+    font-size: 14em;
 }
 
 .lastName {
-    font-size: 30vh;
+    font-size: 16em;
     margin-top: -70px;
 }
 

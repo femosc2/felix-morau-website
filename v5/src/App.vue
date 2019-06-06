@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <structure />
-    <about />
-    <skills />
-    <projects />
-    <contact />
+    <about :currentSection="currentSection" @scrollDetected="setSection" />
+    <skills :currentSection="currentSection" />
   </div>
 </template>
 
@@ -17,12 +15,23 @@ import Structure from "./components/Structure/Structure.vue"
 
 export default {
   name: 'app',
+  data() {
+    return {
+      currentSection: "about"
+    }
+  },
   components: {
     Projects,
     Skills,
     About,
     Contact,
     Structure
+  },
+  methods: {
+    setSection(section) {
+      this.currentSection = section
+      console.log(section)
+    }
   }
 }
 </script>

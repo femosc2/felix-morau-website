@@ -1,6 +1,6 @@
 <template>
     <div>
-        <skills-list :skills="skills" />
+        <skills-list :currentSection="currentSection" :skills="skills" />
     </div>
 </template>
 
@@ -73,7 +73,8 @@ export default {
     },
     components: {
         SkillsList
-    }
+    },
+    props: ["currentSection"]
 }
 </script>
 

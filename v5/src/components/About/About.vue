@@ -1,5 +1,5 @@
 <template>
-    <about-section />
+    <about-section :currentSection="currentSection" @scrollDetected="switchSection" />
 </template>
 
 <script>
@@ -12,7 +12,13 @@ export default {
     },
     components: {
         AboutSection
-    }
+    },
+    methods: {
+        switchSection(section) {
+            this.$emit("scrollDetected", section)
+        }
+    },
+    props: ["currentSection"]
 }
 </script>
 
