@@ -23,9 +23,20 @@ export default {
         scrollDown() {
             console.log(window.scrollY)
             window.scrollBy(0, window.innerHeight - window.scrollY);
+        },
+        handleScroll() {
+            if (window.scrollY >= 0) {
+                this.scrollDown()
+            } else {
+                console.log("asdasdasdasd")
+                window.scrollTo(0,0)
+            }
         }
     },
     components: {
+    },
+    created() {
+        window.addEventListener('mousewheel', this.handleScroll);
     }
 }
 </script>
@@ -39,7 +50,7 @@ h2, h3 {
     padding-left: 1%;
 }
 h3 {
-    font-size: 30px;
+    font-size: 3vh
 }
 section {
     padding: 0;
@@ -54,11 +65,11 @@ section {
 }
 
 .firstName {
-    font-size: 200px;
+    font-size: 25vh;
 }
 
 .lastName {
-    font-size: 225px;
+    font-size: 30vh;
     margin-top: -70px;
 }
 

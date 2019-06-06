@@ -8,14 +8,29 @@
 </template>
 
 <script>
-import SkillsItem from "./SkillsItem"
+import SkillsItem from "./SkillsItem";
 const _ = require("lodash");
 const colorSort = require("color-sort");
 
 export default {
   data: function() {
-    return {
-    };
+    return {};
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY <= 799 && window.scrollY >= 0) {
+        this.scrollDown();
+      } else {
+        window.scrollTo(0, 0);
+      }
+    },
+    scrollDown() {
+      console.log(window.scrollY);
+      window.scrollBy(0, window.innerHeight + window.scrollY);
+    }
+  },
+  created() {
+    window.addEventListener("wheel", this.handleScroll);
   },
   props: ["skills"],
   components: {
@@ -27,13 +42,12 @@ export default {
 <style lang="scss" scoped>
 @import "../../sass/Variables.scss";
 
-
 h2 {
   margin: 0;
   font-size: 7vw;
-   z-index: 9000;
-   text-align: left;
-   padding-left: 40px;
+  z-index: 9000;
+  text-align: left;
+  padding-left: 40px;
 }
 
 p {

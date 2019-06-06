@@ -27,7 +27,6 @@ export default {
           st = 'scrollTop',
           sh = 'scrollHeight';
       let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
-      console.log(percent)
       
       if (percent <= 10) {
           console.log("about")
