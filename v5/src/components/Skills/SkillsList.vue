@@ -40,8 +40,6 @@ export default {
   },
   created() {
     window.addEventListener("wheel", this.handleScroll);
-    window.addEventListener("touchstart", this.handleScroll);
-    window.addEventListener("touchmove", this.handleScroll);
     window.addEventListener("touchend", this.handleScroll);
   },
   components: {
@@ -93,6 +91,10 @@ ul {
 }
 
 @media only screen and (max-width: 1000px) {
+    section {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 </style>
 

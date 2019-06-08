@@ -38,8 +38,6 @@ export default {
     },
     created() {
         window.addEventListener('wheel', this.handleScroll);
-        window.addEventListener("touchstart", this.handleScroll);
-        window.addEventListener("touchmove", this.handleScroll);
         window.addEventListener("touchend", this.handleScroll);
     }
 }
@@ -94,11 +92,11 @@ span {
 .profilePicture {
     float: right;
     margin: 0;
-    max-width: 80vw;
+    max-width: 40vw;
     height: auto;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5%;
 }
 
 @keyframes downArrowAnimation {
@@ -111,6 +109,66 @@ span {
     100% {
         transform: scale(1.0)
     }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+    section {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .firstName {
+    font-size: 10em;
+    padding-top: 100px;
+    } 
+
+    .lastName {
+        font-size: 12em;
+        margin-top: -30px;
+    }
+    h3 {
+        font-size: 2em;
+        &:first-of-type {
+            padding-top: 150px;
+        }
+    }
+    .profilePicture {
+    max-width: 40%;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+}
+}
+
+@media only screen and (max-width:750px) {
+    section {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .firstName {
+    font-size: 3em;
+    padding-top: 50px;
+    } 
+
+    .lastName {
+        font-size: 4em;
+        margin-top: -20px;
+    }
+    h3 {
+        font-size: 0.8em;
+        &:first-of-type {
+            padding-top: 20px;
+        }
+    }
+
+
+    .profilePicture {
+    max-width: 40%;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+}
 }
 
 
