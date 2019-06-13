@@ -1,18 +1,5 @@
 <template>
-    <section class="skills" v-hammer:swipe.down="scrollUp" v-hammer:pan.left="switchSection">
-        <!-- <ul>
-          <skills-item class="skillDiv" v-for="(skill, index) in skills" :key=index :name="skill.name" :familiarity="skill.familiarity" :color="skill.color" />
-        </ul> -->
-        <!-- <p>
-          <i class="fab fa-vuejs"></i> Vue
-          <i class="fab fa-react"></i> React
-          <i class="fab fa-node"></i> Node
-        </p>
-          <i class="fab fa-js"></i> JavaScript
-          <i class="fas fa-camera-retro"></i> Photoshop
-          <i class="fab fa-python"></i> Python
-          <i class="fab fa-css3-alt"></i>CSS
-          <i class="fas fa-user-friends"></i>UX -->
+    <section class="skills" :class="{ active: currentSection != 'skills' }" v-hammer:swipe.down="scrollUp" v-hammer:pan.left="switchSection">
           <h2>Vue</h2>
           <h2>React</h2>
           <h2>Node</h2>
@@ -25,7 +12,6 @@
 </template>
 
 <script>
-import SkillsItem from "./SkillsItem";
 
 export default {
   data: function() {
@@ -49,7 +35,6 @@ export default {
     // window.addEventListener("touchend", this.handleScroll);
   },
   components: {
-    SkillsItem
   }
 };
 </script>
@@ -106,6 +91,10 @@ ul {
   z-index: 5000;
   transition: 1s;
   width: 100%;
+}
+
+.active {
+    transform: translateX(0%)
 }
 
 @media only screen and (max-width: 1000px) {

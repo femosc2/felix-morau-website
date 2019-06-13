@@ -82,7 +82,7 @@ export default {
   height: 100vh;
   width: 80px;
   background-color: $greyDark;
-  z-index: 5000;
+  z-index: 12000;
   color: #fff;
 }
 
@@ -100,7 +100,7 @@ export default {
     background: rgba(0, 0, 0, 0.6);
     height: 100%;
     width: 100%;
-    z-index: 100;
+    z-index: 11999;
 }
 
 h2 {
@@ -129,7 +129,7 @@ h2 {
 
 .sideBarButton {
     display: none;
-    z-index: 200;
+    z-index: 12000;
 }
 
 .contactDiv {

@@ -1,12 +1,16 @@
 <template>
-<div class="projects" :class="{ active: currentSection != 'projects' }" v-hammer:swipe.right="switchToSkills">
-        <h2 class="projectsH2">Projects</h2>
-        <section>
-          <li v-for="(project, index) in projects" :key="index">
-            {{ project.projectName}}
-          </li>
-        </section>
-    </div>
+<div>
+  <div class="projects" :class="{ active: currentSection != 'projects' }" v-hammer:swipe.right="switchToSkills">
+          <h2 class="projectsH2">Projects</h2>
+          <section>
+            <li v-for="(project, index) in projects" :key="index">
+              {{ project.projectName}}
+            </li>
+          </section>
+      </div>
+        
+</div>
+
 </template>
 
 <script>
@@ -22,7 +26,9 @@ export default {
       window.open(link, '_blank'); 
     },
     switchToSkills() {
-      this.$emit("scrollDetected", "projects")
+      console.log("hejsadasdasd")
+      document.querySelector(".projects").style.transform = "translateX(-100%)"
+      this.$emit("scrollDetected", "skills")  
     }
   },
   props: ["projects", "currentSection"],

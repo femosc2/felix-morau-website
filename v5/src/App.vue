@@ -3,7 +3,7 @@
     <structure />
     <sidebar :currentSection="currentSection" />
     <about :currentSection="currentSection" @scrollDetected="setSection" />
-    <skills :currentSection="currentSection" @scrollDetected="setSection" />
+    <second-section :currentSection="currentSection" @scrollDetected="setSection" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ import About from "./components/About/About.vue"
 import Contact from "./components/Contact/Contact.vue"
 import Structure from "./components/Structure/Structure.vue"
 import Sidebar from "./components/Sidebar/Sidebar.vue"
+import SecondSection from "./components/SecondSection/SecondSection.vue"
 
 export default {
   name: 'app',
@@ -23,9 +24,8 @@ export default {
     }
   },
   components: {
-    Projects,
-    Skills,
     About,
+    SecondSection,
     Contact,
     Structure,
     Sidebar
