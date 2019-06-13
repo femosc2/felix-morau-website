@@ -1,5 +1,5 @@
 <template>
-    <section class="aboutSection">
+    <section class="aboutSection" v-hammer:swipe.down="scrollDown">
         <h2 class="name firstName"><span>Fe</span>lix</h2>
         <h2 class="name lastName"><span>Mo</span>rau</h2>
         <h3>Software Developer Trainee @ HIQ</h3>
@@ -22,6 +22,7 @@ export default {
     methods: {
         scrollDown() {
             console.log(window.scrollY)
+            console.log("down")
             window.scrollBy(0, window.innerHeight + window.scrollY);
         },
         handleScroll() {
@@ -38,7 +39,7 @@ export default {
     },
     created() {
         window.addEventListener('wheel', this.handleScroll);
-        window.addEventListener("touchend", this.handleScroll);
+        // window.addEventListener("touchend", this.handleScroll);
     }
 }
 </script>

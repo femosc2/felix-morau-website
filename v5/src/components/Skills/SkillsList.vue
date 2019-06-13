@@ -1,5 +1,5 @@
 <template>
-    <section class="outerDiv">
+    <section class="outerDiv" v-hammer:swipe.up="scrollUp">
         <!-- <ul>
           <skills-item class="skillDiv" v-for="(skill, index) in skills" :key=index :name="skill.name" :familiarity="skill.familiarity" :color="skill.color" />
         </ul> -->
@@ -31,7 +31,7 @@ export default {
     return {};
   },
   methods: {
-    handleScroll() {
+    scrollUp() {
       if (window.scrollY >0) {
         window.scrollTo(0,0)
       this.$emit("scrollDetected", "about")
@@ -39,8 +39,8 @@ export default {
     },
   },
   created() {
-    window.addEventListener("wheel", this.handleScroll);
-    window.addEventListener("touchend", this.handleScroll);
+    window.addEventListener("wheel", this.scrollUp);
+    // window.addEventListener("touchend", this.handleScroll);
   },
   components: {
     SkillsItem
