@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <structure />
+    <swipe-indicator :currentSection="currentSection" />
     <sidebar :currentSection="currentSection" />
     <about :currentSection="currentSection" @scrollDetected="setSection" />
     <second-section :currentSection="currentSection" @scrollDetected="setSection" />
@@ -8,13 +9,12 @@
 </template>
 
 <script>
-import Projects from "./components/Projects/Projects.vue"
-import Skills from "./components/Skills/Skills.vue"
 import About from "./components/About/About.vue"
 import Contact from "./components/Contact/Contact.vue"
 import Structure from "./components/Structure/Structure.vue"
 import Sidebar from "./components/Sidebar/Sidebar.vue"
 import SecondSection from "./components/SecondSection/SecondSection.vue"
+import SwipeIndicator from "./components/SwipeIndicator/SwipeIndicator.vue"
 
 export default {
   name: 'app',
@@ -28,7 +28,8 @@ export default {
     SecondSection,
     Contact,
     Structure,
-    Sidebar
+    Sidebar,
+    SwipeIndicator
   },
   methods: {
     setSection(section) {
