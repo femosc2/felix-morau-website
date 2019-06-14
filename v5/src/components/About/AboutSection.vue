@@ -6,7 +6,7 @@
         <h3>Computer Science Student @ Malmö University</h3>
         <h3>23 Years old</h3>
         <h3>Malmö, Sweden</h3>
-        <img src="./femocutout.png" class="profilePicture" alt=""> 
+        <img src="./femocutout.png" class="profilePicture" alt="A picture of the creator, Felix Morau"> 
         <i @click="scrollDown" id="downArrow" class="fas fa-chevron-down"></i>  
     </section>
 
@@ -83,7 +83,7 @@ span {
 #downArrow {
     margin-top: 5%;
     font-size: 50px;
-    animation: downArrowAnimation 2s infinite ease-in-out;
+    animation: arrowAnimation 2s infinite ease-in-out;
 
     &:hover {
         color: black;

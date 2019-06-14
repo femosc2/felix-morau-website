@@ -24,3 +24,15 @@ $greyLight: #9aa0a5;
 
 $white: #ffffff;
 $black: #000;
+
+@keyframes arrowAnimation {
+    0% {
+        transform: scale(1.0)
+    }
+    50% {
+        transform: scale(1.4)
+    }
+    100% {
+        transform: scale(1.0)
+    }
+}
