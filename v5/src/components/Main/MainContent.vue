@@ -75,6 +75,7 @@ export default {
     switchToAboutFromSkills() {
       document.querySelector(".about").style.transform = "translateX(0%)"
       document.querySelector(".skills").style.transform = "translateX(100%)"
+      this.$emit("scrollDetected", "about")  
     }
   },
   created() {
@@ -121,12 +122,12 @@ export default {
 
 .projects {
   position: absolute;
-  transform: translateX(200%);
+  transform: translateX(100%);
   transition: 1s;
-  background: green;
   width: 100%;
   z-index: 5000;
   height: 100%;
+  background: rgba(0,0,0, 0.0);
 }
 
 .skills {
@@ -136,10 +137,9 @@ export default {
   transition: 1s;
   width: 100%;
   height: 100%;
-  background: $hardPurpleDark;
-  color: $hardPink;
   height: 100vh;
   overflow: hidden;
+  background: rgba(0,0,0, 0.0);
 }
 .about {
   position: absolute;
@@ -147,14 +147,13 @@ export default {
   transition: 1s;
   width: 100%;
   height: 100%;
-  background: yellow;
-  color: blue;
   height: 100vh;
   overflow: hidden;
+  background: rgba(0,0,0, 0.0);
 }
 
 .active {
-  transform: translateX(0%);
+  transform: translateX(100%);
 }
 
 @media only screen and (max-width: 1000px) {

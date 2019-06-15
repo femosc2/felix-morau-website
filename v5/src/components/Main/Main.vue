@@ -1,6 +1,6 @@
 <template>
 <div>
-    <main-content :currentProjects="projects" />
+    <main-content :currentProjects="projects" @scrollDetected="switchSection" />
 </div>
 </template>
 

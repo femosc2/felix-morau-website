@@ -8,6 +8,7 @@
         <div class="navDiv">
             <p><i  :class="{ activeAbout: currentSection === 'about' }" class="far fa-address-card navIcon"></i></p>
             <p><i :class="{ activeSkills: currentSection === 'skills' }" class="far fa-folder-open navIcon"></i></p> 
+            <p><i :class="{ activeProjects: currentSection === 'projects' }" class="far fa-star navIcon"></i></p> 
         </div>
         <div class="contactDiv">
             <ul class="contactList" v-for="(contact, index) in contacts" :key=index>
@@ -145,9 +146,15 @@ h2 {
 }
 
 .activeSkills {
-    color: $hardPink !important;
+    color: $mediumBlue !important;
     transition: 1s;
-    text-shadow: 0px 0px 10px $hardPink;
+    text-shadow: 0px 0px 10px $mediumBlue;
+}
+
+.activeProjects {
+    color: $softGreen !important;
+    transition: 1s;
+    text-shadow: 0px 0px 10px $softGreen;
 }
 
 .navDiv {

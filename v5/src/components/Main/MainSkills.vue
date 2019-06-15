@@ -8,11 +8,11 @@
               At the moment I am primarily using React, Vue and Node as I have interest in both Front-end and Back-end programming.
               <br>
               <br>
-              <span class="hiddenOnResponsive">While programming is what I specialize in I also learn a lot of UX-design through university.
+              While programming is what I specialize in I also learn a lot of UX-design through university.
               Im well versed in proper UX-design including Information Architecture, Interaction Design and Information Design.
               I also have a minor interest in graphic design having used Photoshop for creating posters and logos for various projects.
               <br>
-              <br></span>
+              <br>
               Swipe to the right or click the arrow to see things I have created at university or in my free time!
           </article>
           <img src="./websitelogos.png" class="logos" alt="">
@@ -30,6 +30,7 @@ export default {
 
 .logos {
   width: 25%;
+  pointer-events: none;
 }
 
 .skillsText {
@@ -38,10 +39,12 @@ export default {
   max-width: 50%;
   text-align: left;
   font-size: 25px;
+  color: $darkBlue;
 }
 
 .skillsH3 {
   text-align: center;
+  color: $mediumBlue;
 }
 
 .skills {
@@ -50,8 +53,6 @@ export default {
   transition: 1s;
   width: 100%;
   height: 100%;
-  background: $hardPurpleDark;
-  color: $hardPink;
   height: 100vh;
   overflow: hidden;
 }
@@ -75,8 +76,8 @@ export default {
   .skillsText {
     max-width: 100%;
     text-align: center;
-    margin: 0;
-    font-size: 10px;
+    margin: 0 auto;
+    font-size: 12px;
   }
   .hiddenOnResponsive {
   }

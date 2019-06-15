@@ -78,7 +78,13 @@ h3 {
   transition: 1s;
   width: 100%;
   height: 100%;
-  background: $softPink;
+  // background: $softPink;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #0770AB, $softPink);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #0770AB, $softPink); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
   color: $hardPurpleDark;
   height: 100vh;
   overflow: hidden;
@@ -147,6 +153,7 @@ span {
     position: absolute;
     top: 0;
     right: 5%;
+    pointer-events: none;
 }
 
 @keyframes downArrowAnimation {

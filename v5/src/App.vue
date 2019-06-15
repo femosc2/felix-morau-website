@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <structure /> -->
+    <structure :currentSection="currentSection" />
     <swipe-indicator :currentSection="currentSection" />
     <sidebar :currentSection="currentSection" />
     <vue-main :currentSection="currentSection" @scrollDetected="setSection" />
