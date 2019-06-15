@@ -1,18 +1,19 @@
 <template>
 <div>
-    <projects-list :currentSection="currentSection" :projects="projects" @scrollDetected="switchSection" />
+    <main-content :currentProjects="projects" />
 </div>
 </template>
 
 <script>
-import ProjectsList from "./ProjectsList.vue"
+import MainContent from "./MainContent"
 const axios = require("axios")
 
 
 export default {
     data() {
         return {
-            projects: []
+            projects: [],
+            secondSection: "skills"
         }
     },
     methods: {
@@ -29,17 +30,25 @@ export default {
         },
         switchSection(section) {
             this.$emit("scrollDetected", section)
-        }
+        },
     },
     created() {
         this.getProjects()
     },
 components: {
-    ProjectsList
+    MainContent
+},
+watch: {
+    currentSection: function(newVal, oldVal){
+        this.secondSection = newVal
+        console.log(this.secondSection + "SECOND")
+    }
 },
 props: ["currentSection"]
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.lol {
+}
 </style>

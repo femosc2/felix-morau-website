@@ -130,6 +130,8 @@ h2 {
 .sideBarButton {
     display: none;
     z-index: 12000;
+    position: absolute;
+    right: 0;
 }
 
 .contactDiv {

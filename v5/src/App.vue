@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <structure />
+    <!-- <structure /> -->
     <swipe-indicator :currentSection="currentSection" />
     <sidebar :currentSection="currentSection" />
-    <about :currentSection="currentSection" @scrollDetected="setSection" />
-    <second-section :currentSection="currentSection" @scrollDetected="setSection" />
+    <vue-main :currentSection="currentSection" @scrollDetected="setSection" />
   </div>
 </template>
 
 <script>
-import About from "./components/About/About.vue"
 import Contact from "./components/Contact/Contact.vue"
 import Structure from "./components/Structure/Structure.vue"
 import Sidebar from "./components/Sidebar/Sidebar.vue"
-import SecondSection from "./components/SecondSection/SecondSection.vue"
+import VueMain from "./components/Main/Main.vue"
 import SwipeIndicator from "./components/SwipeIndicator/SwipeIndicator.vue"
 
 export default {
@@ -24,8 +22,7 @@ export default {
     }
   },
   components: {
-    About,
-    SecondSection,
+    VueMain,
     Contact,
     Structure,
     Sidebar,
