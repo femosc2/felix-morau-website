@@ -7,8 +7,8 @@
         <h2>Morau</h2>
         <div class="navDiv">
             <p><i  :class="{ activeAbout: currentSection === 'about' }" class="far fa-address-card navIcon"></i></p>
-            <p><i :class="{ activeSkills: currentSection === 'skills' }" class="far fa-folder-open navIcon"></i></p> 
-            <p><i :class="{ activeProjects: currentSection === 'projects' }" class="far fa-star navIcon"></i></p> 
+            <p><i :class="{ activeSkills: currentSection === 'skills' }" class="far fa-star navIcon"></i></p>
+            <p><i :class="{ activeProjects: currentSection === 'projects' }" class="far fa-folder-open navIcon"></i></p>
         </div>
         <div class="contactDiv">
             <ul class="contactList" v-for="(contact, index) in contacts" :key=index>
