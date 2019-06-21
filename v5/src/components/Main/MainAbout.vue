@@ -1,11 +1,11 @@
 <template>
     <section class="aboutSection" v-hammer:swipe.up="scrollDown">
-        <h2 class="name firstName"><span>Fe</span>lix</h2>
-        <h2 class="name lastName"><span>Mo</span>rau</h2>
-        <h3>Software Developer Trainee @ HIQ</h3>
-        <h3>Computer Science Student @ Malmö University</h3>
-        <h3>23 Years old</h3>
-        <h3>Malmö, Sweden</h3>
+        <h2 class="name firstName revealerAbout"><span>Fe</span>lix</h2>
+        <h2 class="name lastName revealerAbout"><span>Mo</span>rau</h2>
+        <h3 class="nonName revealerAbout">Software Developer Trainee @ HIQ</h3>
+        <h3 class="nonName revealerAbout">Computer Science Student @ Malmö University</h3>
+        <h3 class="nonName revealerAbout">23 Years old</h3>
+        <h3 class="nonName revealerAbout">Malmö, Sweden</h3>
         <img src="./femocutout.png" class="profilePicture" alt="A picture of the creator, Felix Morau"> 
     </section>
 
@@ -50,6 +50,11 @@ h2, h3 {
     margin: 0;
     text-align: left;
     padding-left: 1%;
+    max-width: 100%;
+}
+
+.nonName {
+    max-width: 55%;
 }
 h3 {
     font-size: 2em
@@ -118,8 +123,9 @@ h3 {
 
 
 .name {
-    margin: 0 auto;
+    margin: 0;
     color: $hardPurpleDark;
+    max-width: 60%;
 }
 
 .firstName {
@@ -148,12 +154,14 @@ span {
 .profilePicture {
     float: right;
     margin: 0;
-    max-width: 40vw;
+    max-width: 38vw;
     height: auto;
     position: absolute;
     top: 0;
     right: 5%;
     pointer-events: none;
+    animation: profilePictureAnimation 2s 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes downArrowAnimation {
@@ -166,6 +174,16 @@ span {
     100% {
         transform: scale(1.0)
     }
+}
+
+@keyframes profilePictureAnimation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);    
+    }
+    
 }
 
 @media only screen 

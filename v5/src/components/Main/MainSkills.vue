@@ -2,6 +2,7 @@
     <section>
         <article class="skillsText">
             <h3 class="skillsH3">Skills</h3>
+            <p>
               I wrote my first lines of code in early 2017 when I started learning Web Development through HTML and CSS.
               I enrolled in the Information Architecture Programme at Malmö University in the fall of 2017 and started learning programming through Python.
               Programming became my primary hobby ever since I wrote my first "Hello World!" and I'm always exploring new concepts, languages or designs.
@@ -14,6 +15,7 @@
               <br>
               <br>
               Swipe to the right or click the arrow to see things I have created at university or in my free time!
+            </p>
           </article>
           <img src="./websitelogos.png" class="logos" alt="">
     </section>
@@ -31,6 +33,7 @@ export default {
 .logos {
   width: 25%;
   pointer-events: none;
+  
 }
 
 .skillsText {
@@ -45,6 +48,7 @@ export default {
 .skillsH3 {
   text-align: center;
   color: $mediumBlue;
+  background-color: $darkBlue;
 }
 
 .skills {

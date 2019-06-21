@@ -3,8 +3,8 @@
         <p class="sideBarButton"><i @click="showMenu" class="fas fa-bars"></i></p>
         <div v-if="isMenuShowing" class="overlay" @click="closeMenu"></div>
         <div class="sideBar">
-        <h2>Felix</h2>
-        <h2>Morau</h2>
+        <img class="sideBarPortrait" src="./femocutout.png" alt="">
+        <h2>FeMo</h2>
         <div class="navDiv">
             <p><i  :class="{ activeAbout: currentSection === 'about' }" class="far fa-address-card navIcon"></i></p>
             <p><i :class="{ activeSkills: currentSection === 'skills' }" class="far fa-star navIcon"></i></p>
@@ -108,9 +108,10 @@ h2 {
     font-size: 20px;
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
+.sideBarPortrait {
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
 }
 
 .contactIcon {
