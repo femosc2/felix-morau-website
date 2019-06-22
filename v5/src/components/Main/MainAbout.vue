@@ -1,11 +1,11 @@
 <template>
     <section class="aboutSection" v-hammer:swipe.up="scrollDown">
-        <h2 class="name firstName revealerAbout"><span>Fe</span>lix</h2>
-        <h2 class="name lastName revealerAbout"><span>Mo</span>rau</h2>
-        <h3 class="nonName revealerAbout">Software Developer Trainee @ HIQ</h3>
-        <h3 class="nonName revealerAbout">Computer Science Student @ Malmö University</h3>
-        <h3 class="nonName revealerAbout">23 Years old</h3>
-        <h3 class="nonName revealerAbout">Malmö, Sweden</h3>
+        <h2 class="name firstName revealerAbout"><span class="nonNameText"><span class="nameSpan">Fe</span>lix</span></h2>
+        <h2 class="name lastName revealerAbout"><span class="nonNameText"><span class="nameSpan">Mo</span>rau</span></h2>
+        <h3 class="nonName revealerAbout"><span class="nonNameText">Software Developer Trainee @ HIQ</span></h3>
+        <h3 class="nonName revealerAbout"><span class="nonNameText">Computer Science Student @ Malmö University</span></h3>
+        <h3 class="nonName revealerAbout"><span class="nonNameText">23 Years old</span></h3>
+        <h3 class="nonName revealerAbout"><span class="nonNameText">Malmö, Sweden</span></h3>
         <img src="./femocutout.png" class="profilePicture" alt="A picture of the creator, Felix Morau"> 
     </section>
 
@@ -59,7 +59,6 @@ h2, h3 {
 h3 {
     font-size: 2em
 }
-@import "../../sass/Variables.scss";
 
 .logos {
   width: 25%;
@@ -99,6 +98,11 @@ h3 {
   transform: translateX(0%);
 }
 
+.nonNameText {
+      animation: fadeIn 0.6s 1;
+      animation-fill-mode: forwards;
+  }
+
 @media only screen and (max-width: 1000px) {
   .projectCard {
     width: 50%;
@@ -116,8 +120,6 @@ h3 {
     text-align: center;
     margin: 0;
     font-size: 10px;
-  }
-  .hiddenOnResponsive {
   }
 }
 
@@ -137,7 +139,7 @@ h3 {
     margin-top: -70px;
 }
 
-span {
+.nameSpan {
     color: $hardPurple;
 }
 

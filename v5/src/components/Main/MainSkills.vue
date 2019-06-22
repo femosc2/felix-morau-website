@@ -1,7 +1,7 @@
 <template>
     <section>
         <article class="skillsText">
-            <h3 class="skillsH3">Skills</h3>
+            <h3 class="skillsH3">Skills></h3>
             <p>
               I wrote my first lines of code in early 2017 when I started learning Web Development through HTML and CSS.
               I enrolled in the Information Architecture Programme at Malmö University in the fall of 2017 and started learning programming through Python.
@@ -10,7 +10,7 @@
               <br>
               <br>
               While programming is what I specialize in I also learn a lot of UX-design through university.
-              Im well versed in proper UX-design including Information Architecture, Interaction Design and Information Design.
+              I am well versed in proper UX-design including Information Architecture, Interaction Design and Information Design.
               I also have a minor interest in graphic design having used Photoshop for creating posters and logos for various projects.
               <br>
               <br>
@@ -48,7 +48,6 @@ export default {
 .skillsH3 {
   text-align: center;
   color: $mediumBlue;
-  background-color: $darkBlue;
 }
 
 .skills {
