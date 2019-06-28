@@ -11,7 +11,7 @@
               <br>
               While programming is what I specialize in I also learn a lot of UX-design through university.
               I am well versed in proper UX-design including Information Architecture, Interaction Design and Information Design.
-              I also have a minor interest in graphic design having used Photoshop for creating posters and logos for various projects.
+              I also have a minor interest in graphic design having used Photoshop to create posters and logos for various projects.
               <br>
               <br>
               Swipe to the right or click the arrow to see things I have created at university or in my free time!

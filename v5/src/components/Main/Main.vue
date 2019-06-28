@@ -1,6 +1,6 @@
 <template>
 <div>
-    <main-content :currentProjects="projects" @scrollDetected="switchSection" />
+    <main-content @scrollDetected="switchSection" />
 </div>
 </template>
 
@@ -17,23 +17,11 @@ export default {
         }
     },
     methods: {
-        getProjects() {
-            // Gets the projects from firebase
-            axios.get("https://my-website-21d35.firebaseio.com/Projects.json")
-            .then(response => {
-                const resultArray = [];
-                for (let key in response) {
-                    resultArray.push(response[key]); // Organizes the json response
-                }
-                this.projects = resultArray[0]
-            })
-        },
         switchSection(section) {
             this.$emit("scrollDetected", section)
         },
     },
     created() {
-        this.getProjects()
     },
 components: {
     MainContent

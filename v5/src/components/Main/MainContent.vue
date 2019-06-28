@@ -28,7 +28,6 @@ import MainAbout from "./MainAbout"
 export default {
   data() {
     return {
-      projects: [],
       secondSection: "about"
     };
   },
