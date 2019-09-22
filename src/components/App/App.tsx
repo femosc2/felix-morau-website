@@ -1,17 +1,20 @@
 import React from 'react';
 
-import { AboutPage } from '../../pages/About/AboutPage';
-import { ProjectsPage } from '../../pages/Projects/ProjectsPage';
-import { ContactPage } from '../../pages/Contact/ContactPage'
-import { ErrorPage } from '../../pages/Error/ErrorPage';
+import { AboutPage } from '../../pages/About';
+import { ProjectsPage } from '../../pages/Projects';
+import { ContactPage } from '../../pages/Contact'
+import { ErrorPage } from '../../pages/Error';
 
 import './App.css';
 import { Redirect, Route, Switch } from 'react-router-dom';
+
+import TopBarContainer from '../TopBar';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <div className="content" id="app-content">
+      <TopBarContainer />
         <Switch>
             <Route exact path="/" component={ AboutPage } />
             <Route path="/about" component={ AboutPage } />
