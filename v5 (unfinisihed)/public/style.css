@@ -1,0 +1,14 @@
+    
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto;
+    background-color: #000;
+    overflow: hidden !important;
+}
+
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    scroll-behavior: smooth;
+}
