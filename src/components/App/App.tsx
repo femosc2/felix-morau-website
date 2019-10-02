@@ -10,6 +10,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import TopBarContainer from '../TopBar';
 
+import store from "../../store"
+
 const App: React.FC = () => {
   return (
     <div className="App">
