@@ -3,7 +3,7 @@ import { TopBar } from './TopBar'
 import { withRouter, RouteComponentProps } from 'react-router';
 
 const TopBarContainer: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
-    const TABS = ['About', 'Projects', 'Contact']
+    const TABS = ['about', 'projects', 'contact']
 
     const switchTab = (tabName: string) => {
         props.history.push('/' + tabName)
