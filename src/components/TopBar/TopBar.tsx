@@ -13,7 +13,7 @@ const StyledTopBar = styled.nav`
     width: 100%;
     background: ${ c.topBarGrey }
     font-size: 1.5rem;
-    height: 4rem;
+    height: 8vh;
 `
 const StyledTabContainer = styled.ul`
     display: inline-flex;
