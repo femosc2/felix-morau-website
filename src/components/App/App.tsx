@@ -10,6 +10,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import TopBarContainer from '../TopBar';
 
+import store from "../../store"
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -17,7 +19,7 @@ const App: React.FC = () => {
       <TopBarContainer />
         <Switch>
             <Route exact path="/" component={ AboutPage } />
-            <Route path="/about" component={ AboutPage } />
+            <Route path={["/about", "/about/me", "/about/skills"]}component={ AboutPage } />
             <Route path="/projects" component={ ProjectsPage } />
             {/* <Route path="/projects:id" component={ projectPage } /> */}
             <Route path="/contact" component={ ContactPage } />
