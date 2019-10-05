@@ -6,6 +6,7 @@ import { Skill } from './components/Skill';
 import { COLORS } from '../../../../variables/colors';
 import background from '../../../../assets/background.png'
 
+
 interface IProps {
     handleClick: () => void; 
     whoAmIActive: boolean;

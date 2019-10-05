@@ -2,11 +2,11 @@ import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import reduxStore from '../../../../store';
 import { ITimelineEvent } from './index';
-import { Timeline } from './components/Timeline';
 import felix from '../../../../assets/felix.png'
 import background from '../../../../assets/background.png'
 import meBackground from '../../../../assets/meBackground.png'
 import { COLORS } from '../../../../variables/colors';
+import wave from '../../../../assets/wave.svg'
 
 interface IProps {
     handleClick: () => void; 
@@ -78,6 +78,8 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         const StyledTextSection = styled.section`
         position: absolute;
         right: 0%;
+        animation: ${whoAmIActive ? css`${fadeOut} 1.5s` : css`${fadeIn} 0.5s`};
+        animation-fill-mode: forwards;
         @media (max-width: 768px) {
             margin-top: 20vh;
             right: 23%;
@@ -91,6 +93,11 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         animation: ${whoAmIActive ? css`${fadeIn} 0.5s` : css`${fadeOut} 0.5s`};
         transition: 1s;
         animation-fill-mode: forwards;
+        color: #fff;
+    `
+    const StyledSpanSection = styled.section`
+        position: absolute;
+        right: 0%;
     `
     const StyledH2 = styled.h2`
         font-size: 8vw;
@@ -157,19 +164,18 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
                 <StyledP>
                     My journey as a Software Developer started in 2017 when I dropped out of my marketing programme and enrolled in an Web Development Course.
                     I instantly realised how fun I found coding and transferred to Malmö University and the Information Architecture programme. I wrote my first
-                    Hello World in November 2017, and from there on I have continued honing my skills as a software devloper. In 2019 started working as a Fullstack Web Developer
+                    Hello World in November 2017, and from there on I have continued honing my skills as a software devloper. In 2019 I started working as a Fullstack Web Developer
                     Consultant at HiQ.
                 </StyledP>
                 <StyledP>
 
                 </StyledP>
             </StyledTextSection>
-            <StyledTextSection>
+            <StyledSpanSection>
             {"ME".split("").map(letter => 
                     <StyledVerticalSpan> {letter} </StyledVerticalSpan>
-                )}
-            </StyledTextSection>
-            {/* <Timeline timelineEvents={ timelineEvents }  /> */}
+            )}
+            </StyledSpanSection>
         </StyledSection>
         </>
     )
