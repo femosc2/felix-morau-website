@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 
 import {
-    AboutAction,
-    SET_ACTIVE_ABOUT
+  AboutAction,
+  SET_ACTIVE_ABOUT,
 } from './actions';
 
 export interface IWidths {
@@ -14,16 +15,16 @@ export interface IAbout {
 }
 
 const initialDomainsState: IAbout = {
-    whoAmIActive: false
+  whoAmIActive: false,
 };
 
 export const about = (state: IAbout = initialDomainsState, action: AboutAction) => {
-    switch (action.type) {
-        case SET_ACTIVE_ABOUT:
-            return {
-                ...state,
-                whoAmIActive: action.isWhoAmIActive
-            };
-    }
-    return state;
+  switch (action.type) {
+  case SET_ACTIVE_ABOUT:
+    return {
+      ...state,
+      whoAmIActive: action.isWhoAmIActive,
+    };
+  }
+  return state;
 };
