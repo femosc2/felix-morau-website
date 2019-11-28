@@ -94,6 +94,9 @@
         ],
         "@typescript-eslint/member-delimiter-style": [
             "off"
+        ],
+        "no-irregular-whitespace" : [
+            "off"
         ]
     }
 }

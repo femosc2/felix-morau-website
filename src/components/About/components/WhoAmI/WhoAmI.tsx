@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { ITimelineEvent } from './index';
 import felix from '../../../../assets/felix.png';
 import meBackground from '../../../../assets/meBackground.png';
-// import { COLORS } from '../../../../variables/colors';
+import { COLORS } from '../../../../variables/colors';
 
 interface IProps {
     handleClick: () => void;
@@ -16,7 +16,7 @@ interface IProps {
 
 export const WhoAmI: React.FC<IProps> = (props: IProps) => {
   const { handleClick, whoAmIActive } = props;
-  //   const c = { ...COLORS };
+  const c = { ...COLORS };
 
   const slideToLeft = keyframes`
         0% {
@@ -67,6 +67,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         padding: 0;
         transition: all 1s ease-in-out;
         z-index: 100;
+        cursor: ${whoAmIActive ? 'pointer' : 'default'}
         @media (max-width: 768px) {
             height: 200vh;
             text-align: center;
@@ -98,8 +99,8 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         right: 0%;
     `;
   const StyledH2 = styled.h2`
-        font-size: 8vw;
-        color: #fff;
+        font-size: 8rem;
+        color: ${ '#fff' };
         margin: 0 auto;
         @media (max-width: 768px) {
             text-align: center;
@@ -110,7 +111,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
   const StyledP = styled.p`
     color: #fff;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 3rem;
     max-width: 55vw;
     @media (max-width: 768px) {
         text-align: center;
@@ -118,10 +119,6 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         max-width: 100%;
         margin-left: 15%;
     };
-    `;
-
-  const StyledSpanFelix = styled.span`
-    color: #ff00c3;
     `;
 
   const StyledImg = styled.img`
@@ -132,33 +129,26 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         };
     `;
 
+  const sideBarIcons = [{
+    name: 'fas fa-id-card',
+    color: c.topBarGrey,
+  }];
+
   return (
     <>
       <StyledSection onClick={ () => handleClick()}>
         <StyledImg src={ felix } alt=""/>
         <StyledTextSection>
           <StyledH2> Who am I? </StyledH2>
-          <StyledP>
-                    My name is <StyledSpanFelix> Felix Morau </StyledSpanFelix> I'm 23 years old and I'm a senior year Computer Science Student at Malmö University and a Fullstack Web Developer
-                    Consultant at HiQ.
-          </StyledP>
-          <StyledP>
-                    I was born and raised in Helsingborg where I went to elementery school and high school.
-                    In my spare time I enjoy programming(duh), music, football and fashion.
-          </StyledP>
-          <StyledP>
-                    My journey as a Software Developer started in 2017 when I dropped out of my marketing programme and enrolled in an Web Development Course.
-                    I instantly realised how fun I found coding and transferred to Malmö University and the Information Architecture programme. I wrote my first
-                    Hello World in November 2017, and from there on I have continued honing my skills as a software devloper. In 2019 I started working as a Fullstack Web Developer
-                    Consultant at HiQ.
-          </StyledP>
-          <StyledP>
-
-          </StyledP>
+          <StyledP> Felix Morau | 24 | Malmö, Sweden </StyledP>
+          <StyledP> Fullstack Web Developer @ HiQ </StyledP>
+          <StyledP> CS-Student @ Malmö University </StyledP>
         </StyledTextSection>
         <StyledSpanSection>
-          {'ME'.split('').map((letter: string, index: number) =>
-            <StyledVerticalSpan key={ letter + index}> {letter} </StyledVerticalSpan>,
+          {sideBarIcons.map((icon) =>
+            <StyledVerticalSpan key={ icon.name }> <i className={ icon.name } style={{
+              color: icon.color,
+            }}></i> </StyledVerticalSpan>,
           )}
         </StyledSpanSection>
       </StyledSection>
