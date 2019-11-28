@@ -1,6 +1,5 @@
-import React, { useEffect, ReactNode } from 'react';
-import reduxStore, { IStore } from '../../../../store';
-import { IWidths } from '../../redux/reducers';
+import React, { useEffect } from 'react';
+import { IStore } from '../../../../store';
 import { bindActionCreators } from 'redux';
 import { setActiveAbout } from '../../redux/actions';
 import { connect } from 'react-redux';
@@ -57,8 +56,8 @@ const WhoAmIContainer: React.FC<Props> = (props: Props) => {
     }, [])
 
     const handleClick = () => {
-        whoAmIActive ? props.history.push("/about/me") : console.log("lol")
-        whoAmIActive ? setActiveAbout(false) : console.log("lol");
+        if (whoAmIActive ) { props.history.push("/about/me") }
+        if (whoAmIActive) { setActiveAbout(false) }
     }
     return (
         <>
