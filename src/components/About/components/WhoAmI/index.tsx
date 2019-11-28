@@ -22,64 +22,64 @@ export interface ITimelineEvent {
 type Props = IPropsInternal & RouteComponentProps
 
 const WhoAmIContainer: React.FC<Props> = (props: Props) => {
-    const { whoAmIActive, setActiveAbout } = props
+  const { whoAmIActive, setActiveAbout } = props;
 
-    const timelineEvents: ITimelineEvent[] = [
-        {
-            date: "2019-08-26",
-            event: "Completed my trainee assignment and was assigned to AWA as a front-end web developer"
-        },
-        {
-            date: "2019-07-02",
-            event: "Started at HiQ as a trainee"
-        },
-        {
-            date: "2018-02-04",
-            event: "Launched felixmorau.se"
-        },
-        {
-            date: "2017-11-02",
-            event: "Wrote my first Hello World in Python"
-        },
-        {
-            date: "2017-08-24",
-            event: "Started studying Computer Science at Malmö University"
-        },
-        {
-            date: "2017-01-21",
-            event: "Started coding with HTML & CSS"
-        },
-    ]
+  const timelineEvents: ITimelineEvent[] = [
+    {
+      date: '2019-08-26',
+      event: 'Completed my trainee assignment and was assigned to AWA as a front-end web developer',
+    },
+    {
+      date: '2019-07-02',
+      event: 'Started at HiQ as a trainee',
+    },
+    {
+      date: '2018-02-04',
+      event: 'Launched felixmorau.se',
+    },
+    {
+      date: '2017-11-02',
+      event: 'Wrote my first Hello World in Python',
+    },
+    {
+      date: '2017-08-24',
+      event: 'Started studying Computer Science at Malmö University',
+    },
+    {
+      date: '2017-01-21',
+      event: 'Started coding with HTML & CSS',
+    },
+  ];
 
-    useEffect(() => {
-        window.location.href.includes("me") ? setActiveAbout(false) : console.log("lol");
-    }, [])
+  useEffect(() => {
+    window.location.href.includes('me') ? setActiveAbout(false) : console.log('lol');
+  }, []);
 
-    const handleClick = () => {
-        if (whoAmIActive ) { props.history.push("/about/me") }
-        if (whoAmIActive) { setActiveAbout(false) }
-    }
-    return (
-        <>
-            <WhoAmI handleClick={ handleClick } whoAmIActive={ whoAmIActive} timelineEvents={ timelineEvents } />
-        </>
-    )
-}
+  const handleClick = () => {
+    if (whoAmIActive ) { props.history.push('/about/me'); }
+    if (whoAmIActive) { setActiveAbout(false); }
+  };
+  return (
+    <>
+      <WhoAmI handleClick={ handleClick } whoAmIActive={ whoAmIActive} timelineEvents={ timelineEvents } />
+    </>
+  );
+};
 
 const mapStateToProps = (store: IStore) => {
-    return {
-      whoAmIActive: store.about.whoAmIActive
-    };
+  return {
+    whoAmIActive: store.about.whoAmIActive,
+  };
 };
 
 
 const mapDispatchToProps = (dispatch: any) => {
-    return bindActionCreators({
-      setActiveAbout
-    }, dispatch);
-  };
+  return bindActionCreators({
+    setActiveAbout,
+  }, dispatch);
+};
 
-  export default compose<Props, {}>(
-    connect(mapStateToProps, mapDispatchToProps),
-    withRouter
-  )(WhoAmIContainer)
+export default compose<Props, {}>(
+  connect(mapStateToProps, mapDispatchToProps),
+  withRouter,
+)(WhoAmIContainer);

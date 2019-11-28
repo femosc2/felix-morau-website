@@ -1,13 +1,12 @@
-import React, { Dispatch, useEffect, useState } from 'react';
-import reduxStore, { IStore } from '../../../../store';
-import { IWidths } from '../../redux/reducers';
+import React, { useEffect, useState } from 'react';
+import { IStore } from '../../../../store';
 import { bindActionCreators } from 'redux';
 import { setActiveAbout } from '../../redux/actions';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { WhatDoIDo } from './WhatDoIDo'
+import { WhatDoIDo } from './WhatDoIDo';
 import { RouteComponentProps, withRouter } from 'react-router';
-import axios, { AxiosPromise } from 'axios';
+import axios from 'axios';
 import { ISkill } from './index';
 
 interface IPropsInternal {
@@ -26,55 +25,54 @@ export interface ISkill {
 type Props = IPropsInternal & RouteComponentProps
 
 const WhatDoIDoContainer: React.FC<Props> = (props: Props) => {
-    const { whoAmIActive, setActiveAbout } = props;
-    const [skills, setSkills] = useState([{
-        skillName: "",
-        color: "",
-        comfortability: 0,
-        description: ""
-    }]);
+  const { whoAmIActive, setActiveAbout } = props;
+  const [skills, setSkills] = useState([{
+    skillName: '',
+    color: '',
+    comfortability: 0,
+    description: '',
+  }]);
 
-    useEffect(() => {
-        getSkills()
-        window.location.href.includes("skills") ? setActiveAbout(true) : setActiveAbout(false);
-    }, [])
+  const getSkills = async () => {
+    const response = await axios.get('https://my-website-21d35.firebaseio.com/skills.json');
+    let skills: ISkill[] = response.data;
+    skills = skills.sort((a, b) => {
+      return b.comfortability - a.comfortability;
+    });
+    setSkills(skills);
+  };
 
-    const handleClick = () => {
-        whoAmIActive ? console.log("lol") : props.history.push("/about/skills")
-        whoAmIActive ? console.log("lol") : setActiveAbout(true);
-    }
+  useEffect(() => {
+    getSkills();
+    window.location.href.includes('skills') ? setActiveAbout(true) : setActiveAbout(false);
+  }, []);
 
-    const getSkills = async () => {
-        const response = await axios.get("https://my-website-21d35.firebaseio.com/skills.json")
-        let skills: ISkill[] = response.data
-        skills = skills.sort((a, b) => {
-            return b.comfortability - a.comfortability
-        })
-        setSkills(skills)
-        
-    }
+  const handleClick = () => {
+    whoAmIActive ? console.log('lol') : props.history.push('/about/skills');
+    whoAmIActive ? console.log('lol') : setActiveAbout(true);
+  };
 
-    return (
-        <>
-            <WhatDoIDo handleClick={ handleClick } whoAmIActive={ whoAmIActive} skills={ skills } />
-        </>
-    )
-}
+  return (
+    <>
+      <WhatDoIDo handleClick={ handleClick } whoAmIActive={ whoAmIActive} skills={ skills } />
+    </>
+  );
+};
 
 const mapStateToProps = (store: IStore) => {
-    return {
-        whoAmIActive: store.about.whoAmIActive
-    };
+  return {
+    whoAmIActive: store.about.whoAmIActive,
+  };
 };
 
 
 const mapDispatchToProps = (dispatch: any) => {
-    return bindActionCreators({
-      setActiveAbout
-    }, dispatch);
-  };
+  return bindActionCreators({
+    setActiveAbout,
+  }, dispatch);
+};
 
-  export default compose<Props, {}>(
-    connect(mapStateToProps, mapDispatchToProps),
-    withRouter
-  )(WhatDoIDoContainer)
+export default compose<Props, {}>(
+  connect(mapStateToProps, mapDispatchToProps),
+  withRouter,
+)(WhatDoIDoContainer);

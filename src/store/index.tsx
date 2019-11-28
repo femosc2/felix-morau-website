@@ -2,7 +2,7 @@ import { combineReducers, createStore, Store } from 'redux';
 import { about, IAbout } from '../components/About/redux/reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-declare module "redux" {
+declare module 'redux' {
   export type GenericStoreEnhancer = StoreEnhancer;
 }
 
@@ -12,12 +12,12 @@ export interface IStore {
 }
 
 export const reducers = combineReducers<IStore>({
-    about
+  about,
 });
 
 const reduxStore: Store<IStore> = createStore(
   reducers,
-  composeWithDevTools()
-)
+  composeWithDevTools(),
+);
 
 export default reduxStore;
