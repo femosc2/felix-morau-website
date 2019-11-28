@@ -4,6 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { ISkill } from './index';
 import { Skill } from './components/Skill';
 import background from '../../../../assets/background.png';
+import { COLORS } from '../../../../variables/colors';
 
 
 interface IProps {
@@ -14,7 +15,7 @@ interface IProps {
 
 export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
   const { handleClick, whoAmIActive, skills } = props;
-  //   const c = { ...COLORS };
+  const c = { ...COLORS };
 
   const fadeOut = keyframes`
         0% {
@@ -46,6 +47,7 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
         z-index: -10;
         transition: transform 1s ease-in-out;
         overflow: hidden;
+        cursor: ${whoAmIActive ? 'default' : 'pointer'};
         @media (max-width: 768px) {
             height: 200vh;
         };
@@ -76,7 +78,7 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
     `;
   const StyledVerticalSpan = styled.span`
         display: flex;
-        font-size: 4.5vh;
+        font-size: 4rem;
         margin-top: 50%;
         margin-bottom: 50%;
         transition: 1s;
@@ -108,17 +110,41 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
     font-size: 1.2rem;
     max-width: 55vw;
     `;
+
+  const sideBarIcons = [
+    {
+      name: 'fab fa-js',
+      color: c.lightYellow,
+    },
+    {
+      name: 'fab fa-react',
+      color: c.peach,
+    },
+    {
+      name: 'fab fa-vuejs',
+      color: c.darkPeach,
+    },
+    {
+      name: 'fab fa-node',
+      color: c.lightPink,
+    },
+    {
+      name: 'fas fa-hashtag',
+      color: c.magenta,
+    },
+  ];
+
   return (
     <StyledSection onClick={ () => handleClick()}>
       <StyledTextSection>
         <StyledH2> What do I do? </StyledH2>
         <StyledP>
-                    I'm a problem solver who enjoys simplyfing life through technology, design and creativity. Wether it is through programming or UX-design
-                    I produce intuative, fun-to-use, functional and professional solutions to peoples problems.
+          I'm a problem solver who enjoys simplyfing life through technology, design and creativity. Wether it is through programming or UX-design
+          I produce intuative, fun-to-use, functional and professional solutions to peoples problems.
         </StyledP>
         <StyledP>
-                    I'm a front-end focused fullstack developer meaning that while I enjoy building the occasional backend most of my attention is focused at the front-end.
-                    JavaScript and TypeScript are my tools of choice when it comes to tackling problems and I enjoy honing my skills through personal projects, university projects and work projects.
+          I'm a front-end focused fullstack developer meaning that while I enjoy building the occasional backend most of my attention is focused at the front-end.
+          JavaScript and TypeScript are my tools of choice when it comes to tackling problems and I enjoy honing my skills through personal projects, university projects and work projects.
         </StyledP>
       </StyledTextSection>
       <StyledH3> How do I do it? </StyledH3>
@@ -126,8 +152,11 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
         {skills.map((skill) => <Skill key={ skill.skillName } skill={ skill } />) }
       </StyledList>}
       <StyledSpanSection>
-        {'WHAT DO I DO?'.split('').map((letter, index) =>
-          <StyledVerticalSpan key={ letter + index}> {letter} </StyledVerticalSpan>,
+        { sideBarIcons.map((icon) =>
+          <StyledVerticalSpan key={ icon.name}> <i className={ icon.name} style={{
+            color: icon.color,
+          }}
+          ></i> </StyledVerticalSpan>,
         )}
         <p>
         </p>
