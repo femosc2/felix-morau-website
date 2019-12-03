@@ -5,7 +5,9 @@
     "Root/*": [ "./*" ],
       "Components/*": [ "./components/*" ],
       "Pages/*": [ "./pages/*" ],
-      "Variables/*": [ "./variables/*" ]
+      "Variables/*": [ "./variables/*" ],
+      "Assets/*": [ "./assets/*" ],
+      "Store/*": [ "./store/*" ]
     }
   }
 }

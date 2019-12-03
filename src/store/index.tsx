@@ -1,5 +1,5 @@
 import { combineReducers, createStore, Store } from 'redux';
-import { about, IAbout } from '../components/About/redux/reducers';
+import { about, IAbout } from 'components/About/redux/reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 declare module 'redux' {
