@@ -13,4 +13,9 @@ export const COLORS = {
   magenta: '#e84393',
   peach: '#fab1a0',
   darkPeach: '#ff7675',
+  pink: '#ff579d',
+  neonBlue: '#30b7ff',
+  lightPurple: '#2d1c9c',
+  darkPurple: '#231979',
+  lavender: '#5313fd',
 };

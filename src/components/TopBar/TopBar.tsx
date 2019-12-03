@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../variables/colors';
+import { COLORS } from 'variables/colors';
 
 interface IProps {
     tabs: string[]

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IStore } from '../../../../store';
+import { IStore } from 'store';
 import { bindActionCreators } from 'redux';
 import { setActiveAbout } from '../../redux/actions';
 import { connect } from 'react-redux';

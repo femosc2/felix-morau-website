@@ -3,8 +3,8 @@ import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { ISkill } from './index';
 import { Skill } from './components/Skill';
-import background from '../../../../assets/background.png';
-import { COLORS } from '../../../../variables/colors';
+import background from 'assets/background.png';
+import { COLORS } from 'variables/colors';
 
 
 interface IProps {

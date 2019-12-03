@@ -1,15 +1,12 @@
 /* eslint-disable max-len */
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import { ITimelineEvent } from './index';
-import felix from '../../../../assets/felix.png';
-import meBackground from '../../../../assets/meBackground.png';
-import { COLORS } from '../../../../variables/colors';
+import felix from 'assets/felix.png';
+import { COLORS } from 'variables/colors';
 
 interface IProps {
     handleClick: () => void;
     whoAmIActive: boolean;
-    timelineEvents: ITimelineEvent[];
 }
 
 
@@ -54,8 +51,9 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
     `;
 
   const StyledSection = styled.section`
-        background: url(${ meBackground });
+        background-color: ${c.darkPurple}
         background-size: cover;
+        color: ${c.pink};
         position: absolute;
         height: 92vh
         animation: ${whoAmIActive ? css`${slideToLeft} 1s` : css`${slideToRight} 1s`};
@@ -92,7 +90,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         animation: ${whoAmIActive ? css`${fadeIn} 0.5s` : css`${fadeOut} 0.5s`};
         transition: 1s;
         animation-fill-mode: forwards;
-        color: #fff;
+        color: ${c.pink};
     `;
   const StyledSpanSection = styled.section`
         position: absolute;
@@ -100,7 +98,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
     `;
   const StyledH2 = styled.h2`
         font-size: 8rem;
-        color: ${ '#fff' };
+        color: ${c.pink};
         margin: 0 auto;
         @media (max-width: 768px) {
             text-align: center;
@@ -109,10 +107,9 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
     `;
     
   const StyledP = styled.p`
-    color: #fff;
-    text-align: left;
+    color: ${c.pink};
     font-size: 3rem;
-    max-width: 55vw;
+    max-width: 60vw;
     @media (max-width: 768px) {
         text-align: center;
         width: 100%;
@@ -139,7 +136,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
       <StyledSection onClick={ () => handleClick()}>
         <StyledImg src={ felix } alt=""/>
         <StyledTextSection>
-          <StyledH2> Who am I? </StyledH2>
+          <StyledH2> hello </StyledH2>
           <StyledP> Felix Morau | 24 | Malmö, Sweden </StyledP>
           <StyledP> Fullstack Web Developer @ HiQ </StyledP>
           <StyledP> CS-Student @ Malmö University </StyledP>

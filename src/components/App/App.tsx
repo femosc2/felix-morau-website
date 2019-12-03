@@ -1,11 +1,11 @@
 import React from 'react';
-import { AboutPage } from '../../pages/About';
-import { ProjectsPage } from '../../pages/Projects';
-import { ContactPage } from '../../pages/Contact';
-import { ErrorPage } from '../../pages/Error';
+import { AboutPage } from 'pages/About';
+import { ProjectsPage } from 'pages/Projects';
+import { ContactPage } from 'pages/Contact';
+import { ErrorPage } from 'pages/Error';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import TopBarContainer from '../TopBar';
+import TopBarContainer from 'components/TopBar';
 
 const App: React.FC = () => {
   return (
