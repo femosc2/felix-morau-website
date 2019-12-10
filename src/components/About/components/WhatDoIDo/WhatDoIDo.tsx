@@ -114,27 +114,28 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
   const sideBarIcons = [
     {
       name: 'fab fa-js',
-      color: c.lightYellow,
+      color: c.darkPurple,
     },
     {
       name: 'fab fa-react',
-      color: c.peach,
+      color: c.lightPurple,
     },
     {
       name: 'fab fa-vuejs',
-      color: c.darkPeach,
+      color: c.lavender,
     },
     {
       name: 'fab fa-node',
-      color: c.lightPink,
+      color: c.neonBlue,
     },
     {
       name: 'fas fa-hashtag',
-      color: c.magenta,
+      color: c.pink,
     },
   ];
 
   return (
+    <>
     <StyledSection onClick={ () => handleClick()}>
       <StyledTextSection>
         <StyledH2> What do I do? </StyledH2>
@@ -162,5 +163,6 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
         </p>
       </StyledSpanSection>
     </StyledSection>
+    </>
   );
 };

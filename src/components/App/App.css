@@ -23,3 +23,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+.lol {
+  position: absolute;
+  z-index: 100000;
+  width: 90%;
+  height: 92vh;
+  overflow: hidden;
+}
+
+canvas {
+  height: 3000px;
+  width: 3000px;
+  position: absolute;
+  z-index: 100001;
+}
