@@ -18,7 +18,7 @@ const WhoAmIContainer: React.FC<Props> = (props: Props) => {
   const { whoAmIActive, setActiveAbout } = props;
 
   useEffect(() => {
-    window.location.href.includes('me') ? setActiveAbout(false) : console.log('lol');
+    window.location.href.includes('me') && setActiveAbout(false);
   }, []);
 
   const handleClick = () => {

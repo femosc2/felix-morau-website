@@ -55,10 +55,10 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         background-size: cover;
         color: ${c.pink};
         position: absolute;
-        height: 92vh
+        height: 100vh
         animation: ${whoAmIActive ? css`${slideToLeft} 1s` : css`${slideToRight} 1s`};
         animation-fill-mode: forwards;
-        width: 90%;
+        width: 100%;
         display: inline-flex;
         align-self: flex-start;
         margin: 0;
@@ -73,13 +73,13 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
     `;
 
   const StyledTextSection = styled.section`
-        position: absolute;
-        right: 0%;
+        margin: 0 auto;
         animation: ${whoAmIActive ? css`${fadeOut} 1.5s` : css`${fadeIn} 0.5s`};
         animation-fill-mode: forwards;
+        width: 60%;
+        margin-right: 35%;
         @media (max-width: 768px) {
             margin-top: 20vh;
-            right: 23%;
         };
     `;
   const StyledVerticalSpan = styled.span`
@@ -100,21 +100,20 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         font-size: 8rem;
         color: ${c.pink};
         margin: 0 auto;
+        margin-bottom: -50px;
         @media (max-width: 768px) {
             text-align: center;
-            margin-left: 35%;
         }
     `;
     
   const StyledP = styled.p`
     color: ${c.pink};
-    font-size: 3rem;
-    max-width: 60vw;
+    font-size: 4rem;
+    text-align: left;
     @media (max-width: 768px) {
         text-align: center;
         width: 100%;
         max-width: 100%;
-        margin-left: 15%;
     };
     `;
     
@@ -130,7 +129,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
           params={{
             'particles': {
               'number': {
-                'value': 200,
+                'value': 1200,
                 'density': {
                   'enable': true,
                   'value_area': 1500,
@@ -140,12 +139,12 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
                 'value': c.neonBlue,
               },
               'line_linked': {
-                'enable': true,
-                'opacity': 0.03,
+                'enable': false,
+                'opacity': 0.1,
                 'color': c.neonBlue,
               },
               'move': {
-                'speed': 0.5,
+                'speed': 0.8,
               },
               'size': {
                 'value': 1,
@@ -161,8 +160,8 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
             'interactivity': {
               'events': {
                 'onhover': {
-                  'enable': true,
-                  'mode': 'push',
+                  'enable': false,
+                  'mode': 'repulse',
                 },
                 'resize': true,
               },
@@ -173,9 +172,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
           }} />
         <StyledTextSection>
           <StyledH2> hello </StyledH2>
-          <StyledP> Felix Morau | 24 | Malmö, Sweden </StyledP>
-          <StyledP> Fullstack Web Developer @ HiQ </StyledP>
-          <StyledP> CS-Student @ Malmö University </StyledP>
+          <StyledP> My name is Felix Morau, a Fullstack Web Developer based in Malmö, Sweden </StyledP>
         </StyledTextSection>
         <StyledSpanSection>
           {sideBarIcons.map((icon) =>

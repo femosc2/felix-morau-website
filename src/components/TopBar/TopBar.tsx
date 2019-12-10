@@ -9,20 +9,24 @@ interface IProps {
 }
 
 const c = { ...COLORS };
+
 const StyledTopBar = styled.nav`
     width: 100%;
-    background: ${ c.topBarGrey }
+    position: fixed;
     font-size: 1.5rem;
     height: 8vh;
+    z-index: 10000000;
 `;
 const StyledTabContainer = styled.ul`
     display: inline-flex;
     list-style: none;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: flex-end;
+    width: 100%;
     padding: 0;
+    margin-left: 0px;
 `;
 const StyledTab = styled.li`
+  color: white;
 `;
 
 export const TopBar: React.FC<IProps> = (props: IProps) => {

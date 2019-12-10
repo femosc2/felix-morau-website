@@ -38,13 +38,14 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
   const StyledSection = styled.section`
         background: url(${background});
         background-size: cover;
-        height: 92vh
+        height: 100vh
         width: 100%;
         display: inline-flex;
         align-self: flex-start;
         margin: 0;
         padding: 0;
         z-index: -10;
+        z-index: 9999;
         transition: transform 1s ease-in-out;
         overflow: hidden;
         cursor: ${whoAmIActive ? 'default' : 'pointer'};
@@ -111,29 +112,7 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
     max-width: 55vw;
     `;
 
-  const sideBarIcons = [
-    {
-      name: 'fab fa-js',
-      color: c.darkPurple,
-    },
-    {
-      name: 'fab fa-react',
-      color: c.lightPurple,
-    },
-    {
-      name: 'fab fa-vuejs',
-      color: c.lavender,
-    },
-    {
-      name: 'fab fa-node',
-      color: c.neonBlue,
-    },
-    {
-      name: 'fas fa-hashtag',
-      color: c.pink,
-    },
-  ];
-
+  
   return (
     <>
     <StyledSection onClick={ () => handleClick()}>
@@ -153,12 +132,12 @@ export const WhatDoIDo: React.FC<IProps> = (props: IProps) => {
         {skills.map((skill) => <Skill key={ skill.skillName } skill={ skill } />) }
       </StyledList>}
       <StyledSpanSection>
-        { sideBarIcons.map((icon) =>
+        {/* { sideBarIcons.map((icon) =>
           <StyledVerticalSpan key={ icon.name}> <i className={ icon.name} style={{
             color: icon.color,
           }}
           ></i> </StyledVerticalSpan>,
-        )}
+        )} */}
         <p>
         </p>
       </StyledSpanSection>
