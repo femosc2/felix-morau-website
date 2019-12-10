@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import felix from 'assets/felix.png';
 import { COLORS } from 'variables/colors';
+import Particles from 'react-particles-js';
 
 interface IProps {
     handleClick: () => void;
@@ -117,15 +117,7 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
         margin-left: 15%;
     };
     `;
-
-  const StyledImg = styled.img`
-    width: 35vw;
-    height: 35vw;
-    @media (max-width: 768px) {
-        margin: 0 auto;
-        };
-    `;
-
+    
   const sideBarIcons = [{
     name: 'fas fa-id-card',
     color: c.topBarGrey,
@@ -134,7 +126,51 @@ export const WhoAmI: React.FC<IProps> = (props: IProps) => {
   return (
     <>
       <StyledSection onClick={ () => handleClick()}>
-        <StyledImg src={ felix } alt=""/>
+        <Particles
+          params={{
+            'particles': {
+              'number': {
+                'value': 200,
+                'density': {
+                  'enable': true,
+                  'value_area': 1500,
+                },
+              },
+              'color': {
+                'value': c.neonBlue,
+              },
+              'line_linked': {
+                'enable': true,
+                'opacity': 0.03,
+                'color': c.neonBlue,
+              },
+              'move': {
+                'speed': 0.5,
+              },
+              'size': {
+                'value': 1,
+              },
+              'opacity': {
+                'anim': {
+                  'enable': true,
+                  'speed': 1.5,
+                  'opacity_min': 0.05,
+                },
+              },
+            },
+            'interactivity': {
+              'events': {
+                'onhover': {
+                  'enable': true,
+                  'mode': 'push',
+                },
+                'resize': true,
+              },
+              'modes': {
+              },
+            },
+            'retina_detect': true,
+          }} />
         <StyledTextSection>
           <StyledH2> hello </StyledH2>
           <StyledP> Felix Morau | 24 | Malmö, Sweden </StyledP>

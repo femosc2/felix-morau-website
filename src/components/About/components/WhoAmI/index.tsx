@@ -22,9 +22,10 @@ const WhoAmIContainer: React.FC<Props> = (props: Props) => {
   }, []);
 
   const handleClick = () => {
-    if (whoAmIActive ) { props.history.push('/about/me'); }
-    if (whoAmIActive) { setActiveAbout(false); }
+    whoAmIActive && props.history.push('/about/me');
+    whoAmIActive && setActiveAbout(false);
   };
+
   return (
     <>
       <WhoAmI handleClick={ handleClick } whoAmIActive={ whoAmIActive} />
