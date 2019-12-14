@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
 .App {
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-y: hidden;
 }
 
 .App-logo {
   height: 40vmin;
+}
+
+.paragraphText {
+  font-family: 'Playfair Display', serif;
 }
 
 .App-header {
@@ -24,17 +32,10 @@
   color: #09d3ac;
 }
 
-.lol {
-  position: absolute;
-  z-index: 100000;
-  width: 90%;
-  height: 92vh;
-  overflow: hidden;
-}
-
 canvas {
-  height: 3000px;
-  width: 3000px;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   z-index: 100001;
+  left: 0;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutContainer } from 'components/About';
+import AboutContainer from 'components/About';
 import { ProjectContainer } from 'components/Projects/index';
 import { ContactContainer } from 'components/Contact';
 

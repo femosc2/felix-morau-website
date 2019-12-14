@@ -14,9 +14,9 @@ position: absolute;
 export const Projects: React.FC = () => {
   return (
     <>
-    <StyledSection>
-      <h1>Projects</h1>
-    </StyledSection>
+      <StyledSection>
+        <h1>Projects</h1>
+      </StyledSection>
     </>
   );
 };
