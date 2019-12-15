@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { COLORS } from 'variables/colors';
-import { fadeIn, fadeOut } from 'variables/animations';
+import { fadeOut } from 'variables/animations';
 
 interface IProps {
     activePage: string;
@@ -28,20 +28,30 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
 
   const StyledNext = styled.div`
   position: absolute;
-  right: 0;
-  font-size: 70px;
+  right: 100px;
+  margin-top: -5px;
+  font-size: 40px;
   animation: ${props.activePage === 'contact' ? css`${fadeOut} 0.5s` : 'none'};
   opacity: 1;
   animation-fill-mode: forwards;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
   const StyledPrevious = styled.div`
   position: absolute;
-  left: 0;
-  font-size: 70px;
+  left: 100px;
+  margin-top: -5px;
+  font-size: 40px;
   animation: ${props.activePage === 'about' ? css`${fadeOut} 0.5s` : 'none'};
   animation-fill-mode: forwards;
   opacity: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
   return (
     <StyledBottomBar>
@@ -51,7 +61,6 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
       {<StyledPrevious>
         <i className='fas fa-arrow-left' onClick={() => props.switchTab(props.previousPage)}></i>
       </StyledPrevious>}
-      
     </StyledBottomBar>
   );
 };

@@ -5,7 +5,7 @@ import { IStore } from 'Root/store';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setLastPage, setActivePage } from '../../pages/Structure/redux/actions';
+import { setLastPage, setActivePage } from 'pages/Structure/redux/actions';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 

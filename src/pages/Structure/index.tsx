@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import AboutContainer from 'components/About';
-import { ProjectContainer } from 'components/Projects/index';
-import { ContactContainer } from 'components/Contact';
-import { SkillsContainer } from 'components/Skills';
+import ProjectContainer from 'components/Projects/index';
+import ContactContainer from 'components/Contact';
+import SkillsContainer from 'components/Skills';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { IStore } from 'store';
 import { bindActionCreators } from 'redux';
@@ -26,13 +26,14 @@ const Structure: React.FC<Props> = (props) => {
     }
   });
 
+
   return (
-    <>
+    <section>
       <AboutContainer />
       <SkillsContainer />
       <ProjectContainer />
       <ContactContainer />
-    </>
+    </section>
   );
 };
 

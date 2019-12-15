@@ -44,12 +44,12 @@ const StyledTab = styled.li<{ activePage: string, tab: string}>`
     width: ${(props) => props.tab === props.activePage ? '100%': '0'};
     height: 2px;
     background-color: ${(props) => props.tab === props.activePage ? c.red : c.pink};
-    transition: width .3s;
+    transition: width .5s;
   }
 
   &:hover::after {
     width: 100%;
-    transition: width .3s;
+    transition: width .5s;
   }
 `;
 

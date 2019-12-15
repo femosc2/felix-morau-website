@@ -20,7 +20,7 @@ export const About: React.FC<IProps> = (props) => {
         height: 99vh;
         animation: ${props.activePage !== 'about' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
         animation-fill-mode: forwards;
-        width: '100%';
+        width: 100%;
         margin: 0;
         padding: 0;
         transition: all 1s ease-in-out;
