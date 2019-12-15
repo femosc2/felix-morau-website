@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+* {
+  overflow: hidden;
+}
 
 .App {
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-y: hidden;
 }
 
 .App-logo {
   height: 40vmin;
+}
+
+.paragraphText {
+  font-family: 'Playfair Display', serif;
 }
 
 .App-header {
@@ -24,17 +36,21 @@
   color: #09d3ac;
 }
 
-.lol {
-  position: absolute;
-  z-index: 100000;
-  width: 90%;
-  height: 92vh;
-  overflow: hidden;
-}
-
 canvas {
-  height: 3000px;
-  width: 3000px;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   z-index: 100001;
+  left: 0;
+}
+
+.aboutParticles{
+  height: 70vh;
+  width: 40%;
+  margin-top: 5%;
+  position: absolute;
+  right: -10%;
+  border: 1px solid #ff0000;
+  overflow: hidden;
+  box-shadow: -5px 0px 0px 5px rgb(255, 0, 0);
 }

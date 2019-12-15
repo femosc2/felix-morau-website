@@ -8,16 +8,16 @@ interface IProps {
 }
 
 
-export const Projects: React.FC<IProps> = (props) => {
+export const Skills: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
   
   const StyledSection = styled.section`
-        background-color: ${c.pink}
+        background-color: ${c.topBarGrey}
         background-size: cover;
         color: ${c.black};
         position: absolute;
         height: 100vh;
-        animation: ${props.activePage !== 'projects' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
+        animation: ${props.activePage !== 'skills' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
         animation-fill-mode: forwards;
         width: 100%;
         margin: 0;
@@ -32,7 +32,7 @@ export const Projects: React.FC<IProps> = (props) => {
   return (
     <>
       <StyledSection>
-        <h1>Projects</h1>
+        <h1>Skills</h1>
       </StyledSection>
     </>
   );

@@ -4,16 +4,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { withRouter, RouteComponentProps } from 'react-router';
-import { About } from './About';
+import { Skills } from './Skills';
 
 type Props = ReturnType<typeof mapStateToProps> & RouteComponentProps
 
-const AboutContainer: React.FC<Props> = (props) => {
+const SkillsContainer: React.FC<Props> = (props) => {
 
   return (
     <>
-      {(props.activePage === 'about' || props.lastPage === 'about')
-      && <About activePage={ props.activePage } />}
+      {(props.activePage === 'skills' || props.lastPage === 'skills')
+      && <Skills activePage={ props.activePage } />}
     </>
   );
 };
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch: any) => {
 export default compose<Props, {}>(
   connect(mapStateToProps, mapDispatchToProps),
   withRouter,
-)(AboutContainer);
+)(SkillsContainer);

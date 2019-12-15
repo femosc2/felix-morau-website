@@ -97,6 +97,12 @@
         ],
         "no-irregular-whitespace" : [
             "off"
+        ],
+        "@typescript-eslint/no-use-before-define": [
+            "off"
+        ],
+        "react/prop-types": [
+            "off"
         ]
     }
 }
