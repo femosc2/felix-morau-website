@@ -5,12 +5,12 @@ export const slideToLeft = keyframes`
             transform: translateX(0%)
         }
         100% {
-            transform: translateX(-90%) 
+            transform: translateX(-100%) 
         }
     `;
 export const slideToRight = keyframes`
         0% {
-            transform: translateX(-90%)
+            transform: translateX(-100%)
         }
         100% {
             transform: translateX(-0%) 
@@ -55,7 +55,7 @@ export const secondaryImageOverlayOut = keyframes`
 export const Revealer = styled.div<{ boxColor: string}>`
   position: relative;
   overflow: hidden;
-  
+
   &:after {
     position: absolute;
     content: '';

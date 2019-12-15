@@ -1,5 +1,5 @@
-import React from 'react';
-import { TopBar } from './TopBar';
+import React, { useState, useEffect } from 'react';
+import { BottomBar } from './BottomBar';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { IStore } from 'Root/store';
 import { compose } from 'recompose';
@@ -9,8 +9,9 @@ import { setLastPage, setActivePage } from '../../pages/Structure/redux/actions'
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
-const TopBarContainer: React.FC<Props> = (props) => {
-  const tabs = ['about', 'skills', 'projects', 'contact'];
+const BottomBarContainer: React.FC<Props> = (props) => {
+  const [nextPage, setNextPage] = useState('skills');
+  const [previousPage, setPreviousPage] = useState('contact');
 
   const switchTab = (tabName: string) => {
     props.setLastPage(props.history.location.pathname.substring(1));
@@ -18,8 +19,31 @@ const TopBarContainer: React.FC<Props> = (props) => {
     props.setActivePage(tabName);
   };
 
+  const getNextPage = () => {
+    switch (props.activePage) {
+    case 'about':
+      setNextPage('skills');
+      break;
+    case 'skills':
+      setNextPage('projects');
+      setPreviousPage('about');
+      break;
+    case 'projects':
+      setNextPage('contact');
+      setPreviousPage('skills');
+      break;
+    case 'contact':
+      setPreviousPage('projects');
+      break;
+    }
+  };
+
+  useEffect(() => {
+    getNextPage();
+  }, [props.activePage]);
+
   return (
-    <TopBar tabs={ tabs } switchTab= { switchTab } activePage={ props.activePage } />
+    <BottomBar activePage={ props.activePage } nextPage={ nextPage } previousPage={ previousPage } switchTab={ switchTab }/>
   );
 };
 
@@ -39,5 +63,5 @@ const mapDispatchToProps = (dispatch: any) => {
 export default compose<Props, {}>(
   connect(mapStateToProps, mapDispatchToProps),
   withRouter,
-)(TopBarContainer);
+)(BottomBarContainer);
 

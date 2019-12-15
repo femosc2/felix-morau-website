@@ -6,29 +6,22 @@ import { compose } from 'recompose';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { About } from './About';
 
-interface IPropsInternal {
-}
+type Props = ReturnType<typeof mapStateToProps> & RouteComponentProps
 
-type Props = IPropsInternal & RouteComponentProps
-
-const AboutContainer: React.FC<Props> = () => {
-
-
-  // const handleClick = () => {
-  //   whoAmIActive && props.history.push('/about/me');
-  //   whoAmIActive && setActiveAbout(false);
-  // };
+const AboutContainer: React.FC<Props> = (props) => {
 
   return (
     <>
-      <About />
+      {(props.activePage === 'about' || props.lastPage === 'about')
+      && <About activePage={ props.activePage } />}
     </>
   );
 };
 
 const mapStateToProps = (store: IStore) => {
   return {
-    whoAmIActive: store.about.whoAmIActive,
+    activePage: store.structure.activePage,
+    lastPage: store.structure.lastPage,
   };
 };
 

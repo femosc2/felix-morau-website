@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { COLORS } from 'variables/colors';
+import { Revealer } from 'variables/animations';
 
 interface IProps {
     tabs: string[]
     switchTab: (tabName: string) => void;
+    activePage: string;
 }
 
 const c = { ...COLORS };
@@ -25,8 +26,31 @@ const StyledTabContainer = styled.ul`
     padding: 0;
     margin-left: 0px;
 `;
-const StyledTab = styled.li`
-  color: white;
+const StyledTab = styled.li<{ activePage: string, tab: string}>`
+  color: ${(props) => props.tab === props.activePage ? c.red : c.black};
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s;
+  text-transform: capitalize;
+
+  &:hover {
+    color: ${ c.pink };
+    transition: 0.2s;
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    width: ${(props) => props.tab === props.activePage ? '100%': '0'};
+    height: 2px;
+    background-color: ${(props) => props.tab === props.activePage ? c.red : c.pink};
+    transition: width .3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+    transition: width .3s;
+  }
 `;
 
 export const TopBar: React.FC<IProps> = (props: IProps) => {
@@ -34,11 +58,17 @@ export const TopBar: React.FC<IProps> = (props: IProps) => {
   return (
     <StyledTopBar>
       <StyledTabContainer>
-        { tabs.map((tab) => <StyledTab
-          onClick={ () => switchTab(tab)}
-          key={ tab }>
-          { tab }
-        </StyledTab>) }
+        { tabs.map((tab) => <Revealer
+          key={ tab }
+          boxColor={ props.activePage === tab ? c.red : c.black}>
+          <StyledTab
+            activePage={ props.activePage }
+            tab={ tab }
+            onClick={ () => switchTab(tab)}
+            key={ tab }>
+            { tab }|
+          </StyledTab>
+        </Revealer>) }
       </StyledTabContainer>
     </StyledTopBar>
   );

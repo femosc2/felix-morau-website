@@ -1,11 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { COLORS } from 'variables/colors';
 import Particles from 'react-particles-js';
-import { Revealer } from 'variables/animations';
+import { Revealer, slideToLeft, slideToRight } from 'variables/animations';
 
-export const About: React.FC = () => {
+interface IProps {
+  activePage: string,
+}
+
+export const About: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
 
   const StyledSection = styled.section`
@@ -13,9 +17,10 @@ export const About: React.FC = () => {
         background-size: cover;
         color: ${c.black};
         position: absolute;
-        height: 100vh
+        height: 99vh;
+        animation: ${props.activePage !== 'about' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
         animation-fill-mode: forwards;
-        width: 100%;
+        width: '100%';
         margin: 0;
         padding: 0;
         transition: all 1s ease-in-out;
@@ -30,6 +35,7 @@ export const About: React.FC = () => {
         margin: 0 auto;
         animation-fill-mode: forwards;
         width: 60%;
+        margin-top: 10%;
         margin-right: 35%;
         @media (max-width: 768px) {
             margin-top: 20vh;
@@ -41,7 +47,6 @@ export const About: React.FC = () => {
         margin: 0 auto;
         text-align: left;
         font-weight: 100;
-        margin-bottom: -50px;
         @media (max-width: 768px) {
             text-align: center;
         }
@@ -55,6 +60,7 @@ export const About: React.FC = () => {
     color: ${c.black};
     font-size: 4rem;
     text-align: left;
+    margin-top: -50px;
     @media (max-width: 768px) {
         text-align: center;
         width: 100%;
@@ -63,62 +69,69 @@ export const About: React.FC = () => {
     `;
 
   return (
-    <>
-      <StyledSection>
-        <Particles
-          params={{
-            'particles': {
-              'number': {
-                'value': 100,
-                'density': {
-                  'enable': true,
-                  'value_area': 1500,
-                },
+    <StyledSection>
+      <Particles className="aboutParticles"
+        params={{
+          'particles': {
+            'number': {
+              'value': 300,
+              'density': {
+                'enable': true,
+                'value_area': 1500,
               },
-              'color': {
-                'value': c.red,
-              },
-              'line_linked': {
+            },
+            'color': {
+              'value': c.red,
+            },
+            'line_linked': {
+              'enable': true,
+              'opacity': 0.25,
+              'color': c.red,
+                
+            },
+            'move': {
+              'speed': 2,
+            },
+            'size': {
+              'value': 2,
+            },
+            'opacity': {
+              'anim': {
                 'enable': false,
-                'opacity': 0.5,
-                'color': c.red,
-              },
-              'move': {
-                'speed': 0.8,
-              },
-              'size': {
-                'value': 0,
-              },
-              'opacity': {
-                'anim': {
-                  'enable': true,
-                  'speed': 1.5,
-                  'opacity_min': 0.05,
-                },
+                'speed': 20,
+                'opacity_min': 0.05,
               },
             },
-            'interactivity': {
-              'events': {
-                'onhover': {
-                  'enable': false,
-                  'mode': 'repulse',
-                },
-                'resize': true,
+          },
+          'interactivity': {
+            'events': {
+              'onhover': {
+                'enable': true,
+                'mode': 'grab',
               },
-              'modes': {
+              'onclick': {
+                'enable': true,
+                'mode': 'repulse',
+              },
+              'resize': true,
+            },
+            'modes': {
+              'repulse': {
+                'distance': 50,
+                'duration': 0.25,
               },
             },
-            'retina_detect': true,
-          }} />
-        <StyledTextSection className="paragraphText">
-          <Revealer boxColor={c.red}><StyledH2> hello </StyledH2></Revealer>
-          <StyledP>
-            <Revealer boxColor={c.black}>
+          },
+          'retina_detect': true,
+        }} />
+      <StyledTextSection className="paragraphText">
+        <Revealer boxColor={c.red}><StyledH2> hello </StyledH2></Revealer>
+        <StyledP>
+          <Revealer boxColor={c.black}>
               My name is <StyledSpan>Felix Morau</StyledSpan>, a Fullstack Web Developer based in Malmö, Sweden.
-            </Revealer>
-          </StyledP>
-        </StyledTextSection>
-      </StyledSection>
-    </>
+          </Revealer>
+        </StyledP>
+      </StyledTextSection>
+    </StyledSection>
   );
 };
