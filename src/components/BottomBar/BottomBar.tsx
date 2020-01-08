@@ -12,9 +12,6 @@ interface IProps {
 
 const c = { ...COLORS };
 
-
-
-
 export const BottomBar: React.FC<IProps> = (props: IProps) => {
 
   const StyledBottomBar = styled.section`

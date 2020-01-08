@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { COLORS } from 'variables/colors';
 import Particles from 'react-particles-js';
 import { Revealer, slideToLeft, slideToRight } from 'variables/animations';
+import { aboutParams } from 'variables/particles';
 
 interface IProps {
   activePage: string,
@@ -71,59 +72,7 @@ export const About: React.FC<IProps> = (props) => {
   return (
     <StyledSection>
       <Particles className="aboutParticles"
-        params={{
-          'particles': {
-            'number': {
-              'value': 300,
-              'density': {
-                'enable': true,
-                'value_area': 1500,
-              },
-            },
-            'color': {
-              'value': c.red,
-            },
-            'line_linked': {
-              'enable': true,
-              'opacity': 0.25,
-              'color': c.red,
-                
-            },
-            'move': {
-              'speed': 2,
-            },
-            'size': {
-              'value': 2,
-            },
-            'opacity': {
-              'anim': {
-                'enable': false,
-                'speed': 20,
-                'opacity_min': 0.05,
-              },
-            },
-          },
-          'interactivity': {
-            'events': {
-              'onhover': {
-                'enable': true,
-                'mode': 'grab',
-              },
-              'onclick': {
-                'enable': true,
-                'mode': 'repulse',
-              },
-              'resize': true,
-            },
-            'modes': {
-              'repulse': {
-                'distance': 50,
-                'duration': 0.25,
-              },
-            },
-          },
-          'retina_detect': true,
-        }} />
+        params={ aboutParams } />
       <StyledTextSection className="paragraphText">
         <Revealer boxColor={c.red}><StyledH2> hello </StyledH2></Revealer>
         <StyledP>

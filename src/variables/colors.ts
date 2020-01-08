@@ -10,4 +10,6 @@ export const COLORS = {
   red: '#ff0000',
   white: '#fff',
   black: '#000',
+  transparentBlack: 'rgba(0,0,0, 0.5)',
+  transparentRed: 'rgba(100,0,0, 0.8)',
 };

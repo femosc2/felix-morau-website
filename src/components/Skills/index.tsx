@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { IStore } from 'store';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { Skills } from './Skills';
+import { db } from '../../firebase';
 
 type Props = ReturnType<typeof mapStateToProps> & RouteComponentProps
 
 const SkillsContainer: React.FC<Props> = (props) => {
+  const [skills, setSkills] = useState([]);
+
+  const getSkills = () => {
+    db.ref('/skills').once('value').then((snapshot) => {
+      setSkills(snapshot.val());
+    });
+  };
+
+  useEffect(() => {
+    getSkills();
+  }, []);
 
   return (
     <>
-      {(props.activePage === 'skills' || props.lastPage === 'skills')
-      && <Skills activePage={ props.activePage } />}
+      { (props.activePage === 'skills' || props.lastPage === 'skills')
+      && <Skills activePage={ props.activePage } skills={ skills } /> }
     </>
   );
 };
