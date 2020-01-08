@@ -14,19 +14,6 @@ type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnTy
 
 const Structure: React.FC<Props> = (props) => {
 
-  useEffect(() => {
-    if (window.location.href.includes('about')) {
-      console.log('hello');
-    } else if (window.location.href.includes('skills')) {
-      props.lastPage === 'asd' && props.setLastPage('about');
-    } else if (window.location.href.includes('projects')) {
-      props.lastPage === 'asdd' && props.setLastPage('skills');
-    } else if (window.location.href.includes('contact')) {
-      props.lastPage === 'asd' && props.setLastPage('projects');
-    }
-  });
-
-
   return (
     <section>
       <AboutContainer />

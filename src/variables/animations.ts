@@ -40,7 +40,7 @@ export const secondaryImageOverlayIn = keyframes`
     width: 0;
   }
   100% {
-    width: 100%;
+    width: -100%;
   }
 `;
 
@@ -49,7 +49,7 @@ export const secondaryImageOverlayOut = keyframes`
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 `;
 
@@ -65,7 +65,7 @@ export const Revealer = styled.div<{ boxColor: string}>`
     width: 100%;
     height: 100%;
     background: ${(props) => props.boxColor};
-    transform: translateX(-100%);
+    transform: translateX(100%);
     animation: ${css`${secondaryImageOverlayIn} 0.6s 0s`}, ${css`${secondaryImageOverlayOut} 0.6s 0.6s`};
     animation-fill-mode: both;
   }
