@@ -34,6 +34,8 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
   animation: ${props.activePage === 'contact' ? css`${fadeOut} 0.5s` : 'none'};
   opacity: 1;
   animation-fill-mode: forwards;
+  pointer-events: ${props.activePage === 'contact' ? 'none' : 'auto'};
+
 
   &:hover {
     cursor: pointer;
@@ -48,6 +50,7 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
   animation: ${props.activePage === 'about' ? css`${fadeOut} 0.5s` : 'none'};
   animation-fill-mode: forwards;
   opacity: 1;
+  pointer-events: ${props.activePage === 'about' ? 'none' : 'auto'};
 
   &:hover {
     cursor: pointer;
