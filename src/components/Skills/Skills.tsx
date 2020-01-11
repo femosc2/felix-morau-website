@@ -15,10 +15,6 @@ export const Skills: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
   const { skills } = props;
 
-  skills.map((skill) => {
-    console.log(skill);
-  });
-  
   const StyledSection = styled.section`
         background-color: ${c.white};
         background-size: cover;
@@ -38,24 +34,36 @@ export const Skills: React.FC<IProps> = (props) => {
         };
     `;
 
-  const StyledBarFill = styled.div<{ width: string, color: string}>`
+  const StyledBarFill = styled.div<{ width: string, color: string, text: string}>`
   height: 20px;
   padding: 50px;
   width: ${(props) => props.width};
-  background-color: ${(props) => props.color};
+  background-color: ${c.red};
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${(props) => props.color};
+    transition: 0.5s;
+    height: 50px;
+
+    &::after {
+      content: '${(props) => props.text}'
+    }
+  }
   `;
 
   const StyledSkill = styled.div`
   width: 50%;
-  background: ${c.transparentRed};
+  background: ${c.transparentBlack};
   margin-top: 1%;
-  margin-bottom: 1%;
   text-align: left;
+  min-height: 50px;
+  color: white;
   `;
 
   const StyledSkillList = styled.div`
   overflow: scroll;
-  height: 2000px;
+  height: 100vh;
   `;
   return (
     <>
@@ -63,12 +71,14 @@ export const Skills: React.FC<IProps> = (props) => {
         <StyledSkillList>
           {skills.length === 0 ? <LoaderContainer /> :
             skills.map((skill) =>
-              <Revealer key={ skill.name } boxColor={ skill.color }>
-                <StyledSkill><StyledBarFill color={ skill.color } width={ `${skill.comfortability  }%` }>
-                  {skill.skillName}
-                </StyledBarFill>
-                </StyledSkill>
-              </Revealer>,
+              <StyledSkill key={ skill.name }>
+                <Revealer boxColor={ c.red }>
+                  <StyledBarFill color={ skill.color } width={ `${skill.comfortability  }%`} text={ skill.description }>
+                    {skill.skillName}
+                    <br />
+                  </StyledBarFill>
+                </Revealer>
+              </StyledSkill>,
             )
           }
         </StyledSkillList>
