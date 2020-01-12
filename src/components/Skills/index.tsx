@@ -6,14 +6,14 @@ import { compose } from 'recompose';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { Skills } from './Skills';
 
-type Props = ReturnType<typeof mapStateToProps> & RouteComponentProps
+type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> & RouteComponentProps
 
 const SkillsContainer: React.FC<Props> = (props) => {
 
   return (
     <>
-      {(props.activePage === 'skills' || props.lastPage === 'skills')
-      && <Skills activePage={ props.activePage } />}
+      { (props.activePage === 'skills' || props.lastPage === 'skills')
+      && <Skills activePage={ props.activePage } /> }
     </>
   );
 };

@@ -14,6 +14,20 @@ type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnTy
 
 const Structure: React.FC<Props> = (props) => {
 
+  useEffect(() => {
+    if (window.location.href.includes('about')) {
+      props.setActivePage('about');
+    } else if (window.location.href.includes('skills')) {
+      props.setActivePage('skills');
+    } else if (window.location.href.includes('projects')) {
+      props.setActivePage('projects');
+    } else if (window.location.href.includes('contact')) {
+      props.setActivePage('contact');
+    } else {
+      props.setActivePage('about');
+    }
+  });
+
   return (
     <section>
       <AboutContainer />

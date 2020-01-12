@@ -12,9 +12,6 @@ interface IProps {
 
 const c = { ...COLORS };
 
-
-
-
 export const BottomBar: React.FC<IProps> = (props: IProps) => {
 
   const StyledBottomBar = styled.section`
@@ -35,6 +32,7 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
   opacity: 1;
   animation-fill-mode: forwards;
   pointer-events: ${props.activePage === 'contact' ? 'none' : 'auto'};
+  transition: 1s;
 
 
   &:hover {
@@ -51,6 +49,8 @@ export const BottomBar: React.FC<IProps> = (props: IProps) => {
   animation-fill-mode: forwards;
   opacity: 1;
   pointer-events: ${props.activePage === 'about' ? 'none' : 'auto'};
+  color: ${props.activePage === 'skills' ? c.black : c.red};
+  transition: 1s;
 
   &:hover {
     cursor: pointer;

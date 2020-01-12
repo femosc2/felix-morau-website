@@ -70,4 +70,3 @@ export const Revealer = styled.div<{ boxColor: string}>`
     animation-fill-mode: both;
   }
 `;
-

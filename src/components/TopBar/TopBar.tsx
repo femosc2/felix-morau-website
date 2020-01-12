@@ -53,6 +53,7 @@ const StyledTab = styled.li<{ activePage: string, tab: string}>`
   }
 `;
 
+
 export const TopBar: React.FC<IProps> = (props: IProps) => {
   const { tabs, switchTab } = props;
   return (
