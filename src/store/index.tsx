@@ -1,7 +1,7 @@
 import { combineReducers, createStore, Store } from 'redux';
-import { about, IAbout } from 'components/About/redux/reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { structure, IStructure } from '../pages/Structure/redux/reducers';
+import { structure, IStructure } from 'pages/Structure/redux/reducers';
+import { skills, ISkills } from 'components/Skills/redux/reducers';
 
 declare module 'redux' {
   export type GenericStoreEnhancer = StoreEnhancer;
@@ -9,12 +9,12 @@ declare module 'redux' {
 
 
 export interface IStore {
-  about: IAbout;
+  skills: ISkills;
   structure: IStructure;
 }
 
 export const reducers = combineReducers<IStore>({
-  about,
+  skills,
   structure,
 });
 

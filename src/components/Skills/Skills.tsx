@@ -4,10 +4,12 @@ import { COLORS } from 'variables/colors';
 import { slideToLeft, slideToRight } from 'variables/animations';
 import LoaderContainer from 'components/Loader';
 import { Revealer } from 'variables/animations';
+import { ISkill } from './redux/reducers';
 
 interface IProps {
   activePage: string;
-  skills: any[];
+  skills: ISkill[];
+  sbComfortability: (skills: ISkill[]) => void;
 }
 
 
@@ -100,13 +102,18 @@ export const Skills: React.FC<IProps> = (props) => {
     };
     `;
 
+  const StyledButton = styled.button`
+    z-index: 2000000;
+    position: absolute;
+    `;
+
 
   return (
     <StyledSection>
       <StyledSkillList>
         {skills.length === 0 ? <LoaderContainer /> :
           skills.map((skill) =>
-            <StyledSkill key={ skill.name }>
+            <StyledSkill key={ skill.skillName }>
               <Revealer boxColor={ c.red }>
                 <StyledBarFill color={ skill.color } width={ `${skill.comfortability  }%`} text={ skill.description }>
                   {skill.skillName}
@@ -126,6 +133,7 @@ export const Skills: React.FC<IProps> = (props) => {
             This means that in addition to my programming skills I also have a good grasp on UX-Design
             and some proficiency in graphic design.</StyledP>
           </Revealer>
+          <StyledButton onClick={ () => props.sbComfortability(skills)}>asd</StyledButton>
         </StyledTextSection> }
     </StyledSection>
   );
