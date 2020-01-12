@@ -102,4 +102,3 @@ export const loaderParams: IParticlesParams = {
   },
   'retina_detect': true,
 };
-
