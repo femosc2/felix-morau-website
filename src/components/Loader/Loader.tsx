@@ -4,9 +4,13 @@ import styled from 'styled-components';
 import { loaderParams } from 'variables/particles';
 import { COLORS } from 'variables/colors';
 
-const Loader: React.FC = () => {
+interface IProps {
+  margin?: string;
+}
 
+const Loader: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
+  const { margin } = props;
 
   const StyledLoaderOutline = styled.div`
     width: 200px;
@@ -16,6 +20,7 @@ const Loader: React.FC = () => {
     border-radius: 50%;
     margin: 0 auto;
     margin-top: 25vh;
+    margin-left: ${ margin };
     color: white;
   `;
 

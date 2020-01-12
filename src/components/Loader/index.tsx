@@ -1,9 +1,14 @@
 import React from 'react';
 import Loader from './Loader';
 
-const LoaderContainer: React.FC = () => {
+interface IProps {
+  margin?: string;
+}
+
+const LoaderContainer: React.FC<IProps> = (props) => {
+  const { margin } = props;
   return (
-    <Loader />
+    <Loader margin={ margin }  />
   );
 };
 
