@@ -28,3 +28,4 @@ src/assets/felixLogo.psd
 src/assets/felixLogoBox.psd
 src/assets/felixLogoBoxWIthBackground.psd
 src/firebase.ts
+src/variables/firebase.ts

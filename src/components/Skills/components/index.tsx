@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ISkill } from '../redux/reducers';
-import { db } from '../../../firebase';
+import { db } from 'variables/firebase';
 import SkillsList from './SkillsList';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
