@@ -6,7 +6,7 @@ import {
 
 
 export interface IProject {
-  index: number;
+  type: 'professional' | 'school' | 'hobby';
   description: string;
   github: string;
   image: string;
