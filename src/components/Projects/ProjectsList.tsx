@@ -2,17 +2,19 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { slideToLeft, slideToRight } from 'variables/animations';
+import { IProject } from './redux/reducers';
 
 interface IProps {
   activePage: string;
+  projects: IProject[];
 }
 
 
-export const Projects: React.FC<IProps> = (props) => {
+export const ProjectsList: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
   
   const StyledSection = styled.section`
-        background-color: ${c.pink}
+        background-color: ${c.white}
         background-size: cover;
         color: ${c.black};
         position: absolute;

@@ -31,7 +31,7 @@ const Structure: React.FC<Props> = (props) => {
 
   return (
     <section>
-      <ConstructionContainer />
+
       <AboutContainer />
       <SkillsContainer />
       <ProjectContainer />
