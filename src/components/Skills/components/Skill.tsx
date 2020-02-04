@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { ISkill } from '../redux/reducers';
-import { Revealer } from 'variables/animations';
+import { Revealer, revealerFadeIn } from 'variables/animations';
 
 interface IProps {
   skill: ISkill;
@@ -19,6 +19,8 @@ const Skill: React.FC<IProps> = (props) => {
   background-color: ${c.red};
   transition: 0.5s;
   font-size: 30px;
+  animation: ${revealerFadeIn} 0.5s 1;
+  animation-fill-mode: forwards;
 
   &:hover {
     background-color: ${(props) => props.color};

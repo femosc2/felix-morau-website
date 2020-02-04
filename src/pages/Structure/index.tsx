@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { setActivePage, setLastPage } from './redux/actions';
+import { ConstructionContainer } from 'components/Construction';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
@@ -30,6 +31,7 @@ const Structure: React.FC<Props> = (props) => {
 
   return (
     <section>
+      <ConstructionContainer />
       <AboutContainer />
       <SkillsContainer />
       <ProjectContainer />

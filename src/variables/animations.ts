@@ -35,6 +35,18 @@ export const fadeIn = keyframes`
     }
 `;
 
+export const revealerFadeIn = keyframes`
+    0% {
+      opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+
 export const secondaryImageOverlayIn = keyframes`
   0% {
     width: 0;
@@ -59,6 +71,7 @@ export const Revealer = styled.div<{ boxColor: string}>`
 
   &:after {
     position: absolute;
+    pointer-event: none;
     content: '';
     left: 0;
     top: 0;
