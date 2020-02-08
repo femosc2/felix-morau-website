@@ -1,17 +1,12 @@
 /* eslint-disable no-unused-vars */
 
 import {
-  ProjectsAction, SET_PROJECTS, SET_PROJECTS_FILTER,
+  ModalAction, SET_MODAL_CONTENT,
 } from './actions';
 
 
-export interface IProject {
-  type: 'professional' | 'school' | 'hobby';
-  description: string;
-  github: string;
-  image: string;
-  stack: string[];
-  name: string;
+export interface IModal {
+  content: 
 }
 export interface IProjects {
     projects: IProject[];

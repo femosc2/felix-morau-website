@@ -12,13 +12,15 @@ const Project: React.FC<IProps> = (props) => {
   const { project } = props;
 
   const StyledCard = styled.div<{picture: string; text: string;}>`
-  height: 50%;
-  width: 50%;
+  height: 33%;
+  width: 33%;
   background-image: url(${(props) => props.picture});
   transition: 1s;
   font-size: 30px;
   animation-fill-mode: forwards;
   filter: grayscale(1);
+  display: inline-flex;
+  background-position: center;
   
   &:hover {
     transition: 1s;
