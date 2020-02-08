@@ -19,7 +19,7 @@
     "noEmit": true,
     "jsx": "react",
     "baseUrl": "./src",
-    "downlevelIteration": true,
+    "downlevelIteration": true
   },
   "extends": "./paths.json",
   "include": [
