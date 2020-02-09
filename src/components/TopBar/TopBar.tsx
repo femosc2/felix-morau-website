@@ -16,7 +16,7 @@ const StyledTopBar = styled.nav`
     position: fixed;
     font-size: 1.5rem;
     height: 8vh;
-    z-index: 10000000;
+    z-index: 10000;
 `;
 const StyledTabContainer = styled.ul`
     display: inline-flex;
