@@ -15,8 +15,8 @@ interface IProps {
 export const ProjectFilters: React.FC<IProps> = (props) => {
 
   const { setFilterModalVisbility, projectsSkills,
-     filteredProjectSkills, updateSkillFilter, projectsTypes,
-      filteredProjectsTypes, updateTypeFilter } = props;
+    filteredProjectSkills, updateSkillFilter, projectsTypes,
+    filteredProjectsTypes, updateTypeFilter } = props;
 
   const c = { ...COLORS };
 
@@ -48,7 +48,20 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
 
   const StyledButton = styled.button`
   z-index: 90000000;
-  margin-top: 10%;
+  margin-top: 2%;
+  margin-right: 2%;
+  border: none;
+  border-radius: 50%;
+  float: right;
+  font-size: 50px;
+  color: ${c.black};
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.2s;
+    color: ${c.red};
+  }
   `;
 
   const StyledList = styled.ul`
@@ -95,10 +108,10 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   return (
     <>
       <StyledModal>
-        <StyledButton onClick={ () => setFilterModalVisbility(false) }> X </StyledButton>
+        <StyledButton onClick={ () => setFilterModalVisbility(false) }> <i className='far fa-times-circle'></i> </StyledButton>
         <StyledH2> Tech Filter</StyledH2>
         <hr />
-        <StyledList>{ projectsSkills.map((ps) =>
+        <StyledList>{ projectsSkills.sort().map((ps) =>
           <StyledLi isFilter={ filteredProjectSkills.includes(ps)}
             key={ ps }
             onClick={ () => refreshSkills(ps)}> { ps } <StyledSpan>|</StyledSpan>

@@ -6,10 +6,14 @@ import { IStore } from 'store';
 import { ProjectFilters } from './ProjectFilters';
 import { setFilterModalVisbility, setFilteredProjectsSkills, setFilteredProjectsTypes } from '../../redux/actions';
 
+interface IProps {
+  setUpdate: (update: string) => void;
+}
 
-type Props =  ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps>
+type Props =  IProps & ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps>
 
 const ProjectsFiltersContainer: React.FC<Props> = (props) => {
+  const { setUpdate } = props;
 
   const updateSkillFilter = (skill: string) => {
     let ufps = props.filteredProjectSkills;
@@ -18,7 +22,13 @@ const ProjectsFiltersContainer: React.FC<Props> = (props) => {
     } else {
       ufps.push(skill);
     }
-    props.setFilteredProjectsSkills(ufps);
+    if (ufps.length !== 0) {
+      props.setFilteredProjectsSkills(ufps);
+      setUpdate(skill);
+    } else {
+      props.setFilteredProjectsSkills([]);
+      setUpdate(skill);
+    }
   };
 
   const updateTypeFilter = (type: string) => {
@@ -28,7 +38,12 @@ const ProjectsFiltersContainer: React.FC<Props> = (props) => {
     } else {
       ufpt.push(type);
     }
-    props.setFilteredProjectsTypes(ufpt);
+    if (ufpt.length !== 0) {
+      props.setFilteredProjectsTypes(ufpt);
+      setUpdate(type);
+    } else {
+      alert('You must select atleast one type!');
+    }
   };
 
   return (
@@ -62,7 +77,7 @@ const mapDispatchToProps = (dispatch: any) => {
   }, dispatch);
 };
 
-export default compose<Props, {}>(
+export default compose<Props, IProps>(
   connect(mapStateToProps, mapDispatchToProps),
 )(ProjectsFiltersContainer);
 

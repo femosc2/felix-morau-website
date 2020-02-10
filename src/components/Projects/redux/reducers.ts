@@ -7,7 +7,7 @@ import { ProjectsAction, SET_PROJECTS, SET_PROJECTS_FILTER, SET_PROJECT_FILTERS_
 export interface IProject {
   type: 'professional' | 'school' | 'hobby';
   description: string;
-  github: string;
+  link: string;
   image: string;
   stack: string[];
   name: string;
@@ -25,11 +25,11 @@ export interface IProjects {
 const initialDomainsState: IProjects = {
   projects: [],
   projectsFilter: [],
-  projectsFilterVisibility: true,
+  projectsFilterVisibility: false,
   projectsSkills: [],
   filteredProjectsSkills: [],
   projectsTypes: [],
-  filteredProjectsTypes: [],
+  filteredProjectsTypes: ['hobby', 'professional', 'school'],
 };
 
 export const projects = (state: IProjects = initialDomainsState, action: ProjectsAction) => {

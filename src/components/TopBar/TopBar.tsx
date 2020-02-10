@@ -7,6 +7,7 @@ interface IProps {
     tabs: string[]
     switchTab: (tabName: string) => void;
     activePage: string;
+    isProjectsFilterVisible: boolean;
 }
 
 const c = { ...COLORS };
@@ -26,8 +27,8 @@ const StyledTabContainer = styled.ul`
     padding: 0;
     margin-left: 0px;
 `;
-const StyledTab = styled.li<{ activePage: string, tab: string}>`
-  color: ${(props) => props.tab === props.activePage ? c.red : c.black};
+const StyledTab = styled.li<{ activePage: string, tab: string, isVisible: boolean;}>`
+  color: ${(props) => props.tab === props.activePage ? c.red : (props.isVisible && props.activePage === 'projects') ? c.white : c.black};
   display: inline-block;
   cursor: pointer;
   transition: 0.2s;
@@ -55,15 +56,17 @@ const StyledTab = styled.li<{ activePage: string, tab: string}>`
 
 
 export const TopBar: React.FC<IProps> = (props: IProps) => {
-  const { tabs, switchTab } = props;
+  const { isProjectsFilterVisible, activePage, switchTab, tabs } = props;
+
   return (
     <StyledTopBar>
       <StyledTabContainer>
         { tabs.map((tab) => <Revealer
           key={ tab }
-          boxColor={ props.activePage === tab ? c.red : c.black}>
+          boxColor={ activePage === tab ? c.red : c.black}>
           <StyledTab
-            activePage={ props.activePage }
+            activePage={ activePage }
+            isVisible={ isProjectsFilterVisible }
             tab={ tab }
             onClick={ () => switchTab(tab)}
             key={ tab }>

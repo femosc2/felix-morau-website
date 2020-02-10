@@ -21,6 +21,7 @@ const Project: React.FC<IProps> = (props) => {
   filter: grayscale(1);
   display: inline-flex;
   background-position: center;
+
   
   &:hover {
     transition: 1s;
@@ -33,7 +34,7 @@ const Project: React.FC<IProps> = (props) => {
   background: linear-gradient(
     to top,
     rgba(255, 255, 255, 1),
-    rgba(200, 0, 0, 0.6)
+    rgba(200, 0, 0, 0.8)
   );
   min-height: 300px;
   height: 100%;
@@ -53,9 +54,16 @@ const Project: React.FC<IProps> = (props) => {
   }
   `;
 
+  const StyledP = styled.p`
+  font-size: 14px;
+  `;
+
   return (
-    <StyledCard picture={ project.image } text={ project.description }>
-      <StyledOverlay> { project.name } <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) }</StyledOverlay>
+    <StyledCard picture={ project.image } text={ project.description } onClick={ () => window.open(project.link, '_blank')}>
+      <StyledOverlay>
+        { project.name } <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) } <hr />
+        <StyledP> { project.description } </StyledP>
+      </StyledOverlay>
     </StyledCard>
   );
 };

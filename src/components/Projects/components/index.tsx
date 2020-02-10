@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { db } from 'variables/firebase';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
@@ -11,6 +11,9 @@ type Props = ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateT
 
 const ProjectsListContainer: React.FC<Props> = (props) => {
 
+  // eslint-disable-next-line no-unused-vars
+  const [update, setUpdate] = useState('');
+
   useEffect(() => {
     db.ref('/Projects').once('value').then((snapshot) => {
       props.setProjects(snapshot.val());
@@ -18,19 +21,26 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
   }, []);
 
   useEffect(() => {
-    loadResources();
-  }, [props.projects]);
-
-  const loadResources = () => {
     getTypeOfProjects();
     getNameOfSkills();
-  };
+  }, [props.projects]);
+
+  useEffect(() => {
+    updateProjects();
+  }, [update]);
 
   const getNameOfSkills = () => {
     const pList: string[] = [];
     props.projects.map((p) => p.stack.map((ps) => pList.push(ps)));
     const filteredPList = [...new Set(pList)];
     props.setProjectsSkills(filteredPList);
+  };
+
+  const updateProjects = () => {
+    const filtered = props.projects.filter((p => (p.stack.some(s => props.skillFilter.includes(s)))
+     && props.typesFilter.includes(p.type)));
+
+    props.setProjectsFilter(filtered);
   };
 
   const getTypeOfProjects = () => {
@@ -48,7 +58,10 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
 
   return (
     <ProjectsList projects={ props.projects } search={ search } projectsFilter={ props.projectsFilter }
-      setFilterModalVisbility={ props.setFilterModalVisbility } isVisible={ props.isVisible } />
+      setFilterModalVisbility={ props.setFilterModalVisbility } isVisible={ props.isVisible }
+      setUpdate={ setUpdate }
+      skillFilter={ props.skillFilter }
+      typesFilter= { props.typesFilter } />
   );
 };
 
@@ -57,6 +70,8 @@ const mapStateToProps = (store: IStore) => {
     projects: store.projects.projects,
     projectsFilter: store.projects.projectsFilter,
     isVisible: store.projects.projectsFilterVisibility,
+    typesFilter: store.projects.filteredProjectsTypes,
+    skillFilter: store.projects.filteredProjectsSkills,
   };
 };
 
