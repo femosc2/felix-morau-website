@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 import { ProjectsList } from './ProjectsList';
-import { setProjects, setProjectsFilter, setFilterModalVisbility, setProjectsSkills } from '../redux/actions';
+import { setProjects, setProjectsFilter, setFilterModalVisbility, setProjectsSkills, setProjectsTypes } from '../redux/actions';
 
 type Props = ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps>
 
@@ -18,8 +18,13 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
   }, []);
 
   useEffect(() => {
-    getNameOfSkills();
+    loadResources();
   }, [props.projects]);
+
+  const loadResources = () => {
+    getTypeOfProjects();
+    getNameOfSkills();
+  };
 
   const getNameOfSkills = () => {
     const pList: string[] = [];
@@ -28,15 +33,22 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
     props.setProjectsSkills(filteredPList);
   };
 
+  const getTypeOfProjects = () => {
+    const pList: string[] = [];
+    props.projects.map((p) => pList.push(p.type));
+    const filteredPList = [...new Set(pList)];
+    props.setProjectsTypes(filteredPList);
+  };
+
   const search = (query: string) => {
     query = query.toLowerCase();
-    const searched = props.projects.filter((p) => p.name.toLowerCase() === query || p.description.toLowerCase().includes(query) );
+    const searched = props.projects.filter((p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query) );
     props.setProjectsFilter(searched);
   };
 
   return (
     <ProjectsList projects={ props.projects } search={ search } projectsFilter={ props.projectsFilter }
-      setFilterModalVisbility={ props.setFilterModalVisbility } />
+      setFilterModalVisbility={ props.setFilterModalVisbility } isVisible={ props.isVisible } />
   );
 };
 
@@ -44,6 +56,7 @@ const mapStateToProps = (store: IStore) => {
   return {
     projects: store.projects.projects,
     projectsFilter: store.projects.projectsFilter,
+    isVisible: store.projects.projectsFilterVisibility,
   };
 };
 
@@ -54,6 +67,7 @@ const mapDispatchToProps = (dispatch: any) => {
     setProjectsFilter,
     setFilterModalVisbility,
     setProjectsSkills,
+    setProjectsTypes,
   }, dispatch);
 };
 
