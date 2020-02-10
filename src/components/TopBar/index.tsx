@@ -19,13 +19,14 @@ const TopBarContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    <TopBar tabs={ tabs } switchTab= { switchTab } activePage={ props.activePage } />
+    <TopBar tabs={ tabs } switchTab= { switchTab } activePage={ props.activePage } isProjectsFilterVisible={ props.isProjectsFilterVisible } />
   );
 };
 
 const mapStateToProps = (store: IStore) => {
   return {
     activePage: store.structure.activePage,
+    isProjectsFilterVisible: store.projects.projectsFilterVisibility,
   };
 };
 

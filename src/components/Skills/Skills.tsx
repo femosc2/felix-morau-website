@@ -74,7 +74,7 @@ export const Skills: React.FC<IProps> = (props) => {
             This means that in addition to my programming skills I also have a good grasp on UX-Design
             and some proficiency in graphic design.</StyledP>
         </Revealer>
-      </StyledTextSection> }
+      </StyledTextSection>
     </StyledSection>
   );
 };

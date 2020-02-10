@@ -1,6 +1,5 @@
 import React from 'react';
 import { IStore } from 'store';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { withRouter, RouteComponentProps } from 'react-router';
@@ -26,13 +25,7 @@ const mapStateToProps = (store: IStore) => {
   };
 };
 
-
-const mapDispatchToProps = (dispatch: any) => {
-  return bindActionCreators({
-  }, dispatch);
-};
-
 export default compose<Props, {}>(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps),
   withRouter,
 )(ProjectsContainer);
