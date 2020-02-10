@@ -52,8 +52,14 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
 
   const search = (query: string) => {
     query = query.toLowerCase();
-    const searched = props.projects.filter((p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query) );
-    props.setProjectsFilter(searched);
+    let searched;
+    if (props.skillFilter.length === 0) {
+      searched = props.projects.filter((p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query) );
+      props.setProjectsFilter(searched);
+    } else {
+      searched = props.projectsFilter.filter((p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query) );
+      props.setProjectsFilter(searched);
+    }
   };
 
   return (
