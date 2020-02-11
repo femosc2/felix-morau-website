@@ -32,11 +32,15 @@ export const Projects: React.FC<IProps> = (props) => {
     `;
 
   const StyledTextSection = styled.section`
-  float: right;
-  color: red;
+  color: ${c.red};
   width: 45%;
   margin-top: -90vh;
-  margin-right: 50px;
+  float: right;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: -210vh;
+    float: none;
+  };
   `;
 
   const StyledH2 = styled.h2`
@@ -45,6 +49,9 @@ export const Projects: React.FC<IProps> = (props) => {
     margin: 0 auto;
     text-align: left;
     font-weight: 100;
+    @media (max-width: 768px) {
+      text-align: center;
+    };
   `;
 
   const StyledSpan = styled.span`

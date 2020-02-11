@@ -43,6 +43,9 @@ const Skill: React.FC<IProps> = (props) => {
   text-align: left;
   min-height: 50px;
   color: ${ c.white };
+  @media (max-width: 768px) {
+    width: 100%;
+  };
   `;
 
   return (

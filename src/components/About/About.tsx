@@ -39,7 +39,8 @@ export const About: React.FC<IProps> = (props) => {
         margin-top: 10%;
         margin-right: 35%;
         @media (max-width: 768px) {
-            margin-top: 20vh;
+            margin-top: 30vh;
+            width: 100%;
         };
     `;
   const StyledH2 = styled.h2`
@@ -66,6 +67,8 @@ export const About: React.FC<IProps> = (props) => {
         text-align: center;
         width: 100%;
         max-width: 100%;
+        font-size: 2rem;
+        margin-top: -20px;
     };
     `;
 

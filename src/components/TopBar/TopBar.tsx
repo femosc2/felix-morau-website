@@ -18,6 +18,12 @@ const StyledTopBar = styled.nav`
     font-size: 1.5rem;
     height: 8vh;
     z-index: 10000;
+    @media (max-width: 768px) {
+      box-shadow: 0px 10px 0px -1px ${c.red};
+      background-color: ${c.white};
+      max-width: 100vw;
+    };
+    
 `;
 const StyledTabContainer = styled.ul`
     display: inline-flex;
@@ -26,6 +32,9 @@ const StyledTabContainer = styled.ul`
     width: 100%;
     padding: 0;
     margin-left: 0px;
+    @media (max-width: 768px) {
+      justify-content: center;
+    };
 `;
 const StyledTab = styled.li<{ activePage: string, tab: string, isVisible: boolean;}>`
   color: ${(props) => props.tab === props.activePage ? c.red : (props.isVisible && props.activePage === 'projects') ? c.white : c.black};
@@ -70,7 +79,7 @@ export const TopBar: React.FC<IProps> = (props: IProps) => {
             tab={ tab }
             onClick={ () => switchTab(tab)}
             key={ tab }>
-            { tab }|
+            { tab } &nbsp;
           </StyledTab>
         </Revealer>) }
       </StyledTabContainer>

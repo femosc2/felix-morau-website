@@ -52,3 +52,9 @@
   width: 100%;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 768px) {
+  .aboutParticles {
+    display: none;
+  }
+}

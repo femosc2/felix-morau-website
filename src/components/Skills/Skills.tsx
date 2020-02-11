@@ -27,25 +27,33 @@ export const Skills: React.FC<IProps> = (props) => {
         transition: all 1s ease-in-out;
         z-index: 100;
         @media (max-width: 768px) {
-            height: 200vh;
+            min-height: 100vh;
             text-align: center;
         };
     `;
 
   const StyledTextSection = styled.section`
-  float: right;
-  color: red;
+  color: ${c.red};
   width: 45%;
   margin-top: -90vh;
   margin-right: 50px;
+  float: right;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: -290vh;
+    top: 0;
+    float: none;
+  };
   `;
 
   const StyledH2 = styled.h2`
     font-size: 5rem;
     color: ${c.red};
     margin: 0 auto;
-    text-align: left;
     font-weight: 100;
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    };
   `;
 
   const StyledSpan = styled.span`

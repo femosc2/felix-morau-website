@@ -44,6 +44,11 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   z-index: 20000000;
   background-color: ${c.white};
   box-shadow: 5px 8px 0px 5px ${c.red};
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 90vw;
+    left: 0;
+  };
   `;
 
   const StyledButton = styled.button`
@@ -76,6 +81,12 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   text-align: center;
   overflow: hidden;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    hieght: 100%;
+    left: 0;
+  };
   `;
 
   const StyledLi = styled.li<{isFilter: boolean}>`
