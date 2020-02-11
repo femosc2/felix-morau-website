@@ -77,7 +77,7 @@ export const About: React.FC<IProps> = (props) => {
         <Revealer boxColor={c.red}><StyledH2> hello </StyledH2></Revealer>
         <StyledP>
           <Revealer boxColor={c.black}>
-              My name is <StyledSpan>Felix Morau</StyledSpan>, a Fullstack Web Developer based in Malmö, Sweden.
+              I am <StyledSpan>Felix Morau</StyledSpan>, <br />a Fullstack Web Developer based in Malmö, Sweden.
           </Revealer>
         </StyledP>
       </StyledTextSection>
