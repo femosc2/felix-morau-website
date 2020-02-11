@@ -21,6 +21,7 @@ const Project: React.FC<IProps> = (props) => {
   filter: grayscale(1);
   display: inline-flex;
   background-position: center;
+  cursor: pointer;
 
   
   &:hover {
