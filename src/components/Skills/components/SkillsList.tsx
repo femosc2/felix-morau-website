@@ -19,6 +19,10 @@ const SkillsList: React.FC<IProps> = (props) => {
   const StyledSkillList = styled.section`
   overflow: scroll;
   height: 100vh;
+  @media (max-width: 768px) {
+    height: 200vh;
+    margin-top: 100vh;
+  };
   `;
 
   const StyledButtonComfort = styled.div<{ sortedBy: string }>`
@@ -34,6 +38,9 @@ const SkillsList: React.FC<IProps> = (props) => {
     color: ${ red };
     transition: 0.5s;
   }
+  @media (max-width: 768px) {
+    display: none;
+  };
   `;
 
   const StyledButtonName = styled.div<{ sortedBy: string }>`
@@ -47,7 +54,10 @@ const SkillsList: React.FC<IProps> = (props) => {
   &:hover {
     color: ${ red };
     transition: 0.5s;
-  }
+  };
+  @media (max-width: 768px) {
+    display: none;
+  };
   `;
 
   return (

@@ -47,22 +47,11 @@ export const Contact: React.FC<IProps> = (props) => {
     text-align: left;
     font-weight: 100;
     padding-left: 100px;
-    @media (max-width: 768px) {
-        text-align: center;
-    }
-`;
 
-  const StyledH2 = styled.h2`
-    font-size: 6rem;
-    color: ${c.red};
-    margin: 0 auto;
-    text-align: left;
-    padding-left: 100px;
-    font-weight: 100;
-    margin-top: -2%;
     @media (max-width: 768px) {
-        text-align: center;
-    }
+      padding-left: none;
+      font-size: 2rem;
+    };
 `;
 
   const StyledSpan = styled.span`
@@ -83,14 +72,17 @@ export const Contact: React.FC<IProps> = (props) => {
           <Revealer boxColor={c.red}><StyledH3>send me an
             <StyledSpan> email</StyledSpan>, </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3>follow my
-            <StyledSpan onClick={() => window.open('https://www.twitter.com/moraufelix/', '_blank')}> ramblings</StyledSpan>, </StyledH3></Revealer>
+            <StyledSpan onClick={() => window.open('https://www.twitter.com/moraufelix/', '_blank')}> ramblings</StyledSpan>,
+          </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> look at a slice of
-            <StyledSpan onClick={() => window.open('https://www.instagram.com/moraufelix/', '_blank')}> my life</StyledSpan>, </StyledH3></Revealer>
+            <StyledSpan onClick={() => window.open('https://www.instagram.com/moraufelix/', '_blank')}> my life</StyledSpan>,
+          </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> check out some of my
             <StyledSpan onClick={() => window.open('https://github.com/femosc2', '_blank')}> code</StyledSpan>, </StyledH3></Revealer>
           <Revealer boxColor={c.black}><StyledH3> or </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> have a look at my
-            <StyledSpan onClick={() => window.open('https://www.linkedin.com/in/felix-morau-0193a2163/', '_blank')}> experience</StyledSpan>. </StyledH3></Revealer>
+            <StyledSpan onClick={() => window.open('https://www.linkedin.com/in/felix-morau-0193a2163/', '_blank')}> experience</StyledSpan>.
+          </StyledH3></Revealer>
         </StyledTextSection>
       </StyledSection>
     </>

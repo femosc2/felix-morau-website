@@ -34,6 +34,12 @@ const StyledInput = styled.input`
   &::placeholder {
     font-size: 16px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: -120vh;
+    left: 0;
+  };
   `;
 export const ProjectsList: React.FC<IProps> = (props) => {
   const { projects, search, projectsFilter, setFilterModalVisbility, isVisible, setUpdate, skillFilter, typesFilter } = props;
@@ -48,6 +54,11 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   &::-webkit-scrollbar {
     display:none;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 120vh;
+    
+  };
   `;
 
   const StyledFiltersButton = styled.div`
@@ -59,11 +70,19 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   font-size: 35px;
   transition: 0.2s;
   box-shadow: 2px 4px 0px 2px ${c.red};
+
   
   &:hover {
     color: red;
     transition: 0.2s;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: -110vh;
+    left: 0;
+    display: none;
+  };
   `;
 
   const StyledOverlay = styled.div`

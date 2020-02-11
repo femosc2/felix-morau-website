@@ -28,7 +28,11 @@ const Project: React.FC<IProps> = (props) => {
     transition: 1s;
     color: ${ c.black };
     filter: none;
-  }
+  };
+
+  @media (max-width: 768px) {
+    width: 50%;
+  };
   `;
   
   const StyledOverlay = styled.div`
