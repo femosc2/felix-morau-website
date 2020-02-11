@@ -42,9 +42,6 @@
       "dest": "/service-worker.js"
     },
     {
-      "alias": ["felixmorau.com", "felixmorau.se"]
-    },
-    {
       "src": "/(.*)",
       "headers": {
         "cache-control": "s-maxage=0"
