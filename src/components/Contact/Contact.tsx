@@ -81,7 +81,7 @@ export const Contact: React.FC<IProps> = (props) => {
             <StyledSpan onClick={() => window.open('https://github.com/femosc2', '_blank')}> code</StyledSpan>, </StyledH3></Revealer>
           <Revealer boxColor={c.black}><StyledH3> or </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> have a look at my
-            <StyledSpan onClick={() => window.open('https://www.linkedin.com/in/felix-morau-0193a2163/', '_blank')}> experience</StyledSpan>.
+            <StyledSpan onClick={() => window.open('https://linkedin.com/in/felixmorau', '_blank')}> experience</StyledSpan>.
           </StyledH3></Revealer>
         </StyledTextSection>
       </StyledSection>
