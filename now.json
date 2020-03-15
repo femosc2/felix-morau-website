@@ -3,7 +3,7 @@
   "name": "felixmorau",
   "build": {
     "env": {
-      "API_KEY": "@apiKey",
+      "API_KEY": "@apikey",
       "DATABASE_URL": "@firebaseurl",
       "AUTH_DOMAIN": "@authdomain"
     }
