@@ -1,6 +1,13 @@
 {
   "version": 2,
   "name": "felixmorau",
+  "build": {
+    "env": {
+      "API_KEY": "@apiKey",
+      "DATABASE_URL": "@firebaseurl",
+      "AUTH_DOMAIN": "@authdomain"
+    }
+  },
   "builds": [
     {
       "src": "package.json",
