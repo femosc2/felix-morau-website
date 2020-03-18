@@ -9,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { setActivePage, setLastPage } from './redux/actions';
-import { ConstructionContainer } from 'components/Construction';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
@@ -17,13 +16,13 @@ const Structure: React.FC<Props> = (props) => {
 
   useEffect(() => {
     if (window.location.href.includes('about')) {
-      props.setActivePage('about');
+      if (props.activePage !== window.location.href.split('/')[3]) props.setActivePage('about');
     } else if (window.location.href.includes('skills')) {
-      props.setActivePage('skills');
+      if (props.activePage !== window.location.href.split('/')[3]) props.setActivePage('skills');
     } else if (window.location.href.includes('projects')) {
-      props.setActivePage('projects');
+      if (props.activePage !== window.location.href.split('/')[3]) props.setActivePage('projects');
     } else if (window.location.href.includes('contact')) {
-      props.setActivePage('contact');
+      if (props.activePage !== window.location.href.split('/')[3]) props.setActivePage('contact');
     } else {
       props.setActivePage('about');
     }

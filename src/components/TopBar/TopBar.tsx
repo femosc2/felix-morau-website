@@ -77,7 +77,7 @@ export const TopBar: React.FC<IProps> = (props: IProps) => {
             activePage={ activePage }
             isVisible={ isProjectsFilterVisible }
             tab={ tab }
-            onClick={ () => switchTab(tab)}
+            onClick={ () => { activePage !== tab && switchTab(tab); }}
             key={ tab }>
             { tab } &nbsp;
           </StyledTab>
