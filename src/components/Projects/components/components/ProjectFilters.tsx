@@ -66,6 +66,7 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   &:hover {
     transition: 0.2s;
     color: ${c.red};
+    cursor: pointer;
   }
   `;
 

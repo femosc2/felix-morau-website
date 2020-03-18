@@ -37,6 +37,7 @@ const SkillsList: React.FC<IProps> = (props) => {
   &:hover {
     color: ${ red };
     transition: 0.5s;
+    cursor: pointer;
   }
   @media (max-width: 768px) {
     display: none;
@@ -54,6 +55,7 @@ const SkillsList: React.FC<IProps> = (props) => {
   &:hover {
     color: ${ red };
     transition: 0.5s;
+    cursor: pointer;
   };
   @media (max-width: 768px) {
     display: none;
