@@ -75,6 +75,7 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   &:hover {
     color: red;
     transition: 0.2s;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
