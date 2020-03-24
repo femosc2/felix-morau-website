@@ -13,9 +13,9 @@ const TopBarContainer: React.FC<Props> = (props) => {
   const tabs = ['about', 'skills', 'projects', 'contact'];
 
   const switchTab = (tabName: string) => {
+    props.setLastPage(props.history.location.pathname.substring(1));
     props.history.push(`/${ tabName }`);
     props.setActivePage(tabName);
-    props.setLastPage(props.history.location.pathname.substring(1));
   };
 
   return (
