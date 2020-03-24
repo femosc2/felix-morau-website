@@ -51,6 +51,7 @@ export const Skills: React.FC<IProps> = (props) => {
     color: ${c.red};
     margin: 0 auto;
     font-weight: 100;
+    text-align: left;
     @media (max-width: 768px) {
       font-size: 3rem;
     };
