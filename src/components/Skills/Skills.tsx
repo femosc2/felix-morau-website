@@ -54,6 +54,7 @@ export const Skills: React.FC<IProps> = (props) => {
     text-align: left;
     @media (max-width: 768px) {
       font-size: 3rem;
+      text-align: center;
     };
   `;
 
