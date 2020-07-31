@@ -76,7 +76,7 @@ export const Projects: React.FC<IProps> = (props) => {
         <StyledTextSection className="paragraphText">
           <Revealer boxColor={ c.red }><StyledH2>what do i do?</StyledH2></Revealer>
           <Revealer boxColor={ c.black }>
-            <StyledP>I enjoy all types of <StyledSpan>web development</StyledSpan>! I mostly do <StyledSpan>front-end</StyledSpan> development
+            <StyledP>I enjoy all types of <StyledSpan>web development</StyledSpan>! I mostly do <StyledSpan>frontend</StyledSpan> development
               with JavaScript (React and Vue) but lately I've also
               started doing more <StyledSpan>back-end</StyledSpan> with Node and .NET.</StyledP>
           </Revealer>

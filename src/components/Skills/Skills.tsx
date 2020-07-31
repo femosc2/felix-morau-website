@@ -79,10 +79,12 @@ export const Skills: React.FC<IProps> = (props) => {
       <StyledTextSection className="paragraphText">
         <Revealer boxColor={ c.red }><StyledH2>what can i do?</StyledH2></Revealer>
         <Revealer boxColor={ c.black }>
-          <StyledP>I'm a <StyledSpan>Computer Science</StyledSpan> student at the <StyledSpan>Information Architecture</StyledSpan> programme
-            at Malmö University and a <StyledSpan>Fullstack Web Developer</StyledSpan> at HiQ.
-            This means that in addition to my programming skills I also have a good grasp on UX-Design
-            and some proficiency in graphic design.</StyledP>
+          <StyledP>I'm a <StyledSpan>Frontend Web Developer </StyledSpan>
+            at Avensia. I learned programming through the <StyledSpan>
+            Information Architecture </StyledSpan> programme at Malmö University where I
+            attained my bachelors degree in <StyledSpan> Computer and Information Science</StyledSpan>.
+            This means that in addition to my programming skills I also have a good grasp on <StyledSpan>UX-Design </StyledSpan>
+            and some proficiency in <StyledSpan>graphic design</StyledSpan>.</StyledP>
         </Revealer>
       </StyledTextSection>
     </StyledSection>
