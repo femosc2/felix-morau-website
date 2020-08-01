@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 import { ProjectFilters } from './ProjectFilters';
-import { setFilterModalVisbility, setFilteredProjectsSkills, setFilteredProjectsTypes } from '../../redux/actions';
+import { setFilterModalVisbility, setFilteredProjectsSkills, setFilteredProjectsTypes, setProjectModal } from '../../redux/actions';
+import { ProjectModal } from './ProjectModal';
 
 interface IProps {
   setUpdate: (update: string) => void;
@@ -47,14 +48,18 @@ const ProjectsFiltersContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    props.isVisible ? <ProjectFilters
-      setFilterModalVisbility={ props.setFilterModalVisbility }
-      projectsSkills={ props.projectsSkills }
-      projectsTypes={ props.projectsTypes }
-      filteredProjectSkills={ props.filteredProjectSkills }
-      updateSkillFilter={ updateSkillFilter }
-      updateTypeFilter={ updateTypeFilter }
-      filteredProjectsTypes={ props.filteredProjectsTypes} /> : null
+    <>
+      { props.isVisible && <ProjectFilters
+        setFilterModalVisbility={ props.setFilterModalVisbility }
+        projectsSkills={ props.projectsSkills }
+        projectsTypes={ props.projectsTypes }
+        filteredProjectSkills={ props.filteredProjectSkills }
+        updateSkillFilter={ updateSkillFilter }
+        updateTypeFilter={ updateTypeFilter }
+        filteredProjectsTypes={ props.filteredProjectsTypes} /> }
+
+      {props.projectModal.visibility && <ProjectModal setProjectModal={ props.setProjectModal } />}
+    </>
   );
 };
 
@@ -65,6 +70,7 @@ const mapStateToProps = (store: IStore) => {
     projectsTypes: store.projects.projectsTypes,
     filteredProjectSkills: store.projects.filteredProjectsSkills,
     filteredProjectsTypes: store.projects.filteredProjectsTypes,
+    projectModal: store.projects.projectModal,
   };
 };
 
@@ -74,6 +80,7 @@ const mapDispatchToProps = (dispatch: any) => {
     setFilterModalVisbility,
     setFilteredProjectsSkills,
     setFilteredProjectsTypes,
+    setProjectModal,
   }, dispatch);
 };
 

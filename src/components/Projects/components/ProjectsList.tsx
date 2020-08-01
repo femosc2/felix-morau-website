@@ -125,7 +125,8 @@ const StyledH2 = styled.h2`
         }
     `;
 export const ProjectsList: React.FC<IProps> = (props) => {
-  const { projects, search, projectsFilter, setFilterModalVisbility, filtersVisibility, setUpdate, skillFilter, typesFilter, setProjectModal, projectModal } = props;
+  const { projects, search, projectsFilter, setFilterModalVisbility,
+    filtersVisibility, setUpdate, skillFilter, typesFilter, setProjectModal, projectModal } = props;
 
   const closeModal = () => {
     setFilterModalVisbility(false);
@@ -137,12 +138,13 @@ export const ProjectsList: React.FC<IProps> = (props) => {
 
   return (
     <>
-      {filtersVisibility || projectModal.visibility && <StyledOverlay onClick={ () => closeModal() } />}
+      {(filtersVisibility || projectModal.visibility) && <StyledOverlay onClick={ () => closeModal() } />}
       <StyledProjects>
         {projects.length === 0 ? <LoaderContainer margin={ '25%' } />
           : (projectsFilter.length === 0 && (skillFilter.length === 0 || typesFilter.length === 0) ) &&
         projects.map((p) => <Project setProjectModal={ setProjectModal } project={ p } key={ p.name } />)}
-        {(projectsFilter.length !== 0 && projects.length !== 0) ? projectsFilter.map((p) => <Project setProjectModal={ setProjectModal }project={ p } key={ p.name } />) :
+        {(projectsFilter.length !== 0 && projects.length !== 0) ?
+          projectsFilter.map((p) => <Project setProjectModal={ setProjectModal }project={ p } key={ p.name } />) :
           (projectsFilter.length !== 0 && projects.length === 0) && <StyledNoProjects>
             <StyledH2>Try again!</StyledH2>
             <StyledP className="paragraphText">

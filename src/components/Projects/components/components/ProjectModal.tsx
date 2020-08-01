@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { StyledModal } from './ProjectFilters';
+import { IProjectModal } from '../../redux/reducers';
 
 interface IProps {
-  setFilterModalVisbility: (isVisible: boolean) => void;
-  projectsSkills: string[];
-  projectsTypes: string[];
-  filteredProjectSkills: string[];
-  updateSkillFilter: (skill: string) => void;
-  updateTypeFilter: (type: string) => void;
-  filteredProjectsTypes: string[];
+  setProjectModal: (projectModal: IProjectModal) => void;
 }
 
 const c = { ...COLORS };
