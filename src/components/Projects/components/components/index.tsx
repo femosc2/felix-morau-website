@@ -58,7 +58,7 @@ const ProjectsFiltersContainer: React.FC<Props> = (props) => {
         updateTypeFilter={ updateTypeFilter }
         filteredProjectsTypes={ props.filteredProjectsTypes} /> }
 
-      {props.projectModal.visibility && <ProjectModal setProjectModal={ props.setProjectModal } />}
+      {props.projectModal.visibility && <ProjectModal setProjectModal={ props.setProjectModal } projectModal={ props.projectModal } />}
     </>
   );
 };

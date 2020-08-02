@@ -60,11 +60,9 @@ const Project: React.FC<IProps> = (props) => {
   }
   `;
 
-  const StyledP = styled.p`
-  font-size: 14px;
-  `;
-
-  // onClick={ () => window.open(project.link, '_blank')}
+  const StyledH3 = styled.h3`
+  
+  `
 
   return (
     <StyledCard picture={ project.image } text={ project.description } onClick={ () => setProjectModal({
@@ -72,8 +70,7 @@ const Project: React.FC<IProps> = (props) => {
       project: project,
     })}>
       <StyledOverlay>
-        { project.name } <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) } <hr />
-        <StyledP> { project.description } </StyledP>
+        <StyledH3>{ project.name }</StyledH3> <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) }
       </StyledOverlay>
     </StyledCard>
   );

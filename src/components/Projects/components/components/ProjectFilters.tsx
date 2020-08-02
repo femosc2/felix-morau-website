@@ -26,7 +26,7 @@ export const StyledModal = styled.div`
   box-shadow: 5px 8px 0px 5px ${c.red};
   @media (max-width: 768px) {
     width: 90vw;
-    height: 90vw;
+    height: 100%;
     left: 0;
   };
   `;
