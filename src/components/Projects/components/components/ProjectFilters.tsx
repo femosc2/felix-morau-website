@@ -12,29 +12,9 @@ interface IProps {
   filteredProjectsTypes: string[];
 }
 
-export const ProjectFilters: React.FC<IProps> = (props) => {
+const c = { ...COLORS };
 
-  const { setFilterModalVisbility, projectsSkills,
-    filteredProjectSkills, updateSkillFilter, projectsTypes,
-    filteredProjectsTypes, updateTypeFilter } = props;
-
-  const c = { ...COLORS };
-
-  // eslint-disable-next-line no-unused-vars
-  const [filteredProjects, setFilteredProjects] = useState<string[]>(filteredProjectSkills);
-
-  // method for rerendering the component on prop change
-  const refreshSkills = (skill: string) => {
-    updateSkillFilter(skill);
-    setFilteredProjects([skill]);
-  };
-
-  const refreshTypes = (type: string) => {
-    updateTypeFilter(type);
-    setFilteredProjects([type]);
-  };
-
-  const StyledModal = styled.div`
+export const StyledModal = styled.div`
   position: absolute;
   top: 10%;
   height: 80vh;
@@ -46,12 +26,12 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   box-shadow: 5px 8px 0px 5px ${c.red};
   @media (max-width: 768px) {
     width: 90vw;
-    height: 90vw;
+    height: 100%;
     left: 0;
   };
   `;
 
-  const StyledButton = styled.button`
+export const StyledButton = styled.button`
   z-index: 90000000;
   margin-top: 2%;
   margin-right: 2%;
@@ -70,7 +50,7 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   }
   `;
 
-  const StyledList = styled.ul`
+const StyledList = styled.ul`
   padding: 0;
   max-height: 100%;
   max-width: 100%;
@@ -90,7 +70,7 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   };
   `;
 
-  const StyledLi = styled.li<{isFilter: boolean}>`
+const StyledLi = styled.li<{isFilter: boolean}>`
   padding: 0;
   padding-right: 10px;
   margin: 0;
@@ -105,7 +85,7 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
   }
   `;
 
-  const StyledH2 = styled.h2`
+const StyledH2 = styled.h2`
     font-size: 5rem;
     color: ${c.red};
     margin: 0 auto;
@@ -113,9 +93,29 @@ export const ProjectFilters: React.FC<IProps> = (props) => {
     font-weight: 100;
   `;
 
-  const StyledSpan = styled.span`
+const StyledSpan = styled.span`
     color: ${c.black}  !important;
   `;
+
+export const ProjectFilters: React.FC<IProps> = (props) => {
+
+  const { setFilterModalVisbility, projectsSkills,
+    filteredProjectSkills, updateSkillFilter, projectsTypes,
+    filteredProjectsTypes, updateTypeFilter } = props;
+
+  // eslint-disable-next-line no-unused-vars
+  const [filteredProjects, setFilteredProjects] = useState<string[]>(filteredProjectSkills);
+
+  // method for rerendering the component on prop change
+  const refreshSkills = (skill: string) => {
+    updateSkillFilter(skill);
+    setFilteredProjects([skill]);
+  };
+
+  const refreshTypes = (type: string) => {
+    updateTypeFilter(type);
+    setFilteredProjects([type]);
+  };
   
   return (
     <>

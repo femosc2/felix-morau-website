@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { ProjectsAction, SET_PROJECTS, SET_PROJECTS_FILTER, SET_PROJECT_FILTERS_VISIBILITY,
-  SET_PROJECTS_SKILLS, SET_FILTERED_PROJECTS_SKILLS, SET_PROJECTS_TYPES, SET_FILTERED_PROJECTS_TYPES } from './actions';
+  SET_PROJECTS_SKILLS, SET_FILTERED_PROJECTS_SKILLS, SET_PROJECTS_TYPES, SET_FILTERED_PROJECTS_TYPES, SET_PROJECT_MODAL } from './actions';
 
 
 export interface IProject {
@@ -12,14 +12,20 @@ export interface IProject {
   stack: string[];
   name: string;
 }
+
+export interface IProjectModal {
+  visibility: boolean;
+  project?: IProject;
+}
 export interface IProjects {
     projects: IProject[];
     projectsFilter: IProject[];
     projectsFilterVisibility: boolean;
     projectsSkills: string[];
     projectsTypes: string [];
-    filteredProjectsSkills: string [];
-    filteredProjectsTypes: string [];
+    filteredProjectsSkills: string[];
+    filteredProjectsTypes: string[];
+    projectModal: IProjectModal;
 }
 
 const initialDomainsState: IProjects = {
@@ -30,6 +36,10 @@ const initialDomainsState: IProjects = {
   filteredProjectsSkills: [],
   projectsTypes: [],
   filteredProjectsTypes: ['hobby', 'professional', 'school'],
+  projectModal: {
+    project: undefined,
+    visibility: false,
+  },
 };
 
 export const projects = (state: IProjects = initialDomainsState, action: ProjectsAction) => {
@@ -68,6 +78,11 @@ export const projects = (state: IProjects = initialDomainsState, action: Project
     return {
       ...state,
       filteredProjectsTypes: action.filteredProjectsTypes,
+    };
+  case SET_PROJECT_MODAL:
+    return {
+      ...state,
+      projectModal: action.projectModal,
     };
   }
   return state;

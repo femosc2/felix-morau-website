@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 import { ProjectsList } from './ProjectsList';
-import { setProjects, setProjectsFilter, setFilterModalVisbility, setProjectsSkills, setProjectsTypes } from '../redux/actions';
+import { setProjects, setProjectsFilter, setFilterModalVisbility, setProjectsSkills, setProjectsTypes, setProjectModal } from '../redux/actions';
 
 type Props = ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps>
 
@@ -64,10 +64,12 @@ const ProjectsListContainer: React.FC<Props> = (props) => {
 
   return (
     <ProjectsList projects={ props.projects } search={ search } projectsFilter={ props.projectsFilter }
-      setFilterModalVisbility={ props.setFilterModalVisbility } isVisible={ props.isVisible }
+      setFilterModalVisbility={ props.setFilterModalVisbility } filtersVisibility={ props.filtersVisibility }
       setUpdate={ setUpdate }
       skillFilter={ props.skillFilter }
-      typesFilter= { props.typesFilter } />
+      typesFilter= { props.typesFilter }
+      setProjectModal={ props.setProjectModal }
+      projectModal={ props.projectModal } />
   );
 };
 
@@ -75,9 +77,10 @@ const mapStateToProps = (store: IStore) => {
   return {
     projects: store.projects.projects,
     projectsFilter: store.projects.projectsFilter,
-    isVisible: store.projects.projectsFilterVisibility,
+    filtersVisibility: store.projects.projectsFilterVisibility,
     typesFilter: store.projects.filteredProjectsTypes,
     skillFilter: store.projects.filteredProjectsSkills,
+    projectModal: store.projects.projectModal,
   };
 };
 
@@ -89,6 +92,7 @@ const mapDispatchToProps = (dispatch: any) => {
     setFilterModalVisbility,
     setProjectsSkills,
     setProjectsTypes,
+    setProjectModal,
   }, dispatch);
 };
 

@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
-import { IProject } from '../redux/reducers';
+import { IProject, IProjectModal } from '../redux/reducers';
 
 interface IProps {
   project: IProject;
+  setProjectModal: (projectModal: IProjectModal) => void;
 }
 
 const Project: React.FC<IProps> = (props) => {
   const c = { ...COLORS };
-  const { project } = props;
+  const { project, setProjectModal } = props;
 
   const StyledCard = styled.div<{picture: string; text: string;}>`
   height: 33%;
@@ -59,15 +60,17 @@ const Project: React.FC<IProps> = (props) => {
   }
   `;
 
-  const StyledP = styled.p`
-  font-size: 14px;
-  `;
+  const StyledH3 = styled.h3`
+  
+  `
 
   return (
-    <StyledCard picture={ project.image } text={ project.description } onClick={ () => window.open(project.link, '_blank')}>
+    <StyledCard picture={ project.image } text={ project.description } onClick={ () => setProjectModal({
+      visibility: true,
+      project: project,
+    })}>
       <StyledOverlay>
-        { project.name } <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) } <hr />
-        <StyledP> { project.description } </StyledP>
+        <StyledH3>{ project.name }</StyledH3> <br /> { project.stack.map((tech) => <h2 key={ tech }> { tech } </h2> ) }
       </StyledOverlay>
     </StyledCard>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Project from './Project';
 import LoaderContainer from 'components/Loader';
-import { IProject } from '../redux/reducers';
+import { IProject, IProjectModal } from '../redux/reducers';
 import ProjectsFiltersContainer from './components';
 import { COLORS } from 'variables/colors';
 
@@ -11,10 +11,12 @@ interface IProps {
   search: (query: string) => void;
   projectsFilter: IProject[];
   setFilterModalVisbility: (isVisible: boolean) => void;
-  isVisible: boolean;
+  filtersVisibility: boolean;
   setUpdate: (update: string) => void;
   skillFilter: string[];
   typesFilter: string[];
+  setProjectModal: (projexctModal: IProjectModal) => void;
+  projectModal: IProjectModal;
 }
 
 
@@ -41,12 +43,10 @@ const StyledInput = styled.input`
     left: 0;
   };
   `;
-export const ProjectsList: React.FC<IProps> = (props) => {
-  const { projects, search, projectsFilter, setFilterModalVisbility, isVisible, setUpdate, skillFilter, typesFilter } = props;
 
-  const c = { ...COLORS };
+const c = { ...COLORS };
 
-  const StyledProjects = styled.section`
+const StyledProjects = styled.section`
   overflow: scroll;
   height: 100vh;
   width: 50%;
@@ -61,7 +61,7 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   };
   `;
 
-  const StyledFiltersButton = styled.div`
+const StyledFiltersButton = styled.div`
   z-index:9000;
   position: absolute;
   margin-top: -20vh;
@@ -86,7 +86,7 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   };
   `;
 
-  const StyledOverlay = styled.div`
+export const StyledOverlay = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: rgba(0,0,0, 0.8);
@@ -97,11 +97,11 @@ export const ProjectsList: React.FC<IProps> = (props) => {
   left: 0;
   `;
 
-  const StyledNoProjects = styled.section`
+const StyledNoProjects = styled.section`
   color: ${c.red};
   `;
 
-  const StyledP = styled.p`
+const StyledP = styled.p`
     color: ${c.black};
     font-size: 4rem;
     text-align: left;
@@ -112,7 +112,7 @@ export const ProjectsList: React.FC<IProps> = (props) => {
         max-width: 100%;
   `;
 
-  const StyledH2 = styled.h2`
+const StyledH2 = styled.h2`
         font-size: 8rem;
         color: ${c.red};
         margin: 0 auto;
@@ -124,17 +124,27 @@ export const ProjectsList: React.FC<IProps> = (props) => {
             text-align: center;
         }
     `;
+export const ProjectsList: React.FC<IProps> = (props) => {
+  const { projects, search, projectsFilter, setFilterModalVisbility,
+    filtersVisibility, setUpdate, skillFilter, typesFilter, setProjectModal, projectModal } = props;
 
-  
-  
+  const closeModal = () => {
+    setFilterModalVisbility(false);
+    setProjectModal({
+      project: undefined,
+      visibility: false,
+    });
+  };
+
   return (
     <>
-      {isVisible && <StyledOverlay onClick={ () => setFilterModalVisbility(false) } />}
+      {(filtersVisibility || projectModal.visibility) && <StyledOverlay onClick={ () => closeModal() } />}
       <StyledProjects>
         {projects.length === 0 ? <LoaderContainer margin={ '25%' } />
           : (projectsFilter.length === 0 && (skillFilter.length === 0 || typesFilter.length === 0) ) &&
-        projects.map((p) => <Project project={ p } key={ p.name } />)}
-        {(projectsFilter.length !== 0 && projects.length !== 0) ? projectsFilter.map((p) => <Project project={ p } key={ p.name } />) :
+        projects.map((p) => <Project setProjectModal={ setProjectModal } project={ p } key={ p.name } />)}
+        {(projectsFilter.length !== 0 && projects.length !== 0) ?
+          projectsFilter.map((p) => <Project setProjectModal={ setProjectModal }project={ p } key={ p.name } />) :
           (projectsFilter.length !== 0 && projects.length === 0) && <StyledNoProjects>
             <StyledH2>Try again!</StyledH2>
             <StyledP className="paragraphText">
