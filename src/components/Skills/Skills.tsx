@@ -18,7 +18,7 @@ export const Skills: React.FC<IProps> = (props) => {
         background-size: cover;
         color: ${c.black};
         position: absolute;
-        height: 100vh;
+        min-height: 100vh;
         animation: ${props.activePage !== 'skills' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
         animation-fill-mode: forwards;
         width: 100%;
