@@ -30,7 +30,6 @@ const Structure: React.FC<Props> = (props) => {
 
   return (
     <section>
-
       <AboutContainer />
       <SkillsContainer />
       <ProjectContainer />

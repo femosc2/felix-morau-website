@@ -20,6 +20,7 @@ export const Skills: React.FC<IProps> = (props) => {
         position: absolute;
         height: 100vh;
         animation: ${props.activePage !== 'skills' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
+        visibility: ${props.activePage !== 'skills' ? 0 : 1};
         animation-fill-mode: forwards;
         width: 100%;
         margin: 0;

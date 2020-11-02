@@ -19,7 +19,8 @@ export const About: React.FC<IProps> = (props) => {
         color: ${c.black};
         position: absolute;
         height: 99vh;
-        animation: ${props.activePage !== 'about' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s` }
+        animation: ${props.activePage !== 'about' ? css`${slideToLeft} 1s` : css`${slideToRight} 1s`};
+        visibility: ${props.activePage !== 'about' ? 0 : 1};
         animation-fill-mode: forwards;
         width: 100%;
         margin: 0;
