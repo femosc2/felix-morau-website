@@ -14,9 +14,15 @@ const BottomBarContainer: React.FC<Props> = (props) => {
   const [previousPage, setPreviousPage] = useState('contact');
 
   const switchTab = (tabName: string) => {
-    props.setLastPage(props.history.location.pathname.substring(1));
-    props.history.push(`/${ tabName }`);
-    props.setActivePage(tabName);
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      props.history.push(`/${ tabName }`);
+      props.setActivePage(tabName);
+      props.setLastPage(props.history.location.pathname.substring(1));
+    }else{
+      props.setLastPage(props.history.location.pathname.substring(1));
+      props.history.push(`/${ tabName }`);
+      props.setActivePage(tabName);
+    }
   };
 
   const getNextPage = () => {
