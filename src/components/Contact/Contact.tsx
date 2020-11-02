@@ -79,9 +79,12 @@ export const Contact: React.FC<IProps> = (props) => {
           </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> check out some of my
             <StyledSpan onClick={() => window.open('https://github.com/femosc2', '_blank')}> code</StyledSpan>, </StyledH3></Revealer>
-          <Revealer boxColor={c.black}><StyledH3> or </StyledH3></Revealer>
           <Revealer boxColor={c.red}><StyledH3> have a look at my
-            <StyledSpan onClick={() => window.open('https://linkedin.com/in/felixmorau', '_blank')}> experience</StyledSpan>.
+            <StyledSpan onClick={() => window.open('https://linkedin.com/in/felixmorau', '_blank')}> experience</StyledSpan>,
+          </StyledH3></Revealer>
+          <Revealer boxColor={c.black}><StyledH3> or </StyledH3></Revealer>
+          <Revealer boxColor={c.red}><StyledH3> check out what
+            <StyledSpan onClick={() => window.open('https://fmovies.now.sh', '_blank')}> movies</StyledSpan> i watch.
           </StyledH3></Revealer>
         </StyledTextSection>
       </StyledSection>
