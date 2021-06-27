@@ -27,62 +27,58 @@
     ],
     "rules": {
         "indent": [
-            "error",
+            "warn",
             2
         ],
         "linebreak-style": [
-            "error",
-            "unix"
+            "warn",
+            "windows"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
-            "error",
+            "warn",
             "always"
         ],
         "max-len": [
-            "error",
+            "warn",
             145
         ],
         "object-curly-spacing": [
-            "error",
+            "warn",
             "always"
         ],
         "comma-dangle": [
-            "error",
+            "warn",
             "always-multiline"
         ],
         "eol-last": [
-            "error",
+            "warn",
             "always"
         ],
         "no-trailing-spaces": [
-            "error",
+            "warn",
             {"skipBlankLines": true}
         ],
         "prefer-template": [
-            "error"
+            "warn"
         ],
         "prefer-destructuring": [
-            "error",
+            "warn",
             {
                 "object": true,
                 "array": false
             }
         ],
         "prefer-const": [
-            "error"
+            "warn"
         ],
         "prefer-arrow-callback": [
-            "error"
+            "warn"
         ],
-        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-        "@typescript-eslint/interface-name-prefix": [
-            "error",
-            "always"
-        ],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
         "@typescript-eslint/explicit-function-return-type": [
             "off"
         ],

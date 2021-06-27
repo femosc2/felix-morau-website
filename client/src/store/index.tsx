@@ -1,8 +1,6 @@
+import { header, IHeader } from 'components/SiteLayout/Header/redux/reducers';
 import { combineReducers, createStore, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { structure, IStructure } from 'pages/Structure/redux/reducers';
-import { skills, ISkills } from 'components/Skills/redux/reducers';
-import { projects, IProjects } from 'components/Projects/redux/reducers';
 
 declare module 'redux' {
   export type GenericStoreEnhancer = StoreEnhancer;
@@ -10,15 +8,11 @@ declare module 'redux' {
 
 
 export interface IStore {
-  skills: ISkills;
-  structure: IStructure;
-  projects: IProjects;
+  header: IHeader,
 }
 
 export const reducers = combineReducers<IStore>({
-  skills,
-  structure,
-  projects,
+  header,
 });
 
 const reduxStore: Store<IStore> = createStore(
