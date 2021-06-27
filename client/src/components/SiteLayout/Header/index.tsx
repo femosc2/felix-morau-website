@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
+
 import { Header } from './Header';
 import { setCurrentTab } from './redux/actions';
-import { compose } from 'recompose';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
