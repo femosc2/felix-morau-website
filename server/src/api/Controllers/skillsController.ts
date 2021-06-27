@@ -1,6 +1,7 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
+
+import { db } from '../..';
 import { Skill } from '../../Models/skill';
-import { db } from '../../index';
 
 export const getSkills = ({ }, res: Response): Response<Skill[]> | null => {
   try {
