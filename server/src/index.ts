@@ -20,12 +20,12 @@ export const db = firebase.database();
 
 const app = express();
 
-const port = 8080; // default port to listen
+const port = 8081; // default port to listen
 app.use('/api/v1', api);
 // app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.listen( port, () => {
     console.log(process.env.FIREBASE_KEY)
-    console.log( `server started at http://localhost:${ port }` );
+    console.log( `server started at http://localhost:${ port }/api/v1/` );
 });

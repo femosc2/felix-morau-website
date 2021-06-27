@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { Skill } from '../../Models/skill';
+import { Project } from '../../Models/Project';
 import { db } from '../../index';
 
-export const getSkills = ({ }, res: Response): Response<Skill[]> | null => {
+export const getProjects = ({ }, res: Response): Response<Project[]> | null => {
   try {
-    db.ref('/skills').once('value').then((snapshot) => {
+    db.ref('/projects').once('value').then((snapshot) => {
         return res.status(200).send(snapshot.val());
     })
     } catch(e) {
