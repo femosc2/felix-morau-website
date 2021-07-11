@@ -1,9 +1,9 @@
-export const SET_CURRENT_TAB = 'SET_CURRENT_TAB';
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 export type HeaderAction =
-| { type: typeof SET_CURRENT_TAB, tab: string }
+| { type: typeof SET_CURRENT_PAGE, page: string }
 
-export const setCurrentTab = (tab: string): HeaderAction => ({
-  tab,
-  type: SET_CURRENT_TAB,
+export const setCurrentPage = (page: string): HeaderAction => ({
+  page,
+  type: SET_CURRENT_PAGE,
 });

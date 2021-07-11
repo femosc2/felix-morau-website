@@ -12,5 +12,5 @@ export const AboutContainer: React.FC = () => {
 const StyledAboutContainer = styled.section`
 background-color: blue;
 height: 100vh;
-`
+`;
 

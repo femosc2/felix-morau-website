@@ -1,23 +1,23 @@
 /* eslint-disable no-unused-vars */
-import { HeaderAction, SET_CURRENT_TAB } from './actions';
+import { HeaderAction, SET_CURRENT_PAGE } from './actions';
 
 
 export interface IHeader {
-    tabs: string[];
-    currentTab: string;
+    pages: string[];
+    currentPage: string;
 }
   
-const initialDomainsState: IHeader = {
-  tabs: ['home', 'page2'],
-  currentTab: 'home',
+const initialHeaderState: IHeader = {
+  pages: ['about', 'page2'],
+  currentPage: 'about',
 };
   
-export const header = (state: IHeader = initialDomainsState, action: HeaderAction): IHeader  => {
+export const header = (state: IHeader = initialHeaderState, action: HeaderAction): IHeader  => {
   switch (action.type) {
-  case SET_CURRENT_TAB:
+  case SET_CURRENT_PAGE:
     return {
       ...state,
-      currentTab: action.tab,
+      currentPage: action.page,
     };
   }
   return state;

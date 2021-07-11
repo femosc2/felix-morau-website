@@ -6,30 +6,32 @@ import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 
 import { Header } from './Header';
-import { setCurrentTab } from './redux/actions';
+import { setCurrentPage } from './redux/actions';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 const HeaderContainer: React.FC<Props> = (props) => {
 
-  const switchTab = (tabName: string) => {
+  const switchPage = (tabName: string) => {
+    console.log(tabName);
     props.history.push(`/${ tabName }`);
+    props.setCurrentPage(tabName);
   };
 
   return (
-    <Header switchTab={ switchTab } />
+    <Header switchPage={ switchPage } />
   );
 };
 
 const mapStateToProps = (store: IStore) => {
   return {
-    currentTab: store.header.tabs,
+    currentPage: store.header.currentPage,
   };
 };
   
 const mapDispatchToProps = (dispatch: any) => {
   return bindActionCreators({
-    setCurrentTab,
+    setCurrentPage,
   }, dispatch);
 };
   

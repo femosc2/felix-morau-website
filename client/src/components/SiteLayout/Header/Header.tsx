@@ -6,15 +6,15 @@ import { MARGINS } from 'variables/margins';
 import { Navigation } from './components/Navigation';
 
 interface IProps {
-  switchTab: (tab: string) => void;
+  switchPage: (page: string) => void;
 }
 
 export const Header: React.FC<IProps> = (props) => {
-  const { switchTab } = props;
+  const { switchPage } = props;
   return (
     <StyledHeader>
       <h1> Felix Morau </h1>
-      <Navigation switchTab={ switchTab }/>
+      <Navigation switchPage={ switchPage }/>
     </StyledHeader>
   );
 };

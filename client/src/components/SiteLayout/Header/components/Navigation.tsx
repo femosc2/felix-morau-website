@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface IProps {
-  switchTab: (tab: string) => void;
+  switchPage: (tab: string) => void;
 }
 
 export const Navigation: React.FC<IProps> = (props) => {
-  const { switchTab } = props;
+  const { switchPage } = props;
   return (
     <StyledNavigationContainer>
-      <a onClick={() => switchTab('about')}><h2> About </h2></a>
-      <a onClick={() => switchTab('contact')}><h2> Contact </h2></a>
+      <a onClick={() => switchPage('about')}><h2> About </h2></a>
+      <a onClick={() => switchPage('contact')}><h2> Contact </h2></a>
     </StyledNavigationContainer>
   );
 };
