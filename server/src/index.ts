@@ -1,11 +1,13 @@
-import express, { Request, Response } from 'express';
+import 'firebase/database';
+
+import dotenv from 'dotenv';
+import express from 'express';
+import firebase from 'firebase/app';
+
+import api from './api';
+
 // import swaggerUi from 'swagger-ui-express';
 // import { swaggerDocument } from './swagger/swagger';
-import api from './api';
-import firebase from 'firebase/app';
-import 'firebase/database';
-import dotenv from 'dotenv';
-
 dotenv.config();
 
 const config = {
@@ -19,6 +21,10 @@ firebase.initializeApp(config);
 export const db = firebase.database();
 
 const app = express();
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 const port = 8081; // default port to listen
 app.use('/api/v1', api);
@@ -26,6 +32,5 @@ app.use('/api/v1', api);
 
 
 app.listen( port, () => {
-    console.log(process.env.FIREBASE_KEY)
-    console.log( `server started at http://localhost:${ port }/api/v1/` );
+  console.log( `server started at http://localhost:${ port }/api/v1/` );
 });

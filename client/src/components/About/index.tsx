@@ -1,10 +1,11 @@
+import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 
 export const AboutContainer: React.FC = () => {
   return (
     <StyledAboutContainer>
-      About
+      {useTranslation('Hello')}
     </StyledAboutContainer>
   );
 };

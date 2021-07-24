@@ -5,10 +5,8 @@ import styled from 'styled-components';
 interface IProps {
     switchLanguage: (langauge: Languages) => void;
 }
-
 export const LanguagePicker: React.FC<IProps> = (props) => {
   const { switchLanguage } = props;
-  console.log(switchLanguage)
   return (
     <StyledLanguagePicker>
       <a onClick={() => switchLanguage('fr')}> FR </a>

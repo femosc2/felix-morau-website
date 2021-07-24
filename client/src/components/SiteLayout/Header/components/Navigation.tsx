@@ -7,7 +7,6 @@ interface IProps {
 
 export const Navigation: React.FC<IProps> = (props) => {
   const { switchPage } = props;
-  console.log(switchPage);
   return (
     <StyledNavigationContainer>
       <a onClick={() => switchPage('about')}><h2> About </h2></a>
