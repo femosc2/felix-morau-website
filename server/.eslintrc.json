@@ -78,10 +78,6 @@
             "error"
         ],
         "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-        "@typescript-eslint/interface-name-prefix": [
-            "error",
-            "always"
-        ],
         "@typescript-eslint/explicit-function-return-type": [
             "off"
         ],
@@ -95,6 +91,12 @@
             "off"
         ],
         "@typescript-eslint/no-use-before-define": [
+            "off"
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "off"
+        ],
+        "no-empty-pattern": [
             "off"
         ]
     }
