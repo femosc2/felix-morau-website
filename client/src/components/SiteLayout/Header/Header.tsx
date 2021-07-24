@@ -1,20 +1,24 @@
+import { Languages } from 'models/languages';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
 
+import { LanguagePicker } from './components/LanguagePicker';
 import { Navigation } from './components/Navigation';
 
 interface IProps {
   switchPage: (page: string) => void;
+  switchLanguage: (language: Languages) => void;
 }
 
 export const Header: React.FC<IProps> = (props) => {
-  const { switchPage } = props;
+  const { switchPage, switchLanguage } = props;
   return (
     <StyledHeader>
       <h1> Felix Morau </h1>
       <Navigation switchPage={ switchPage }/>
+      <LanguagePicker switchLanguage={ switchLanguage } />
     </StyledHeader>
   );
 };

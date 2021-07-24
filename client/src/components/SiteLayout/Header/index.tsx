@@ -6,20 +6,19 @@ import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 
 import { Header } from './Header';
-import { setCurrentPage } from './redux/actions';
+import { setCurrentPage, setLanguage } from './redux/actions';
 
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 const HeaderContainer: React.FC<Props> = (props) => {
 
   const switchPage = (tabName: string) => {
-    console.log(tabName);
     props.history.push(`/${ tabName }`);
     props.setCurrentPage(tabName);
   };
 
   return (
-    <Header switchPage={ switchPage } />
+    <Header switchPage={ switchPage } switchLanguage={ props.setLanguage } />
   );
 };
 
@@ -32,6 +31,7 @@ const mapStateToProps = (store: IStore) => {
 const mapDispatchToProps = (dispatch: any) => {
   return bindActionCreators({
     setCurrentPage,
+    setLanguage,
   }, dispatch);
 };
   
