@@ -1,3 +1,4 @@
+import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,8 +10,8 @@ export const Navigation: React.FC<IProps> = (props) => {
   const { switchPage } = props;
   return (
     <StyledNavigationContainer>
-      <a onClick={() => switchPage('about')}><h2> About </h2></a>
-      <a onClick={() => switchPage('contact')}><h2> Contact </h2></a>
+      <a onClick={() => switchPage('about')}><h2> {useTranslation('About')} </h2></a>
+      <a onClick={() => switchPage('contact')}><h2> {useTranslation('Contact')} </h2></a>
     </StyledNavigationContainer>
   );
 };

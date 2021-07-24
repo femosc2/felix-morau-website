@@ -1,10 +1,11 @@
 import { Router } from 'express';
 
-import { getTranslation, getTranslations } from '../controllers/translationsController';
+import { getTranslation, getTranslationByLanguage, getTranslations } from '../controllers/translationsController';
 
 const translationsRouter = Router();
 
 translationsRouter.get('/', getTranslations);
 translationsRouter.get('/translation', getTranslation);
+translationsRouter.get('/byLanguage', getTranslationByLanguage);
 
 export default translationsRouter;
