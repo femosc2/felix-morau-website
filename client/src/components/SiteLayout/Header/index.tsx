@@ -21,7 +21,6 @@ const HeaderContainer: React.FC<Props> = (props) => {
 
   const switchLanguage = async (language: Languages) => {
     const translations = await getTranslations(language);
-    console.log(translations.data);
     props.setTranslations(translations.data);
     props.setLanguage(language);
   };

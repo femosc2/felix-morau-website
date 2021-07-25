@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fadeIn } from 'variables/animations';
 import { COLORS } from 'variables/colors';
+import { SHADOWS } from 'variables/shadows';
 
 interface IProps {
     switchLanguage: (langauge: Languages) => void;
@@ -78,6 +79,7 @@ const StyledLanguageDropDown = styled.ul`
   padding: 0;
   margin-top: -10px;
   border-radius: 10px;
+  box-shadow: ${SHADOWS.languagePickerShadow};
   animation: ${fadeIn} 0.25s linear 1 forwards;
   > li {
    > img {
