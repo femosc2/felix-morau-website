@@ -11,9 +11,9 @@ export interface IHeader {
     translations: Record<string, string>;
 }
 const initialHeaderState: IHeader = {
-  pages: ['about', 'page2'],
+  pages: ['about', 'contact'],
   currentPage: 'about',
-  language: 'en',
+  language: 'gb',
   translations: {},
 };
   

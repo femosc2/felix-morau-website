@@ -27,13 +27,14 @@ const HeaderContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } />
+    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ props.language } />
   );
 };
 
 const mapStateToProps = (store: IStore) => {
   return {
     currentPage: store.header.currentPage,
+    language: store.header.language,
   };
 };
   
