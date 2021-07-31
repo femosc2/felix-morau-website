@@ -40,6 +40,14 @@ export const LanguagePicker: React.FC<IProps> = (props) => {
         onClick={() => switchLanguage(language)}
         onMouseEnter={() => setIsDropDownShowing(true)} />
       {isDropDownShowing && <StyledLanguageDropDown  onMouseLeave={() => setIsDropDownShowing(false)}>
+        <StyledLanguage key={language} active={language} country={language}>
+          <img
+            alt={`${language} flag`}
+            src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${language.toUpperCase()}.svg`}
+            onClick={() => switchLanguage(language)}
+            onMouseEnter={() => setIsDropDownShowing(true)}
+          />
+        </StyledLanguage>
         {languages.map((l) => <StyledLanguage key={l.country} active={language} country={l.country}>
           <img src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${l.country.toUpperCase()}.svg`} alt={l.alt}
             onClick={() => switchLanguage(l.country)}
