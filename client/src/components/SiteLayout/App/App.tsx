@@ -11,6 +11,7 @@ import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 
+import CookieBarContainer from '../CookieBar';
 import HeaderContainer from '../Header';
 import { setTranslations } from '../Header/redux/actions';
 
@@ -29,8 +30,8 @@ const App: React.FC<Props> = (props) =>{
         <Route path={['/contact']} component={ ContactContainer } />
         {/* <Route path="*" component={ ErrorPage } /> */}
       </Switch>
+      <CookieBarContainer />
     </div>
-  // );
   );
 };
 

@@ -1,6 +1,7 @@
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
+import { COLORS } from 'variables/colors';
 
 export const AboutContainer: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const AboutContainer: React.FC = () => {
 };
 
 const StyledAboutContainer = styled.section`
-background-color: blue;
+background-color: ${COLORS.secondary};
 height: 100vh;
 `;
 
