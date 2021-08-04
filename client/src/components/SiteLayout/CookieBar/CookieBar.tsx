@@ -1,13 +1,10 @@
 import { Button } from 'components/Shared/Button';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
 import { SHADOWS } from 'variables/shadows';
-
-import { setIsShowing } from './redux/actions';
 
 interface IProps {
     isShowing: boolean;
@@ -51,9 +48,6 @@ const StyledCookieBarText = styled.p`
 color: ${COLORS.primary};
 padding: ${MARGINS.gutter};
 padding-top: 10px;
-`;
-
-const StyledCookieBarButton = styled(Button)`
 `;
 
 const StyledCookieBarContainer = styled.div`

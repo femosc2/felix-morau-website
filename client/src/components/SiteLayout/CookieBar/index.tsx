@@ -19,7 +19,7 @@ const CookieBarContainer: React.FC<Props> = (props) => {
   useEffect(() => {
     setIsCookiesEnabled(localStorage.getItem('cookies') === null);
     console.log(props.isShowing);
-}, [props.isShowing]);
+  }, [props.isShowing]);
 
   return (
     <CookieBar isShowing={isCookiesEnabled} setIsShowing={props.setIsShowing} />
