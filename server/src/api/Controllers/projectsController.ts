@@ -1,7 +1,7 @@
 import { Response } from 'express';
 
 import { db } from '../..';
-import { Project } from '../../Models/Project';
+import { Project } from '../../Models/project';
 
 export const getProjects = ({ }, res: Response): Response<Project[]> | null => {
   try {

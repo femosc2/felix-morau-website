@@ -26,7 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const port = 8081; // default port to listen
+const port = process.env.PORT || 8081; // default port to listen
 app.use('/api/v1', api);
 // app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

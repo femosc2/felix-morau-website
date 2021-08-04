@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getSkills } from '../controllers/skillsController';
+import { getSkills } from '../Controllers/skillsController';
 
 const skillsRouter = Router();
 

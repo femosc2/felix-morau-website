@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getTranslation, getTranslationByLanguage, getTranslations } from '../controllers/translationsController';
+import { getTranslation, getTranslationByLanguage, getTranslations } from '../Controllers/translationsController';
 
 const translationsRouter = Router();
 
