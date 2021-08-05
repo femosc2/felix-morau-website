@@ -100,4 +100,9 @@ const StyledLanguageDropDown = styled.ul`
 
 const StyledLanguage = styled.li<{active: string, country: string}>`
 background-color: ${(props) => props.active === props.country ? COLORS.primary : COLORS.secondary };
+transition: 0.2s;
+&:hover {
+  cursor: pointer;
+  background-color: ${COLORS.primary};
+}
 `;

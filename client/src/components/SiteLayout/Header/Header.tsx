@@ -27,11 +27,13 @@ export const Header: React.FC<IProps> = (props) => {
 
 const StyledHeader = styled.header<{isTop: boolean}>`
 display: flex;
+position: fixed;
 width: 100%;
 justify-content: space-between;
-background-color: ${(props) => props.isTop ? 'rgba(0,0,0,0)' : COLORS.primary};
+background-color: ${(props) => props.isTop ? 'rgba(0,0,0,0)' : COLORS.secondary};
 padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
 height: 10vh;
 align-content: center;
 transition: 0.5s;
+color: ${COLORS.white}
 `;

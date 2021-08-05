@@ -1,6 +1,9 @@
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { IStore } from 'store';
 import styled from 'styled-components';
+import { COLORS } from 'variables/colors';
 
 interface IProps {
   switchPage: (tab: string) => void;
@@ -8,10 +11,15 @@ interface IProps {
 
 export const Navigation: React.FC<IProps> = (props) => {
   const { switchPage } = props;
+  const currentPage: any = useSelector<IStore>(state => state.header.currentPage);
   return (
     <StyledNavigationContainer>
-      <a onClick={() => switchPage('about')}><h2> {useTranslation('About')} </h2></a>
-      <a onClick={() => switchPage('contact')}><h2> {useTranslation('Contact')} </h2></a>
+      <StyledNavigationLink onClick={() => switchPage('about')} name={'about'} currentPage={currentPage}>
+        <h2> {useTranslation('About')} </h2>
+      </StyledNavigationLink>
+      <StyledNavigationLink onClick={() => switchPage('contact')} name={'contact'} currentPage={currentPage}>
+        <h2> {useTranslation('Contact')}</h2>
+      </StyledNavigationLink>
     </StyledNavigationContainer>
   );
 };
@@ -21,10 +29,15 @@ display: flex;
 width: 15%;
 justify-content: space-around;
 list-decoration: none;
- > a {
-    &:hover {
-        cursor: pointer;
-    }
-}
 align-content: center;
 `;
+
+const StyledNavigationLink = styled.a<{name: string, currentPage: string}>`
+color: ${(props) => props.name === props.currentPage ? COLORS.primary : COLORS.white};
+transition: 0.2s;
+&:hover {
+  cursor: pointer;
+  color: ${COLORS.primary};
+}
+`;
+
