@@ -1,6 +1,7 @@
 import { getTranslations } from 'api';
 import { Languages } from 'models/languages';
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -13,6 +14,16 @@ import { setCurrentPage, setLanguage, setTranslations } from './redux/actions';
 type Props = RouteComponentProps & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 const HeaderContainer: React.FC<Props> = (props) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const onScroll = (e: any) => {
+      setScrollPosition(e.target.documentElement.scrollTop);
+    };
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollPosition]);
 
   const switchPage = (tabName: string) => {
     props.history.push(`/${ tabName }`);
@@ -26,7 +37,8 @@ const HeaderContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ props.language } />
+    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ props.language }
+      isAtTop={scrollPosition < 10} />
   );
 };
 
