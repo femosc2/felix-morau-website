@@ -37,7 +37,7 @@ const HeaderContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ props.language }
+    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ props.language } currentPage={props.currentPage}
       isAtTop={scrollPosition < 10}
     />
   );
