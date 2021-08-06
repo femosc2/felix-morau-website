@@ -12,7 +12,7 @@ export const AboutContainer: React.FC = () => {
       >
         <StyledAboutContent>
           <h2>{useTranslation('Hello')}</h2>
-          <h2>{useTranslation('AboutContent')}</h2>
+          <p>{useTranslation('AboutContent')}</p>
         </StyledAboutContent>
       </Hero>
     </StyledAboutContainer>
@@ -25,8 +25,15 @@ height: 100vh;
 `;
 const StyledAboutContent = styled.section`
 padding-top: 5vh;
-color: ${COLORS.primary};
-font-size: 50px;
+color: ${COLORS.white};
+> h2 {
+  color: ${COLORS.primary};
+  font-size: 72px;
+  margin-top: 25%;
+}
+> p {
+  font-size: 40px;
+}
 width: 50%;
 margin: 0 auto;
 margin-left: 40%;

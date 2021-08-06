@@ -19,7 +19,7 @@ export const Header: React.FC<IProps> = (props) => {
   const { switchPage, switchLanguage, language, isAtTop, currentPage } = props;
   return (
     <StyledHeader isTop={isAtTop} currentPage={currentPage}>
-      <h1> Felix Morau </h1>
+      <h1> felix morau </h1>
       <Navigation switchPage={ switchPage }/>
       <LanguagePicker switchLanguage={ switchLanguage } language={language} />
     </StyledHeader>
