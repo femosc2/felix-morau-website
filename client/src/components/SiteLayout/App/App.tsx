@@ -7,6 +7,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
@@ -21,17 +22,24 @@ type Props =  ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatch
 const App: React.FC<Props> = (props) =>{
   useEffect(() => {
     getTranslations(props.language).then((translations) => props.setTranslations(translations.data));
-    props.setCurrentPage(window.location.pathname.substring(1));
+    props.setCurrentPage(window.location.pathname.substring(1) || 'about');
   }, []);
   return (
     <div className="App">
       <HeaderContainer />
-      <Switch>
-        <Route exact path="/" component={ AboutContainer } />
-        <Route path={['/about']} component={ AboutContainer } />
-        <Route path={['/contact']} component={ ContactContainer } />
-        {/* <Route path="*" component={ ErrorPage } /> */}
-      </Switch>
+      <TransitionGroup>
+        <CSSTransition
+          timeout={300}
+          classNames='fade'
+        >
+          <Switch>
+            <Route exact path="/" component={ AboutContainer } />
+            <Route path={['/about']} component={ AboutContainer } />
+            <Route path={['/contact']} component={ ContactContainer } />
+            {/* <Route path="*" component={ ErrorPage } /> */}
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
       <CookieBarContainer />
       <FooterContainer />
     </div>
