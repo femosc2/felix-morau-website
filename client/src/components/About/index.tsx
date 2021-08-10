@@ -8,7 +8,7 @@ import { COLORS } from 'variables/colors';
 export const AboutContainer: React.FC = () => {
   return (
     <StyledAboutContainer>
-      <Hero imageUrl={'https://i.imgur.com/7At6RG9.jpg'} xPosition={'100%'} yPosition={'25%'}
+      <Hero imageUrl={'https://i.imgur.com/DbIizm6.jpg'} xPosition={'65%'} yPosition={'55%'}
       >
         <StyledAboutContent>
           <h2>{useTranslation('Hello')}</h2>
@@ -29,14 +29,13 @@ color: ${COLORS.white};
 > h2 {
   color: ${COLORS.primary};
   font-size: 72px;
-  margin-top: 25%;
+  margin-top: 20%;
 }
 > p {
   font-size: 40px;
 }
 width: 50%;
-margin: 0 auto;
-margin-left: 40%;
 text-align: center;
+margin: 0 auto;
 `;
 
