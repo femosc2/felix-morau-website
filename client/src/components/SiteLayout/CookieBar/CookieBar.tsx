@@ -27,14 +27,14 @@ export const CookieBar: React.FC<IProps> = (props) => {
       <StyledCookieBarText>{useTranslation('CookieBar')}</StyledCookieBarText>
       <StyledCookieBarContainer>
         <Button onClick={() => acceptCookies()} size={'small'}text={'Yes'} variant={'primary'} />
-        <Button  onClick={() => refuseCookies()} size={'small'} text={'No'} variant={'secondary'} />
+        <Button  onClick={() => refuseCookies()} size={'small'} text={'No'} variant={'primaryOutline'} />
       </StyledCookieBarContainer>
     </StyledCookieBar> : null
   );
 };
 
 const StyledCookieBar = styled.article`
-background-color: ${COLORS.darkGrey};
+background-color: ${COLORS.white};
 width: 33%;
 position: fixed;
 z-index: 10;
@@ -42,6 +42,7 @@ top: 82vh;
 left: 33.5%;
 box-shadow: ${SHADOWS.cookieBarShadow};
 text-align: center;
+border-radius: 25px;
 `;
 
 const StyledCookieBarText = styled.p`

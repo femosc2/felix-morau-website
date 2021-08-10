@@ -95,11 +95,10 @@ const StyledLanguageDropDown = styled.ul`
     margin: 10px;
   } 
   }
-  
 `;
 
 const StyledLanguage = styled.li<{active: string, country: string}>`
-background-color: ${(props) => props.active === props.country ? COLORS.primary : COLORS.secondary };
+background-color: ${(props) => props.active === props.country ? COLORS.primary : COLORS.white };
 transition: 0.2s;
 &:hover {
   cursor: pointer;

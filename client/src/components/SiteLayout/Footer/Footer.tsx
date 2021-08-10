@@ -22,7 +22,7 @@ display: flex;
 position: fixed;
 width: 100%;
 justify-content: center;
-background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.secondary};
+background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};
 padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
 height: 5vh;
 align-content: center;

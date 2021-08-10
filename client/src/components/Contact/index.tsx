@@ -17,7 +17,7 @@ height: 100vh;
 `;
 const StyledContactContent = styled.section`
 padding-top: 10vh;
-color: ${COLORS.secondary};
+color: ${COLORS.primary};
 > h2 {
   font-size: 72px;
   margin-top: 20%;

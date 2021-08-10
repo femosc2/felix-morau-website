@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { COLORS } from 'variables/colors';
+import { SHADOWS } from 'variables/shadows';
 
 interface IProps {
     text: string;
@@ -23,6 +24,8 @@ export const Button: React.FC<IProps> = (props) => {
 
 const StyledButton = styled.button<{variant: string, size: string}>`
 border: none;
+border-radius: 25px;
+transition: 0.2s;
 ${({ variant }) => {
     switch(variant) {
     case 'primary':
@@ -35,8 +38,15 @@ ${({ variant }) => {
         color: ${COLORS.primary};
         background-color: ${COLORS.secondary};
         `;
+    case 'primaryOutline':
+      return css`
+        color: ${COLORS.primary};
+        background-color: rgba(0,0,0,0);
+        border: 1px solid ${COLORS.primary};
+        `;
     }
-  }}
+  }
+}}
   ${({ size }) => {
     switch(size) {
     case 'small':
@@ -51,7 +61,11 @@ ${({ variant }) => {
   }}
   &:hover {
     cursor: pointer;
+    transition: 0.2s;
+    background-color: ${COLORS.secondary};
+    color: ${COLORS.primary};
   }
+  box-shadow: ${SHADOWS.buttonShadow};
 `;
 
 const StyledButtonText = styled.p`
