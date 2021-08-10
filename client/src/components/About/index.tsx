@@ -27,7 +27,6 @@ const StyledAboutContent = styled.section`
 padding-top: 5vh;
 color: ${COLORS.white};
 > h2 {
-  color: ${COLORS.primary};
   font-size: 72px;
   margin-top: 20%;
 }

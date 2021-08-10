@@ -1,8 +1,8 @@
 const DEFAULTCOLORS = {
   primary: '#fa347b',
-  secondary: '#241641',
+  secondary: '#11513d',
   darkGrey: '#303030',
-  white: '#fff',
+  white: '#fae4d7',
   
 };
 

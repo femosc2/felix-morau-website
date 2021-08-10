@@ -12,6 +12,7 @@ import { bindActionCreators } from 'redux';
 import { IStore } from 'store';
 
 import CookieBarContainer from '../CookieBar';
+import FooterContainer from '../Footer';
 import HeaderContainer from '../Header';
 import { setTranslations } from '../Header/redux/actions';
 
@@ -31,6 +32,7 @@ const App: React.FC<Props> = (props) =>{
         {/* <Route path="*" component={ ErrorPage } /> */}
       </Switch>
       <CookieBarContainer />
+      <FooterContainer />
     </div>
   );
 };

@@ -1,0 +1,32 @@
+import React from 'react';
+import styled from 'styled-components';
+import { COLORS } from 'variables/colors';
+import { MARGINS } from 'variables/margins';
+
+interface IProps {
+  isAtTop: boolean;
+  currentPage: string;
+}
+
+export const Footer: React.FC<IProps> = (props) => {
+  const { isAtTop, currentPage } = props;
+  return (
+    <StyledFooter isTop={isAtTop} currentPage={currentPage}>
+      <h3> web developer & designer </h3>
+    </StyledFooter>
+  );
+};
+
+const StyledFooter = styled.header<{isTop: boolean, currentPage: string}>`
+display: flex;
+position: fixed;
+width: 100%;
+justify-content: center;
+background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.secondary};
+padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
+height: 5vh;
+align-content: center;
+transition: 0.5s;
+color: ${COLORS.white};
+bottom: 0;
+`;
