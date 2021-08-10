@@ -14,13 +14,14 @@ import { IStore } from 'store';
 import CookieBarContainer from '../CookieBar';
 import FooterContainer from '../Footer';
 import HeaderContainer from '../Header';
-import { setTranslations } from '../Header/redux/actions';
+import { setCurrentPage, setTranslations } from '../Header/redux/actions';
 
 type Props =  ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 const App: React.FC<Props> = (props) =>{
   useEffect(() => {
     getTranslations(props.language).then((translations) => props.setTranslations(translations.data));
+    props.setCurrentPage(window.location.pathname.substring(1));
   }, []);
   return (
     <div className="App">
@@ -46,6 +47,7 @@ const mapStateToProps = (store: IStore) => {
 const mapDispatchToProps = (dispatch: any) => {
   return bindActionCreators({
     setTranslations,
+    setCurrentPage,
   }, dispatch);
 };
   
