@@ -22,7 +22,7 @@ type Props =  ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatch
 const App: React.FC<Props> = (props) =>{
   useEffect(() => {
     getTranslations(props.language).then((translations) => props.setTranslations(translations.data));
-    props.setCurrentPage(window.location.pathname.substring(1) || 'about');
+    window.location.pathname.substring(1) !== '' ? props.setCurrentPage(window.location.pathname.substring(1)) : 'about';
   }, []);
   return (
     <div className="App">
