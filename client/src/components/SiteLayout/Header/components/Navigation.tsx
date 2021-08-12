@@ -17,6 +17,12 @@ export const Navigation: React.FC<IProps> = (props) => {
       <StyledNavigationLink onClick={() => switchPage('about')} name={'about'} currentPage={currentPage}>
         <h2> {useTranslation('About')} </h2>
       </StyledNavigationLink>
+      <StyledNavigationLink onClick={() => switchPage('skills')} name={'skills'} currentPage={currentPage}>
+        <h2> {useTranslation('skills')}</h2>
+      </StyledNavigationLink>
+      <StyledNavigationLink onClick={() => switchPage('projects')} name={'projects'} currentPage={currentPage}>
+        <h2> {useTranslation('projects')}</h2>
+      </StyledNavigationLink>
       <StyledNavigationLink onClick={() => switchPage('contact')} name={'contact'} currentPage={currentPage}>
         <h2> {useTranslation('Contact')}</h2>
       </StyledNavigationLink>
@@ -26,8 +32,8 @@ export const Navigation: React.FC<IProps> = (props) => {
 
 const StyledNavigationContainer = styled.ul`
 display: flex;
-width: 15%;
-justify-content: space-around;
+width: 30%;
+justify-content: space-evenly;
 list-decoration: none;
 align-content: center;
 `;

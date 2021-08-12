@@ -3,6 +3,8 @@ import './App.css';
 import { getTranslations } from 'api';
 import { AboutContainer } from 'components/About';
 import { ContactContainer } from 'components/Contact';
+import ProjectsContainer from 'components/Projects';
+import SkillsContainer from 'components/Skills';
 import React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -36,6 +38,8 @@ const App: React.FC<Props> = (props) =>{
             <Route exact path="/" component={ AboutContainer } />
             <Route path={['/about']} component={ AboutContainer } />
             <Route path={['/contact']} component={ ContactContainer } />
+            <Route path={['/projects']} component={ ProjectsContainer } />
+            <Route path={['/skills']} component={ SkillsContainer } />
             {/* <Route path="*" component={ ErrorPage } /> */}
           </Switch>
         </CSSTransition>
