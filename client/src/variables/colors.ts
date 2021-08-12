@@ -3,6 +3,7 @@ const DEFAULTCOLORS = {
   secondary: '#fa347b',
   darkGrey: '#303030',
   white: '#fae4d7',
+  darkWhite: '#ffd2bd',
   
 };
 

@@ -7,6 +7,7 @@ export const ContactPage: React.FC = () => {
   return (
     <>
       <StyledContactContainer>
+        <StyledBackgroundText>{useTranslation('contact')}</StyledBackgroundText>
         <StyledContactContent>
           <h3>
             {useTranslation('have a look at my illustrations')} <span>&nbsp;@&nbsp;</span>
@@ -62,6 +63,7 @@ padding-top: 15vh;
 color: ${COLORS.primary};
 text-align: center;
 margin: 0 auto;
+width: 100%;
 > h3 {
   display: flex;
   justify-content: center;
@@ -77,5 +79,15 @@ margin: 0 auto;
     > span {
     }
   }
+  z-index: 2;
 }
+`;
+
+const StyledBackgroundText = styled.h2`
+color: ${COLORS.darkWhite};
+position: absolute;
+font-size: 300px;
+text-align: center;
+width: 100%;
+user-select: none;
 `;

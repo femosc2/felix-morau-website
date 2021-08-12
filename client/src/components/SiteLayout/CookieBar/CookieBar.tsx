@@ -1,6 +1,7 @@
 import { Button } from 'components/Shared/Button';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
@@ -12,13 +13,14 @@ interface IProps {
 }
 
 export const CookieBar: React.FC<IProps> = (props) => {
+  const dispatch = useDispatch();
   
   const acceptCookies = () => {
-    props.setIsShowing(false);
+    dispatch(props.setIsShowing(false));
     localStorage.setItem('cookies', 'enabled');
   };
   const refuseCookies = () => {
-    props.setIsShowing(false);
+    dispatch(props.setIsShowing(false));
     localStorage.setItem('cookies', 'disabled');
   };
 

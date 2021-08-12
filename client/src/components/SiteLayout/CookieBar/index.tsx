@@ -13,7 +13,6 @@ export const CookieBarContainer: React.FC = () => {
 
   useEffect(() => {
     setIsCookiesEnabled(localStorage.getItem('cookies') === null);
-    console.log(isShowing);
   }, [isShowing]);
 
   return (

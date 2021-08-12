@@ -1,3 +1,4 @@
+import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
@@ -6,6 +7,7 @@ export const Projects: React.FC = () => {
   return (
     <>
       <StyledProjectsContainer>
+        <StyledBackgroundText>{useTranslation('projects')}</StyledBackgroundText>
         <StyledProjectContent>
             ProjectsContainer
         </StyledProjectContent>
@@ -42,4 +44,12 @@ margin: 0 auto;
     }
   }
 }
+`;
+const StyledBackgroundText = styled.h2`
+color: ${COLORS.darkWhite};
+position: absolute;
+font-size: 300px;
+text-align: center;
+width: 100%;
+user-select: none;
 `;

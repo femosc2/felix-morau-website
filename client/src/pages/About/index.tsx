@@ -18,6 +18,7 @@ export const AboutPage: React.FC = () => {
     </StyledAboutContainer>
   );
 };
+
 const StyledAboutContainer = styled.section`
 background-color: ${COLORS.white};
 height: 100vh;
