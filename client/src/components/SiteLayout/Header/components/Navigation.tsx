@@ -34,7 +34,7 @@ align-content: center;
 
 const StyledNavigationLink = styled.a<{name: string, currentPage: string}>`
 color: ${(props) => props.name === props.currentPage ? COLORS.secondary : COLORS.white};
-transition: background-color 0.2s ease;
+transition: 0.2s;
 &:hover {
   cursor: pointer;
   color: ${COLORS.secondary};

@@ -35,6 +35,6 @@ background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'r
 padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
 height: 10vh;
 align-content: center;
-transition: 0.2s;
+transition: background-color 0.2s ease;
 color: ${COLORS.white}
 `;

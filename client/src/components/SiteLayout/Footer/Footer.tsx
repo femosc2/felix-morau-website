@@ -2,7 +2,6 @@ import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
-import { MARGINS } from 'variables/margins';
 
 interface IProps {
   isAtTop: boolean;
@@ -24,7 +23,7 @@ position: fixed;
 width: 100%;
 justify-content: center;
 background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};
-padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
+padding-bottom: 5px;
 height: 5vh;
 align-content: center;
 transition: background-color 0.2s ease;

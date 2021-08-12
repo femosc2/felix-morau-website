@@ -1,5 +1,7 @@
 import { keyframes } from 'styled-components';
 
+import { COLORS } from './colors';
+
 export const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -7,5 +9,15 @@ export const fadeIn = keyframes`
 
   to {
     opacity: 1;
+  }
+`;
+
+export const fadeInBackgroundColor = keyframes`
+  from {
+    background-color: rgba(0,0,0,0);
+  }
+
+  to {
+    background-color: ${COLORS.primary};
   }
 `;
