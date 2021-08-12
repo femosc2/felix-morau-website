@@ -9,42 +9,42 @@ export const ContactPage: React.FC = () => {
       <StyledContactContainer>
         <StyledBackgroundText>{useTranslation('contact')}</StyledBackgroundText>
         <StyledContactContent>
-          <h3>
+          <p>
             {useTranslation('have a look at my illustrations')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href={'https://www.instagram.com/moraufelix/'}>
                instagram
             </a>
-          </h3>
-          <h3>
+          </p>
+          <p>
             {useTranslation('open a pull request')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href={'https://www.github.com/femosc2'}>
                github
             </a>
-          </h3>
-          <h3>
+          </p>
+          <p>
             {useTranslation('follow my ramblings')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href={'https://www.twitter.com/moraufelix'}>
                twitter
             </a>
-          </h3>
-          <h3>
+          </p>
+          <p>
             {useTranslation('look at my professional life')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href={'https://www.linkedin.com/in/felixmorau/'}>
                linkedin
             </a>
-          </h3>
-          <h3>
+          </p>
+          <p>
             {useTranslation('ask me something')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href="mailto:felixmorau@gmail.com">
                felixmorau@gmail.com
             </a>
-          </h3>
-          <h3>
+          </p>
+          <p>
             {useTranslation('check out what movies i watch')} <span>&nbsp;@&nbsp;</span>
             <a target='_blank' rel='noreferrer' href={'https://fmovies.vercel.app/'}>
                fmovies
             </a>
-          </h3>
+          </p>
         </StyledContactContent>
       </StyledContactContainer>
     </>
@@ -64,10 +64,13 @@ color: ${COLORS.primary};
 text-align: center;
 margin: 0 auto;
 width: 100%;
-> h3 {
+> p {
   display: flex;
+  position: relative;
   justify-content: center;
   font-size: 30px;
+  font-weight: 600;
+  z-index: 2;
   > a {
     transition: 0.2s;
     color: ${COLORS.primary};
@@ -79,7 +82,6 @@ width: 100%;
     > span {
     }
   }
-  z-index: 2;
 }
 `;
 
@@ -90,4 +92,5 @@ font-size: 300px;
 text-align: center;
 width: 100%;
 user-select: none;
+z-index: 0;
 `;

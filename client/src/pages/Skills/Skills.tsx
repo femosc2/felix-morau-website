@@ -7,7 +7,7 @@ export const Skills: React.FC = () => {
   return (
     <>
       <StyledSkillsContainer>
-      <StyledBackgroundText>{useTranslation('skills')}</StyledBackgroundText>
+        <StyledBackgroundText>{useTranslation('skills')}</StyledBackgroundText>
         <StyledSkillsContent>
             SkillsContainer
         </StyledSkillsContent>
