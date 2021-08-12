@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 
-export const AboutContainer: React.FC = () => {
+export const AboutPage: React.FC = () => {
   return (
     <StyledAboutContainer>
       <Hero imageUrl={'https://i.imgur.com/DNa9jSJ.jpg'} xPosition={'65%'} yPosition={'55%'}

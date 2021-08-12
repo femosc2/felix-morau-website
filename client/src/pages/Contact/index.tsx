@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 
-export const ContactContainer: React.FC = () => {
+export const ContactPage: React.FC = () => {
   return (
     <>
       <StyledContactContainer>
