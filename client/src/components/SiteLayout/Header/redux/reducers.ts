@@ -5,13 +5,11 @@ import { HeaderAction, SET_CURRENT_PAGE, SET_LANGUAGE, SET_TRANSLATIONS } from '
 
 
 export interface IHeader {
-    pages: string[];
     currentPage: string;
     language: Languages;
     translations: Record<string, string>;
 }
 const initialHeaderState: IHeader = {
-  pages: ['about', 'contact'],
   currentPage: 'about',
   language: 'gb',
   translations: {},

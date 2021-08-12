@@ -8,7 +8,6 @@ import { ProjectsPage } from 'pages/Projects';
 import { SkillsPage } from 'pages/Skills';
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -21,7 +20,6 @@ import { setCurrentPage, setTranslations } from '../Header/redux/actions';
 
 export const App: React.FC = () =>{
   const dispatch = useDispatch();
-  const translations = useSelector<IStore, Record<string,string>>(state => state.header.translations);
   const language = useSelector<IStore, Languages>(state => state.header.language);
   useEffect(() => {
     getTranslations(language).then((translations) => dispatch(setTranslations(translations.data)));
