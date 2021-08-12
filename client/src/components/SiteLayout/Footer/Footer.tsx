@@ -1,3 +1,4 @@
+import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
@@ -12,7 +13,7 @@ export const Footer: React.FC<IProps> = (props) => {
   const { isAtTop, currentPage } = props;
   return (
     <StyledFooter isTop={isAtTop} currentPage={currentPage}>
-      <h3> web developer & designer </h3>
+      <h3> {useTranslation('WebDeveloperDesigenr')} </h3>
     </StyledFooter>
   );
 };

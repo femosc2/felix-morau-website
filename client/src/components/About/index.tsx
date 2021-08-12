@@ -8,7 +8,7 @@ import { COLORS } from 'variables/colors';
 export const AboutContainer: React.FC = () => {
   return (
     <StyledAboutContainer>
-      <Hero imageUrl={'https://i.imgur.com/DbIizm6.jpg'} xPosition={'65%'} yPosition={'55%'}
+      <Hero imageUrl={'https://i.imgur.com/DNa9jSJ.jpg'} xPosition={'65%'} yPosition={'55%'}
       >
         <StyledAboutContent>
           <h2>{useTranslation('Hello')}</h2>
