@@ -90,6 +90,7 @@ const StyledLanguageDropDown = styled.ul`
   box-shadow: ${SHADOWS.languagePickerShadow};
   animation: ${fadeIn} 0.25s linear 1 forwards;
   > li {
+    z-index: 2;
    > img {
     height: 32px;
     margin: 10px;

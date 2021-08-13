@@ -29,6 +29,7 @@ export const Header: React.FC<IProps> = (props) => {
 const StyledHeader = styled.header<{isTop: boolean, currentPage: string}>`
 display: flex;
 position: fixed;
+z-index: 2;
 width: 100%;
 justify-content: space-between;
 background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};

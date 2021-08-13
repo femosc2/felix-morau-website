@@ -63,14 +63,14 @@ padding-top: 15vh;
 color: ${COLORS.primary};
 text-align: center;
 margin: 0 auto;
-width: 100%;
+position: relative;
+width: 80%;
+  margin-left: 10%;
 > p {
   display: flex;
-  position: relative;
   justify-content: center;
   font-size: 30px;
   font-weight: 600;
-  z-index: 2;
   > a {
     transition: 0.2s;
     color: ${COLORS.primary};
@@ -92,5 +92,4 @@ font-size: 300px;
 text-align: center;
 width: 100%;
 user-select: none;
-z-index: 0;
 `;
