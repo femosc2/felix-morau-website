@@ -1,4 +1,5 @@
 import { getTranslations } from 'api';
+import { useIsCompact } from 'hooks/isCompact';
 import { Languages } from 'models/languages';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -6,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { IStore } from 'store';
 
+import { CompactHeader } from './CompactHeader';
 import { Header } from './Header';
 import { setCurrentPage, setLanguage, setTranslations } from './redux/actions';
 
@@ -15,6 +17,7 @@ export const HeaderContainer: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [scrollPosition, setScrollPosition] = useState(0);
+  const isCompact = useIsCompact();
 
   useEffect(() => {
     const onScroll = (e: any) => {
@@ -37,8 +40,9 @@ export const HeaderContainer: React.FC = () => {
   };
 
   return (
-    <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ language } currentPage={ currentPage}
+    !isCompact ? <Header switchPage={ switchPage } switchLanguage={ switchLanguage } language={ language } currentPage={ currentPage}
       isAtTop={scrollPosition < 10}
-    />
+    /> : <CompactHeader switchPage={ switchPage } switchLanguage={ switchLanguage } language={ language } currentPage={ currentPage}
+      isAtTop={scrollPosition < 10} />
   );
 };

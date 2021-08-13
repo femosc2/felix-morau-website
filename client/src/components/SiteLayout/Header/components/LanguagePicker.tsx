@@ -1,3 +1,4 @@
+import { useIsCompact } from 'hooks/isCompact';
 import { Languages } from 'models/languages';
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -19,6 +20,7 @@ type LanguageFlag =
 export const LanguagePicker: React.FC<IProps> = (props) => {
   const { switchLanguage, language } = props;
   const [isDropDownShowing, setIsDropDownShowing] = useState(false);
+  const isCompact = useIsCompact();
   const languages: LanguageFlag[] = [{
     country: 'fr',
     alt: 'France Flag',
@@ -33,20 +35,20 @@ export const LanguagePicker: React.FC<IProps> = (props) => {
   },
   ];
   return (
-    <StyledLanguagePicker>
+    <StyledLanguagePicker onClick={() => setIsDropDownShowing(true)} isCompact={isCompact}>
       <img
         alt={`${language} flag`}
         src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${language.toUpperCase()}.svg`}
         onClick={() => switchLanguage(language)}
         onMouseEnter={() => setIsDropDownShowing(true)} />
-      {isDropDownShowing && <StyledLanguageDropDown  onMouseLeave={() => setIsDropDownShowing(false)}>
+      {(isDropDownShowing || isCompact) && <StyledLanguageDropDown  onMouseLeave={() => setIsDropDownShowing(false)} isCompact={isCompact}>
         <StyledLanguage key={language} active={language} country={language}>
-          <img
+          {!isCompact && <img
             alt={`${language} flag`}
             src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${language.toUpperCase()}.svg`}
             onClick={() => switchLanguage(language)}
             onMouseEnter={() => setIsDropDownShowing(true)}
-          />
+          />}
         </StyledLanguage>
         {languages.map((l) => <StyledLanguage key={l.country} active={language} country={l.country}>
           <img src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${l.country.toUpperCase()}.svg`} alt={l.alt}
@@ -57,9 +59,9 @@ export const LanguagePicker: React.FC<IProps> = (props) => {
   );
 };
 
-const StyledLanguagePicker = styled.section`
+const StyledLanguagePicker = styled.section<{isCompact: boolean}>`
 display: flex;
-width: 15%;
+width: ${(props) => !props.isCompact ? '15%' : '100%'};
 justify-content: space-around;
 margin-top: 30px;
 list-decoration: none;
@@ -74,20 +76,20 @@ list-decoration: none;
 align-content: center;
 `;
 
-const StyledLanguageDropDown = styled.ul`
+const StyledLanguageDropDown = styled.ul<{isCompact: boolean}>`
   display: flex;
   flex-direction: column;
   background-color: white;
   justify-content: center;
   align-content: center;
   position: absolute;
-  width: 100px;
+  width: ${(props) => !props.isCompact ? '100px' : '100%'};
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-top: -10px;
   border-radius: 10px;
-  box-shadow: ${SHADOWS.languagePickerShadow};
+  box-shadow: ${(props) => !props.isCompact ? SHADOWS.languagePickerShadow : 'none'};
   animation: ${fadeIn} 0.25s linear 1 forwards;
   > li {
     z-index: 2;
