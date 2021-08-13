@@ -40,6 +40,7 @@ const StyledHamburger = styled.button`
   border: none;
   margin: ${MARGINS.gutter};
   right: 10px;
+  z-index: 10;
 `;
 
 const StyledOverlay = styled.section`
@@ -47,6 +48,7 @@ width: 100vw;
 height: 100vh;
 position: fixed;
 background-color: rgba(0,0,0,0.5);
+z-index: 9;
 `;
 
 const StyledMenu = styled.section`
@@ -57,6 +59,7 @@ width: 75vw;
 top: 0;
 left: 0;
 color: ${COLORS.primary};
+z-index: 10;
 `;
 
 const StyledExitButton = styled.button`
@@ -68,6 +71,7 @@ position: fixed;
 border: none;
 left: 65vw;
 margin-top: 10px;
+z-index: 10;
 `;
 
 

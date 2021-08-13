@@ -1,13 +1,15 @@
+import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 
 export const Projects: React.FC = () => {
+  const isCompact = useIsCompact();
   return (
     <>
       <StyledProjectsContainer>
-        <StyledBackgroundText>{useTranslation('projects')}</StyledBackgroundText>
+        {!isCompact && <StyledBackgroundText>{useTranslation('projects')}</StyledBackgroundText>}
         <StyledProjectContent>
             ProjectsContainer
         </StyledProjectContent>

@@ -1,13 +1,15 @@
+import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 
 export const Skills: React.FC = () => {
+  const isCompact = useIsCompact();
   return (
     <>
       <StyledSkillsContainer>
-        <StyledBackgroundText>{useTranslation('skills')}</StyledBackgroundText>
+        {!isCompact && <StyledBackgroundText>{useTranslation('skills')}</StyledBackgroundText>}
         <StyledSkillsContent>
             SkillsContainer
         </StyledSkillsContent>

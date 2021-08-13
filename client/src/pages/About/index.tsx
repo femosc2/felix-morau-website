@@ -1,16 +1,18 @@
-/* eslint-disable max-len */
 import { Hero } from 'components/Shared/Hero';
+import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
+import { MARGINS } from 'variables/margins';
 
 export const AboutPage: React.FC = () => {
+  const isCompact = useIsCompact();
   return (
     <StyledAboutContainer>
       <Hero imageUrl={'https://i.imgur.com/DNa9jSJ.jpg'} xPosition={'65%'} yPosition={'55%'}
       >
-        <StyledAboutContent>
+        <StyledAboutContent isCompact={isCompact}>
           <h2>{useTranslation('Hello')}</h2>
           <p>{useTranslation('AboutContent')}</p>
         </StyledAboutContent>
@@ -23,7 +25,7 @@ const StyledAboutContainer = styled.section`
 background-color: ${COLORS.white};
 height: 100vh;
 `;
-const StyledAboutContent = styled.section`
+const StyledAboutContent = styled.section<{isCompact: boolean}>`
 padding-top: 5vh;
 color: ${COLORS.white};
 > h2 {
@@ -32,8 +34,9 @@ color: ${COLORS.white};
 }
 > p {
   font-size: 40px;
+  margin: ${(props) => props.isCompact ? MARGINS.gutter : '0px'};
 }
-width: 50%;
+width: ${(props) => props.isCompact ? '100%' : '50%'};
 text-align: center;
 margin: 0 auto;
 `;

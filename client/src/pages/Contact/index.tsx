@@ -1,13 +1,15 @@
+import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 
 export const ContactPage: React.FC = () => {
+  const isCompact = useIsCompact();
   return (
     <>
       <StyledContactContainer>
-        <StyledBackgroundText>{useTranslation('contact')}</StyledBackgroundText>
+        {!isCompact && <StyledBackgroundText>{useTranslation('contact')}</StyledBackgroundText>}
         <StyledContactContent>
           <p>
             {useTranslation('have a look at my illustrations')} <span>&nbsp;@&nbsp;</span>
