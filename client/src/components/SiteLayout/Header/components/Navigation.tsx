@@ -40,6 +40,7 @@ padding: 0;
 justify-content: space-evenly;
 list-decoration: none;
 align-content: center;
+justify-self: center;
 `;
 
 const StyledNavigationLink = styled.a<{name: string, currentPage: string, isCompact: boolean}>`
@@ -57,5 +58,6 @@ border-bottom: ${props => props.isCompact ? `1px solid ${COLORS.primary}` : 'non
 &:first-child {
   border-top: ${props => props.isCompact ? `1px solid ${COLORS.primary}` : 'none'};
 }
+text-align: center;
 `;
 

@@ -23,8 +23,11 @@ export const AboutPage: React.FC = () => {
 
 const StyledAboutContainer = styled.section`
 background-color: ${COLORS.white};
+margin: 0;
+padding: 0;
 height: 100vh;
 `;
+
 const StyledAboutContent = styled.section<{isCompact: boolean}>`
 padding-top: 5vh;
 color: ${COLORS.white};

@@ -55,4 +55,5 @@ font-size: 300px;
 text-align: center;
 width: 100%;
 user-select: none;
+position: fixed;
 `;

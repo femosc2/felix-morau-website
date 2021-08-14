@@ -6,6 +6,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "STIX Two Text", serif;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }

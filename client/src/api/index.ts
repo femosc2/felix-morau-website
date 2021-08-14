@@ -9,3 +9,8 @@ export const getTranslations = async (language: Languages): Promise<any> => {
   const response = await axios.get(`${process.env.REACT_APP_API}translations/byLanguage?language=${language}`);
   return response;
 };
+
+export const getProjects = async (): Promise<any> => {
+  const response = await axios.get(`${process.env.REACT_APP_API}projects`);
+  return response;
+};

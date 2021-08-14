@@ -5,9 +5,13 @@ import { SHADOWS } from 'variables/shadows';
 
 interface IProps {
     text: string;
-    variant: string;
+    variant: 'primary' | 'secondary' | 'primaryOutline' | 'secondaryOutline';
     size: string;
     onClick?: any;
+}
+type IButton = {
+  variant: 'primary' | 'secondary' | 'primaryOutline' | 'secondaryOutline';
+  size: string;
 }
 
 export const Button: React.FC<IProps> = (props) => {
@@ -22,7 +26,7 @@ export const Button: React.FC<IProps> = (props) => {
   );
 };
 
-const StyledButton = styled.button<{variant: string, size: string}>`
+const StyledButton = styled.button<IButton>`
 border: none;
 border-radius: 25px;
 transition: 0.2s;

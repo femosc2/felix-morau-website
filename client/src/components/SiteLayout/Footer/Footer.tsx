@@ -17,7 +17,7 @@ export const Footer: React.FC<IProps> = (props) => {
   );
 };
 
-const StyledFooter = styled.header<{isTop: boolean, currentPage: string}>`
+const StyledFooter = styled.footer<{isTop: boolean, currentPage: string}>`
 display: flex;
 position: fixed;
 width: 100%;
