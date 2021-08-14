@@ -5,6 +5,7 @@ const DEFAULTCOLORS = {
   white: '#fae4d7',
   darkWhite: '#ffd2bd',
   transparentBlack: 'rgba(0,0,0,0.5)',
+  gradientPrimary: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, #11513d 100%);',
   
 };
 

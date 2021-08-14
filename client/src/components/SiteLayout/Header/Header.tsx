@@ -29,7 +29,7 @@ export const Header: React.FC<IProps> = (props) => {
 const StyledHeader = styled.header<{isTop: boolean, currentPage: string}>`
 display: flex;
 position: fixed;
-z-index: 2;
+z-index: 3;
 width: 100%;
 justify-content: space-between;
 background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};
@@ -37,5 +37,5 @@ padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
 height: 10vh;
 align-content: center;
 transition: background-color 0.2s ease;
-color: ${COLORS.white}
+color: ${COLORS.white};
 `;

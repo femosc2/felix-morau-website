@@ -22,7 +22,8 @@ export const ProjectsPage: React.FC = () => {
 
 const StyledProjectsContainer = styled.section`
 background-color: ${COLORS.white};
-height: 100vh;
+min-height: 100vh;
+overflow-x: hidden;
 `;
 const StyledProjectContent= styled.section`
 display: flex;

@@ -91,8 +91,9 @@ const StyledLanguageDropDown = styled.ul<{isCompact: boolean}>`
   border-radius: 10px;
   box-shadow: ${(props) => !props.isCompact ? SHADOWS.languagePickerShadow : 'none'};
   animation: ${fadeIn} 0.25s linear 1 forwards;
+  margin: 0 auto;
   > li {
-    z-index: 2;
+    z-index: 3;
    > img {
     height: 32px;
     margin: 10px;

@@ -18,15 +18,17 @@ export const Footer: React.FC<IProps> = (props) => {
 };
 
 const StyledFooter = styled.footer<{isTop: boolean, currentPage: string}>`
+opacity: ${(props) => !props.isTop ? 0 : 1};
 display: flex;
 position: fixed;
 width: 100%;
 justify-content: center;
-background-color: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};
+background-color: ${(props) => !props.isTop || props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.primary};
 padding-bottom: 5px;
 height: 5vh;
 align-content: center;
-transition: background-color 0.2s ease;
+transition: all 0.2s ease;
 color: ${COLORS.white};
 bottom: 0;
+z-index: 3;
 `;

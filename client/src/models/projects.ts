@@ -1,5 +1,5 @@
 export type Project =  {
-    type: 'professional' | 'school' | 'hobby';
+    occasion: 'professional' | 'school' | 'hobby';
     description: string;
     link: string;
     image: string;
