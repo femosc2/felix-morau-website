@@ -1,4 +1,4 @@
 
 export const useIsCompact = (): boolean => {
-  return screen.width < 768;
+  return screen.width < 769;
 };
