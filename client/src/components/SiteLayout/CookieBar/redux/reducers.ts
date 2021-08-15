@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { CookieBarAction, SET_IS_SHOWING } from './actions';
 
 
