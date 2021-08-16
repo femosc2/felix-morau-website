@@ -2,6 +2,7 @@ import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
+import { fadeIn } from 'variables/animations';
 import { COLORS } from 'variables/colors';
 
 export const Skills: React.FC = () => {
@@ -22,6 +23,7 @@ export const Skills: React.FC = () => {
 const StyledSkillsContainer = styled.section`
 background-color: ${COLORS.white};
 height: 100vh;
+animation: ${fadeIn} 0.25s linear 1 forwards;
 `;
 const StyledSkillsContent= styled.section`
 display: flex;

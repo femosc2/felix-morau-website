@@ -2,6 +2,7 @@ import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
+import { fadeIn } from 'variables/animations';
 import { COLORS } from 'variables/colors';
 
 export const ContactPage: React.FC = () => {
@@ -57,6 +58,7 @@ export const ContactPage: React.FC = () => {
 const StyledContactContainer = styled.section`
 background-color: ${COLORS.white};
 height: 100vh;
+animation: ${fadeIn} 0.25s linear 1 forwards;
 `;
 const StyledContactContent = styled.section`
 display: flex;

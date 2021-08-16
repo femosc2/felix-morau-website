@@ -3,6 +3,7 @@ import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import styled from 'styled-components';
+import { fadeIn } from 'variables/animations';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
 
@@ -26,6 +27,7 @@ background-color: ${COLORS.white};
 margin: 0;
 padding: 0;
 height: 100vh;
+animation: ${fadeIn} 0.25s ease 1 forwards;
 `;
 
 const StyledAboutContent = styled.section<{isCompact: boolean}>`

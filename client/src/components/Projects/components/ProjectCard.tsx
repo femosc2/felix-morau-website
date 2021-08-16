@@ -19,17 +19,17 @@ export const ProjectCard: React.FC<IProps> = (props) => {
     const language = useSelector<IStore>(state => state.header.language);
     switch(language) {
     case 'fr':
-      return project.descriptionFr;
+      return project.descriptionFr.toLocaleLowerCase();
     case 'gb':
-      return project.descriptionGb;
+      return project.descriptionGb.toLocaleLowerCase();
     case 'se':
-      return project.descriptionSe;
+      return project.descriptionSe.toLocaleLowerCase();
     }
   };
   return (
     <StyledProjectCardContainer isCompact={isCompact}>
       <StyledProjectCardHeader>
-        <a href={project.link}><h3>{project.name}</h3></a>
+        <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
         <p>{project.occasion}</p>
       </StyledProjectCardHeader>
       <a href={project.link}>
@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<IProps> = (props) => {
           <StyledProjectCardOverlay>
             <h4>{descriptionLanguage()}</h4>
             <section>
-              {project.stack.map((s) => <h4 key={s}> {s}</h4>)}
+              {project.stack.map((s) => <h4 key={s}> {s.toLocaleLowerCase()}</h4>)}
             </section>
           </StyledProjectCardOverlay>
         </StyledProjectCardContent>
