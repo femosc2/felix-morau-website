@@ -23,7 +23,7 @@ export const Skills: React.FC = () => {
 const StyledSkillsContainer = styled.section`
 background-color: ${COLORS.white};
 height: 100vh;
-animation: ${fadeIn} 0.25s linear 1 forwards;
+animation: ${fadeIn} 0.25s ease 1 forwards;
 `;
 const StyledSkillsContent= styled.section`
 display: flex;

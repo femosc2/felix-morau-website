@@ -94,6 +94,8 @@ const StyledLanguageDropDown = styled.ul<{isCompact: boolean}>`
   margin: 0 auto;
   > li {
     z-index: 3;
+    display: flex;
+    justify-content: center;
    > img {
     height: 32px;
     margin: 10px;

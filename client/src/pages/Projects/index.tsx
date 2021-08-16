@@ -25,7 +25,7 @@ const StyledProjectsContainer = styled.section`
 background-color: ${COLORS.white};
 min-height: 100vh;
 overflow-x: hidden;
-animation: ${fadeIn} 0.25s linear 1 forwards;
+animation: ${fadeIn} 0.25s ease 1 forwards;
 `;
 const StyledProjectContent= styled.section`
 display: flex;
