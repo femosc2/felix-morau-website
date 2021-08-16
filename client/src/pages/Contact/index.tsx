@@ -57,7 +57,7 @@ export const ContactPage: React.FC = () => {
 
 const StyledContactContainer = styled.section`
 background-color: ${COLORS.white};
-height: 100vh;
+min-height: 100vh;
 animation: ${fadeIn} 0.25s ease 1 forwards;
 `;
 const StyledContactContent = styled.section`

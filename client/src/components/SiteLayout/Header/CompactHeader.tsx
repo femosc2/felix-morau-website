@@ -1,5 +1,6 @@
 import { Languages } from 'models/languages';
 import React, { useState } from 'react';
+import { IoCloseOutline, IoMenuOutline } from 'react-icons/io5';
 import styled from 'styled-components';
 import { fadeIn, slideInFromRight } from 'variables/animations';
 import { COLORS } from 'variables/colors';
@@ -22,10 +23,10 @@ export const CompactHeader: React.FC<IProps> = (props) => {
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   return (
     <>
-      {!isMenuShowing && <StyledHamburger onClick={() => setIsMenuShowing(true)} />}
+      {!isMenuShowing && <StyledHamburger color={COLORS.primary} onClick={() => setIsMenuShowing(true)} />}
       {isMenuShowing && <StyledOverlay onClick={() =>setIsMenuShowing(false)} />}
       {isMenuShowing && <StyledMenu>
-        <StyledExitButton onClick={() => setIsMenuShowing(false)} />
+        <StyledExitButton color={COLORS.secondary} size={25} onClick={() => setIsMenuShowing(false)} />
         <h3>felix morau</h3>
         <Navigation switchPage={switchPage} />
         <LanguagePicker language={language} switchLanguage={switchLanguage} />
@@ -34,7 +35,7 @@ export const CompactHeader: React.FC<IProps> = (props) => {
   );
 };
 
-const StyledHamburger = styled.button`
+const StyledHamburger = styled(IoMenuOutline)`
   width: 50px;
   height: 50px;
   position: fixed;
@@ -70,11 +71,7 @@ box-shadow: ${SHADOWS.mobileMenuShadow};
 animation: ${slideInFromRight} 0.5s ease forwards;
 `;
 
-const StyledExitButton = styled.button`
-width: 25px;
-height: 25px;
-background-color: ${COLORS.secondary};
-border-radius: 50%;
+const StyledExitButton = styled(IoCloseOutline)`
 position: fixed;
 border: none;
 left: 65vw;

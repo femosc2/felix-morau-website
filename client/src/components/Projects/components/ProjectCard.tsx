@@ -1,6 +1,7 @@
 import { useIsCompact } from 'hooks/isCompact';
 import { Project } from 'models/projects';
 import React from 'react';
+import { IoCheckmarkCircleSharp, IoCloseCircleOutline } from 'react-icons/io5';
 import { useSelector } from 'react-redux';
 import { IStore } from 'store';
 import styled from 'styled-components';
@@ -29,8 +30,13 @@ export const ProjectCard: React.FC<IProps> = (props) => {
   return (
     <StyledProjectCardContainer isCompact={isCompact}>
       <StyledProjectCardHeader>
-        <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
-        <p>{project.occasion}</p>
+        <StyledHeaderContent>
+          <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
+          <p>{project.occasion}</p>
+        </StyledHeaderContent>
+        <StyledCompletionIcon>
+          {project.completed ? <IoCheckmarkCircleSharp color={COLORS.primary} size={35} /> : <IoCloseCircleOutline color={'red'} size={35} /> }
+        </StyledCompletionIcon>
       </StyledProjectCardHeader>
       <a href={project.link}>
         <StyledProjectCardContent background={project.image}>
@@ -78,27 +84,19 @@ height: 100%;
 `;
 
 const StyledProjectCardHeader = styled.section`
-height: 50px;
+display: flex;
+justify-content: space-between;
+min-height: 50px;
 padding: 0 15px 15px 15px;
 background: ${COLORS.gradientWhite};
 border: 1px solid ${COLORS.darkWhite};
+box-shadow: ${SHADOWS.headerShadow};
+z-index: 2;
 > p {
   margin: 0;
   padding: 0;
   text-align: left;
 }
-> a {
-  color: inherit;
-  text-decoration: none;
-  &: hover {
-    cursor: pointer;
-  }
-  > h3 {
-    text-align: left;
-    margin: 0;
-    margin-top: 10px;
-    padding: 0;
-  }
 }
 `;
 
@@ -126,5 +124,27 @@ justify-content: flex-end;
 }
 `;
 
+const StyledHeaderContent = styled.section`
+> a {
+  color: inherit;
+  text-decoration: none;
+  &: hover {
+    cursor: pointer;
+  }
+  > h3 {
+    text-align: left;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+  }
+}
+> p {
+  text-align: left;
+  margin: 0 auto;
+}
+`;
 
+const StyledCompletionIcon = styled.span`
+margin-top: auto;
+`;
 
