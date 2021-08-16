@@ -5,5 +5,5 @@ export const SHADOWS = {
   headerShadow: '2px 4px 5px 0px rgba(0,0,0,0.3);',
   footerShadow: '0px -4px 10px 0px rgba(0,0,0,0.3)',
   cardShadow: '0px 0px 10px 0px rgba(0,0,0,0.3)',
-  cardShadowElevated: '0px 0px 15px 0px rgba(0,0,0,0.5)',
+  cardShadowElevated: '0px 0px 20px 0px rgba(0,0,0,0.15)',
 };

@@ -1,6 +1,8 @@
 export type Project =  {
     occasion: 'professional' | 'school' | 'hobby';
-    description: string;
+    descriptionGb: string;
+    descriptionSe: string;
+    descriptionFr: string;
     link: string;
     image: string;
     stack: string[];

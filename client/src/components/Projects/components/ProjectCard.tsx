@@ -1,6 +1,8 @@
 import { useIsCompact } from 'hooks/isCompact';
 import { Project } from 'models/projects';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { IStore } from 'store';
 import styled from 'styled-components';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
@@ -13,6 +15,17 @@ interface IProps {
 export const ProjectCard: React.FC<IProps> = (props) => {
   const isCompact = useIsCompact();
   const { project } = props;
+  const descriptionLanguage = () => {
+    const language = useSelector<IStore>(state => state.header.language);
+    switch(language) {
+    case 'fr':
+      return project.descriptionFr;
+    case 'gb':
+      return project.descriptionGb;
+    case 'se':
+      return project.descriptionSe;
+    }
+  };
   return (
     <StyledProjectCardContainer isCompact={isCompact}>
       <StyledProjectCardHeader>
@@ -22,7 +35,7 @@ export const ProjectCard: React.FC<IProps> = (props) => {
       <a href={project.link}>
         <StyledProjectCardContent background={project.image}>
           <StyledProjectCardOverlay>
-            <h4>{project.description}</h4>
+            <h4>{descriptionLanguage()}</h4>
             <section>
               {project.stack.map((s) => <h4 key={s}> {s}</h4>)}
             </section>
@@ -58,6 +71,9 @@ border-radius: 25px;
 
 const StyledProjectCardContent = styled.section<{background: string}>`
 background-image: url(${(props) => props.background});
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 height: 100%;
 `;
 
