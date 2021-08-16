@@ -1,8 +1,10 @@
 import { Languages } from 'models/languages';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { fadeIn, slideInFromRight } from 'variables/animations';
 import { COLORS } from 'variables/colors';
 import { MARGINS } from 'variables/margins';
+import { SHADOWS } from 'variables/shadows';
 
 import { LanguagePicker } from './components/LanguagePicker';
 import { Navigation } from './components/Navigation';
@@ -49,6 +51,7 @@ height: 100vh;
 position: fixed;
 background-color: rgba(0,0,0,0.5);
 z-index: 9;
+animation: ${fadeIn} 0.5s ease forwards;
 `;
 
 const StyledMenu = styled.section`
@@ -60,6 +63,11 @@ top: 0;
 left: 0;
 color: ${COLORS.primary};
 z-index: 10;
+> h3 {
+  text-align: center;
+}
+box-shadow: ${SHADOWS.mobileMenuShadow};
+animation: ${slideInFromRight} 0.5s ease forwards;
 `;
 
 const StyledExitButton = styled.button`

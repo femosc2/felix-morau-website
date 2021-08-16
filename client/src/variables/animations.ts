@@ -21,3 +21,13 @@ export const fadeInBackgroundColor = keyframes`
     background-color: ${COLORS.primary};
   }
 `;
+
+export const slideInFromRight = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;

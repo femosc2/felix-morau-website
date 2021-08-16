@@ -6,4 +6,5 @@ export const SHADOWS = {
   footerShadow: '0px -4px 10px 0px rgba(0,0,0,0.3)',
   cardShadow: '0px 0px 10px 0px rgba(0,0,0,0.3)',
   cardShadowElevated: '0px 0px 20px 0px rgba(0,0,0,0.15)',
+  mobileMenuShadow: '6px -1px 25px 1px rgba(0,0,0,0.29)',
 };
