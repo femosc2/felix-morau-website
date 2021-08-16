@@ -14,3 +14,8 @@ export const getProjects = async (): Promise<any> => {
   const response = await axios.get(`${process.env.REACT_APP_API}projects`);
   return response;
 };
+
+export const getSkills = async (): Promise<any> => {
+  const response = await axios.get(`${process.env.REACT_APP_API}skills`);
+  return response;
+};

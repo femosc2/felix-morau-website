@@ -17,13 +17,13 @@ export const Footer: React.FC<IProps> = (props) => {
     <StyledFooter isTop={isAtTop} currentPage={currentPage}>
       <h3> {useTranslation('WebDeveloperDesigenr')} </h3>
       <StyledSocialMediaLinks>
-        <a href={'target=\'_blank\' rel=\'noreferrer\' href={\'https://www.instagram.com/moraufelix/\'}'}>
+        <a target='blank' rel='noreferrer' href='https://www.instagram.com/moraufelix/'>
           <IoLogoInstagram size={25} />
         </a>
-        <a href={'target=\'_blank\' rel=\'noreferrer\' href={\'https://twitter.com/moraufelix\'}'}>
+        <a target='blank' rel='noreferrer' href='https://twitter.com/moraufelix'>
           <IoLogoTwitter size={25} />
         </a>
-        <a href={'target=\'_blank\' rel=\'noreferrer\' href={\'https://www.linkedin.com/in/felixmorau/\'}'}>
+        <a target='blank' rel='noreferrer' href='https://www.linkedin.com/in/felixmorau' >
           <IoLogoLinkedin size={25} />
         </a>
       </StyledSocialMediaLinks>
