@@ -32,7 +32,7 @@ export const Footer: React.FC<IProps> = (props) => {
 };
 
 const StyledFooter = styled.footer<{isTop: boolean, currentPage: string}>`
-opacity: ${(props) => !props.isTop ? 0 : 1};
+opacity: ${(props) => !props.isTop && props.currentPage !== 'about' ? 0 : 1};
 display: flex;
 position: fixed;
 width: 100%;
@@ -45,7 +45,8 @@ transition: all 0.2s ease;
 color: ${COLORS.white};
 bottom: 0;
 z-index: 3;
-box-shadow: ${(props) => props.isTop && props.currentPage === 'about' ? '0 0 0 0' : SHADOWS.footerShadow};
+box-shadow: ${(props) =>
+    (props.isTop && props.currentPage === 'about') || (!props.isTop && props.currentPage === 'about') ? '0 0 0 0' : SHADOWS.footerShadow};
 `;
 
 const StyledSocialMediaLinks = styled.section`

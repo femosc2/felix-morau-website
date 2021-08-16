@@ -33,10 +33,11 @@ position: fixed;
 z-index: 3;
 width: 100%;
 justify-content: space-between;
-background: ${(props) => props.isTop && props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.gradientPrimaryDark};
+background: ${(props) =>
+    (props.isTop && props.currentPage === 'about') || props.currentPage === 'about' ? 'rgba(0,0,0,0)' : COLORS.gradientPrimaryDark};
 padding: 0 ${MARGINS.gutter} 0 ${MARGINS.gutter};
 align-content: center;
 transition: all 0.2s ease;
 color: ${COLORS.white};
-box-shadow: ${(props) => props.isTop && props.currentPage === 'about' ? '0 0 0 0' : SHADOWS.headerShadow};
+box-shadow: ${(props) => (props.isTop && props.currentPage === 'about') || props.currentPage === 'about' ? '0 0 0 0' : SHADOWS.headerShadow};
 `;
