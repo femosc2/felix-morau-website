@@ -26,8 +26,8 @@ const StyledProjects = styled.section`
 display: flex;
 justify-content: center;
 z-index: 2;
-width: 80%;
-margin-left: 10%;
+width: 98%;
+margin: 0 auto;
 `;
 
 const StyledProjectsList = styled.section`

@@ -57,8 +57,8 @@ const StyledProjectCardContainer = styled.article<{isCompact: boolean}>`
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-height: 50vh;
-width: ${(props) => props.isCompact ? '100%' : '30%'};
+height: 66vh;
+width: ${(props) => props.isCompact ? '100%' : '49.5%'};
 margin-bottom: ${MARGINS.gutter};
 overflow: hidden;
 transition: 0.5s;
@@ -68,7 +68,6 @@ box-shadow: ${SHADOWS.cardShadow};
   box-shadow: ${SHADOWS.cardShadowElevated};
   cursor: pointer;
 }
-border-radius: 25px;
 > a {
   height: 100%;
   text-decoration: none;
@@ -88,7 +87,7 @@ display: flex;
 justify-content: space-between;
 min-height: 50px;
 padding: 0 15px 15px 15px;
-background: ${COLORS.gradientWhite};
+background: ${COLORS.darkWhite};
 border: 1px solid ${COLORS.darkWhite};
 box-shadow: ${SHADOWS.headerShadow};
 z-index: 2;
@@ -112,7 +111,7 @@ justify-content: flex-end;
 > section {
   display: flex;
   width: 60%;
-  justify-content: space-between;
+  justify-content: space-around;
   color: ${COLORS.white};
   text-align: left;
   > h4 {
