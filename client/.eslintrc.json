@@ -1,0 +1,103 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "indent": [
+            "warn",
+            2
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "max-len": [
+            "warn",
+            145
+        ],
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        "comma-dangle": [
+            "warn",
+            "always-multiline"
+        ],
+        "eol-last": [
+            "warn",
+            "always"
+        ],
+        "no-trailing-spaces": [
+            "warn",
+            {"skipBlankLines": true}
+        ],
+        "prefer-template": [
+            "warn"
+        ],
+        "prefer-destructuring": [
+            "warn",
+            {
+                "object": true,
+                "array": false
+            }
+        ],
+        "prefer-const": [
+            "warn"
+        ],
+        "prefer-arrow-callback": [
+            "warn"
+        ],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "@typescript-eslint/explicit-function-return-type": [
+            "off"
+        ],
+        "@typescript-eslint/no-non-null-assertion": [
+            "off"
+        ],
+        "react/no-unescaped-entities": [
+            "off"
+        ],
+        "@typescript-eslint/no-explicit-any": [
+            "off"
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+            "off"
+        ],
+        "no-irregular-whitespace" : [
+            "off"
+        ],
+        "@typescript-eslint/no-use-before-define": [
+            "off"
+        ],
+        "react/prop-types": [
+            "off"
+        ]
+    }
+}
