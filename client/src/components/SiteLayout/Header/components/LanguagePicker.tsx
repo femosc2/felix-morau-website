@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fadeIn } from 'variables/animations';
 import { COLORS } from 'variables/colors';
+import { MARGINS } from 'variables/margins';
 import { SHADOWS } from 'variables/shadows';
 
 interface IProps {
@@ -63,7 +64,7 @@ const StyledLanguagePicker = styled.section<{isCompact: boolean}>`
 display: flex;
 width: ${(props) => !props.isCompact ? '15%' : '100%'};
 justify-content: space-around;
-margin-top: 30px;
+margin-top: ${MARGINS.headerCenter};
 list-decoration: none;
  > img {
    height: 32px;

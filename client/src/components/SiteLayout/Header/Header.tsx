@@ -40,4 +40,7 @@ align-content: center;
 transition: all 0.2s ease;
 color: ${COLORS.white};
 box-shadow: ${(props) => (props.isTop && props.currentPage === 'about') || props.currentPage === 'about' ? '0 0 0 0' : SHADOWS.headerShadow};
+> h1 {
+  margin-top: ${MARGINS.headerCenter};
+}
 `;
