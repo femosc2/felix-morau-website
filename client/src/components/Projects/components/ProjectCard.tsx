@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<IProps> = (props) => {
             <StyledCompletionIcon>
               {project.completed ? <IoCheckmarkCircleSharp color={COLORS.primary} size={35} />
                 :
-                <IoCloseCircleOutline color={'red'} size={35} /> }
+                <IoCloseCircleOutline color={COLORS.errorRed} size={35} /> }
             </StyledCompletionIcon>
           </StyledProjectCardHeader>
           <StyledProjectCardOverlay>

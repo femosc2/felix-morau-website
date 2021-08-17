@@ -10,6 +10,7 @@ const DEFAULTCOLORS = {
   gradientWhite: 'linear-gradient(180deg, rgba(250,228,215,1) 25%, rgba(250,228,215,0.5) 100%);',
   gradientPrimaryDark: 'linear-gradient(180deg, #11513d 0%, #15694e 100%);',
   darkPrimary: '#061f17',
+  errorRed: '#9c0000',
   
 };
 
