@@ -49,14 +49,14 @@ const StyledSkillBar = styled.figure<{comfortability: number, color: string, isC
     margin-left: 0;
     &:hover {
         background-color: ${(props) => props.color};
-        height: ${(props) => props.isCompact ? '25vh' : '15vh'}
+        height: ${(props) => props.isCompact ? '25vh' : '15vh'};
     }
     > h4 {
-        font-size: ${(props) => props.isCompact ? '15px' : '30px'}
+        font-size: ${(props) => props.isCompact ? '15px' : '30px'};
         margin: 0;
     }
     > p {
-      font-size: ${(props) => props.isCompact ? '12px' : '25px'}
+      font-size: ${(props) => props.isCompact ? '12px' : '25px'};
     }
 `;
 

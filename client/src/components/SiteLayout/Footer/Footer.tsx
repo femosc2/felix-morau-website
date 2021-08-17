@@ -1,3 +1,4 @@
+import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
 import { IoLogoInstagram, IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io5';
@@ -13,10 +14,11 @@ interface IProps {
 
 export const Footer: React.FC<IProps> = (props) => {
   const { isAtTop, currentPage } = props;
+  const isCompact = useIsCompact();
   return (
     <StyledFooter isTop={isAtTop} currentPage={currentPage}>
       <h3> {useTranslation('WebDeveloperDesigenr')} </h3>
-      <StyledSocialMediaLinks>
+      <StyledSocialMediaLinks isCompact={isCompact}>
         <a target='blank' rel='noreferrer' href='https://www.instagram.com/moraufelix/'>
           <IoLogoInstagram size={25} />
         </a>
@@ -49,7 +51,8 @@ box-shadow: ${(props) =>
     (props.isTop && props.currentPage === 'about') || (!props.isTop && props.currentPage === 'about') ? '0 0 0 0' : SHADOWS.footerShadow};
 `;
 
-const StyledSocialMediaLinks = styled.section`
+const StyledSocialMediaLinks = styled.section<{isCompact: boolean}>`
+display: ${(props) => props.isCompact ? 'none' : 'block'};
 margin: ${MARGINS.gutter};
 position: absolute;
 right: 0;
@@ -64,3 +67,4 @@ right: 0;
   }
 }
 `;
+

@@ -41,7 +41,7 @@ justify-content: space-evenly;
 list-decoration: none;
 align-content: center;
 justify-self: center;
-margin-left: 3vw;
+margin-left: ${(props) => props.isCompact ? '0px' : '3vw'}
 `;
 
 const StyledNavigationLink = styled.a<{name: string, currentPage: string, isCompact: boolean}>`

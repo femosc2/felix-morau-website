@@ -33,7 +33,7 @@ export const ProjectCard: React.FC<IProps> = (props) => {
         <StyledProjectCardContent background={project.image}>
           <StyledProjectCardHeader>
             <StyledHeaderContent>
-              <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
+              <h3>{project.name.toLocaleLowerCase()}</h3>
               <p>{project.occasion}</p>
             </StyledHeaderContent>
             <StyledCompletionIcon>
@@ -125,9 +125,6 @@ justify-content: flex-end;
 
 const StyledHeaderContent = styled.section`
 color: ${COLORS.primary};
-> a {
-  text-decoration: none;
-  color: ${COLORS.primary};
   &: hover {
     cursor: pointer;
   }
