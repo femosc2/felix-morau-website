@@ -10,7 +10,6 @@ interface IProjects {
 
 export const Projects: React.FC<IProjects> = (props) => {
   const { projects } = props;
-  console.log(projects);
   return (
     <StyledProjects>
       <StyledProjectsList>
