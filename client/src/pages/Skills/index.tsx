@@ -1,3 +1,4 @@
+import { SkillsContainer } from 'components/Skills';
 import { useIsCompact } from 'hooks/isCompact';
 import { useTranslation } from 'hooks/translation';
 import React from 'react';
@@ -12,7 +13,7 @@ export const SkillsPage: React.FC = () => {
       <StyledSkillsContainer>
         {!isCompact && <StyledBackgroundText>{useTranslation('skills')}</StyledBackgroundText>}
         <StyledSkillsContent>
-            SkillsContainer
+          <SkillsContainer />
         </StyledSkillsContent>
       </StyledSkillsContainer>
     </>

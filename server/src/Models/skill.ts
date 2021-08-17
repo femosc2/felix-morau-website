@@ -1,6 +1,8 @@
 export type Skill = {
     comfortability: number;
     name: string;
-    description: string;
+    descriptionGb: string;
+    descriptionFr: string;
+    descriptionSe: string;
     color: string;
   }
