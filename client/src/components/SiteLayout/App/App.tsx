@@ -22,8 +22,7 @@ export const App: React.FC = () =>{
   const dispatch = useDispatch();
   const language = useSelector<IStore, Languages>(state => state.header.language);
   useEffect(() => {
-    getTranslations(language).then((translations) => {console.log(translations);
-      dispatch(setTranslations(translations.data));});
+    getTranslations(language).then((translations) => dispatch(setTranslations(translations.data)));
     window.location.pathname.substring(1) !== '' ? dispatch(setCurrentPage(window.location.pathname.substring(1))) : 'about';
   }, []);
   return (
@@ -40,7 +39,6 @@ export const App: React.FC = () =>{
             <Route path={['/contact']} component={ ContactPage } />
             <Route path={['/projects']} component={ ProjectsPage } />
             <Route path={['/skills']} component={ SkillsPage } />
-            {/* <Route path="*" component={ ErrorPage } /> */}
           </Switch>
         </CSSTransition>
       </TransitionGroup>
