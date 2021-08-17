@@ -22,7 +22,8 @@ export const App: React.FC = () =>{
   const dispatch = useDispatch();
   const language = useSelector<IStore, Languages>(state => state.header.language);
   useEffect(() => {
-    getTranslations(language).then((translations) => dispatch(setTranslations(translations.data)));
+    getTranslations(language).then((translations) => {console.log(translations)
+       dispatch(setTranslations(translations.data))});
     window.location.pathname.substring(1) !== '' ? dispatch(setCurrentPage(window.location.pathname.substring(1))) : 'about';
   }, []);
   return (
