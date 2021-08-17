@@ -29,17 +29,19 @@ export const ProjectCard: React.FC<IProps> = (props) => {
   };
   return (
     <StyledProjectCardContainer isCompact={isCompact}>
-      <StyledProjectCardHeader>
-        <StyledHeaderContent>
-          <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
-          <p>{project.occasion}</p>
-        </StyledHeaderContent>
-        <StyledCompletionIcon>
-          {project.completed ? <IoCheckmarkCircleSharp color={COLORS.primary} size={35} /> : <IoCloseCircleOutline color={'red'} size={35} /> }
-        </StyledCompletionIcon>
-      </StyledProjectCardHeader>
       <a href={project.link}>
         <StyledProjectCardContent background={project.image}>
+          <StyledProjectCardHeader>
+            <StyledHeaderContent>
+              <a href={project.link}><h3>{project.name.toLocaleLowerCase()}</h3></a>
+              <p>{project.occasion}</p>
+            </StyledHeaderContent>
+            <StyledCompletionIcon>
+              {project.completed ? <IoCheckmarkCircleSharp color={COLORS.primary} size={35} />
+                :
+                <IoCloseCircleOutline color={'red'} size={35} /> }
+            </StyledCompletionIcon>
+          </StyledProjectCardHeader>
           <StyledProjectCardOverlay>
             <h4>{descriptionLanguage()}</h4>
             <section>
@@ -85,11 +87,9 @@ height: 100%;
 const StyledProjectCardHeader = styled.section`
 display: flex;
 justify-content: space-between;
-min-height: 50px;
+min-height: 150px;
 padding: 0 15px 15px 15px;
-background: ${COLORS.darkWhite};
-border: 1px solid ${COLORS.darkWhite};
-box-shadow: ${SHADOWS.headerShadow};
+background: ${COLORS.gradientWhite};
 z-index: 2;
 > p {
   margin: 0;
@@ -103,7 +103,7 @@ const StyledProjectCardOverlay = styled.div`
 display: flex;
 flex-direction: column;
 background: ${COLORS.gradientPrimaryReverse};
-height: 100%;
+height: calc(100% - 150px);
 justify-content: flex-end;
 > h4 {
   color: ${COLORS.white};
@@ -124,9 +124,10 @@ justify-content: flex-end;
 `;
 
 const StyledHeaderContent = styled.section`
+color: ${COLORS.primary};
 > a {
-  color: inherit;
   text-decoration: none;
+  color: ${COLORS.primary};
   &: hover {
     cursor: pointer;
   }
@@ -144,6 +145,6 @@ const StyledHeaderContent = styled.section`
 `;
 
 const StyledCompletionIcon = styled.span`
-margin-top: auto;
+margin-top: 10px;
 `;
 
