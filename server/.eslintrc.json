@@ -6,8 +6,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "plugin:@typescript-eslint/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -27,61 +26,55 @@
     ],
     "rules": {
         "indent": [
-            "warn",
+            "error",
             2
         ],
         "quotes": [
-            "warn",
+            "error",
             "single"
         ],
         "semi": [
-            "warn",
+            "error",
             "always"
         ],
         "max-len": [
-            "warn",
+            "error",
             145
         ],
         "object-curly-spacing": [
-            "warn",
+            "error",
             "always"
         ],
         "comma-dangle": [
-            "warn",
+            "error",
             "always-multiline"
         ],
         "eol-last": [
-            "warn",
+            "error",
             "always"
         ],
         "no-trailing-spaces": [
-            "warn",
+            "error",
             {"skipBlankLines": true}
         ],
         "prefer-template": [
-            "warn"
+            "error"
         ],
         "prefer-destructuring": [
-            "warn",
+            "error",
             {
                 "object": true,
                 "array": false
             }
         ],
         "prefer-const": [
-            "warn"
+            "error"
         ],
         "prefer-arrow-callback": [
-            "warn"
+            "error"
         ],
-        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
         "@typescript-eslint/explicit-function-return-type": [
-            "off"
-        ],
-        "@typescript-eslint/no-non-null-assertion": [
-            "off"
-        ],
-        "react/no-unescaped-entities": [
             "off"
         ],
         "@typescript-eslint/no-explicit-any": [
@@ -96,8 +89,11 @@
         "@typescript-eslint/no-use-before-define": [
             "off"
         ],
-        "react/prop-types": [
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "off"
+        ],
+        "no-empty-pattern": [
             "off"
         ]
     }
-}
+  }
