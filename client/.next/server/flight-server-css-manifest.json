@@ -1,0 +1,14 @@
+{
+  "cssImports": {
+    "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\app\\layout.tsx": [
+      "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\node_modules\\next\\font\\google\\target.css?{\"path\":\"app\\\\layout.tsx\",\"import\":\"EB_Garamond\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":\"700\"}],\"variableName\":\"main\"}",
+      "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\app\\globals.css"
+    ]
+  },
+  "cssModules": {
+    "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\app\\page": [
+      "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\app\\globals.css",
+      "C:\\Users\\Felix Morau\\Documents\\Programmering\\felix-morau-website\\client\\node_modules\\next\\font\\google\\target.css?{\"path\":\"app\\\\layout.tsx\",\"import\":\"EB_Garamond\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":\"700\"}],\"variableName\":\"main\"}"
+    ]
+  }
+}
